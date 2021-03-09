@@ -41,6 +41,23 @@ zinit light zdharma/fast-syntax-highlighting
 ## Ctrl+r でコマンド履歴を検索
 # zinit light zdharma/history-search-multi-word
 
+# anyframeのセットアップ
+zinit light mollifier/anyframe
+
+# Ctrl+x -> b
+# peco でディレクトリの移動履歴を表示
+bindkey '^xd' anyframe-widget-cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# Ctrl+x -> r
+# peco でコマンドの実行履歴を表示
+bindkey '^xc' anyframe-widget-execute-history
+
+# Ctrl+x -> Ctrl+b
+# peco でGitブランチを表示して切替え
+bindkey '^xb' anyframe-widget-checkout-git-branch
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
