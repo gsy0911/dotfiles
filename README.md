@@ -4,6 +4,12 @@
 # dotfiles
 dotfiles of @gsy0911
 
+# setup
+
+```
+$ brew install peco
+```
+
 # install
 
 ```

@@ -22,6 +22,10 @@ autoload -Uz _zinit
 # setup Prezto via zinit
 zinit snippet PZT::modules/helper/init.zsh
 
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
 # setup oh-my-zsh via zinit
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
@@ -30,6 +34,7 @@ zinit cdclear -q
 ## Load theme from OMZ
 ## See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 setopt promptsubst
+## candidates: [amuse, jonathan]
 zinit snippet OMZT::amuse
 
 ## auto-complete
@@ -57,10 +62,6 @@ bindkey '^xc' anyframe-widget-execute-history
 # Ctrl+x -> Ctrl+b
 # peco でGitブランチを表示して切替え
 bindkey '^xb' anyframe-widget-checkout-git-branch
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
