@@ -27,6 +27,10 @@ $ sh install.sh
     - [ohmyzsh-Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
     - [owesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)
     - [zinitでzsh環境をいい感じにしたメモ](https://qiita.com/crossroad0201/items/17270127732dc20fa8b2)
+    - [zle](https://dev.classmethod.jp/articles/zsh-zle-introduction/)
 - vim
     - [vimrcの設定方法](https://qiita.com/iwaseasahi/items/0b2da68269397906c14c)
     - [dein設定](https://knowledge.sakura.ad.jp/23248/)
+- peco
+    - [https://qiita.com/xtetsuji/items/05f6f4c1b17854cdd75b](https://qiita.com/xtetsuji/items/05f6f4c1b17854cdd75b)
+    - [peco・fzfを使うとLinuxのシェルでの選択作業が楽に](https://www.kwbtblog.com/entry/2019/05/29/023911)
