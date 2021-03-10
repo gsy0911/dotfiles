@@ -1,21 +1,22 @@
-iterm:line ## ⌃ + e ## go tail 
-iterm:line ## ⌃ + a ## go head
-iterm:tab ## ⌘ + t ## new tab
-iterm:tab ## ⌘ + (RL) ## move tabs
-iterm:window ## ⌘ + r ## clear lines
-iterm:window ## ⌘ + ⌥ + (RLUD) ## move window
-iterm:window ## ⌘ + d ## split window vertically
-iterm:window ## ⌘ + ⇧ + d ## split window horizontally
+iterm:line ## ⌃e ## go tail 
+iterm:line ## ⌃j ## go middle
+iterm:line ## ⌃a ## go head
+iterm:tab ## ⌘t ## new tab
+iterm:tab ## ⌘+(RL) ## move tabs
+iterm:window ## ⌘r ## clear lines
+iterm:window ## ⌘⌥+(RLUD) ## move window
+iterm:window ## ⌘d ## split window vertically
+iterm:window ## ⌘⇧d ## split window horizontally
 
 ⌘
 ⌥
 ⇧
 
-alias:dir ## pcd ## cd "$( ls -1d $HOME/Development/*/* | peco )"
+alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
 alias:dir ## ll ## ls -l or exa -l 
 alias:docker ## dcb ## docker-compose build
 alias:docker ## dcu ## docker-compose up
 alias:docker ## dcd ## docker-compose down
 alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 alias:docker ## drm ## docker system prune
-
+alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
