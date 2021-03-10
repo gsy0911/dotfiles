@@ -22,6 +22,11 @@ autoload -Uz _zinit
 # setup Prezto via zinit
 zinit snippet PZT::modules/helper/init.zsh
 
+### install oh-my-zsh if not exist
+if [[ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
@@ -85,6 +90,21 @@ bindkey '^xb' anyframe-widget-checkout-git-branch
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 # python
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
@@ -100,12 +120,12 @@ alias cdp="cd $HOME/Development/Projects"
 
 # ls
 if type "exa" > /dev/null 2>&1; then
-    alias ls='exa -la'
+    alias ls='exa'
     alias l='exa -F'
     alias la='exa -a'
     alias ll='exa -l'
 else
-    alias ls='ls -la'
+    alias ls='ls'
     alias l='ls -CF'
     alias la='ls -A'
     alias ll='ls -l'
