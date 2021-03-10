@@ -1,0 +1,13 @@
+iterm:line ## ⌃ + e ## go tail 
+iterm:line ## ⌃ + a ## go head
+iterm:tab ## ⌘ + t ## new tab
+iterm:tab ## ⌘ + (right | left) ## move tabs
+iterm:window ## ⌘ + ⌥ + (right | left | up | down) ## move window
+iterm:window ## ⌘ + d ## split window vertically
+iterm:window ## ⌘ + ⇧ + d ## split window horizontally
+
+
+alias ## ⌃ + e ## go tail 
+⌘
+⌥
+⇧

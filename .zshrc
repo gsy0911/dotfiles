@@ -163,3 +163,11 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Stat
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
 
+function mm() {
+    if [[ $1 ]]; then
+        printf "\033[36m%-30s\033[0m %-50s %-30s\n" "[main:sub]" "[Command]" "[Description]"
+        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-30s\033[0m %-50s %-30s\n", $1, $2, $3}'
+    else
+        echo "mm iterm[:line, :tab, :window]"
+    fi
+}
