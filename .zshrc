@@ -131,9 +131,6 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 # mysql
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-# general
-alias cdp="cd $HOME/Development/Projects"
-
 # ls
 if type "exa" > /dev/null 2>&1; then
     alias ls='exa'
@@ -165,9 +162,18 @@ alias drm="docker system prune"
 
 function mm() {
     if [[ $1 ]]; then
-        printf "\033[36m%-30s\033[0m %-50s %-30s\n" "[main:sub]" "[Command]" "[Description]"
-        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-30s\033[0m %-50s %-30s\n", $1, $2, $3}'
+        printf "\033[36m%-20s\033[0m %-20s %-30s\n" "[main:sub]" "[Command]" "[Description]"
+        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-20s %-30s\n", $1, $2, $3}'
     else
         echo "mm iterm[:line, :tab, :window]"
+        echo "mm alias[:line, :tab, :window]"
     fi
+}
+
+function cdp() {
+    local dir="$( ls -1d $HOME/Development/*/* | peco )"
+    if [ ! -z "$dir" ] ; then
+        echo $dir
+        cd $dir
+    fi    
 }
