@@ -54,6 +54,22 @@ zinit light zdharma/fast-syntax-highlighting
 # anyframeのセットアップ
 zinit light mollifier/anyframe
 
+## zsh settings
+# ヒストリファイルを指定
+HISTFILE=~/.zsh_history
+# ヒストリに保存するコマンド数
+HISTSIZE=10000
+# ヒストリファイルに保存するコマンド数
+SAVEHIST=10000
+# 重複するコマンド行は古い方を削除
+setopt hist_ignore_all_dups
+# 直前と同じコマンドラインはヒストリに追加しない
+setopt hist_ignore_dups
+# 履歴を追加 (毎回 .zsh_history を作るのではなく)
+setopt append_history
+# 履歴をインクリメンタルに追加
+setopt inc_append_history
+
 # Ctrl+x -> b
 # peco でディレクトリの移動履歴を表示
 bindkey '^xd' anyframe-widget-cdr
@@ -144,4 +160,6 @@ alias dcb="docker-compose build"
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
+alias drm="docker system prune"
 
