@@ -177,3 +177,17 @@ function cdp() {
         cd $dir
     fi    
 }
+zle -N cdp
+bindkey "^p" cdp
+
+function drmip(){
+    local imageId=$(docker images | peco | awk '{print $3}')
+    [ -n "$imageId" ] && docker rmi $imageId
+}
+
+function jump_middle() {
+    CURSOR=$((${#BUFFER} / 2))
+    zle redisplay
+}
+zle -N jump_middle
+bindkey "^j" jump_middle
