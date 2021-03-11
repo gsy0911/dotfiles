@@ -40,7 +40,8 @@ zinit cdclear -q
 ## See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 setopt promptsubst
 ## candidates: [amuse, jonathan]
-zinit snippet OMZT::amuse
+# use theme via `starship`
+# zinit snippet OMZT::amuse
 
 ## auto-complete
 # zinit light zsh-users/zsh-autosuggestions
@@ -105,6 +106,9 @@ bindkey '^xb' anyframe-widget-checkout-git-branch
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+
+# set theme via `starship`
+eval "$(starship init zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

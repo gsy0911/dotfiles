@@ -10,6 +10,7 @@ dotfiles of @gsy0911
 $ brew install peco
 $ brew install gawk
 $ brew install bat
+$ brew install starship
 ```
 
 # install
