@@ -1,0 +1,47 @@
+# Don't print a new line at the start of the prompt
+add_newline = true
+
+[directory]
+truncation_length = 20
+truncation_symbol = "…/"
+truncate_to_repo = false
+style = "bold #32cd32"
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+format="$symbol "
+success_symbol = "[❯](bold #32cd32)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red) "
+
+[aws]
+format = "aws: [$profile $region]($style)"
+style = "bold #32cd32"
+
+[python]
+style = "bold #ff8c00"
+
+[nodejs]
+style = "bold #32cd32"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = "git:"
+style = "bold #ff8c00"
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[time]
+format = "[$time]($style) "
+style = "bold #ff8c00"
+disabled = false
