@@ -5,7 +5,7 @@ add_newline = true
 truncation_length = 20
 truncation_symbol = "…/"
 truncate_to_repo = false
-style = "bold #32cd32"
+style = "bold #4169e1"
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
@@ -26,7 +26,7 @@ style = "bold #32cd32"
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = "git:"
-style = "bold #ff8c00"
+# style = "bold #ff8c00"
 
 [git_commit]
 disabled = true
