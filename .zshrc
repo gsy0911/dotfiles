@@ -148,6 +148,10 @@ else
     alias ll='ls -l'
 fi
 
+if type "bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
+
 # cd
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
