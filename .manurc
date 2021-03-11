@@ -14,6 +14,7 @@ iterm:window ## ⌘⇧d ## split window horizontally
 
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
 alias:dir ## ll ## ls -l or exa -l
+alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
 alias:cdk ## cdkld ## cdk deploy "$(cdk ls | grep $1 | peco)"
 alias:node.js ## nsc ## cat package.json | jq ".scripts"
 alias:docker ## dcb ## docker-compose build

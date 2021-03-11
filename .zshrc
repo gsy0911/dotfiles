@@ -224,3 +224,8 @@ function cdkld() {
         cdk deploy $stack    
     fi
 }
+
+# show aws CREDential
+function cred() {
+    cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
+}
