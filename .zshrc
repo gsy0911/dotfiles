@@ -131,6 +131,9 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 # mysql
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
+# general
+alias nawk=/usr/bin/awk
+
 # ls
 if type "exa" > /dev/null 2>&1; then
     alias ls='exa'
@@ -166,7 +169,7 @@ function mm() {
         cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-20s %-30s\n", $1, $2, $3}'
     else
         echo "mm iterm[:line, :tab, :window]"
-        echo "mm alias[:line, :tab, :window]"
+        echo "mm alias[:dir, ...]"
     fi
 }
 
@@ -191,3 +194,25 @@ function jump_middle() {
 }
 zle -N jump_middle
 bindkey "^j" jump_middle
+
+# Node-SCript
+function nsc() {
+    if [[ -f package.json ]]; then
+        # printf "\033[36m%-20s\033[0m %-20s\n" "[main:sub]" "[Command]"
+        cat package.json | jq ".scripts"
+        #| grep : | sed -e 's/\"//g' | sed -e 's/://g' | awk '{printf "\033[36m%-20s\033[0m %-20s\n", $1, $2}'
+    fi
+}
+
+# CDK List && cdk Deploy
+function cdkld() {
+    if [[ $1 ]]; then
+        local stack="$(cdk ls | grep $1 | peco)"
+        echo deploying... $stack
+        cdk deploy $stack
+    else
+        local stack="$(cdk ls | peco)"
+        echo deploying... $stack
+        cdk deploy $stack    
+    fi
+}

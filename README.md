@@ -8,6 +8,7 @@ dotfiles of @gsy0911
 
 ```
 $ brew install peco
+$ brew install gawk
 ```
 
 # install
@@ -22,6 +23,7 @@ $ sh install.sh
 
 - [reireias/dotfiles](https://github.com/reireias/dotfiles)
 - [dotfilesの育て方](https://qiita.com/reireias/items/b33b5c824a56dc89e1f7)
+- [テキスト処理のための標準的なコマンド群の macOS への導入手順](https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f)
 - zsh
     - [zinit-settings](https://ktrysmt.github.io/blog/switch-zgen-to-zinit/)
     - [ohmyzsh-Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
