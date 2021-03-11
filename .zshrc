@@ -133,6 +133,7 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # general
 alias nawk=/usr/bin/awk
+alias awk=/usr/local/bin/gawk
 
 # ls
 if type "exa" > /dev/null 2>&1; then
@@ -198,9 +199,8 @@ bindkey "^j" jump_middle
 # Node-SCript
 function nsc() {
     if [[ -f package.json ]]; then
-        # printf "\033[36m%-20s\033[0m %-20s\n" "[main:sub]" "[Command]"
-        cat package.json | jq ".scripts"
-        #| grep : | sed -e 's/\"//g' | sed -e 's/://g' | awk '{printf "\033[36m%-20s\033[0m %-20s\n", $1, $2}'
+        printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
+        cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
     fi
 }
 
