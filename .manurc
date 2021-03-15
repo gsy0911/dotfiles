@@ -8,10 +8,6 @@ iterm:window ## ⌘⌥+(RLUD) ## move window
 iterm:window ## ⌘d ## split window vertically
 iterm:window ## ⌘⇧d ## split window horizontally
 
-⌘
-⌥
-⇧
-
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
 alias:dir ## ll ## ls -l or exa -l
 alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
