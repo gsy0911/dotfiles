@@ -7,10 +7,8 @@ dotfiles of @gsy0911
 # setup
 
 ```
-$ brew install peco
-$ brew install gawk
-$ brew install bat
-$ brew install starship
+# install required packages via brew
+$ make setup-brew-package
 ```
 
 # install
@@ -18,7 +16,7 @@ $ brew install starship
 ```
 # create symbolic linc
 # add .zshrc & .vimrc now
-$ sh install.sh
+$ make dotfile
 ```
 
 # References
