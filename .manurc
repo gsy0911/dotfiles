@@ -13,9 +13,13 @@ alias:dir ## ll ## ls -l or exa -l
 alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
 alias:cdk ## cdkld ## cdk deploy "$(cdk ls | grep $1 | peco)"
 alias:node.js ## nsc ## cat package.json | jq ".scripts"
+alias:docker ## dl {filter-word} ## docker images | grep $1 | sort | awk | peco
+alias:docker ## dr ## docker run --rm (-d) {CMD}
+alias:docker ## ds ## docker stop $(docker ps -q)
 alias:docker ## dcb ## docker-compose build
 alias:docker ## dcu ## docker-compose up
 alias:docker ## dcd ## docker-compose down
 alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 alias:docker ## drm ## docker system prune
 alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
+usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}

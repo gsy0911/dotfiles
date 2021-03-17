@@ -168,6 +168,9 @@ alias ..4='cd ../../../..'
 alias j="poetry run jupyter lab"
 
 # alias for docker
+alias di="docker images"
+alias dr="docker run --rm"
+alias ds='docker stop $(docker ps -q)'
 alias dcb="docker-compose build"
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
@@ -182,7 +185,19 @@ function mm() {
     else
         echo "mm iterm[:line, :tab, :window]"
         echo "mm alias[:dir, ...]"
+        echo "mm usage[:docker, ...]"
     fi
+}
+
+function dl() {
+    if [[ $1 ]]; then
+        local image="$(docker images | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
+        export li=$image
+        echo "export li=$image"
+    else
+        echo "dl {filter-word}"
+    fi
+
 }
 
 function cdp() {
