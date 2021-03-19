@@ -4,7 +4,7 @@ add_newline = true
 [directory]
 truncation_length = 20
 truncation_symbol = "…/"
-truncate_to_repo = false
+truncate_to_repo = true
 style = "bold #4169e1"
 
 # Replace the "❯" symbol in the prompt with "➜"
@@ -14,7 +14,7 @@ success_symbol = "[❯](bold #32cd32)"     # The "success_symbol" segment is bei
 error_symbol = "[✗](bold red) "
 
 [aws]
-format = "aws: [$profile $region]($style)"
+format = "aws: [$profile $region]($style) "
 style = "bold #32cd32"
 
 [python]
@@ -45,3 +45,11 @@ disabled = true
 format = "[$time]($style) "
 style = "bold #ff8c00"
 disabled = false
+
+[custom.cdk]
+# shows output of command
+command = "echo $CDK_VERSION"
+# can specify filters
+when = """ test -e cdk.json """
+symbol = "cdk: "
+format = "[$symbol$output]($style)"
