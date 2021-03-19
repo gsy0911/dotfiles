@@ -23,13 +23,13 @@ autoload -Uz _zinit
 zinit snippet PZT::modules/helper/init.zsh
 
 ### install oh-my-zsh if not exist
-if [[ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
-    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-fi
+# if [[ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
+#     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+# fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+# export ZSH="$HOME/.oh-my-zsh"
+# source $ZSH/oh-my-zsh.sh
 
 # setup oh-my-zsh via zinit
 zinit snippet OMZL::git.zsh
@@ -137,6 +137,9 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 
 # mysql
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# for starship(zsh) and CDK
+export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
 
 # general
 alias nawk=/usr/bin/awk
