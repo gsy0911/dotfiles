@@ -1,12 +1,17 @@
 iterm:line ## ⌃e ## go tail 
 iterm:line ## ⌃j ## go middle
 iterm:line ## ⌃a ## go head
+iterm:line ## ⌘⇧h ## paste history
+iterm:line ## ⌘k or ⌘r ## clear
 iterm:tab ## ⌘t ## new tab
 iterm:tab ## ⌘+(RL) ## move tabs
 iterm:window ## ⌘r ## clear lines
 iterm:window ## ⌘⌥+(RLUD) ## move window
 iterm:window ## ⌘d ## split window vertically
 iterm:window ## ⌘⇧d ## split window horizontally
+
+mysql:login ## mysql -u {user} -D {database} -p {terminal} ## login
+mysql:sql ## show columns from {table} ## show schema
 
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
 alias:dir ## ll ## ls -l or exa -l

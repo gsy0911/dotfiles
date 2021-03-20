@@ -166,6 +166,18 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Stat
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
 
+# Get week number
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+
 function mm() {
     if [[ $1 ]]; then
         printf "\033[36m%-20s\033[0m %-20s %-30s\n" "[main:sub]" "[Command]" "[Description]"
@@ -177,6 +189,7 @@ function mm() {
     fi
 }
 
+# Docker List
 function dl() {
     if [[ $1 ]]; then
         local image="$(docker images | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
@@ -188,6 +201,7 @@ function dl() {
 
 }
 
+# CD Project-directory
 function cdp() {
     local dir="$( ls -1d $HOME/Development/*/* | peco )"
     if [ ! -z "$dir" ] ; then
@@ -198,6 +212,7 @@ function cdp() {
 zle -N cdp
 bindkey "^p" cdp
 
+# Docker RM Images with Peco
 function drmip(){
     local imageId=$(docker images | peco | awk '{print $3}')
     [ -n "$imageId" ] && docker rmi $imageId
