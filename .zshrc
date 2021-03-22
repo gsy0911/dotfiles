@@ -27,9 +27,6 @@ zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit cdclear -q
 
-## Load theme from OMZ
-## See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-setopt promptsubst
 ## not share command history between terminals
 setopt no_share_history
 unsetopt share_history
