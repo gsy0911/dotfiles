@@ -234,6 +234,17 @@ function cdkld() {
     fi
 }
 
+function cdk_pkg_ver() {
+    if [[ -f package.json ]]; then
+        local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
+        # export CDK_PKG_COMPATIBILITY="⭕"
+        echo "$(($cdk_installed_packages_version_count - 1))"
+    else
+        # echo "cdk package not found"
+        echo 0
+    fi
+}
+
 # show aws CREDential
 function cred() {
     cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
