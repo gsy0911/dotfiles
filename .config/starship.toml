@@ -52,4 +52,11 @@ command = "echo $CDK_VERSION"
 # can specify filters
 when = """ test -e cdk.json """
 symbol = "cdk: "
-format = "[$symbol$output]($style)"
+[custom.makefile]
+# shows output of command
+command = "cat Makefile | grep .PHONY: | wc -l | awk '{print $1}'"
+# can specify filters
+when = """ test -e Makefile """
+symbol = "make: "
+format = "[$symbol$output]($style) "
+style = "bold #4169e1"
