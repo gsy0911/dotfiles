@@ -203,7 +203,7 @@ bindkey "^p" cdp
 
 function drmip(){
     local imageId=$(docker images | peco | awk '{print $3}')
-    [ -n "$imageId" ] && docker rmi $imageId
+    [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
 function jump_middle() {
