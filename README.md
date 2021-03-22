@@ -36,3 +36,5 @@ $ make dotfile
 - peco
     - [https://qiita.com/xtetsuji/items/05f6f4c1b17854cdd75b](https://qiita.com/xtetsuji/items/05f6f4c1b17854cdd75b)
     - [peco・fzfを使うとLinuxのシェルでの選択作業が楽に](https://www.kwbtblog.com/entry/2019/05/29/023911)
+- starship
+    - [starship/config](https://starship.rs/config/)
