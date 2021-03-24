@@ -199,7 +199,7 @@ zle -N cdp
 bindkey "^p" cdp
 
 function drmip(){
-    local imageId=$(docker images | peco | awk '{print $3}')
+    local imageId=$(docker images | sort | peco | awk '{print $3}')
     [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
@@ -221,11 +221,11 @@ function nsc() {
 # CDK List && cdk Deploy
 function cdkld() {
     if [[ $1 ]]; then
-        local stack="$(cdk ls | grep $1 | peco)"
+        local stack="$(cdk ls | sort | grep $1 | peco)"
         echo deploying... $stack
         cdk deploy $stack
     else
-        local stack="$(cdk ls | peco)"
+        local stack="$(cdk ls | sort | peco)"
         echo deploying... $stack
         cdk deploy $stack    
     fi
@@ -234,7 +234,14 @@ function cdkld() {
 function cdk_pkg_ver() {
     if [[ -f package.json ]]; then
         local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
-        # export CDK_PKG_COMPATIBILITY="⭕"
+        echo $cdk_installed_packages_version_count
+        if [ $cdk_installed_packages_version_count -eq 1 ]; then
+            export CDK_PKG_COMPATIBILITY="⭕"
+            echo "circle"
+        else
+            export CDK_PKG_COMPATIBILITY="❌"
+            echo "cross"
+        fi
         echo "$(($cdk_installed_packages_version_count - 1))"
     else
         # echo "cdk package not found"
