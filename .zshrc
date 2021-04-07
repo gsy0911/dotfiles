@@ -171,8 +171,9 @@ function mm() {
         printf "\033[36m%-20s\033[0m %-20s %-30s\n" "[main:sub]" "[Command]" "[Description]"
         cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-20s %-30s\n", $1, $2, $3}'
     else
-        echo "mm iterm[:line, :tab, :window]"
         echo "mm alias[:dir, ...]"
+        echo "mm iterm[:line, :tab, :window]"
+        echo "mm net"
         echo "mm usage[:docker, ...]"
     fi
 }
@@ -234,18 +235,13 @@ function cdkld() {
 function cdk_pkg_ver() {
     if [[ -f package.json ]]; then
         local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
-        echo $cdk_installed_packages_version_count
         if [ $cdk_installed_packages_version_count -eq 1 ]; then
-            export CDK_PKG_COMPATIBILITY="⭕"
-            echo "circle"
+            echo "cdk package compatibility: ⭕"
         else
-            export CDK_PKG_COMPATIBILITY="❌"
-            echo "cross"
+            echo "cdk package compatibility: ❌"
         fi
-        echo "$(($cdk_installed_packages_version_count - 1))"
     else
-        # echo "cdk package not found"
-        echo 0
+        echo "cdk package not found"
     fi
 }
 

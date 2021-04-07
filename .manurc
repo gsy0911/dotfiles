@@ -8,10 +8,15 @@ iterm:window ## ⌘⌥+(RLUD) ## move window
 iterm:window ## ⌘d ## split window vertically
 iterm:window ## ⌘⇧d ## split window horizontally
 
+net:nslookup ## nslookup -type=ns [domain] ## 
+net:nslookup ## nslookup -type=a [domain] ## 
+net:traceroute ## traceroute [IP] ##
+
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
 alias:dir ## ll ## ls -l or exa -l
 alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
 alias:cdk ## cdkld ## cdk deploy "$(cdk ls | grep $1 | peco)"
+alias:cdk ## cdk_pkg_ver ## check compatibility package version
 alias:node.js ## nsc ## cat package.json | jq ".scripts"
 alias:docker ## dl {filter-word} ## docker images | grep $1 | sort | awk | peco
 alias:docker ## dr ## docker run --rm (-d) {CMD}
