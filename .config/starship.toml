@@ -16,6 +16,7 @@ error_symbol = "[✗](bold red) "
 [aws]
 format = "aws: [$profile $region]($style) "
 style = "bold #32cd32"
+disabled = true
 
 [python]
 style = "bold #ff8c00"

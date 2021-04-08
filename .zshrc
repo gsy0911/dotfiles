@@ -136,11 +136,14 @@ if type "exa" > /dev/null 2>&1; then
     alias l='exa -F'
     alias la='exa -a'
     alias ll='exa -l'
+    alias lla='exa -la'
+    alias lt='ls -lT --level=2 --git-ignore'
 else
     alias ls='ls'
     alias l='ls -CF'
     alias la='ls -A'
     alias ll='ls -l'
+    alias lla='ls -la'
 fi
 
 if type "bat" > /dev/null 2>&1; then
@@ -165,6 +168,8 @@ alias dcd="docker-compose down"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
+
+alias mp="make | peco"
 
 function mm() {
     if [[ $1 ]]; then
