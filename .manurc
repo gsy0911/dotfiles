@@ -13,10 +13,21 @@ iterm:window ## ⌘⇧d ## split window horizontally
 mysql:login ## mysql -u {user} -D {database} -p {terminal} ## login
 mysql:sql ## show columns from {table} ## show schema
 
+net:nslookup ## nslookup -type=ns [domain] ##
+net:nslookup ## nslookup -type=a [domain] ##
+net:traceroute ## traceroute [IP] ##
+
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
+alias:dir ## ls ## ls or exa
+alias:dir ## l ## ls -CF or exa -F
 alias:dir ## ll ## ls -l or exa -l
+alias:dir ## la ## ls -a or exa -a
+alias:dir ## lla ## ls -la or exa -la
+alias:dir ## lt ## exa -lT --level=2 --git-ignore
+alias:Makefile ## mp ## make | peco
 alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
 alias:cdk ## cdkld ## cdk deploy "$(cdk ls | grep $1 | peco)"
+alias:cdk ## cdk_pkg_ver ## check compatibility package version
 alias:node.js ## nsc ## cat package.json | jq ".scripts"
 alias:docker ## dl {filter-word} ## docker images | grep $1 | sort | awk | peco
 alias:docker ## dr ## docker run --rm (-d) {CMD}

@@ -136,11 +136,14 @@ if type "exa" > /dev/null 2>&1; then
     alias l='exa -F'
     alias la='exa -a'
     alias ll='exa -l'
+    alias lla='exa -la'
+    alias lt='ls -lT --level=2 --git-ignore'
 else
     alias ls='ls'
     alias l='ls -CF'
     alias la='ls -A'
     alias ll='ls -l'
+    alias lla='ls -la'
 fi
 
 if type "bat" > /dev/null 2>&1; then
@@ -177,14 +180,16 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
+alias mp="make | peco"
 
 function mm() {
     if [[ $1 ]]; then
         printf "\033[36m%-20s\033[0m %-20s %-30s\n" "[main:sub]" "[Command]" "[Description]"
         cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-20s %-30s\n", $1, $2, $3}'
     else
-        echo "mm iterm[:line, :tab, :window]"
         echo "mm alias[:dir, ...]"
+        echo "mm iterm[:line, :tab, :window]"
+        echo "mm net"
         echo "mm usage[:docker, ...]"
     fi
 }
@@ -214,8 +219,8 @@ bindkey "^p" cdp
 
 # Docker RM Images with Peco
 function drmip(){
-    local imageId=$(docker images | peco | awk '{print $3}')
-    [ -n "$imageId" ] && docker rmi $imageId
+    local imageId=$(docker images | sort | peco | awk '{print $3}')
+    [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
 function jump_middle() {
@@ -236,13 +241,26 @@ function nsc() {
 # CDK List && cdk Deploy
 function cdkld() {
     if [[ $1 ]]; then
-        local stack="$(cdk ls | grep $1 | peco)"
+        local stack="$(cdk ls | sort | grep $1 | peco)"
         echo deploying... $stack
         cdk deploy $stack
     else
-        local stack="$(cdk ls | peco)"
+        local stack="$(cdk ls | sort | peco)"
         echo deploying... $stack
         cdk deploy $stack    
+    fi
+}
+
+function cdk_pkg_ver() {
+    if [[ -f package.json ]]; then
+        local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
+        if [ $cdk_installed_packages_version_count -eq 1 ]; then
+            echo "cdk package compatibility: ⭕"
+        else
+            echo "cdk package compatibility: ❌"
+        fi
+    else
+        echo "cdk package not found"
     fi
 }
 
