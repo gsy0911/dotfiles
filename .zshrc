@@ -183,15 +183,28 @@ function mm() {
     fi
 }
 
+# Docker List
 function dl() {
     if [[ $1 ]]; then
         local image="$(docker images | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
         export li=$image
         echo "export li=$image"
     else
-        echo "dl {filter-word}"
+        local image="$(docker images | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
+        export li=$image
+        echo "export li=$image"
     fi
+}
 
+# TRivy Peco
+function trp() {
+    if [[ $1 ]]; then
+        dl $1
+        trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
+    else
+        dl
+        trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
+    fi
 }
 
 function cdp() {

@@ -33,4 +33,5 @@ alias:docker ## dcd ## docker-compose down
 alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 alias:docker ## drm ## docker system prune
 alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
+alias:docker ## trp ## trivy --severity=HIGH,CRITICAL --ignore-unfixed=true {peco chosen}
 usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}

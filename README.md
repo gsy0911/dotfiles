@@ -39,3 +39,6 @@ $ make dotfile
     - [peco・fzfを使うとLinuxのシェルでの選択作業が楽に](https://www.kwbtblog.com/entry/2019/05/29/023911)
 - starship
     - [starship/config](https://starship.rs/config/)
+- trivy
+    - [コンテナイメージ脆弱性スキャンツールの Trivy を使ってみた](https://d2v.hatenablog.com/entry/2020/12/27/202211)
+    
