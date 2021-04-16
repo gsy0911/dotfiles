@@ -24,7 +24,7 @@ alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' |
 alias:cdk ## cdkld ## cdk deploy "$(cdk ls | grep $1 | peco)"
 alias:cdk ## cdk_pkg_ver ## check compatibility package version
 alias:node.js ## nsc ## cat package.json | jq ".scripts"
-alias:docker ## dl {filter-word} ## docker images | grep $1 | sort | awk | peco
+alias:docker ## dl {filter-word} ## docker images {| grep $1} | sort | awk | peco
 alias:docker ## dr ## docker run --rm (-d) {CMD}
 alias:docker ## ds ## docker stop $(docker ps -q)
 alias:docker ## dcb ## docker-compose build

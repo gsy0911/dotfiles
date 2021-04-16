@@ -169,7 +169,7 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Stat
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
 
-alias mp="make | peco"
+alias mp="make | sed -e '1d' | peco"
 
 function mm() {
     if [[ $1 ]]; then
@@ -186,27 +186,25 @@ function mm() {
 # Docker List
 function dl() {
     if [[ $1 ]]; then
-        local image="$(docker images | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
-        export li=$image
-        echo "export li=$image"
+        local image="$(docker images | sed -e '1d' | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
     else
-        local image="$(docker images | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
-        export li=$image
-        echo "export li=$image"
+        local image="$(docker images | sed -e '1d' | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
     fi
+    export li=$image
+    echo "export li=$image"
 }
 
 # TRivy Peco
 function trp() {
     if [[ $1 ]]; then
         dl $1
-        trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
     else
         dl
-        trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
     fi
+    trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
 }
 
+# ChangeDirectory Peco
 function cdp() {
     local dir="$( ls -1d $HOME/Development/*/* | peco )"
     if [ ! -z "$dir" ] ; then
@@ -217,6 +215,7 @@ function cdp() {
 zle -N cdp
 bindkey "^p" cdp
 
+# Docker ReMove Image Peco
 function drmip(){
     local imageId=$(docker images | sort | peco | awk '{print $3}')
     [ -n "$imageId" ] && docker rmi -f $imageId
