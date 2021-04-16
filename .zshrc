@@ -171,6 +171,17 @@ alias drm="docker system prune"
 
 alias mp="make | sed -e '1d' | peco"
 
+# Get week number
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
 function mm() {
     if [[ $1 ]]; then
         printf "\033[36m%-20s\033[0m %-20s %-30s\n" "[main:sub]" "[Command]" "[Description]"
@@ -204,7 +215,7 @@ function trp() {
     trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
 }
 
-# ChangeDirectory Peco
+# CD Project-directory
 function cdp() {
     local dir="$( ls -1d $HOME/Development/*/* | peco )"
     if [ ! -z "$dir" ] ; then
@@ -215,7 +226,7 @@ function cdp() {
 zle -N cdp
 bindkey "^p" cdp
 
-# Docker ReMove Image Peco
+# Docker RM Images with Peco
 function drmip(){
     local imageId=$(docker images | sort | peco | awk '{print $3}')
     [ -n "$imageId" ] && docker rmi -f $imageId
