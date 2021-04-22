@@ -118,7 +118,7 @@ export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 
 # node
-export PATH="/usr/local/opt/node@14/bin:$PATH"
+export PATH="/usr/local/opt/node/bin:$PATH"
 
 # mysql
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
