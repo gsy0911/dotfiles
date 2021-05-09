@@ -20,9 +20,13 @@ disabled = true
 
 [python]
 style = "bold #ff8c00"
+symbol = "py:"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [nodejs]
 style = "bold #32cd32"
+symbol = "node:"
+format = "[$symbol($version )]($style)"
 
 [git_branch]
 format = "[$symbol$branch]($style) "
