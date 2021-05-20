@@ -10,8 +10,10 @@ iterm:window ## ⌘⌥+(RLUD) ## move window
 iterm:window ## ⌘d ## split window vertically
 iterm:window ## ⌘⇧d ## split window horizontally
 
-mysql:login ## mysql -u {user} -D {database} -p {terminal} ## login
-mysql:sql ## show columns from {table} ## show schema
+db-mysql:login ## mysql -u {user} -D {database} -p {terminal} ## login
+db-mysql:sql ## show columns from {table} ## show schema
+db-psql:login ## psql -h {host} -U {user} -d {database} ## login
+db-psql:update ## UPDATE {table} SET {column}={value} WHERE {column}={condition} ## update table
 
 net:nslookup ## nslookup -type=ns [domain] ##
 net:nslookup ## nslookup -type=a [domain] ##

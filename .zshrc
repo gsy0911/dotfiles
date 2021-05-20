@@ -191,6 +191,7 @@ function mm() {
         echo "mm iterm[:line, :tab, :window]"
         echo "mm net"
         echo "mm usage[:docker, ...]"
+        echo "mm db-[psql, mysql]"
     fi
 }
 
