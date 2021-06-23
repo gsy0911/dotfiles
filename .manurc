@@ -42,3 +42,6 @@ alias:docker ## drm ## docker system prune
 alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
 alias:docker ## trp ## trivy --severity=HIGH,CRITICAL --ignore-unfixed=true {peco chosen}
 usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}
+
+usage:av-antivirus ## sudo freshclam ## update virus definition
+usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}

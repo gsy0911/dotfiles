@@ -192,6 +192,7 @@ function mm() {
         echo "mm net"
         echo "mm usage[:docker, ...]"
         echo "mm db-[psql, mysql]"
+        echo "mm av"
     fi
 }
 
