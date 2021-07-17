@@ -193,6 +193,7 @@ function mm() {
         echo "mm usage[:docker, ...]"
         echo "mm db-[psql, mysql]"
         echo "mm av"
+        echo "mm aws"
     fi
 }
 
@@ -273,6 +274,16 @@ function cdk_pkg_ver() {
     else
         echo "cdk package not found"
     fi
+}
+
+function set_cdk() {
+    if [[ $1 ]]; then
+        local account=$(aws sts get-caller-identity --profile $1 | jq -r .Account)
+    else
+        local account=$(aws sts get-caller-identity | jq -r .Account)
+    fi
+    export CDK_DEFAULT_ACCOUNT=$account
+    echo "set CDK_DEFAULT_ACCOUNT as $CDK_DEFAULT_ACCOUNT as deploy account"
 }
 
 # show aws CREDential
