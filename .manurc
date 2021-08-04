@@ -46,5 +46,9 @@ alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
 alias:docker ## trp ## trivy --severity=HIGH,CRITICAL --ignore-unfixed=true {peco chosen}
 usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}
 
+desc:github ## 1. ## generate token in GitHub
+desc:github ## 2.a ## `$ git remote add origin https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
+desc:github ## 2.b ## or edit origin as `https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
+
 usage:av-antivirus ## sudo freshclam ## update virus definition
 usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}

@@ -194,6 +194,7 @@ function mm() {
         echo "mm db-[psql, mysql]"
         echo "mm av"
         echo "mm aws"
+        echo "mm github"
     fi
 }
 
