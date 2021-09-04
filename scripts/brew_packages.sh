@@ -13,3 +13,4 @@ check_exists_then_install gawk
 check_exists_then_install jq
 check_exists_then_install peco
 check_exists_then_install starship
+check_exists_then_install colordiff
