@@ -46,6 +46,8 @@ alias:docker ## drm ## docker system prune
 alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
 alias:docker ## trp ## trivy --severity=HIGH,CRITICAL --ignore-unfixed=true {peco chosen}
 usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}
+usage:docker ## - ## docker cp {container-id}:/path/file.txt .
+usage:docker ## - ## docker exec -it {container-id} /bin/bash
 
 desc:github ## 1. ## generate token in GitHub
 desc:github ## 2.a ## `$ git remote add origin https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
