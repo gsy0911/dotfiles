@@ -193,8 +193,8 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 function mm() {
     if [[ $1 ]]; then
-        printf "\033[36m%-20s\033[0m %-20s %-30s\n" "[main:sub]" "[Command]" "[Description]"
-        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-20s %-30s\n", $1, $2, $3}'
+        printf "\033[36m%-20s\033[0m %-30s %-30s\n" "[main:sub]" "[Command]" "[Description]"
+        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-30s %-30s\n", $1, $2, $3}'
     else
         echo "mm alias[:dir, ...]"
         echo "mm iterm[:line, :tab, :window]"
@@ -204,6 +204,7 @@ function mm() {
         echo "mm av"
         echo "mm aws"
         echo "mm github"
+        echo "mm conda"
     fi
 }
 
@@ -299,4 +300,12 @@ function set_cdk() {
 # show aws CREDential
 function cred() {
     cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
+}
+
+
+# Conda Activate with Peco
+function cap() {
+    env=$(conda info -e | grep anaconda | awk '{printf "%s\n", $1}' | peco)
+    echo "activating... $env"
+    conda activate $env
 }
