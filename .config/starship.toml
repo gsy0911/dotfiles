@@ -14,9 +14,8 @@ success_symbol = "[❯](bold #32cd32)"     # The "success_symbol" segment is bei
 error_symbol = "[✗](bold red) "
 
 [aws]
-format = "aws: [$profile $region]($style) "
-style = "bold #32cd32"
-disabled = true
+format = "[aws:$profile]($style) "
+style = "#ff8c00"
 
 [python]
 style = "bold #ff8c00"

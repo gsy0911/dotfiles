@@ -30,6 +30,7 @@ alias:dir ## lla ## ls -la or exa -la
 alias:dir ## lt ## exa -lT --level=2 --git-ignore
 alias:Makefile ## mp ## make | peco
 alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
+alias:aws ## credp ## set AWS_DEFAULT_PROFILE=$( cred | peco )
 alias:aws ## set_cdk {profile-name} ## aws sts get-caller-identity --profile $1 | jq -r .Account
 alias:cdk ## cdkld ## cdk deploy "$(cdk ls | grep $1 | peco)"
 alias:cdk ## cdk_pkg_ver ## check compatibility package version

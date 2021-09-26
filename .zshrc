@@ -125,6 +125,8 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # for starship(zsh) and CDK
 export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
+# for starship(aws default_profile)
+export AWS_PROFILE=default
 
 # general
 alias nawk=/usr/bin/awk
@@ -302,6 +304,13 @@ function cred() {
     cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
 }
 
+# CREDential with Peco
+function credp() {
+    target=$(cred | peco)
+    export AWS_PROFILE=$target
+    export AWS_DEFAULT_PROFILE=$target
+    echo "set AWS_DEFAULT_PROFILE as $AWS_DEFAULT_PROFILE"
+}
 
 # Conda Activate with Peco
 function cap() {
