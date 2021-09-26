@@ -22,4 +22,9 @@ for dotfile in $(ls -F .config/git | grep -v /); do
     ln -snfv "$(pwd)/.config/git/$dotfile" "$HOME/.config/git/$dotfile"
 done
 
+echo "\n================================="
+echo "create .config/karabiner in $HOME"
+mkdir -p $HOME/.config/karabiner
+ln -snfv "$(pwd)/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+
 echo "Success"
