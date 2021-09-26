@@ -5,7 +5,7 @@ add_newline = true
 truncation_length = 20
 truncation_symbol = "…/"
 truncate_to_repo = true
-style = "bold #4169e1"
+style = "#FFD700"
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
@@ -47,7 +47,7 @@ disabled = true
 
 [time]
 format = "[$time]($style) "
-style = "bold #ff8c00"
+style = "#32cd32"
 disabled = false
 
 [custom.cdk]
@@ -55,7 +55,7 @@ disabled = false
 command = "echo $CDK_VERSION"
 # can specify filters
 when = """ test -e cdk.json """
-symbol = "cdk: "
+symbol = "cdk:"
 format = "[$symbol$output]($style) "
 
 [custom.makefile]
@@ -63,6 +63,7 @@ format = "[$symbol$output]($style) "
 command = "cat Makefile | grep .PHONY: | wc -l | awk '{print $1}'"
 # can specify filters
 when = """ test -e Makefile """
-symbol = "make: "
+symbol = "make:"
 format = "[$symbol$output]($style) "
 style = "bold #4169e1"
+disabled = true
