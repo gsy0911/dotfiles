@@ -50,6 +50,9 @@ format = "[$time]($style) "
 style = "#32cd32"
 disabled = false
 
+[conda]
+format = "on [conda]($style) "
+
 [custom.cdk]
 # shows output of command
 command = "echo $CDK_VERSION"
