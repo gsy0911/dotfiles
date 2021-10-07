@@ -316,7 +316,7 @@ function credp() {
 
 # Conda Activate with Peco
 function cap() {
-    env=$(conda info -e | grep anaconda | awk '{printf "%s\n", $1}' | peco)
+    env=$(conda info -e | grep anaconda | grep -v "base" | awk '{printf "%s\n", $1}' | peco)
     echo "activating... $env"
     conda activate $env
 }
