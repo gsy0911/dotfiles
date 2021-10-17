@@ -168,7 +168,7 @@ alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 
 # alias for Python
-alias j="poetry run jupyter lab"
+alias j="jupyter lab"
 
 # alias for docker
 alias di="docker images"
