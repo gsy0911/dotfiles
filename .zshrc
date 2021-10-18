@@ -174,10 +174,10 @@ alias j="jupyter lab"
 alias di="docker images"
 alias dr="docker run --rm"
 alias ds='docker stop $(docker ps -q)'
-alias dcb="docker-compose build"
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
-alias dcdrm="docker-compose down --rmi all --volumes --remove-orphans"
+alias dcb="docker compose build"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
+alias dcdrm="docker compose down --rmi all --volumes --remove-orphans"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
