@@ -169,6 +169,7 @@ alias ..4='cd ../../../..'
 
 # alias for Python
 alias j="jupyter lab"
+alias p="poetry shell"
 
 # alias for docker
 alias di="docker images"
@@ -182,6 +183,8 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Stat
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
 
+# alias for make
+alias fis="make"
 alias mp="make | sed -e '1d' | peco"
 
 # Get week number
@@ -209,6 +212,7 @@ function mm() {
         echo "mm aws"
         echo "mm github"
         echo "mm conda"
+        echo "mm makefile"
     fi
 }
 
