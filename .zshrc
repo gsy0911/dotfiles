@@ -121,6 +121,9 @@ export PIPENV_VENV_IN_PROJECT=1
 
 # node
 export PATH="/usr/local/opt/node/bin:$PATH"
+# rust
+# you should add, after executing `$ rustup-init`
+export PATH="$HOME/.cargo/env:$PATH"
 
 # mysql
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"

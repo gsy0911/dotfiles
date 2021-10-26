@@ -14,3 +14,6 @@ check_exists_then_install jq
 check_exists_then_install peco
 check_exists_then_install starship
 check_exists_then_install colordiff
+# rust
+check_exists_then_install rustup
+check_exists_then_install rust-analyzer
