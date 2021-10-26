@@ -41,6 +41,9 @@ disabled = true
 [git_status]
 disabled = true
 
+[rust]
+format = "[rust:$version](red bold) "
+
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
