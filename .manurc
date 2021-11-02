@@ -19,6 +19,7 @@ db-psql:insert ## INSERT INTO {table} (col_1_name, ..., col_n_name) VALUES ('{va
 
 net:nslookup ## nslookup -type=ns [domain] ##
 net:nslookup ## nslookup -type=a [domain] ##
+net:nslookup ## nslookup -debug -q=mx [domain] ## check TTL
 net:traceroute ## traceroute [IP] ##
 
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
