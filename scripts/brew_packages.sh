@@ -7,6 +7,7 @@ function check_exists_then_install(){
     fi
 }
 
+# basics
 check_exists_then_install bat
 check_exists_then_install exa
 check_exists_then_install gawk
@@ -17,3 +18,10 @@ check_exists_then_install colordiff
 # rust
 check_exists_then_install rustup
 check_exists_then_install rust-analyzer
+# aws
+check_exists_then_install aws-cdk
+check_exists_then_install awscli
+# node
+check_exists_then_install node@16
+# python
+check_exists_then_install poetry
