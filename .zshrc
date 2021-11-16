@@ -96,7 +96,9 @@ bindkey '^xb' anyframe-widget-checkout-git-branch
 # For a full list of active aliases, run `alias`.
 
 # set theme via `starship`
-eval "$(starship init zsh)"
+if type "starship" > /dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -129,13 +131,17 @@ export PATH="$HOME/.cargo/env:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # for starship(zsh) and CDK
-export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
+if type "cdk" > /dev/null 2>&1; then
+    export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
+fi
 # for starship(aws default_profile)
 export AWS_PROFILE=default
 
 # general
-alias nawk=/usr/bin/awk
-alias awk=/usr/local/bin/gawk
+if type "gwak" > /dev/null 2>&1; then
+    alias nawk=/usr/bin/awk
+    alias awk=/usr/local/bin/gawk
+fi
 
 # ls
 if type "exa" > /dev/null 2>&1; then
