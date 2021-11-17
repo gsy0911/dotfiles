@@ -182,6 +182,7 @@ alias dcb="docker compose build"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
 alias dcdrm="docker compose down --rmi all --volumes --remove-orphans"
+alias dst="docker stats"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="docker system prune"
@@ -326,4 +327,11 @@ function cap() {
     env=$(conda info -e | grep anaconda | grep -v "base" | awk '{printf "%s\n", $1}' | peco)
     echo "activating... $env"
     conda activate $env
+}
+
+# Docker EXec with Peco
+function dexp() {
+    container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
+    echo "chosen: $container"
+    docker exec -it $container /bin/bash
 }
