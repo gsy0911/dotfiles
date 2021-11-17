@@ -1,4 +1,4 @@
-IGNORE_PATTERN="^\.(git|config)"
+IGNORE_PATTERN="^\.(git|config|idea)"
 
 echo "Create dotfile links."
 for dotfile in .??*; do

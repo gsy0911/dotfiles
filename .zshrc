@@ -9,7 +9,7 @@
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -35,7 +35,7 @@ unsetopt share_history
 # zinit light zsh-users/zsh-autosuggestions
 
 ## syntax-highlight
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 ## Ctrl+r でコマンド履歴を検索
 # zinit light zdharma/history-search-multi-word
@@ -96,7 +96,9 @@ bindkey '^xb' anyframe-widget-checkout-git-branch
 # For a full list of active aliases, run `alias`.
 
 # set theme via `starship`
-eval "$(starship init zsh)"
+if type "starship" > /dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -129,13 +131,17 @@ export PATH="$HOME/.cargo/env:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # for starship(zsh) and CDK
-export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
+if type "cdk" > /dev/null 2>&1; then
+    export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
+fi
 # for starship(aws default_profile)
 export AWS_PROFILE=default
 
 # general
-alias nawk=/usr/bin/awk
-alias awk=/usr/local/bin/gawk
+if type "gwak" > /dev/null 2>&1; then
+    alias nawk=/usr/bin/awk
+    alias awk=/usr/local/bin/gawk
+fi
 
 # ls
 if type "exa" > /dev/null 2>&1; then

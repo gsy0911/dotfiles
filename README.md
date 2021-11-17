@@ -29,7 +29,9 @@ $ make dotfile
   - [zinit-settings](https://ktrysmt.github.io/blog/switch-zgen-to-zinit/)
   - [ohmyzsh-Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
   - [owesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)
-  - [zinitでzsh環境をいい感じにしたメモ](https://qiita.com/crossroad0201/items/17270127732dc20fa8b2)
+  - [https://github.com/zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit#install)
+  - [zsh の zinit (旧zplugin) が消滅しちゃったよ！ 経緯と解決法](https://qiita.com/taiyodayo/items/c1ebdc863e6baa18ea06)
+  - [~~zinitでzsh環境をいい感じにしたメモ~~](https://qiita.com/crossroad0201/items/17270127732dc20fa8b2)
   - [zle](https://dev.classmethod.jp/articles/zsh-zle-introduction/)
 - vim
   - [vimrcの設定方法](https://qiita.com/iwaseasahi/items/0b2da68269397906c14c)

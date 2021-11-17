@@ -6,7 +6,7 @@ help:
 
 .PHONY: setup-brew-package
 setup-brew-package: ## create symbolic link ## make setup-brew-package
-	sh ./scripts/scripts/brew_packages.sh
+	sh ./scripts/brew_packages.sh
 
 .PHONY: dotfile
 dotfile: ## create symbolic link ## make dotfile
