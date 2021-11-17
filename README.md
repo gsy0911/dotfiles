@@ -51,3 +51,12 @@ $ make dotfile
   - [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
 - rust
   - [Rust 入門日記 (1) macOS/VSCode の環境構築](https://chocoby.com/blog/2021/02/13/rust-memo-1)
+- python
+  - scipy
+    - [macでpip install scipy](https://footprints.link/articles/ja/n-machida/pip-install-scipy-on-mac)
+  - miniforge
+    - [miniforge](https://github.com/conda-forge/miniforge)
+- Node.js
+  - [volta](https://github.com/volta-cli/volta)
+- WARP
+  - [macOS desktop client](https://developers.cloudflare.com/warp-client/setting-up/macOS)
