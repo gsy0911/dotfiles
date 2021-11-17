@@ -135,7 +135,11 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 
 # node
-export PATH="/usr/local/opt/node/bin:$PATH"
+export PATH="/usr/local/opt/node@16/bin:$PATH"
+## volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # rust
 # you should add, after executing `$ rustup-init`
 export PATH="$HOME/.cargo/env:$PATH"
@@ -220,6 +224,11 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# for M1 mac
+alias x86='arch -x86_64 zsh'
+alias arm='arch -arm64 zsh'
+
 
 function mm() {
     if [[ $1 ]]; then
