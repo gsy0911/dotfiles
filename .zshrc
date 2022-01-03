@@ -154,6 +154,13 @@ fi
 # for starship(aws default_profile)
 export AWS_PROFILE=default
 
+# openblas
+export LDFLAGS="-L/opt/homebrew/opt/openblas/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openblas/include"
+
+# docker
+export DOCKER_BUILDKIT=1
+
 # general
 if type "gwak" > /dev/null 2>&1; then
     alias nawk=/usr/bin/awk

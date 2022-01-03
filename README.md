@@ -60,3 +60,5 @@ $ make dotfile
   - [volta](https://github.com/volta-cli/volta)
 - WARP
   - [macOS desktop client](https://developers.cloudflare.com/warp-client/setting-up/macOS)
+- multipass
+  - [multipass](https://qiita.com/notakaos/items/928987623fc61e815363)

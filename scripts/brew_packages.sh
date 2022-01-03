@@ -32,4 +32,6 @@ check_exists_then_install lapack
 check_exists_then_install libjpeg
 ## for psycopg2
 check_exists_then_install postgres
+## for numpy, see: https://github.com/numpy/numpy/issues/17807
+check_exists_then_install openblas
 
