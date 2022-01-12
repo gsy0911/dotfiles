@@ -370,3 +370,10 @@ function dexp() {
     echo "chosen: $container"
     docker exec -it $container /bin/bash
 }
+
+# Docker LOGs with Peco
+function dlop() {
+    container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
+    echo "chosen: $container"
+    docker logs $container
+}

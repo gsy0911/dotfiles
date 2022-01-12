@@ -46,6 +46,7 @@ alias:docker ## dcd ## docker-compose down
 alias:docker ## dcdrm ## docker-compose down --rmi all --volumes --remove-orphans
 alias:docker ## dst ## docker stats
 alias:docker ## dexp ## docker exec $(docker ps | peco) /bin/bash
+alias:docker ## dlop ## docker logs $(docker ps | peco)
 alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 alias:docker ## drm ## docker system prune
 alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
