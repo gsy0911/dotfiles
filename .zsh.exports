@@ -1,0 +1,34 @@
+#!/bin/zsh
+
+# python
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export PATH="/usr/local/opt/python@3.9/bin:$PATH"
+export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+export PIPENV_VENV_IN_PROJECT=1
+
+# node
+export PATH="/usr/local/opt/node@16/bin:$PATH"
+## volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# rust
+# you should add, after executing `$ rustup-init`
+export PATH="$HOME/.cargo/env:$PATH"
+
+# mysql
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# for starship(zsh) and CDK
+if type "cdk" > /dev/null 2>&1; then
+    export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
+fi
+# for starship(aws default_profile)
+export AWS_PROFILE=default
+
+# openblas
+export LDFLAGS="-L/opt/homebrew/opt/openblas/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openblas/include"
+
+# docker
+export DOCKER_BUILDKIT=1

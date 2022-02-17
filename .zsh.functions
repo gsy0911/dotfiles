@@ -1,0 +1,142 @@
+#!/bin/zsh
+
+function mm() {
+    if [[ $1 ]]; then
+        printf "\033[36m%-20s\033[0m %-30s %-30s\n" "[main:sub]" "[Command]" "[Description]"
+        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-30s %-30s\n", $1, $2, $3}'
+    else
+        echo "mm alias[:dir, ...]"
+        echo "mm iterm[:line, :tab, :window]"
+        echo "mm net"
+        echo "mm usage[:docker, ...]"
+        echo "mm db-[psql, mysql]"
+        echo "mm av"
+        echo "mm aws"
+        echo "mm github"
+        echo "mm conda"
+        echo "mm makefile"
+    fi
+}
+
+# Docker List
+function dl() {
+    if [[ $1 ]]; then
+        local image="$(docker images | sed -e '1d' | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
+    else
+        local image="$(docker images | sed -e '1d' | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
+    fi
+    export li=$image
+    echo "export li=$image"
+}
+
+# TRivy Peco
+function trp() {
+    if [[ $1 ]]; then
+        dl $1
+    else
+        dl
+    fi
+    trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
+}
+
+# CD Project-directory
+function cdp() {
+    local dir="$( ls -1d $HOME/Development/*/* | peco )"
+    if [ ! -z "$dir" ] ; then
+        echo $dir
+        cd $dir
+    fi
+}
+zle -N cdp
+bindkey "^p" cdp
+
+# Docker RM Images with Peco
+function drmip(){
+    local imageId=$(docker images | sort | peco | awk '{print $3}')
+    [ -n "$imageId" ] && docker rmi -f $imageId
+}
+
+function jump_middle() {
+    CURSOR=$((${#BUFFER} / 2))
+    zle redisplay
+}
+zle -N jump_middle
+bindkey "^j" jump_middle
+
+# Node-SCript
+function nsc() {
+    if [[ -f package.json ]]; then
+        printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
+        cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
+    fi
+}
+
+# CDK List && cdk Deploy
+function cdkld() {
+    if [[ $1 ]]; then
+        local stack="$(cdk ls | sort | grep $1 | peco)"
+        echo deploying... $stack
+        cdk deploy $stack
+    else
+        local stack="$(cdk ls | sort | peco)"
+        echo deploying... $stack
+        cdk deploy $stack
+    fi
+}
+
+function cdk_pkg_ver() {
+    if [[ -f package.json ]]; then
+        local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
+        if [ $cdk_installed_packages_version_count -eq 1 ]; then
+            echo "cdk package compatibility: ⭕"
+        else
+            echo "cdk package compatibility: ❌"
+        fi
+    else
+        echo "cdk package not found"
+    fi
+}
+
+function set_cdk() {
+    if [[ $1 ]]; then
+        local account=$(aws sts get-caller-identity --profile $1 | jq -r .Account)
+    else
+        local account=$(aws sts get-caller-identity | jq -r .Account)
+    fi
+    export CDK_DEFAULT_ACCOUNT=$account
+    echo "set CDK_DEFAULT_ACCOUNT as $CDK_DEFAULT_ACCOUNT as deploy account"
+}
+
+# show aws CREDential
+function cred() {
+    cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
+}
+
+# CREDential with Peco
+function credp() {
+    target=$(cred | peco)
+    export AWS_PROFILE=$target
+    export AWS_DEFAULT_PROFILE=$target
+    echo "set AWS_DEFAULT_PROFILE as $AWS_DEFAULT_PROFILE"
+}
+
+# Conda Activate with Peco
+function cap() {
+    env=$(conda info -e | grep $HOME | grep -v "base" | awk '{printf "%s\n", $1}' | peco)
+    echo "activating... $env"
+    conda activate $env
+}
+
+# Docker EXec with Peco
+function dexp() {
+    container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
+    echo "chosen: $container"
+    docker exec -it $container /bin/bash
+}
+
+# Docker LOGs with Peco
+function dlop() {
+    container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
+    echo "chosen: $container"
+    docker logs $container
+}

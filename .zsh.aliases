@@ -1,0 +1,76 @@
+#!/bin/zsh
+
+# general
+if type "gwak" > /dev/null 2>&1; then
+    alias nawk=/usr/bin/awk
+    alias awk=/usr/local/bin/gawk
+fi
+
+# ls
+if type "exa" > /dev/null 2>&1; then
+    alias ls='exa'
+    alias l='exa -F'
+    alias la='exa -a'
+    alias ll='exa -l'
+    alias lla='exa -la'
+    alias lt='ls -lT --level=2 --git-ignore'
+else
+    alias ls='ls'
+    alias l='ls -CF'
+    alias la='ls -A'
+    alias ll='ls -l'
+    alias lla='ls -la'
+fi
+
+if type "bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
+
+if type "colordiff" > /dev/null 2>&1; then
+    alias diff='colordiff'
+    alias diffu='colordiff -u'
+    alias diffy='colordiff -y'
+else
+    alias diff='diff'
+fi
+
+# cd
+alias ..='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
+
+# alias for Python
+alias j="jupyter lab"
+alias p="poetry shell"
+
+# alias for docker
+alias di="docker images"
+alias dr="docker run --rm"
+alias ds='docker stop $(docker ps -q)'
+alias dcb="docker compose build"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
+alias dcdrm="docker compose down --rmi all --volumes --remove-orphans"
+alias dst="docker stats"
+alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
+alias drm="docker system prune"
+
+# alias for make
+alias fis="make"
+alias mp="make | sed -e '1d' | peco"
+
+# Get week number
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# for M1 mac
+alias x86='arch -x86_64 zsh'
+alias arm='arch -arm64 zsh'
