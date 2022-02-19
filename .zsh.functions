@@ -1,9 +1,31 @@
 #!/bin/zsh
 
+# Terminal colors
+TC='\e['
+Rst="${TC}0m"
+Blk="${TC}30m";
+Red="${TC}31m";
+Grn="${TC}32m";
+Yel="${TC}33m";
+Blu="${TC}34m";
+Prp="${TC}35m";
+Cyn="${TC}36m";
+Wht="${TC}37m";
+
 function mm() {
     if [[ $1 ]]; then
-        printf "\033[36m%-20s\033[0m %-30s %-30s\n" "[main:sub]" "[Command]" "[Description]"
-        cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{printf "\033[36m%-20s\033[0m %-30s %-30s\n", $1, $2, $3}'
+        LOWER_BAR=$(yes '-' | head -n 100 | tr -d '\n')
+        for item in `cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{print $1}' | uniq | sort`
+        do
+          item_length=${#item}
+          upper_first_bar_len=$((40-$item_length))
+          upper_first_bar=$(yes '-' | head -n $upper_first_bar_len | tr -d '\n')
+          upper_second_bar_len=$((60-3))
+          upper_second_bar=$(yes '-' | head -n $upper_second_bar_len | tr -d '\n')
+          echo "\033[0;33m+ $item $upper_first_bar+$upper_second_bar\033[0;0m"
+          cat $HOME/.manurc | grep $item | awk -F " *?## *?" '{printf "\033[0;33m|\033[0;0m$ \033[0;36m%-40s\033[0;0m\033[0;33m|\033[0;0m %s\n", $2, $3}'
+        done
+        echo "\033[0;33m+$LOWER_BAR\033[0;0m\n"
     else
         echo "mm alias[:dir, ...]"
         echo "mm iterm[:line, :tab, :window]"
