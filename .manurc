@@ -21,7 +21,7 @@ usage:net:nslookup ## nslookup -type=ns [domain] ##
 usage:net:nslookup ## nslookup -type=a [domain] ##
 usage:net:nslookup ## nslookup -debug -q=mx [domain] ## check TTL
 usage:net:traceroute ## traceroute [IP] ##
-alias:net:ip ## ip ## dig +short myip.opendns.com @resolver1.opendns.com
+alias:net:ip ## ip {domain} ## dig +short myip.opendns.com @resolver1.opendns.com
 alias:net:ip ## localip ## ipconfig getifaddr en0
 
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
