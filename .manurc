@@ -17,10 +17,12 @@ db-psql:update ## UPDATE {table} SET {column}={value} WHERE {column}={condition}
 db-psql:schema ## \d {table} ## show schema
 db-psql:insert ## INSERT INTO {table} (col_1_name, ..., col_n_name) VALUES ('{value_1}', ..., '{value_n}'); ## insert data
 
-net:nslookup ## nslookup -type=ns [domain] ##
-net:nslookup ## nslookup -type=a [domain] ##
-net:nslookup ## nslookup -debug -q=mx [domain] ## check TTL
-net:traceroute ## traceroute [IP] ##
+usage:net:nslookup ## nslookup -type=ns [domain] ##
+usage:net:nslookup ## nslookup -type=a [domain] ##
+usage:net:nslookup ## nslookup -debug -q=mx [domain] ## check TTL
+usage:net:traceroute ## traceroute [IP] ##
+alias:net:ip ## ip ## dig +short myip.opendns.com @resolver1.opendns.com
+alias:net:ip ## localip ## ipconfig getifaddr en0
 
 alias:dir ## cdp or ^p ## cd "$( ls -1d $HOME/Development/*/* | peco )"
 alias:dir ## ls ## ls or exa
@@ -29,6 +31,14 @@ alias:dir ## ll ## ls -l or exa -l
 alias:dir ## la ## ls -a or exa -a
 alias:dir ## lla ## ls -la or exa -la
 alias:dir ## lt ## exa -lT --level=2 --git-ignore
+alias:dir ## .. ## cd ../..
+alias:dir ## ... ## cd ../../..
+alias:dir ## .... ## cd ../../../..
+
+alias:utils ## diffu ## colordiff -u
+alias:utils ## diffy ## colordiff -y
+alias:utils ## timer ## date && time cat && date
+
 alias:makefile ## mp ## make | peco
 alias:makefile ## fis ## make
 alias:aws ## cred ## cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
@@ -62,9 +72,9 @@ desc:github ## 2.b ## or edit origin as `https://<TOKEN>@github.com/<USERNAME>/<
 usage:av-antivirus ## sudo freshclam ## update virus definition
 usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}
 
-usage:conda ## conda create -n {n} python={v} ## create new environment
-usage:conda ## conda info -e ## list conda environment
-usage:conda ## conda remove -n {n} --all ## remove the environment
-alias:conda ## cap ## conda info -e | grep anaconda | awk '{printf "%s\n", $1}' | peco && conda activate -
+usage:python:conda ## conda create -n {n} python={v} ## create new environment
+usage:python:conda ## conda info -e ## list conda environment
+usage:python:conda ## conda remove -n {n} --all ## remove the environment
+alias:python:conda ## cap ## conda info -e | grep anaconda | awk '{printf "%s\n", $1}' | peco && conda activate -
 alias:python ## p ## poetry shell
 alias:python ## j ## jupyter lab
