@@ -23,7 +23,7 @@ function mm() {
           upper_second_bar_len=$((60-3))
           upper_second_bar=$(yes '-' | head -n $upper_second_bar_len | tr -d '\n')
           echo "\033[0;33m+ $item $upper_first_bar+$upper_second_bar\033[0;0m"
-          cat $HOME/.manurc | grep $item | awk -F " *?## *?" '{printf "\033[0;33m|\033[0;0m$ \033[0;36m%-40s\033[0;0m\033[0;33m|\033[0;0m %s\n", $2, $3}'
+          cat $HOME/.manurc | grep "$item\s" | awk -F " *?## *?" '{printf "\033[0;33m|\033[0;0m$ \033[0;36m%-40s\033[0;0m\033[0;33m|\033[0;0m %s\n", $2, $3}'
         done
         echo "\033[0;33m+$LOWER_BAR\033[0;0m\n"
     else

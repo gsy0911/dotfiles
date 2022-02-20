@@ -129,10 +129,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # add exports
-source ./.zsh.exports
+source "$HOME/.zsh.exports"
 
 # add aliases
-source ./.zsh.aliases
+source "$HOME/.zsh.aliases"
 
 # add functions
-source ./.zsh.functions
+source "$HOME/.zsh.functions"
