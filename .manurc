@@ -53,6 +53,7 @@ alias:docker ## ds ## docker stop $(docker ps -q)
 alias:docker ## dcb ## docker-compose build
 alias:docker ## dcu ## docker-compose up
 alias:docker ## dcd ## docker-compose down
+alias:docker ## dcr ## dcd && dcb && dcu
 alias:docker ## dcdrm ## docker-compose down --rmi all --volumes --remove-orphans
 alias:docker ## dst ## docker stats
 alias:docker ## dexp ## docker exec $(docker ps | peco) /bin/bash
