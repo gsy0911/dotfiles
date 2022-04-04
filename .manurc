@@ -34,6 +34,7 @@ alias:dir ## lt ## exa -lT --level=2 --git-ignore
 alias:dir ## .. ## cd ../..
 alias:dir ## ... ## cd ../../..
 alias:dir ## .... ## cd ../../../..
+usage:dir ## zip compress ## zip -r NAME.zip FILE_DIR -x "*.DS_Store" "*__MACOSX*"
 
 alias:utils ## diffu ## colordiff -u
 alias:utils ## diffy ## colordiff -y
