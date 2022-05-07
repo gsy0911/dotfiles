@@ -41,3 +41,10 @@
   - [macOS desktop client](https://developers.cloudflare.com/warp-client/setting-up/macOS)
 - multipass
   - [multipass](https://qiita.com/notakaos/items/928987623fc61e815363)
+- UnixPorn
+  - [summaries1](http://neko-mac.blogspot.com/2022/04/unixporn.html)
+- cava
+  - [GitHub](https://github.com/karlstav/cava)
+  - [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)
+- pipes.sh
+  - [GitHub](https://github.com/pipeseroni/pipes.sh)

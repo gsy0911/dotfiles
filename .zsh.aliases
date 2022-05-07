@@ -34,6 +34,10 @@ else
     alias diff='diff'
 fi
 
+if type "pipes.sh" > /dev/null 2>&1; then
+    alias pipe='pipes.sh'
+fi
+
 # cd
 alias ..='cd ../..'
 alias ...='cd ../../..'

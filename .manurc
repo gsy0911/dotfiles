@@ -9,6 +9,8 @@ iterm:window ## ⌘r ## clear lines
 iterm:window ## ⌘⌥+(RLUD) ## move window
 iterm:window ## ⌘d ## split window vertically
 iterm:window ## ⌘⇧d ## split window horizontally
+iterm:porn ## cava ## display music bar
+iterm:porn ## pipe ## display pipes
 
 db-mysql:login ## mysql -u {user} -D {database} -p {terminal} ## login
 db-mysql:sql ## show columns from {table} ## show schema
