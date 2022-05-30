@@ -75,6 +75,7 @@ desc:github ## 2.b ## or edit origin as `https://<TOKEN>@github.com/<USERNAME>/<
 
 usage:av-antivirus ## sudo freshclam ## update virus definition
 usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}
+usage:av-antivirus ## sudo /usr/local/sbin/clamd ## start deamon
 
 usage:python:conda ## conda create -n {n} python={v} ## create new environment
 usage:python:conda ## conda info -e ## list conda environment
