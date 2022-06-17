@@ -33,9 +33,13 @@ alias:dir ## ll ## ls -l or exa -l
 alias:dir ## la ## ls -a or exa -a
 alias:dir ## lla ## ls -la or exa -la
 alias:dir ## lt ## exa -lT --level=2 --git-ignore
+alias:dir ## u ## cd ..
+alias:dir ## uu ## cd ../..
 alias:dir ## .. ## cd ../..
 alias:dir ## ... ## cd ../../..
 alias:dir ## .... ## cd ../../../..
+alias:global ## C ## `| wc -l`
+alias:global ## G ## `| grep --color=auto`
 usage:dir ## zip compress ## zip -r NAME.zip FILE_DIR -x "*.DS_Store" "*__MACOSX*"
 
 alias:utils ## diffu ## colordiff -u

@@ -42,10 +42,16 @@ fi
 alias ..='cd ../..'
 alias ...='cd ../../..'
 alias ....='cd ../../../..'
+alias u='cd ..'
+alias uu='cd ../..'
 
 # alias for Python
 alias j="jupyter lab"
 alias p="poetry shell"
+
+# global alias
+alias -g C='| wc -l' # count
+alias -g G='| grep --color=auto' # 鉄板
 
 # alias for docker
 alias di="docker images"
