@@ -7,7 +7,7 @@ export PATH="$(brew --prefix)/opt/python@3.10/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 
 # node
-export PATH="/usr/local/opt/node@16/bin:$PATH"
+export PATH="$(brew --prefix)/opt/node@16/bin:$PATH"
 ## volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -17,7 +17,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 
 # mysql
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
 
 # for starship(zsh) and CDK
 if type "cdk" > /dev/null 2>&1; then
@@ -26,9 +26,12 @@ fi
 # for starship(aws default_profile)
 export AWS_PROFILE=default
 
-# openblas
-export LDFLAGS="-L/opt/homebrew/opt/openblas/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/openblas/include"
+# openblas, psycopg2
+export LDFLAGS="-I$(brew --prefix)/opt/openssl/include -L$(brew --prefix)/opt/openssl/lib"
+export CPPFLAGS="-I$(brew --prefix)/opt/openblas/include"
 
 # docker
 export DOCKER_BUILDKIT=1
+
+# openssl / gmp, pycrypto
+export "CFLAGS=-I$(brew --prefix)/include -L$(brew --prefix)/lib"
