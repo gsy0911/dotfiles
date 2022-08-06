@@ -35,7 +35,6 @@ function mm() {
         echo "mm av"
         echo "mm aws"
         echo "mm github"
-        echo "mm conda"
         echo "mm makefile"
     fi
 }
@@ -140,13 +139,6 @@ function credp() {
     export AWS_PROFILE=$target
     export AWS_DEFAULT_PROFILE=$target
     echo "set AWS_DEFAULT_PROFILE as $AWS_DEFAULT_PROFILE"
-}
-
-# Conda Activate with Peco
-function cap() {
-    env=$(conda info -e | grep $HOME | grep -v "base" | awk '{printf "%s\n", $1}' | peco)
-    echo "activating... $env"
-    conda activate $env
 }
 
 # Docker EXec with Peco
