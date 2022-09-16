@@ -16,6 +16,9 @@ check_exists_then_install peco
 check_exists_then_install starship
 check_exists_then_install colordiff
 check_exists_then_install tokei
+check_exists_then_install gum
+check_exists_then_install httpie
+check_exists_then_install procs
 # rust
 check_exists_then_install rustup
 check_exists_then_install rust-analyzer
