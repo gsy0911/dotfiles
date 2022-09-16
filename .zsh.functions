@@ -13,29 +13,32 @@ Cyn="${TC}36m";
 Wht="${TC}37m";
 
 function mm() {
+    WIDTH=$(tput cols)
+    LOWER_BAR=$(yes '-' | head -n $((WIDTH-1)) | tr -d '\n')
     if [[ $1 ]]; then
-        LOWER_BAR=$(yes '-' | head -n 100 | tr -d '\n')
         for item in `cat $HOME/.manurc | grep $1 | awk -F " *?## *?" '{print $1}' | uniq | sort`
         do
           item_length=${#item}
           upper_first_bar_len=$((40-$item_length))
           upper_first_bar=$(yes '-' | head -n $upper_first_bar_len | tr -d '\n')
-          upper_second_bar_len=$((60-3))
+          upper_second_bar_len=$((WIDTH-3-40-1))
           upper_second_bar=$(yes '-' | head -n $upper_second_bar_len | tr -d '\n')
           echo "\033[0;33m+ $item $upper_first_bar+$upper_second_bar\033[0;0m"
           cat $HOME/.manurc | grep "$item\s" | awk -F " *?## *?" '{printf "\033[0;33m|\033[0;0m$ \033[0;36m%-40s\033[0;0m\033[0;33m|\033[0;0m %s\n", $2, $3}'
         done
         echo "\033[0;33m+$LOWER_BAR\033[0;0m\n"
     else
-        echo "mm alias[:dir, ...]"
-        echo "mm iterm[:line, :tab, :window]"
-        echo "mm net"
-        echo "mm usage[:docker, ...]"
-        echo "mm db-[psql, mysql]"
-        echo "mm av"
-        echo "mm aws"
-        echo "mm github"
-        echo "mm makefile"
+        echo "$Yel+$LOWER_BAR$Rst"
+        printf "$Yel|$Rst$ "$Cyn"mm alias[:dir, ...]$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm iterm[:line, :tab, :window]$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm net$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm usage[:docker, ...]$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm db-[psql, mysql]$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm av$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm aws$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm github$Rst\n"
+        printf "$Yel|$Rst$ "$Cyn"mm makefile$Rst\n"
+        echo "$Yel+$LOWER_BAR$Rst\n"
     fi
 }
 
