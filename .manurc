@@ -81,9 +81,5 @@ usage:av-antivirus ## sudo freshclam ## update virus definition
 usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}
 usage:av-antivirus ## sudo /usr/local/sbin/clamd ## start deamon
 
-usage:python:conda ## conda create -n {n} python={v} ## create new environment
-usage:python:conda ## conda info -e ## list conda environment
-usage:python:conda ## conda remove -n {n} --all ## remove the environment
-alias:python:conda ## cap ## conda info -e | grep anaconda | awk '{printf "%s\n", $1}' | peco && conda activate -
 alias:python ## p ## poetry shell
 alias:python ## j ## jupyter lab
