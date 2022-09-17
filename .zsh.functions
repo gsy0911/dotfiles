@@ -23,10 +23,10 @@ function mm() {
           upper_first_bar=$(yes '-' | head -n $upper_first_bar_len | tr -d '\n')
           upper_second_bar_len=$((WIDTH-3-40-1))
           upper_second_bar=$(yes '-' | head -n $upper_second_bar_len | tr -d '\n')
-          echo "\033[0;33m+ $item $upper_first_bar+$upper_second_bar\033[0;0m"
+          echo "$Yel+ $item $upper_first_bar+$upper_second_bar$Rst"
           cat $HOME/.manurc | grep "$item\s" | awk -F " *?## *?" '{printf "\033[0;33m|\033[0;0m$ \033[0;36m%-40s\033[0;0m\033[0;33m|\033[0;0m %s\n", $2, $3}'
         done
-        echo "\033[0;33m+$LOWER_BAR\033[0;0m\n"
+        echo "$Yel+$LOWER_BAR$Rst\n"
     else
         echo "$Yel+$LOWER_BAR$Rst"
         printf "$Yel|$Rst$ "$Cyn"mm alias[:dir, ...]$Rst\n"
@@ -141,19 +141,19 @@ function credp() {
     target=$(cred | peco)
     export AWS_PROFILE=$target
     export AWS_DEFAULT_PROFILE=$target
-    echo "set AWS_DEFAULT_PROFILE as $AWS_DEFAULT_PROFILE"
+    echo "set AWS_DEFAULT_PROFILE as $Red$AWS_DEFAULT_PROFILE$Rst"
 }
 
 # Docker EXec with Peco
 function dexp() {
     container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
-    echo "chosen: $container"
+    echo "chosen: $Red$container$Rst"
     docker exec -it $container /bin/bash
 }
 
 # Docker LOGs with Peco
 function dlop() {
     container=$(docker ps -a --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
-    echo "chosen: $container"
+    echo "chosen: $Red$container$Rst"
     docker logs $container
 }
