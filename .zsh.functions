@@ -74,6 +74,15 @@ function cdp() {
 zle -N cdp
 bindkey "^p" cdp
 
+function cdpp() {
+    cdp
+    local dir="$( ls -D | peco )"
+    if [ ! -z "$dir" ] ; then
+        echo $dir
+        cd $dir
+    fi
+}
+
 # Docker RM Images with Peco
 function drmip(){
     local imageId=$(docker images | sort | peco | awk '{print $3}')
