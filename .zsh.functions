@@ -89,6 +89,14 @@ function drmip(){
     [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
+function drmig() {
+  docker image ls \
+    | sed -e '1d' \
+    | awk '{printf("%s:%s\n", $1, $2)}' \
+    | gum filter --no-limit \
+    | xargs docker image rm
+}
+
 function jump_middle() {
     CURSOR=$((${#BUFFER} / 2))
     zle redisplay
