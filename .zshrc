@@ -1,12 +1,9 @@
-#                                     _              
+#                                     _
 #                             _______| |__  _ __ ___ 
 #                            |_  / __| '_ \| '__/ __|
 #                           _ / /\__ \ | | | | | (__ 
 #                          (_)___|___/_| |_|_|  \___|
 #
-
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -111,6 +108,3 @@ source "$HOME/.zsh.aliases"
 
 # add functions
 source "$HOME/.zsh.functions"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
