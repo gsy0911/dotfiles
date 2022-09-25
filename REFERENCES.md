@@ -3,6 +3,8 @@
 - [reireias/dotfiles](https://github.com/reireias/dotfiles)
 - [dotfilesの育て方](https://qiita.com/reireias/items/b33b5c824a56dc89e1f7)
 - [テキスト処理のための標準的なコマンド群の macOS への導入手順](https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f)
+- [ようこそdotfilesの世界へ](https://qiita.com/yutkat/items/c6c7584d9795799ee164)
+- [~/.gitignore_global を指定するのをやめ、デフォルトの置き場に置こう](https://zenn.dev/qnighy/articles/1a756f2857dc20)
 - [sorted-colors](https://enes.in/sorted-colors/)
 - zsh
   - [zinit-settings](https://ktrysmt.github.io/blog/switch-zgen-to-zinit/)
@@ -37,8 +39,6 @@
     - [miniforge](https://github.com/conda-forge/miniforge)
 - Node.js
   - [volta](https://github.com/volta-cli/volta)
-- WARP
-  - [macOS desktop client](https://developers.cloudflare.com/warp-client/setting-up/macOS)
 - multipass
   - [multipass](https://qiita.com/notakaos/items/928987623fc61e815363)
 - UnixPorn
