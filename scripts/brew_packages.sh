@@ -37,8 +37,3 @@ check_exists_then_install libjpeg
 check_exists_then_install postgres
 ## for numpy, see: https://github.com/numpy/numpy/issues/17807
 check_exists_then_install openblas
-## for cava
-check_exists_then_install cava
-## pipes
-check_exists_then_install pipes-sh
-
