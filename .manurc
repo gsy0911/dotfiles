@@ -72,6 +72,9 @@ alias:docker ## trp ## trivy --severity=HIGH,CRITICAL --ignore-unfixed=true {pec
 usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}
 usage:docker ## - ## docker cp {container-id}:/path/file.txt .
 usage:docker ## - ## docker exec -it {container-id} /bin/bash
+usage:docker ## - ## docker sysmtem df
+usage:docker ## - ## docker sysmtem prune
+usage:docker ## - ## docker volume prune
 
 desc:github ## 1. ## generate token in GitHub
 desc:github ## 2.a ## `$ git remote add origin https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
