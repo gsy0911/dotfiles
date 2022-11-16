@@ -5,6 +5,7 @@ export PATH="$(brew --prefix)/opt/python@3.8/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3.9/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3.10/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
+export POETRY_CONFIG_DIR=$HOME/Library/Preferences/pypoetry
 
 # node
 export PATH="$(brew --prefix)/opt/node@16/bin:$PATH"
