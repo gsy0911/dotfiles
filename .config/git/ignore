@@ -106,3 +106,7 @@ Temporary Items
 # All JetBrains
 
 .idea
+
+# Jupyter Notebooks
+notebook
+notebooks
