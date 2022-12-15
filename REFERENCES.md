@@ -48,3 +48,5 @@
   - [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)
 - pipes.sh
   - [GitHub](https://github.com/pipeseroni/pipes.sh)
+- ansible
+  - [Ansible](https://tech.prog-8.com/entry/2021/12/19/setup-mac-ansible)
