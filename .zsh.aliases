@@ -82,3 +82,6 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 # for M1 mac
 alias x86='arch -x86_64 zsh'
 alias arm='arch -arm64 zsh'
+
+# weather
+alias tenki='curl wttr.in/Tokyo'
