@@ -37,3 +37,9 @@ check_exists_then_install libjpeg
 check_exists_then_install postgres
 ## for numpy, see: https://github.com/numpy/numpy/issues/17807
 check_exists_then_install openblas
+## for lightgbm
+check_exists_then_install libomp
+check_exists_then_install cmake
+## for mecab
+check_exists_then_install mecab
+check_exists_then_install mecab-ipadic

@@ -28,6 +28,7 @@ fi
 export AWS_PROFILE=default
 
 # openblas, psycopg2
+export OPENBLAS=$(brew --prefix openblas)
 export LDFLAGS="-I$(brew --prefix)/opt/openssl/include -L$(brew --prefix)/opt/openssl/lib"
 export CPPFLAGS="-I$(brew --prefix)/opt/openblas/include"
 
