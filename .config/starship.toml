@@ -64,6 +64,15 @@ when = """ test -e cdk.json """
 symbol = "cdk:"
 format = "[$symbol$output]($style) "
 
+
+[custom.archi]
+# shows output of command
+command = "uname -m"
+when = true
+symbol = "arch:"
+style = "#ff8c00"
+format = "[$symbol$output]($style) "
+
 [custom.makefile]
 # shows output of command
 command = "cat Makefile | grep .PHONY: | wc -l | awk '{print $1}'"
