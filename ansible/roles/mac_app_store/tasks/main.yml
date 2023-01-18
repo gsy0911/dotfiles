@@ -1,0 +1,8 @@
+- name: install applications from app store
+  community.general.mas:
+    upgrade_all: yes
+    id:
+      # LINE
+      - 539883307
+      # Slack
+      - 803453959
