@@ -8,5 +8,5 @@
   # タスクの呼び出し
   roles:
     - homebrew
+    - homebrew_cask
     - mac_app_store
-#    - homebrew_cask

@@ -50,3 +50,5 @@
   - [GitHub](https://github.com/pipeseroni/pipes.sh)
 - ansible
   - [Ansible](https://tech.prog-8.com/entry/2021/12/19/setup-mac-ansible)
+- yubikey & aws-vault
+  - [YubiKeyでCLI環境でのAWS MFA認証を楽にする](https://zenn.dev/eviry/articles/0f448ab2edc87d)

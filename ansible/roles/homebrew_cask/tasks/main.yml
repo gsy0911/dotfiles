@@ -1,4 +1,5 @@
 - name: install homebrew cask packages
   community.general.homebrew_cask:
     name:
-      - iterm2
+      - aws-vault
+      # - iterm2

@@ -43,3 +43,5 @@
       ## for mecab
       - mecab
       - mecab-ipadic
+      # yubikey
+      - ykman
