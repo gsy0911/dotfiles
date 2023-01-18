@@ -77,6 +77,8 @@ usage:docker ## - ## docker sysmtem df
 usage:docker ## - ## docker sysmtem prune
 usage:docker ## - ## docker volume prune
 
+usage:cdk ## cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1 ## bootstrap
+
 desc:github ## 1. ## generate token in GitHub
 desc:github ## 2.a ## `$ git remote add origin https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
 desc:github ## 2.b ## or edit origin as `https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
