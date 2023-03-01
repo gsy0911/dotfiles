@@ -174,3 +174,17 @@ function dlop() {
     echo "chosen: $Red$container$Rst"
     docker logs $container
 }
+
+function dcuf() {
+    if [[ $1 ]]; then
+        local dockerfile=$1
+    else
+        exit 1
+    fi
+    docker compose -f $dockerfile up --build
+}
+
+function dcrf() {
+    dcd
+    dcuf $1
+}

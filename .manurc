@@ -64,6 +64,8 @@ alias:docker ## dcb ## docker-compose build
 alias:docker ## dcu ## docker-compose up
 alias:docker ## dcd ## docker-compose down
 alias:docker ## dcr ## dcd && dcb && dcu
+alias:docker ## dcuf ## docker-compose -f $1 up --build
+alias:docker ## dcrf ## dcd && dcuf $1
 alias:docker ## dcdrm ## docker-compose down --rmi all --volumes --remove-orphans
 alias:docker ## dst ## docker stats
 alias:docker ## dexp ## docker exec $(docker ps | peco) /bin/bash
