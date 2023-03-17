@@ -6,6 +6,9 @@ export PATH="$(brew --prefix)/opt/python@3.9/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3.10/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 export POETRY_CONFIG_DIR=$HOME/Library/Preferences/pypoetry
+## for tables(library)
+export HDF5_DIR="$(brew --prefix)/opt/hdf5"
+export BLOSC_DIR="$(brew --prefix)/opt/c-blosc"
 
 # node
 export PATH="$(brew --prefix)/opt/node@16/bin:$PATH"

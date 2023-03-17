@@ -45,5 +45,6 @@
       - mecab-ipadic
       ## for tables(library)
       - hdf5
+      - c-blosc
       # yubikey
       - ykman
