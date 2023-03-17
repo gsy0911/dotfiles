@@ -80,6 +80,7 @@ usage:docker ## - ## docker exec -it {container-id} /bin/bash
 usage:docker ## - ## docker sysmtem df
 usage:docker ## - ## docker sysmtem prune
 usage:docker ## - ## docker volume prune
+usage:docker ## - ## docker network create {network-name}
 
 usage:cdk ## cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1 ## bootstrap
 
