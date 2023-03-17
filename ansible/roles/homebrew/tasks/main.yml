@@ -43,5 +43,7 @@
       ## for mecab
       - mecab
       - mecab-ipadic
+      ## for tables(library)
+      - hdf5
       # yubikey
       - ykman
