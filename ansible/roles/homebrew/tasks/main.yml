@@ -26,7 +26,7 @@
       - aws-cdk
       - awscli
       # node
-      - node@16
+      - node@18
       # python
       - poetry
       ## for scipy

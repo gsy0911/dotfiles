@@ -11,10 +11,10 @@ export HDF5_DIR="$(brew --prefix)/opt/hdf5"
 export BLOSC_DIR="$(brew --prefix)/opt/c-blosc"
 
 # node
-export PATH="$(brew --prefix)/opt/node@16/bin:$PATH"
+export PATH="$(brew --prefix)/opt/node@18/bin:$PATH"
 ## volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+#export VOLTA_HOME="$HOME/.volta"
+#export PATH="$VOLTA_HOME/bin:$PATH"
 
 # rust
 # you should add, after executing `$ rustup-init`
