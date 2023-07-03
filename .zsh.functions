@@ -89,6 +89,11 @@ function drmip(){
     [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
+function drmcp(){
+    local containerId=$(docker ps -a | sort | peco | awk '{print $1}')
+    [ -n "$containerId" ] && docker rm -f $containerId
+}
+
 function drmig() {
   docker image ls \
     | sed -e '1d' \

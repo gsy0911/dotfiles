@@ -72,7 +72,9 @@ alias:docker ## dexp ## docker exec $(docker ps | peco) /bin/bash
 alias:docker ## dlop ## docker logs $(docker ps | peco)
 alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 alias:docker ## drm ## docker system prune
+alias:docker ## drv ## docker volume rm $(docker volume ls -qf dangling=true)
 alias:docker ## drmip ## docker rmi $(docker images | peco | awk '{print $3}')
+alias:docker ## drmcp ## docker rm -f $(docker ps -a | peco | awk '{print $1}')
 alias:docker ## trp ## trivy --severity=HIGH,CRITICAL --ignore-unfixed=true {peco chosen}
 usage:docker ## - ## choose and run: dl {filter-word} && dr $li {CMD}
 usage:docker ## - ## docker cp {container-id}:/path/file.txt .
