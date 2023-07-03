@@ -16,8 +16,7 @@ The repository-references is [here](./REFERENCES.md).
 
 ```
 # install required packages via brew
-# at ./ansible directory
-$ ansible-playbook playbook.yml
+$ task ansible
 ```
 
 # install
@@ -25,5 +24,5 @@ $ ansible-playbook playbook.yml
 ```
 # create symbolic linc
 # add .zshrc
-$ make dotfile
+$ task dotfile
 ```

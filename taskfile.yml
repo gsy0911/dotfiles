@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  dotfile:
+    desc: create symbolic link
+    cmds:
+      - sh ./bin/dotfile_symbolic_link.sh
+
+  ansible:
+    desc: run-ansible
+    dir: ./ansible
+    preconditions:
+      - test -f playbook.yml
+      - test -f requirements.yml
+    cmds:
+      - ansible-playbook playbook.yml
