@@ -19,6 +19,8 @@
       - gum
       - httpie
       - procs
+      # Taskfile
+      - go-task
       # rust
       - rustup
       - rust-analyzer
@@ -48,3 +50,7 @@
       - c-blosc
       # yubikey
       - ykman
+      # sshpass
+      - hudochenkov/sshpass/sshpass
+      # for ssh2-python
+      - openssl@3
