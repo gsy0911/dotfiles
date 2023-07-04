@@ -1,6 +1,12 @@
 version: '3'
 
 tasks:
+
+  default:
+    cmds:
+      - task -l --sort none
+    silent: true
+
   dotfile:
     desc: create symbolic link
     cmds:
