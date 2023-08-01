@@ -65,7 +65,7 @@ function trp() {
 
 # CD Project-directory
 function cdp() {
-    local dir="$( ls -1d $HOME/Development/*/* | peco )"
+    local dir="$( ls -1d $HOME/Development/Projects/* | peco )"
     if [ ! -z "$dir" ] ; then
         echo $dir
         cd $dir
