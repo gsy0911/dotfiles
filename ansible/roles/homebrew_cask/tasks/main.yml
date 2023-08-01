@@ -3,4 +3,8 @@
     name:
       - aws-vault
       - notion
-      # - iterm2
+      - iterm2
+      - google-chrome
+      - fork
+      - jetbrains-toolbox
+      - visual-studio-code
