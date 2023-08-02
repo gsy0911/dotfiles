@@ -30,3 +30,9 @@ $ cd doftiles
 $ task dotfile
 $ task ansible
 ```
+
+install docker-desktop
+add aws credentials
+install PyCharm, DataGrip
+
+create GitHub Personal Access Token.
