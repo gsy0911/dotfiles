@@ -31,6 +31,8 @@
       - node@18
       # python
       - poetry
+      - python@3.9
+      - python@3.10
       ## for scipy
       - lapack
       ## for matplotlib

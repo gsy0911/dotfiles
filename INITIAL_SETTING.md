@@ -10,6 +10,10 @@
   - タップでクリック：有効
 - install brew
   - https://brew.sh/index_ja
+- install session-manager
+  - https://docs.aws.amazon.com/ja_jp/systems-manager/latest/userguide/install-plugin-macos-overview.html
+- install Chrome extension
+  - https://chrome.google.com/webstore/detail/rename-favbar/djibddceopnloddkfmgekaejflcnadli/related
 
 ```shell
 # install brew
