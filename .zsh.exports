@@ -40,3 +40,6 @@ export DOCKER_BUILDKIT=1
 
 # openssl / gmp, pycrypto
 export "CFLAGS=-I$(brew --prefix)/include -L$(brew --prefix)/lib"
+
+# taskfile
+export TASK_X_REMOTE_TASKFILES=1
