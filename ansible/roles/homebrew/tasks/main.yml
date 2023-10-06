@@ -56,3 +56,5 @@
       - hudochenkov/sshpass/sshpass
       # for ssh2-python
       - openssl@3
+      # for SSL
+      - mkcert
