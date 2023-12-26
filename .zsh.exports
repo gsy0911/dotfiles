@@ -1,9 +1,10 @@
 #!/bin/zsh
 
 # python
-export PATH="$(brew --prefix)/opt/python@3.8/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3.9/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3.10/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python@3.11/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python@3.12/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 export POETRY_CONFIG_DIR=$HOME/Library/Preferences/pypoetry
 ## for tables(library)
@@ -12,6 +13,7 @@ export BLOSC_DIR="$(brew --prefix)/opt/c-blosc"
 
 # node
 export PATH="$(brew --prefix)/opt/node@18/bin:$PATH"
+export PATH="$(brew --prefix)/opt/node@20/bin:$PATH"
 ## volta
 #export VOLTA_HOME="$HOME/.volta"
 #export PATH="$VOLTA_HOME/bin:$PATH"

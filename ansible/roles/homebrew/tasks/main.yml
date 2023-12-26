@@ -29,6 +29,7 @@
       - awscli
       # node
       - node@18
+      - node@20
       # python
       - poetry
       - python@3.9
