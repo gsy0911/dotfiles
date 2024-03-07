@@ -61,3 +61,5 @@
       - openssl@3
       # for SSL
       - mkcert
+      # portscan
+      - nmap
