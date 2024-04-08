@@ -16,8 +16,8 @@
       - starship
       - colordiff
       - tokei
-      - gum
-      - httpie
+      # - gum
+      # - httpie
       - procs
       # Taskfile
       - go-task
@@ -36,6 +36,8 @@
       - python@3.10
       - python@3.11
       - python@3.12
+      # after install, you must type: brew link certifi
+      - certifi
       ## for scipy
       - lapack
       ## for matplotlib
@@ -46,7 +48,7 @@
       - openblas
       ## for lightgbm
       - libomp
-      - cmake
+      # - cmake
       ## for mecab
       - mecab
       - mecab-ipadic
