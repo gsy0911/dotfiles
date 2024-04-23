@@ -30,6 +30,7 @@
       # node
       - node@18
       - node@20
+      - yarn
       # python
       - poetry
       - python@3.9
