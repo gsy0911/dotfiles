@@ -37,6 +37,11 @@ for dotfile in $(ls -F .config/nvim | grep -v /); do
     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
     ln -snfv "$(pwd)/.config/nvim/$dotfile" "$HOME/.config/nvim/$dotfile"
 done
+mkdir -p $HOME/.config/nvim/lua/plugins
+for dotfile in $(ls -F .config/nvim/lua/plugins | grep -v /); do
+    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+    ln -snfv "$(pwd)/.config/nvim/lua/plugins/$dotfile" "$HOME/.config/nvim/lua/plugins/$dotfile"
+done
 
 echo "\n================================="
 echo "create .config/karabiner in $HOME"

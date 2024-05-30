@@ -55,4 +55,6 @@
 - neovim
   - https://github.com/equalsraf/neovim-qt
   - https://giginc.co.jp/blog/giglab/neovim
-  - 
+  - https://zenn.dev/peloeil/articles/a9c579ba24b225
+  - エクスプローラー
+    - https://minerva.mamansoft.net/Notes/nvim-tree.lua
