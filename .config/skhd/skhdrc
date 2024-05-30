@@ -1,0 +1,10 @@
+# Launch Applications
+
+alt + s - 0x01: osascript -e 'tell application "Slack" to run' \
+  -e 'tell application "System Events"' \
+  -e 'if visible of application process "Slack" is true then' \
+  -e 'set visible of application process "Slack" to false' \
+  -e 'else' \
+  -e 'set visible of application process "Slack" to true' \
+  -e 'end if' \
+  -e 'end tell'
