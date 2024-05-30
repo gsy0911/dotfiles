@@ -66,3 +66,9 @@
       - mkcert
       # portscan
       - nmap
+      # simple-hotkeys-daemon
+      - koekeishiya/formulae/skhd
+      - yabai
+      # neovim
+      - neovim
+      - neovim-qt

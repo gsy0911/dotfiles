@@ -23,6 +23,22 @@ for dotfile in $(ls -F .config/git | grep -v /); do
 done
 
 echo "\n================================="
+echo "create .config/skhd in $HOME"
+mkdir -p $HOME/.config/skhd
+for dotfile in $(ls -F .config/skhd | grep -v /); do
+    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+    ln -snfv "$(pwd)/.config/skhd/$dotfile" "$HOME/.config/skhd/$dotfile"
+done
+
+echo "\n================================="
+echo "create .config/nvim in $HOME"
+mkdir -p $HOME/.config/nvim
+for dotfile in $(ls -F .config/nvim | grep -v /); do
+    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+    ln -snfv "$(pwd)/.config/nvim/$dotfile" "$HOME/.config/nvim/$dotfile"
+done
+
+echo "\n================================="
 echo "create .config/karabiner in $HOME"
 mkdir -p $HOME/.config/karabiner
 ln -snfv "$(pwd)/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
