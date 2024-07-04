@@ -13,4 +13,5 @@
       - vlc
       - minecraft
       - cursor
-#      - karabiner-elements
+      # キーボードの読み込みができなくなっていたため
+      # - karabiner-elements

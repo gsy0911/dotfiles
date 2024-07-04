@@ -72,3 +72,5 @@
       # neovim
       - neovim
       - neovim-qt
+      # $ img2sixel to show image in terminal
+      - libsixel
