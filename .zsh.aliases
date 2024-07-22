@@ -7,12 +7,12 @@ if type "gwak" > /dev/null 2>&1; then
 fi
 
 # ls
-if type "exa" > /dev/null 2>&1; then
-    alias ls='exa'
-    alias l='exa -F'
-    alias la='exa -a'
-    alias ll='exa -l'
-    alias lla='exa -la'
+if type "eza" > /dev/null 2>&1; then
+    alias ls='eza'
+    alias l='eza -F'
+    alias la='eza -a'
+    alias ll='eza -l'
+    alias lla='eza -la'
     alias lt='ls -lT --level=2 --git-ignore'
 else
     alias ls='ls'

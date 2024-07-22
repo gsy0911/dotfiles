@@ -9,7 +9,7 @@
       - mas
       # basics
       - bat
-      - exa
+      - eza
       - gawk
       - jq
       - peco
