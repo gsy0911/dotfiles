@@ -2,6 +2,7 @@
   community.general.homebrew_cask:
     name:
       - aws-vault
+      - docker
       - notion
       - iterm2
       - google-chrome

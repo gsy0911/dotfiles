@@ -21,6 +21,6 @@ tasks:
     cmds:
       - ansible-playbook playbook.yml
   tap:
-    desc: add repository
+    desc: add external-repositories
     cmds:
       - brew tap koekeishiya/formulae
