@@ -14,5 +14,6 @@
       - vlc
       - minecraft
       - cursor
+      - arc
       # キーボードの読み込みができなくなっていたため
       # - karabiner-elements
