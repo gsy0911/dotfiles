@@ -108,3 +108,6 @@ source "$HOME/.zsh.aliases"
 
 # add functions
 source "$HOME/.zsh.functions"
+
+# set up direnv
+eval "$(direnv hook zsh)"

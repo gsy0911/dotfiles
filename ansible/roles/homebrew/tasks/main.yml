@@ -16,6 +16,7 @@
       - starship
       - colordiff
       - tokei
+      - direnv
       # - gum
       # - httpie
       - procs
@@ -33,6 +34,7 @@
       - yarn
       # python
       - poetry
+      - rye
       - python@3.9
       - python@3.10
       - python@3.11
