@@ -45,6 +45,7 @@ alias uu='cd ../..'
 # alias for Python
 alias j="jupyter lab"
 alias p="poetry shell"
+alias rj="rye run jupyter lab"
 
 # global alias
 alias -g C='| wc -l' # count
