@@ -66,10 +66,6 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Stat
 alias drm="yes | docker system prune"
 alias drv="docker volume rm $(docker volume ls -qf dangling=true)"
 
-# alias for make
-alias fis="make"
-alias mp="make | sed -e '1d' | peco"
-
 # Get week number
 alias week='date +%V'
 
@@ -93,3 +89,6 @@ alias teams='rm -r ~/Library/Application\ Support/Microsoft/Teams'
 
 # 画像の表示
 alias lsimg='img2sixel'
+
+# direnv
+alias da='direnv allow'
