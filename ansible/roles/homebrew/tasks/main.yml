@@ -74,3 +74,6 @@
       - neovim-qt
       # $ img2sixel to show image in terminal
       - libsixel
+      # document a Database
+      # see: https://github.com/k1LoW/tbls
+      - k1LoW/tap/tbls

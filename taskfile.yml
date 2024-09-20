@@ -24,3 +24,4 @@ tasks:
     desc: add external-repositories
     cmds:
       - brew tap koekeishiya/formulae
+      - brew tap k1low/tap
