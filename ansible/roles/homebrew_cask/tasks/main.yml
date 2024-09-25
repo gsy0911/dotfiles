@@ -4,7 +4,6 @@
       - aws-vault
       - docker
       - notion
-      - iterm2
       - google-chrome
       - fork
       - jetbrains-toolbox
@@ -17,4 +16,5 @@
       # - arc
       # キーボードの読み込みができなくなっていたため
       # - karabiner-elements
+      # - iterm2
       - wezterm
