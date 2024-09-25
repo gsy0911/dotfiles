@@ -44,8 +44,8 @@ for dotfile in $(ls -F .config/nvim/lua/plugins | grep -v /); do
 done
 
 echo "\n================================="
-echo "create .config/karabiner in $HOME"
-mkdir -p $HOME/.config/karabiner
-ln -snfv "$(pwd)/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+echo "create .config/wezterm in $HOME"
+mkdir -p $HOME/.config/wezterm
+ln -snfv "$(pwd)/.config/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 
 echo "Success"
