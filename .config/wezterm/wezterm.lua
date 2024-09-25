@@ -127,17 +127,17 @@ config.keys = {
         action = wezterm.action.CloseCurrentPane { confirm = true },
     },
     -- ⌘ Ctrl ,で下方向にペイン分割
-    {
-        key = ",",
-        mods = "CMD|CTRL",
-        action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } },
-    },
-    -- ⌘ Ctrl .で右方向にペイン分割
-    {
-        key = ".",
-        mods = "CMD|CTRL",
-        action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
-    },
+--     {
+--         key = ",",
+--         mods = "CMD|CTRL",
+--         action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } },
+--     },
+--     -- ⌘ Ctrl .で右方向にペイン分割
+--     {
+--         key = ".",
+--         mods = "CMD|CTRL",
+--         action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
+--     },
     -- ⌘ Ctrl oでペインの中身を入れ替える
     {
         key = "o",
@@ -145,32 +145,44 @@ config.keys = {
         action = wezterm.action.RotatePanes 'Clockwise'
     },
     -- ⌘ Ctrl hjklでペインの移動
-    {
-        key = 'h',
-        mods = 'CMD|CTRL',
-        action = wezterm.action.ActivatePaneDirection 'Left',
-    },
-    {
-        key = 'j',
-        mods = 'CMD|CTRL',
-        action = wezterm.action.ActivatePaneDirection 'Down',
-    },
-    {
-        key = 'k',
-        mods = 'CMD|CTRL',
-        action = wezterm.action.ActivatePaneDirection 'Up',
-    },
-    {
-        key = 'l',
-        mods = 'CMD|CTRL',
-        action = wezterm.action.ActivatePaneDirection 'Right',
-    },
+--     {
+--         key = 'h',
+--         mods = 'CMD|CTRL',
+--         action = wezterm.action.ActivatePaneDirection 'Left',
+--     },
+--     {
+--         key = 'j',
+--         mods = 'CMD|CTRL',
+--         action = wezterm.action.ActivatePaneDirection 'Down',
+--     },
+--     {
+--         key = 'k',
+--         mods = 'CMD|CTRL',
+--         action = wezterm.action.ActivatePaneDirection 'Up',
+--     },
+--     {
+--         key = 'l',
+--         mods = 'CMD|CTRL',
+--         action = wezterm.action.ActivatePaneDirection 'Right',
+--     },
     -- ⌘ Enterで最大化・縮小化のトグル
     {
         key = 'Enter',
         mods = 'CMD',
         action = act.ToggleFullScreen
     },
+    -- ⌘ Ctrl [] でタブの移動
+    -- defaultは⌘ Shift []
+    {
+        key = '[',
+        mods = 'CMD|CTRL',
+        action = act.ActivateTabRelative(-1)
+    },
+    {
+        key = ']',
+        mods = 'CMD|CTRL',
+        action = act.ActivateTabRelative(1)
+    }
 }
 
 -- 最初からフルスクリーンで起動
