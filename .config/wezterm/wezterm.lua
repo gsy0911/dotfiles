@@ -13,8 +13,6 @@ config.color_scheme = 'Wombat'
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Breeze'
 
--- フォントサイズ
-config.font_size = 13.0
 -- 背景の非透過率（1なら完全に透過させない）
 config.window_background_opacity = 0.70
 config.macos_window_background_blur = 20
@@ -58,18 +56,39 @@ config.colors = {
 }
 
 
+function split(str, ts)
+  -- 引数がないときは空tableを返す
+  if ts == nil then return {} end
+
+  local t = {} ;
+  i=1
+  for s in string.gmatch(str, "([^"..ts.."]+)") do
+    t[i] = s
+    i = i + 1
+  end
+
+  return t
+end
+
 -- 各タブの「ディレクトリ名」を記憶しておくテーブル
 local title_cache = {}
 
 wezterm.on('update-status', function(window, pane)
   local pane_id = pane:pane_id()
-  title_cache[pane_id] = "ccc"
+  title_cache[pane_id] = "-"
   local process_info = pane:get_foreground_process_info()
+
+--   local success, stdout, stderr = wezterm.run_child_process({ 'printenv', '|', 'grep', 'CDK_VERSION' })
+--   if success then
+--     title_cache[pane_id] = stdout
+--   end
   if process_info then
     local cwd = process_info.cwd
     local rm_home = string.gsub(cwd, os.getenv 'HOME', '')
     local prj = string.gsub(rm_home, '/Development/Projects', '')
-    title_cache[pane_id] = prj
+    local dirs = split(prj, '/')
+    local root_dir = dirs[1]
+    title_cache[pane_id] = root_dir
   end
 end)
 
