@@ -19,9 +19,13 @@ tasks:
       - test -f playbook.yml
       - test -f requirements.yml
     cmds:
+      - task: tap
       - ansible-playbook playbook.yml
+
   tap:
     desc: add external-repositories
+    internal: true
     cmds:
       - brew tap koekeishiya/formulae
       - brew tap k1low/tap
+      - brew tap jesseduffield/lazygit
