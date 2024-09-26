@@ -1,5 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
+local act = wezterm.action
+local mux = wezterm.mux
 
 -- This table will hold the configuration.
 local config = wezterm.config_builder()
@@ -26,13 +28,19 @@ config.enable_scroll_bar = true
 
 config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
 config.font_size = 14.0
-config.command_palette_font_size = 14.0
+config.command_palette_font_size = 16.0
 config.command_palette_bg_color = '#4D07FF'
 
 config.window_frame = {
 	font = wezterm.font('JetBrains Mono', { weight = 'Bold' }),
 	font_size = 14,
 }
+
+-- 最初からフルスクリーンで起動
+wezterm.on("gui-startup", function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    window:gui_window():toggle_fullscreen()
+end)
 
 
 ----------------------------------------------------
@@ -44,6 +52,8 @@ config.window_decorations = "RESIZE"
 config.show_new_tab_button_in_tab_bar = false
 -- タブが一つしかない時に非表示
 config.hide_tab_bar_if_only_one_tab = true
+-- タブを下に表示（デフォルトでは上にある）
+config.tab_bar_at_bottom = true
 -- nightlyのみ使用可能
 -- タブの閉じるボタンを非表示
 -- config.show_close_tab_button_in_tabs = false
@@ -136,8 +146,6 @@ end)
 -- Key Bindings
 ----------------------------------------------------
 
-local act = wezterm.action
-
 config.keys = {
     -- ⌘ w でペインを閉じる（デフォルトではタブが閉じる）
     {
@@ -201,17 +209,38 @@ config.keys = {
         key = ']',
         mods = 'CMD|CTRL',
         action = act.ActivateTabRelative(1)
-    }
+    },
+    -- Create new workspace
+    {
+        key = 'S',
+        mods = 'CMD|SHIFT',
+        action = act.PromptInputLine {
+          description = "(wezterm) Create new workspace:",
+          action = wezterm.action_callback(function(window, pane, line)
+            if line then
+              window:perform_action(
+                act.SwitchToWorkspace {
+                  name = line,
+                },
+                pane
+              )
+            end
+          end),
+        },
+  },
 }
 
--- 最初からフルスクリーンで起動
-local mux = wezterm.mux
-wezterm.on("gui-startup", function(cmd)
-    local tab, pane, window = mux.spawn_window(cmd or {})
-    window:gui_window():toggle_fullscreen()
-end)
 
--- タブを下に表示（デフォルトでは上にある）
-config.tab_bar_at_bottom = true
+
+----------------------------------------------------
+-- Command Palette
+----------------------------------------------------
+
+
+wezterm.on('augment-command-palette', function(window, pane)
+  return {
+    { brief = "Open Lazygit", action = act.ActivateTabRelative(-1), icon = "dev_git" },
+  }
+end)
 
 return config
