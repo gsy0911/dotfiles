@@ -45,6 +45,7 @@
       - libjpeg
       ## for psycopg2
       # - postgresql
+      - mysql
       ## for numpy, see: https://github.com/numpy/numpy/issues/17807
       - openblas
       ## for lightgbm
