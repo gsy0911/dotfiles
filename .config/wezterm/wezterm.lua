@@ -239,7 +239,8 @@ config.keys = {
 
 wezterm.on('augment-command-palette', function(window, pane)
   return {
-    { brief = "Open Lazygit", action = act.ActivateTabRelative(-1), icon = "dev_git" },
+    { brief = "Git | Open Lazygit", action = wezterm.action.SendString('lazygit'), icon = "dev_git" },
+    { brief = "Custom: manual", action = wezterm.action.SendString('mm'), icon = "md_card_text_outline" },
   }
 end)
 
