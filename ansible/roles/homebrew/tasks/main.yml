@@ -71,7 +71,7 @@
       - yabai
       # neovim
       - neovim
-      - neovim-qt
+      # - neovim-qt
       # $ img2sixel to show image in terminal
       - libsixel
       # Git
