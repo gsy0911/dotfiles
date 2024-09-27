@@ -10,6 +10,12 @@ return {
     {mode = "n", "<C-m>", "<cmd>NvimTreeFocus<CR>", desc = "NvimTreeにフォーカス"},
   },
   config = function()
-    require("nvim-tree").setup {}
+    require("nvim-tree").setup {
+      git = {
+        enable = true,
+        ignore = true,
+      }
+    }
+
   end,
 }
