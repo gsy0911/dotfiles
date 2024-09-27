@@ -53,7 +53,7 @@ config.show_new_tab_button_in_tab_bar = false
 -- タブが一つしかない時に非表示
 config.hide_tab_bar_if_only_one_tab = true
 -- タブを下に表示（デフォルトでは上にある）
-config.tab_bar_at_bottom = true
+-- config.tab_bar_at_bottom = true
 -- nightlyのみ使用可能
 -- タブの閉じるボタンを非表示
 -- config.show_close_tab_button_in_tabs = false
