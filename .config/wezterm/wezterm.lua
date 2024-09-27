@@ -6,6 +6,7 @@ local mux = wezterm.mux
 -- This table will hold the configuration.
 local config = wezterm.config_builder()
 
+config.use_ime = true
 
 ----------------------------------------------------
 -- Window

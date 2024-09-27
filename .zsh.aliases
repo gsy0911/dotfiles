@@ -95,3 +95,5 @@ alias da='direnv allow'
 
 # lazygit
 alias lg="lazygit"
+# nvim
+alias n='nvim'
