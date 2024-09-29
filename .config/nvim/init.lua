@@ -13,6 +13,8 @@ vim.wo.number = true
 vim.opt.swapfile = false
 
 vim.keymap.set("i", "jj", "<esc>")
+vim.keymap.set("i", "<C-g>", "<esc>")
+vim.keymap.set("i", "kk", "<esc>")
 
 -- see: https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
