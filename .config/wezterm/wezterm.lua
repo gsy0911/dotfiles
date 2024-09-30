@@ -253,6 +253,8 @@ wezterm.on('augment-command-palette', function(window, pane)
     { brief = "Git | Open Lazygit", action = wezterm.action.SendString('lazygit'), icon = "dev_git" },
     { brief = "Git | Close Lazygit", action = wezterm.action.SendString('q'), icon = "dev_git" },
     { brief = "Custom: manual", action = wezterm.action.SendString('mm'), icon = "md_card_text_outline" },
+    { brief = "Custom: Ollama up", action = wezterm.action.SendString('docker compose -f ~/.compose/compose.yaml up --build'), icon = "dev_docker" },
+    { brief = "Custom: Ollama in", action = wezterm.action.SendString('docker exec -it ollama ollama run ollama3'), icon = "dev_docker" },
   }
 end)
 
