@@ -48,4 +48,10 @@ echo "create .config/wezterm in $HOME"
 mkdir -p $HOME/.config/wezterm
 ln -snfv "$(pwd)/.config/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 
+echo "\n================================="
+echo "create .compose in $HOME"
+mkdir -p $HOME/.compose
+ln -snfv "$(pwd)/docker/compose.yaml" "$HOME/.compose/compose.yaml"
+
 echo "Success"
+
