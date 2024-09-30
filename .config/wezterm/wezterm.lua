@@ -211,6 +211,16 @@ config.keys = {
         mods = 'CMD|CTRL',
         action = act.ActivateTabRelative(1)
     },
+    {
+        key = '{',
+        mods = 'SHIFT|CTRL',
+        action = act.MoveTabRelative(-1)
+    },
+    {
+        key = '}',
+        mods = 'SHIFT|CTRL',
+        action = act.MoveTabRelative(1)
+    },
     -- Create new workspace
     {
         key = 'S',

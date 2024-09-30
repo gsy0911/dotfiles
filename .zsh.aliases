@@ -38,6 +38,9 @@ if type "pipes.sh" > /dev/null 2>&1; then
     alias pipe='pipes.sh'
 fi
 
+# node
+alias nr='npm run'
+
 # cd
 alias u='cd ..'
 alias uu='cd ../..'
