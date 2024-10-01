@@ -68,6 +68,7 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Stat
 ## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
 alias drm="yes | docker system prune"
 alias drv="docker volume rm $(docker volume ls -qf dangling=true)"
+alias lk="lazydocker"
 
 # Get week number
 alias week='date +%V'

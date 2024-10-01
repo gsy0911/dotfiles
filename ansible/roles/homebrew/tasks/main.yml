@@ -46,6 +46,7 @@
       ## for psycopg2
       # - postgresql
       - mysql
+      - tbls
       ## for numpy, see: https://github.com/numpy/numpy/issues/17807
       - openblas
       ## for lightgbm
@@ -77,6 +78,8 @@
       - libsixel
       # Git
       - jesseduffield/lazygit/lazygit
+      # Docker
+      - lazydocker
       # document a Database
       # see: https://github.com/k1LoW/tbls
       - k1LoW/tap/tbls
