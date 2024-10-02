@@ -5,7 +5,7 @@ return {
     require("toggleterm").setup{
       -- size can be a number or function which is passed the current terminal
       size = 20,
-      open_mapping = [[<c-¥>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+      open_mapping = [[<leader>tt]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
       -- on_create = fun(t: Terminal), -- function to run when the terminal is first created
       -- on_open = fun(t: Terminal), -- function to run when the terminal opens
       -- on_close = fun(t: Terminal), -- function to run when the terminal closes
@@ -49,7 +49,7 @@ return {
         -- see :h nvim_open_win for details on borders however
         -- the 'curved' border is a custom border type
         -- not natively supported but implemented in this plugin.
-        border = 'single',
+        border = 'curved',
         -- like `size`, width, height, row, and col can be a number or function which is passed the current terminal
         -- width = <value>,
         -- height = <value>,
@@ -74,7 +74,7 @@ return {
       lazygit:toggle()
     end
 
-    vim.api.nvim_set_keymap("n", "<C-g>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
   end
 }
