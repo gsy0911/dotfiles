@@ -17,11 +17,6 @@
       - colordiff
       - tokei
       - direnv
-      # for neovim
-      - ripgrep
-      - vhs
-      # - gum
-      # - httpie
       - procs
       # Taskfile
       - go-task
@@ -76,7 +71,8 @@
       - yabai
       # neovim
       - neovim
-      # - neovim-qt
+      - ripgrep
+      - vhs
       # $ img2sixel to show image in terminal
       - libsixel
       # Git
@@ -86,3 +82,4 @@
       # document a Database
       # see: https://github.com/k1LoW/tbls
       - k1LoW/tap/tbls
+

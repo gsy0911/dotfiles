@@ -3,3 +3,4 @@ notebook
 node_modules
 cdk.out
 .envrc
+*.gif
