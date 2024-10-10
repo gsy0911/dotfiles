@@ -17,6 +17,9 @@
       - colordiff
       - tokei
       - direnv
+      # for neovim
+      - ripgrep
+      - vhs
       # - gum
       # - httpie
       - procs
