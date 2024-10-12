@@ -73,10 +73,13 @@
       - neovim
       - ripgrep
       - vhs
+      # font
+      - font-hack-nerd-font
       # $ img2sixel to show image in terminal
       - libsixel
       # Git
       - jesseduffield/lazygit/lazygit
+      - git-flow
       # Docker
       - lazydocker
       # document a Database

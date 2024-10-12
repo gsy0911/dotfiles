@@ -22,6 +22,15 @@ for dotfile in $(ls -F .config/git | grep -v /); do
     ln -snfv "$(pwd)/.config/git/$dotfile" "$HOME/.config/git/$dotfile"
 done
 
+
+echo "\n================================="
+# echo "create Library/Application\ Support/lazygit/lazygit in $HOME"
+# mkdir -p $HOME/Library/Application\ Support/lazygit
+for dotfile in $(ls -F .config/lazygit | grep -v /); do
+    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+    ln -sf "$(pwd)/.config/lazygit/$dotfile" "$HOME/Library/Application Support/lazygit/$dotfile"
+done
+
 echo "\n================================="
 echo "create .config/skhd in $HOME"
 mkdir -p $HOME/.config/skhd

@@ -34,6 +34,8 @@ return {
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
     -- 定義ジャンプ
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+    -- 定義ジャンプ後に下のファイルに戻る
+    vim.keymap.set('n', 'gt', '<C-t>')
     -- 改行やインデントなどのフォーマット
     vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
     -- カーソル下の変数をコード内で参照している箇所

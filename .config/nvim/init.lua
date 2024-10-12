@@ -11,10 +11,15 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.wo.number = true
 vim.opt.swapfile = false
+vim.g.have_nerd_font = true
 
 vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set("i", "<C-g>", "<esc>")
 vim.keymap.set("i", "kk", "<esc>")
+
+vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>")
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

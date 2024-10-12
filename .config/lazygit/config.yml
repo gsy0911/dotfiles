@@ -1,0 +1,23 @@
+customCommands:
+  - key: 'n'
+    context: 'localBranches'
+    prompts:
+      - type: 'menu'
+        title: 'git-flow'
+        key: 'BranchType'
+        options:
+          - name: 'feature'
+            description: 'a feature branch'
+            value: feature
+          - name: 'hotfix'
+            description: 'a hotfix branch'
+            value: 'hotfix'
+          - name: 'release'
+            description: 'a release branch'
+            value: 'release'
+      - type: 'input'
+        input: 'branch name?'
+        key: 'BranchName'
+        initialValue: ''
+    command: "git flow {{.Form.BranchType}} start {{.Form.BranchName}}"
+    loadingText: 'Creating Branch'
