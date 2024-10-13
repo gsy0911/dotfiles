@@ -110,3 +110,6 @@ Temporary Items
 # Jupyter Notebooks
 notebook
 notebooks
+
+.editorconfig
+
