@@ -27,9 +27,10 @@ config.cursor_blink_ease_out = "Linear"
 
 config.enable_scroll_bar = true
 
-config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
-config.font_size = 14.0
-config.command_palette_font_size = 16.0
+config.font = wezterm.font('Cica', { weight = 'Bold' })
+-- config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
+config.font_size = 16.0
+config.command_palette_font_size = 18.0
 config.command_palette_bg_color = '#4D07FF'
 
 config.window_frame = {
