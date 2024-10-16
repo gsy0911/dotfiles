@@ -13,12 +13,20 @@ vim.wo.number = true
 vim.opt.swapfile = false
 vim.g.have_nerd_font = true
 
-vim.keymap.set("i", "jj", "<esc>")
-vim.keymap.set("i", "<C-g>", "<esc>")
-vim.keymap.set("i", "kk", "<esc>")
-
+-- モード切り替えと保存
+vim.keymap.set("i", "jj", "<esc><cmd>w<CR>")
+vim.keymap.set("i", "<C-g>", "<esc><cmd>w<CR>")
+vim.keymap.set("i", "kk", "<esc><cmd>w<CR>")
+-- ファイル切り替え
 vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>")
+-- クリップボードへコピー
+vim.keymap.set("n", "<space>d", '"*dd')
+vim.keymap.set("v", "<space>d", '"*dd')
+vim.keymap.set("n", "<space>y", '"*yy')
+vim.keymap.set("v", "<space>y", '"*yy')
+vim.keymap.set("n", "<space>p", '"*p')
+vim.keymap.set("v", "<space>p", '"*p')
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

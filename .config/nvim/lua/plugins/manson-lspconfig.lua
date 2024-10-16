@@ -4,16 +4,22 @@ return {
   lazy = false,
   config = function()
     local lsp_servers = { "lua_ls", "pyright", "ruff", "ts_ls", "html", "yamlls", "jsonls" }
+    local diagnostics = { "typos_lsp" }
     require("mason-lspconfig").setup {
-      ensure_installed = lsp_servers,
+      ensure_installed = vim.tbl_flatten({ lsp_servers, diagnostics }),
     }
     require("mason-lspconfig").setup_handlers {
       function (server_name)
         local nvim_lsp = require("lspconfig")
+        require("lspconfig").typos_lsp.setup {}
+
+        -- TypeScript
+        nvim_lsp.ts_ls.setup {}
+        -- Python
         require("lspconfig").pyright.setup {
           root_dir = nvim_lsp.util.root_pattern(".venv"),
           -- cmd = { "bash", "-c", "source ./.venv/bin/activate"},
-          settins = {
+          settings = {
             python = {
               -- 仮想環境のルートパス
               venvPath = ".",
