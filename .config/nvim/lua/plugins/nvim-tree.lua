@@ -1,4 +1,3 @@
-
 -- open File Tree when open
 local function open_nvim_tree()
     require("nvim-tree.api").tree.open()
@@ -29,6 +28,7 @@ return {
          "\\.ipynb_checkpoints",
          "\\.pytest_cache",
          "\\.DS_Store",
+         "__pycache__",
         },
       },
       git = {
