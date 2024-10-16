@@ -3,12 +3,12 @@ customCommands:
     context: 'localBranches'
     prompts:
       - type: 'menu'
-        title: 'git-flow'
+        title: '[git-flow] add new branch'
         key: 'BranchType'
         options:
           - name: 'feature'
             description: 'a feature branch'
-            value: feature
+            value: 'feature'
           - name: 'hotfix'
             description: 'a hotfix branch'
             value: 'hotfix'
@@ -19,13 +19,36 @@ customCommands:
         input: 'branch name?'
         key: 'BranchName'
         initialValue: ''
-    command: "git flow {{.Form.BranchType}} start {{.Form.BranchName}}"
+    command: "git flow {{.Form.BranchType}} start '{{.Form.BranchName}}'"
     loadingText: 'Creating Branch'
+  - key: '<c-f>'
+    context: 'localBranches'
+    prompts:
+      - type: 'menu'
+        title: '[git-flow] finish branch'
+        key: 'BranchType'
+        options:
+          - name: 'feature'
+            description: 'finish the feature branch'
+            value: 'feature'
+          - name: 'hotfix'
+            description: 'finish the hotfix branch'
+            value: 'hotfix'
+          - name: 'release'
+            description: 'finish the release branch'
+            value: 'release'
+      - type: 'input'
+        input: 'branch name?'
+        key: 'BranchName'
+        suggestions:
+          command: "git branch --show-current | cut -d'/' -f2"
+    command: "git flow {{.Form.BranchType}} finish '{{.Form.BranchName}}'"
+    loadingText: 'Finishing Branch'
   - key: '<c-c>'
     context: 'files'
     prompts:
       - type: 'menu'
-        title: 'git-commit-prefix'
+        title: '[git] Commit with prefix'
         key: 'Prefix'
         options:
           - name: 'fix'
@@ -54,4 +77,4 @@ customCommands:
         key: 'CommitMessage'
         initialValue: ''
     command: "git commit -m '{{.Form.Prefix}}: {{.Form.CommitMessage}}'"
-    loadingText: 'Creating Branch'
+    loadingText: 'Commit with prefix'
