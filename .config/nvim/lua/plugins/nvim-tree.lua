@@ -19,6 +19,18 @@ return {
   },
   config = function()
     require("nvim-tree").setup {
+      filters = {
+        git_ignored = false,
+        custom = {
+         "^\\.git",
+         "^node_modules",
+         "^\\.venv",
+         "^\\.idea",
+         "\\.ipynb_checkpoints",
+         "\\.pytest_cache",
+         "\\.DS_Store",
+        },
+      },
       git = {
         enable = true,
         ignore = true,
