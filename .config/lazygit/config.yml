@@ -3,7 +3,7 @@ customCommands:
     context: 'localBranches'
     prompts:
       - type: 'menu'
-        title: '[git-flow] add new branch'
+        title: '[git-flow] select branch type'
         key: 'BranchType'
         options:
           - name: 'feature'
@@ -16,6 +16,7 @@ customCommands:
             description: 'a release branch'
             value: 'release'
       - type: 'input'
+        title: '[git-flow] Input branch name'
         input: 'branch name?'
         key: 'BranchName'
         initialValue: ''
@@ -47,8 +48,15 @@ customCommands:
   - key: '<c-c>'
     context: 'files'
     prompts:
+      - type: 'input'
+        title: '[git] Input prefix, e.g. issue number'
+        input: 'branch prefix-name'
+        key: 'Name'
+        initialValue: '#'
+        suggestions:
+          command: "git branch --show-current | cut -d'/' -f2"
       - type: 'menu'
-        title: '[git] Commit with prefix'
+        title: '[git] Input prefix, e.g. fix; current:= {{.Form.Name}}'
         key: 'Prefix'
         options:
           - name: 'fix'
@@ -73,8 +81,9 @@ customCommands:
             description: 'others.'
             value: 'chore'
       - type: 'input'
+        title: '[git] Input message; current:= {{.Form.Name}} {{.Form.Prefix}}'
         input: 'commit message'
         key: 'CommitMessage'
         initialValue: ''
-    command: "git commit -m '{{.Form.Prefix}}: {{.Form.CommitMessage}}'"
+    command: "git commit -m '{{.Form.Name}} {{.Form.Prefix}}: {{.Form.CommitMessage}}'"
     loadingText: 'Commit with prefix'
