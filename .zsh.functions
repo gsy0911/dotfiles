@@ -30,7 +30,6 @@ function mm() {
     else
         echo "$Yel+$LOWER_BAR$Rst"
         printf "$Yel|$Rst$ "$Cyn"mm alias[:dir, ...]$Rst\n"
-        printf "$Yel|$Rst$ "$Cyn"mm iterm[:line, :tab, :window]$Rst\n"
         printf "$Yel|$Rst$ "$Cyn"mm net$Rst\n"
         printf "$Yel|$Rst$ "$Cyn"mm usage[:docker, ...]$Rst\n"
         printf "$Yel|$Rst$ "$Cyn"mm db-[psql, mysql]$Rst\n"

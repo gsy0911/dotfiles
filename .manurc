@@ -1,17 +1,3 @@
-iterm:line ## ⌃e ## go tail 
-iterm:line ## ⌃j ## go middle
-iterm:line ## ⌃a ## go head
-iterm:line ## ⌘⇧h ## paste history
-iterm:line ## ⌘k or ⌘r ## clear
-iterm:tab ## ⌘t ## new tab
-iterm:tab ## ⌘+(RL) ## move tabs
-iterm:window ## ⌘r ## clear lines
-iterm:window ## ⌘⌥+(RLUD) ## move window
-iterm:window ## ⌘d ## split window vertically
-iterm:window ## ⌘⇧d ## split window horizontally
-iterm:porn ## cava ## display music bar
-iterm:porn ## pipe ## display pipes
-
 db-mysql:login ## mysql -u {user} -D {database} -p {terminal} ## login
 db-mysql:sql ## show columns from {table} ## show schema
 db-psql:login ## psql -h {host} -U {user} -d {database} ## login
@@ -37,9 +23,6 @@ alias:dir ## lla ## ls -la or exa -la
 alias:dir ## lt ## exa -lT --level=2 --git-ignore
 alias:dir ## u ## cd ..
 alias:dir ## uu ## cd ../..
-alias:dir ## .. ## cd ../..
-alias:dir ## ... ## cd ../../..
-alias:dir ## .... ## cd ../../../..
 alias:other ## tenki ## curl wttr.in/Tokyo
 alias:global ## C ## `| wc -l`
 alias:global ## G ## `| grep --color=auto`
@@ -92,7 +75,7 @@ desc:github ## 2.b ## or edit origin as `https://<TOKEN>@github.com/<USERNAME>/<
 
 usage:av-antivirus ## sudo freshclam ## update virus definition
 usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}
-usage:av-antivirus ## sudo /usr/local/sbin/clamd ## start deamon
+usage:av-antivirus ## sudo /usr/local/sbin/clamd ## start daemon
 
 alias:python ## p ## poetry shell
 alias:python ## j ## jupyter lab
