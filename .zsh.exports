@@ -23,7 +23,7 @@ export PATH="$(brew --prefix)/opt/node/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 
 # mysql
-export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
+export PATH="$(brew --prefix)/opt/mysql-client@8.0/bin:$PATH"
 
 # for starship(zsh) and CDK
 if type "cdk" > /dev/null 2>&1; then

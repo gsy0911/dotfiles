@@ -4,7 +4,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   name = "darcula",
-  -- enabled = false,
+  enabled = false,
   config = function()
     require("darcula").setup({
     })
