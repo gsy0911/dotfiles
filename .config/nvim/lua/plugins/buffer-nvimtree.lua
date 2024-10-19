@@ -28,6 +28,7 @@ return {
          "\\.ipynb_checkpoints",
          "\\.pytest_cache",
          "\\.DS_Store",
+         "cdk.out",
          "__pycache__",
         },
       },
