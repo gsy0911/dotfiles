@@ -201,6 +201,8 @@ config.keys = {
         action = act.ToggleFullScreen
     },
     -- ⌘ Ctrl [] でタブの移動
+    -- ⌘ Ctrl hl でタブの移動
+    -- ⌘ Shift hl でタブの移動
     -- defaultは⌘ Shift []
     {
         key = '[',
@@ -213,12 +215,42 @@ config.keys = {
         action = act.ActivateTabRelative(1)
     },
     {
+        key = 'h',
+        mods = 'CMD|CTRL',
+        action = act.ActivateTabRelative(-1)
+    },
+    {
+        key = 'l',
+        mods = 'CMD|CTRL',
+        action = act.ActivateTabRelative(1)
+    },
+    {
+        key = 'h',
+        mods = 'CMD|SHIFT',
+        action = act.ActivateTabRelative(-1)
+    },
+    {
+        key = 'l',
+        mods = 'CMD|SHIFT',
+        action = act.ActivateTabRelative(1)
+    },
+    {
         key = '{',
         mods = 'SHIFT|CTRL',
         action = act.MoveTabRelative(-1)
     },
     {
         key = '}',
+        mods = 'SHIFT|CTRL',
+        action = act.MoveTabRelative(1)
+    },
+    {
+        key = 'h',
+        mods = 'SHIFT|CTRL',
+        action = act.MoveTabRelative(-1)
+    },
+    {
+        key = 'l',
         mods = 'SHIFT|CTRL',
         action = act.MoveTabRelative(1)
     },
