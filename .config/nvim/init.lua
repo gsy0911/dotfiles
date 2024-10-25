@@ -25,8 +25,8 @@ vim.keymap.set("n", "<space>d", '"*dd')
 vim.keymap.set("v", "<space>d", '"*dd')
 vim.keymap.set("n", "<space>y", '"*yy')
 vim.keymap.set("v", "<space>y", '"*yy')
-vim.keymap.set("n", "<space>p", 'h"*pl')
-vim.keymap.set("v", "<space>p", 'h"*pl')
+vim.keymap.set("n", "<space>p", '"*p')
+vim.keymap.set("v", "<space>p", '"*p')
 -- cursor
 vim.opt.guicursor = "n-i:ver25"
 

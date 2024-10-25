@@ -74,6 +74,7 @@
       - neovim
       - ripgrep
       - vhs
+      - im-select
       # font
       - font-hack-nerd-font
       # $ img2sixel to show image in terminal

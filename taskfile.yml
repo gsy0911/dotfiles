@@ -30,3 +30,4 @@ tasks:
       - brew tap k1low/tap
       - brew tap jesseduffield/lazygit
       - brew tap jesseduffield/lazydocker
+      - brew tap daipeihust/tap
