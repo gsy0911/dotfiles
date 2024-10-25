@@ -6,7 +6,7 @@ return {
   },
   config = function()
     require('nvim-treesitter.configs').setup({
-      ensure_installed = { "python" },
+      ensure_installed = { "python", "typescript" },
       highlight = {
         enable = true,
       }
