@@ -31,3 +31,8 @@ tasks:
       - brew tap jesseduffield/lazygit
       - brew tap jesseduffield/lazydocker
       - brew tap daipeihust/tap
+
+  github:
+    desc: add gh-plugins
+    cmds:
+      - gh extension install dlvhdr/gh-dash
