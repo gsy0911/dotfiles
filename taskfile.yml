@@ -31,6 +31,7 @@ tasks:
       - brew tap jesseduffield/lazygit
       - brew tap jesseduffield/lazydocker
       - brew tap daipeihust/tap
+      # - brew tap jabley/homebrew-wrk2
 
   github:
     desc: add gh-plugins
