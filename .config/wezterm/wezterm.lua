@@ -154,6 +154,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   elseif tab.active_pane.title == "Python" then
     icon = TAB_ICON_PYTHON
     icon_foreground = "#ffd700"
+  elseif string.find(tab.active_pane.title, "python") > 0 then
+    icon = TAB_ICON_PYTHON
   elseif tab.active_pane.title == "docker" then
     icon = TAB_ICON_DOCKER
     icon_foreground = "#4169e1"
