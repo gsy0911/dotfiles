@@ -13,6 +13,12 @@ config.use_ime = true
 ----------------------------------------------------
 
 config.color_scheme = 'Wombat'
+config.window_padding = {
+  left = "0.5cell",
+  right = "0.5cell",
+  top = "1.0cell",
+  bottom = 0,
+}
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Breeze'
 
@@ -50,7 +56,8 @@ end)
 -- Tab
 ----------------------------------------------------
 -- タイトルバーを非表示
-config.window_decorations = "RESIZE"
+config.window_decorations = "TITLE | RESIZE"
+-- config.enable_tab_bar = true
 -- タブの追加ボタンを非表示
 config.show_new_tab_button_in_tab_bar = false
 -- タブが一つしかない時に非表示
