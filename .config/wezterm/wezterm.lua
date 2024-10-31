@@ -137,14 +137,19 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
   
   local icon = ""
+  local icon_foreground = background
   if tab.active_pane.title == "nvim" then
     icon = TAB_ICON_NEOVIM
+    icon_foreground = "#32cd32"
   elseif tab.active_pane.title == "zsh" then
     icon = TAB_ICON_ZSH
+    icon_foreground = "#808080"
   elseif tab.active_pane.title == "Python" then
     icon = TAB_ICON_PYTHON
+    icon_foreground = "#ffd700"
   elseif tab.active_pane.title == "docker" then
     icon = TAB_ICON_DOCKER
+    icon_foreground = "#4169e1"
   end
 
   -- local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "
@@ -153,9 +158,10 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local title = " " .. wezterm.truncate_right(wholeTitle, max_width - 1) .. " "
   return {
     { Background = { Color = edge_background } },
-    { Foreground = { Color = edge_foreground } },
+    { Foreground = { Color = icon_foreground } },
     { Text = icon },
     { Text = " " },
+    { Foreground = { Color = edge_foreground } },
     { Text = SOLID_LEFT_CIRCLE },
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
