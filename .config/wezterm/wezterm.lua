@@ -34,9 +34,10 @@ config.command_palette_font_size = 18.0
 config.command_palette_bg_color = '#4D07FF'
 
 config.window_frame = {
-	font = wezterm.font('JetBrains Mono', { weight = 'Bold' }),
-	font_size = 14,
+	font = wezterm.font('Cica', { weight = 'Bold' }),
+	font_size = 16,
 }
+config.tab_max_width = 24
 
 -- 最初からフルスクリーンで起動
 wezterm.on("gui-startup", function(cmd)
@@ -55,7 +56,7 @@ config.show_new_tab_button_in_tab_bar = false
 -- タブが一つしかない時に非表示
 -- config.hide_tab_bar_if_only_one_tab = true
 -- タブを下に表示（デフォルトでは上にある）
--- config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = true
 -- nightlyのみ使用可能
 -- タブの閉じるボタンを非表示
 -- config.show_close_tab_button_in_tabs = false
@@ -90,7 +91,6 @@ wezterm.on('update-status', function(window, pane)
   title_cache[pane_id] = "-"
   local process_info = pane:get_foreground_process_info()
 
---   local success, stdout, stderr = wezterm.run_child_process({ 'printenv', '|', 'grep', 'CDK_VERSION' })
 --   if success then
 --     title_cache[pane_id] = stdout
 --   end
@@ -106,10 +106,16 @@ end)
 
 
 -- タブの形をカスタマイズ
+local TAB_ICON_DOCKER = wezterm.nerdfonts.md_docker
+local TAB_ICON_PYTHON = wezterm.nerdfonts.dev_python
+local TAB_ICON_NEOVIM = wezterm.nerdfonts.linux_neovim
+local TAB_ICON_ZSH = wezterm.nerdfonts.dev_terminal
 -- タブの左側の装飾
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
+local SOLID_LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
 -- タブの右側の装飾
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+local SOLID_RIGHT_CIRCLE = wezterm.nerdfonts.ple_right_half_circle_thick
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local background = "#5c6d74"
@@ -129,18 +135,34 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   else
     cwd = "-"
   end
+  
+  local icon = ""
+  if tab.active_pane.title == "nvim" then
+    icon = TAB_ICON_NEOVIM
+  elseif tab.active_pane.title == "zsh" then
+    icon = TAB_ICON_ZSH
+  elseif tab.active_pane.title == "Python" then
+    icon = TAB_ICON_PYTHON
+  elseif tab.active_pane.title == "docker" then
+    icon = TAB_ICON_DOCKER
+  end
 
-  local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "
+  -- local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "
+  -- local wholeTitle = tab.active_pane.title .. " @ " .. cwd .. ""
+  local wholeTitle = cwd 
+  local title = " " .. wezterm.truncate_right(wholeTitle, max_width - 1) .. " "
   return {
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
-    { Text = SOLID_LEFT_ARROW },
+    { Text = icon },
+    { Text = " " },
+    { Text = SOLID_LEFT_CIRCLE },
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
     { Text = title },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
-    { Text = SOLID_RIGHT_ARROW },
+    { Text = SOLID_RIGHT_CIRCLE },
   }
 end)
 
