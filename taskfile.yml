@@ -37,3 +37,11 @@ tasks:
     desc: add gh-plugins
     cmds:
       - gh extension install dlvhdr/gh-dash
+      
+  update-github-pat:
+    desc: update token
+    cmds:
+      - sh ./bin/update_github_pat.sh {{.token}}
+    requires:
+      vars: [token]
+

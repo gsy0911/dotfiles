@@ -12,6 +12,8 @@ style = "#FFD700"
 format="$symbol "
 success_symbol = "[❯](bold #32cd32)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[✗](bold red) "
+vimcmd_symbol = "[N](bold #32cd32)"
+vimcmd_visual_symbol = "[V](bold #32cd32)"
 
 [aws]
 format = "[aws:$profile]($style) "
