@@ -1,0 +1,10 @@
+PROMPT_INS="[INS]"
+PROMPT_NOR="[NOR]"
+PROMPT_VIS="[VIS]"
+
+# bindkey -M viins jj vi-cmd-mode
+# alias vv="bindkey -v"
+bindkey '^k' history-beginning-search-backward
+bindkey '^j' history-beginning-search-forward
+# press Enter for '^m'
+

@@ -109,5 +109,8 @@ source "$HOME/.zsh.aliases"
 # add functions
 source "$HOME/.zsh.functions"
 
+# add vi-mode
+source "$HOME/.zsh.vi"
+
 # set up direnv
 eval "$(direnv hook zsh)"
