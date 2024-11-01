@@ -117,6 +117,9 @@ local TAB_ICON_DOCKER = wezterm.nerdfonts.md_docker
 local TAB_ICON_PYTHON = wezterm.nerdfonts.dev_python
 local TAB_ICON_NEOVIM = wezterm.nerdfonts.linux_neovim
 local TAB_ICON_ZSH = wezterm.nerdfonts.dev_terminal
+local TAB_ICON_TASK = wezterm.nerdfonts.cod_server_process
+local TAB_ICON_NODE = wezterm.nerdfonts.md_language_typescript
+local TAB_ICON_FALLBACK = wezterm.nerdfonts.md_console_network
 -- タブの左側の装飾
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
@@ -143,7 +146,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     cwd = "-"
   end
   
-  local icon = ""
+  local icon = TAB_ICON_FALLBACK
   local icon_foreground = background
   if tab.active_pane.title == "nvim" then
     icon = TAB_ICON_NEOVIM
@@ -151,17 +154,18 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   elseif tab.active_pane.title == "zsh" then
     icon = TAB_ICON_ZSH
     icon_foreground = "#808080"
-  elseif tab.active_pane.title == "Python" then
+  elseif tab.active_pane.title == "Python" or string.find(tab.active_pane.title, "python") then
     icon = TAB_ICON_PYTHON
     icon_foreground = "#ffd700"
-  elseif string.find(tab.active_pane.title, "python") > 0 then
-    icon = TAB_ICON_PYTHON
-  elseif tab.active_pane.title == "docker" then
+  elseif tab.active_pane.title == "node" or string.find(tab.active_pane.title, "node") then
+    icon = TAB_ICON_NODE
+    icon_foreground = "#1e90ff"
+  elseif tab.active_pane.title == "docker" or string.find(tab.active_pane.title, "docker") then
     icon = TAB_ICON_DOCKER
     icon_foreground = "#4169e1"
-  elseif string.find(tab.active_pane.title, "docker") > 0 then
-    icon = TAB_ICON_DOCKER
-    icon_foreground = "#4169e1"
+  elseif tab.active_pane.title == "task" or string.find(tab.active_pane.title, "task") then
+    icon = TAB_ICON_TASK
+    icon_foreground = "#ff7f50"
   end
 
   -- local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "

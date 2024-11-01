@@ -68,6 +68,7 @@ function cdp() {
     if [ ! -z "$dir" ] ; then
         echo $dir
         cd $dir
+	zle accept-line
     fi
 }
 zle -N cdp
