@@ -159,6 +159,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   elseif tab.active_pane.title == "docker" then
     icon = TAB_ICON_DOCKER
     icon_foreground = "#4169e1"
+  elseif string.find(tab.active_pane.title, "docker") > 0 then
+    icon = TAB_ICON_DOCKER
+    icon_foreground = "#4169e1"
   end
 
   -- local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "
