@@ -29,6 +29,12 @@ vim.keymap.set("n", "<space>p", '"*p')
 vim.keymap.set("v", "<space>p", '"*p')
 -- cursor
 vim.opt.guicursor = "n-i:ver25"
+-- say
+vim.keymap.set("n", "<space>say", function()
+  local current_word = vim.fn.expand("<cword>")
+  vim.api.nvim_feedkeys(":!say -v Ava " .. current_word .. "\n", "n", false)
+end, { desc = "say command" })
+
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
