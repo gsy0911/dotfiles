@@ -48,6 +48,7 @@ alias uu='cd ../..'
 # alias for Python
 alias j="jupyter lab"
 alias p="poetry shell"
+alias r="rye run -l"
 alias rj="rye run jupyter lab"
 alias va=". .venv/bin/activate"
 alias vd="deactivate"

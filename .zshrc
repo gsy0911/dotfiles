@@ -114,3 +114,7 @@ source "$HOME/.zsh.vi"
 
 # set up direnv
 eval "$(direnv hook zsh)"
+
+# disable default repeat command
+disable r
+

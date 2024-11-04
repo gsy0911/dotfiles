@@ -17,7 +17,7 @@ config.window_padding = {
   left = "0.5cell",
   right = "0.5cell",
   top = "1.0cell",
-  bottom = 0,
+  bottom = "0.5cell",
 }
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Breeze'
