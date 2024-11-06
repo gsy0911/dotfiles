@@ -112,7 +112,7 @@ wezterm.on('update-status', function(window, pane)
 end)
 
 
--- タブの形をカスタマイズ
+-- タブのアイコン
 local TAB_ICON_DOCKER = wezterm.nerdfonts.md_docker
 local TAB_ICON_PYTHON = wezterm.nerdfonts.dev_python
 local TAB_ICON_NEOVIM = wezterm.nerdfonts.linux_neovim
@@ -147,7 +147,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
   
   local icon = TAB_ICON_FALLBACK
-  local icon_foreground = background
+  local icon_foreground = "#ae8b2d"
   if tab.active_pane.title == "nvim" then
     icon = TAB_ICON_NEOVIM
     icon_foreground = "#32cd32"
