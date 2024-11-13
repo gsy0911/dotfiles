@@ -35,7 +35,10 @@ return {
       git = {
         enable = true,
         ignore = true,
-      }
+      },
+      renderer = {
+       root_folder_label = false, 
+      },
     }
 
   end,
