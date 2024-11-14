@@ -205,6 +205,11 @@ end)
 ----------------------------------------------------
 
 config.keys = {
+    {
+        key = 't',
+        mods = 'CTRL',
+        action = act.SpawnTab 'CurrentPaneDomain',
+    },
     -- ⌘ w でペインを閉じる（デフォルトではタブが閉じる）
     {
         key = "w",
