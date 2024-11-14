@@ -68,3 +68,12 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
+local function copy_current_file_path()
+  local path = vim.fn.expand "%:."
+  vim.fn.setreg("*", path)
+  vim.api.nvim_echo({ { "Copied: " .. path, "None" } }, true, {})
+end
+-- Keymap("<Leader>yp", copy_current_file_path)
+
+vim.keymap.set("n", "<Leader>y", copy_current_file_path, { noremap = true, silent = true })
+
