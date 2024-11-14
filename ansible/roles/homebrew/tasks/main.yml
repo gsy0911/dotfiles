@@ -27,8 +27,8 @@
       - aws-cdk
       - awscli
       # node
-      - node@20
-      - node
+      # - node@20
+      # - node
       - yarn
       # python
       - rye
