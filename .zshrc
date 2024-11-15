@@ -102,6 +102,7 @@ fi
 
 # add exports
 source "$HOME/.zsh.exports"
+source "$HOME/.zsh.exports.secret"
 
 # add aliases
 source "$HOME/.zsh.aliases"
