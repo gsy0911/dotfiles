@@ -44,6 +44,8 @@ alias nr='npm run'
 # cd
 alias u='cd ..'
 alias uu='cd ../..'
+# cd to chat stored directory
+alias cdc='cd $HOME/.local/share/nvim/parrot/chats'
 
 # alias for Python
 alias j="jupyter lab"
