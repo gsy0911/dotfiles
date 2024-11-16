@@ -38,5 +38,9 @@ return {
       },
     })
   end,
+  keys = {
+    {mode = "n", "<C-g>t", "<cmd>PrtChatNew tabnew<CR>", desc = "new chat with tab"},
+    {mode = "n", "<C-g>v", "<cmd>PrtChatNew vsplit<CR>", desc = "new chat with vsplit"},
+  },
 }
 
