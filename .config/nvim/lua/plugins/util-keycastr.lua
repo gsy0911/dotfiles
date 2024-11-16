@@ -11,5 +11,6 @@ return {
     }
     keycastr.enable()
   end,
+  enabled = false,
 }
 
