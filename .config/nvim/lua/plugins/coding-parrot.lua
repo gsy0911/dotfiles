@@ -18,9 +18,13 @@ return {
         -- mistral = {
         --   api_key = os.getenv "MISTRAL_API_KEY",
         -- },
-        -- pplx = {
-        --   api_key = os.getenv "PERPLEXITY_API_KEY",
-        -- },
+        -- see: https://docs.perplexity.ai/guides/model-cards
+        pplx = {
+          api_key = os.getenv "PERPLEXITY_API_KEY",
+          topic = {
+            model = "llama-3.1-sonar-large-128k-chat"
+          },
+        },
         -- provide an empty list to make provider available (no API key required)
         -- ollama = {},
         openai = {
