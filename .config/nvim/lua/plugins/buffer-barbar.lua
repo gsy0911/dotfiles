@@ -15,5 +15,8 @@ return {
   keys = {
     {mode = "n", "<C-b>a", "<cmd>BufferCloseAllButCurrent<CR>", desc = "開いているbuffer以外を閉じる"},
     {mode = "n", "<C-b>c", "<cmd>BufferClose<CR>", desc = "bufferを閉じる"},
+    {mode = "n", "<C-b>s", "<cmd>BufferOrderByDirectory<CR>", desc = "bufferをソートする"},
+    {mode = "n", "<C-h>", "<cmd>BufferPrevious<CR>", desc = "1つ前のbuffer選択"},
+    {mode = "n", "<C-l>", "<cmd>BufferNext<CR>", desc = "1つ次のbuffer選択"},
   },
 }

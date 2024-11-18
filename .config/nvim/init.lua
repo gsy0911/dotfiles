@@ -18,8 +18,8 @@ vim.keymap.set("i", "jj", "<esc><cmd>w<CR>")
 vim.keymap.set("i", "<C-g>", "<esc><cmd>w<CR>")
 vim.keymap.set("i", "kk", "<esc><cmd>w<CR>")
 -- ファイル切り替え
-vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>")
-vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>")
+-- vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>")
+-- vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>")
 -- タブ切り替え
 vim.keymap.set("n", "<C-t>", "<cmd>tabNext<CR>")
 -- クリップボードへコピー
