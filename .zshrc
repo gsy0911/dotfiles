@@ -58,6 +58,11 @@ setopt hist_ignore_dups
 setopt append_history
 # 履歴をインクリメンタルに追加
 setopt inc_append_history
+# historyにcdやlsなどを残さないようにする
+zshaddhistory() {
+    local line="${1%%$'\n'}"
+    [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir|u|uu|drm)($| )" ]]
+}
 
 # Ctrl+x -> b
 # peco でディレクトリの移動履歴を表示
