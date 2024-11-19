@@ -19,10 +19,18 @@ return {
       change = "MiniDiffSignChange", -- 変更された行に対するハイライトグループ
       delete = "MiniDiffDelete", -- 削除された行に対するハイライトグループ
     }
-    local integration = minimap.gen_integration.diff(hl_groups)
+    local diff_integration = minimap.gen_integration.diff(hl_groups)
+
+    local search_integration = minimap.gen_integration.builtin_search()
+    local diagnostic_integration = minimap.gen_integration.diagnostic({
+      error = 'DiagnosticFloatingError',
+      warn  = 'DiagnosticFloatingWarn',
+      info  = 'DiagnosticFloatingInfo',
+      hint  = 'DiagnosticFloatingHint',
+    })
 
     minimap.setup({
-      integrations = { integration }
+      integrations = { diff_integration, search_integration, diagnostic_integration }
     })
     minimap.open()
   end
