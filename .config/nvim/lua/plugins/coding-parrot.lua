@@ -3,6 +3,7 @@ return {
   dependencies = { 'ibhagwan/fzf-lua', 'nvim-lua/plenary.nvim' },
   -- optionally include "rcarriga/nvim-notify" for beautiful notifications
   config = function()
+    require("fzf-lua").setup({})
     require("parrot").setup({
       -- Providers must be explicitly added to make them available.
       providers = {
@@ -29,6 +30,9 @@ return {
         -- ollama = {},
         openai = {
           api_key = os.getenv "OPENAI_API_KEY",
+          topic = {
+            model = "gpt-4o"
+          }
         },
         -- github = {
         --   api_key = os.getenv "GITHUB_TOKEN",
@@ -45,6 +49,9 @@ return {
   keys = {
     {mode = "n", "<C-g>t", "<cmd>PrtChatNew tabnew<CR>", desc = "new chat with tab"},
     {mode = "n", "<C-g>v", "<cmd>PrtChatNew vsplit<CR>", desc = "new chat with vsplit"},
+    {mode = "n", "<C-g>pp", "<cmd>PrtProvider pplx<CR>", desc = "new chat with Perplexity"},
+    {mode = "n", "<C-g>po", "<cmd>PrtProvider openai<CR>", desc = "new chat with OpenAI"},
+    {mode = "n", "<C-g>s", "<cmd>PrtStatus<CR>", desc = "show model"},
   },
 }
 
