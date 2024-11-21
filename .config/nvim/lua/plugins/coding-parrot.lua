@@ -47,7 +47,7 @@ return {
     })
   end,
   keys = {
-    {mode = "n", "<C-g>t", "<cmd>PrtChatNew tabnew<CR>", desc = "new chat with tab"},
+    {mode = "n", "<C-g>t", "<cmd>PrtChatNew vsplit<CR><C-w>x<C-w>l", desc = "new chat with tab"},
     {mode = "n", "<C-g>v", "<cmd>PrtChatNew vsplit<CR>", desc = "new chat with vsplit"},
     {mode = "n", "<C-g>pp", "<cmd>PrtProvider pplx<CR>", desc = "new chat with Perplexity"},
     {mode = "n", "<C-g>po", "<cmd>PrtProvider openai<CR>", desc = "new chat with OpenAI"},
