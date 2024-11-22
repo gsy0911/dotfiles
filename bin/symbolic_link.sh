@@ -31,13 +31,13 @@ for dotfile in $(ls -F .config/lazygit | grep -v /); do
     ln -sf "$(pwd)/.config/lazygit/$dotfile" "$HOME/Library/Application Support/lazygit/$dotfile"
 done
 
-echo "\n================================="
-echo "create .config/skhd in $HOME"
-mkdir -p $HOME/.config/skhd
-for dotfile in $(ls -F .config/skhd | grep -v /); do
-    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
-    ln -snfv "$(pwd)/.config/skhd/$dotfile" "$HOME/.config/skhd/$dotfile"
-done
+# echo "\n================================="
+# echo "create .config/skhd in $HOME"
+# mkdir -p $HOME/.config/skhd
+# for dotfile in $(ls -F .config/skhd | grep -v /); do
+#     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+#     ln -snfv "$(pwd)/.config/skhd/$dotfile" "$HOME/.config/skhd/$dotfile"
+# done
 
 echo "\n================================="
 echo "create .config/nvim in $HOME"
@@ -56,6 +56,12 @@ echo "\n================================="
 echo "create .config/wezterm in $HOME"
 mkdir -p $HOME/.config/wezterm
 ln -snfv "$(pwd)/.config/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+
+echo "\n================================="
+echo "create ./.hammerspoon in $HOME"
+mkdir -p $HOME/.hammerspoon
+ln -snfv "$(pwd)/.config/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
+ln -snfv "$(pwd)/.config/hammerspoon/ctrlDoublePress.lua" "$HOME/.hammerspoon/ctrlDoublePress.lua"
 
 echo "\n================================="
 echo "create .compose in $HOME"
