@@ -33,5 +33,7 @@ return {
       integrations = { diff_integration, search_integration, diagnostic_integration }
     })
     minimap.open()
+    vim.keymap.set('n', '<C-m>o', minimap.open, { desc = 'open minimap' })
+    vim.keymap.set('n', '<C-m>c', minimap.close, { desc = 'close minimap' })
   end
 } 
