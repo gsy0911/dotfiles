@@ -19,7 +19,8 @@ return {
     {mode = "n", "<C-n>c", "<cmd>NvimTreeCollapse<CR>", desc = "NvimTreeのフォルダを閉じる"},
   },
   config = function()
-    require("nvim-tree").setup {
+    local nvimtree = require("nvim-tree")
+    nvimtree.setup {
       filters = {
         git_ignored = false,
         custom = {
@@ -43,5 +44,15 @@ return {
       },
     }
 
+    local api = require("nvim-tree.api")
+    local resizeUp = function()
+      api.tree.resize({ relative = 10 })
+    end
+    vim.keymap.set('n', '<C-n>wu', resizeUp, { desc = 'set window width + 10' })
+
+    local resizeDown = function()
+      api.tree.resize({ relative = -10 })
+    end
+    vim.keymap.set('n', '<C-n>wd', resizeDown, { desc = 'set window width - 10' })
   end,
 }
