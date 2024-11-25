@@ -3,7 +3,23 @@ return {
   version = "*",
   lazy = false,
   config = function()
-    local lsp_servers = { "lua_ls", "pyright", "ruff", "ts_ls", "html", "yamlls", "jsonls" }
+    -- languages
+    local lsp_servers = { 
+      "lua_ls",
+      "pyright",
+      "ruff",
+      "ts_ls",
+      "html",
+      "yamlls",
+      "jsonls",
+      "dockerls",
+      "docker_compose_language_service",
+      -- toml
+      "taplo",
+      -- PHP
+      "intelephense"
+    }
+    -- utilities
     local diagnostics = { "typos_lsp" }
     require("mason-lspconfig").setup {
       ensure_installed = vim.tbl_flatten({ lsp_servers, diagnostics }),
