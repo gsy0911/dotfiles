@@ -54,5 +54,8 @@ return {
       api.tree.resize({ relative = -10 })
     end
     vim.keymap.set('n', '<C-n>wd', resizeDown, { desc = 'set window width - 10' })
+    -- close all
+    vim.keymap.set("n", "<leader>q", "<cmd>NvimTreeClose<CR><cmd>quit<CR>", { desc = "Close NvimTree and quit" })
+
   end,
 }
