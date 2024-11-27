@@ -205,6 +205,17 @@ end)
 ----------------------------------------------------
 
 config.keys = {
+    -- ¥ではなく、バックスラッシュを入力する。おそらくMac固有
+    {
+        key = "¥",
+        action = wezterm.action.SendKey { key = '\\' }
+    },
+    -- Altを押した場合はバックスラッシュではなく¥を入力する。おそらくMac固有
+    {
+        key = "¥",
+        mods = "ALT",
+        action = wezterm.action.SendKey { key = '¥' }
+    },
     -- {
     --     key = 't',
     --     mods = 'CTRL',
