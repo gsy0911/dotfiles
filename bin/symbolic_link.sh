@@ -58,6 +58,11 @@ mkdir -p $HOME/.config/wezterm
 ln -snfv "$(pwd)/.config/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 
 echo "\n================================="
+echo "create .config/sheldon in $HOME"
+mkdir -p $HOME/.config/sheldon
+ln -snfv "$(pwd)/.config/sheldon/plugins.toml" "$HOME/.config/sheldon/plugins.toml"
+
+echo "\n================================="
 echo "create ./.hammerspoon in $HOME"
 mkdir -p $HOME/.hammerspoon
 ln -snfv "$(pwd)/.config/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
