@@ -1,19 +1,21 @@
 #!/bin/zsh
 
+# brew path
+export BREW_PREFIX=$(brew --prefix)
+
 # python
-# export PATH="$(brew --prefix)/opt/python@3.9/bin:$PATH"
-export PATH="$(brew --prefix)/opt/python@3.10/bin:$PATH"
-export PATH="$(brew --prefix)/opt/python@3.11/bin:$PATH"
-export PATH="$(brew --prefix)/opt/python@3.12/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/python@3.10/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/python@3.11/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/python@3.12/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 export POETRY_CONFIG_DIR=$HOME/Library/Preferences/pypoetry
 ## for tables(library)
-export HDF5_DIR="$(brew --prefix)/opt/hdf5"
-export BLOSC_DIR="$(brew --prefix)/opt/c-blosc"
+export HDF5_DIR="$BREW_PREFIX/opt/hdf5"
+export BLOSC_DIR="$BREW_PREFIX/opt/c-blosc"
 
 # node
-# export PATH="$(brew --prefix)/opt/node@20/bin:$PATH"
-# export PATH="$(brew --prefix)/opt/node/bin:$PATH"
+# export PATH="$BREW_PREFIX/opt/node@20/bin:$PATH"
+# export PATH="$BREW_PREFIX/opt/node/bin:$PATH"
 ## volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -23,25 +25,21 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 
 # mysql
-export PATH="$(brew --prefix)/opt/mysql-client@8.0/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/mysql-client@8.0/bin:$PATH"
 
-# for starship(zsh) and CDK
-if type "cdk" > /dev/null 2>&1; then
-    export CDK_VERSION="$(cdk --version | awk '{printf $1}')"
-fi
 # for starship(aws default_profile)
 export AWS_PROFILE=default
 
 # openblas, psycopg2
 export OPENBLAS=$(brew --prefix openblas)
-export LDFLAGS="-I$(brew --prefix)/opt/openssl/include -L$(brew --prefix)/opt/openssl/lib"
-export CPPFLAGS="-I$(brew --prefix)/opt/openblas/include"
+export LDFLAGS="-I$BREW_PREFIX/opt/openssl/include -L$BREW_PREFIX/opt/openssl/lib"
+export CPPFLAGS="-I$BREW_PREFIX/opt/openblas/include"
 
 # docker
 export DOCKER_BUILDKIT=1
 
 # openssl / gmp, pycrypto
-export "CFLAGS=-I$(brew --prefix)/include -L$(brew --prefix)/lib"
+export "CFLAGS=-I$BREW_PREFIX/include -L$BREW_PREFIX/lib"
 
 # taskfile
 export TASK_X_REMOTE_TASKFILES=1

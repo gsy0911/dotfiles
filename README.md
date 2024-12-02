@@ -16,15 +16,21 @@ Initial set up is [here](./INITIAL_SETTING.md).
 
 # setup
 
-```
+```shell
 # install required packages via brew
 $ task ansible
 ```
 
 # install
 
-```
+```shell
 # create symbolic linc
 # add .zshrc
 $ task dotfile
+```
+
+# check
+
+```shell
+$ time zsh -i -c exit
 ```

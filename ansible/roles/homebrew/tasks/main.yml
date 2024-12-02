@@ -5,6 +5,7 @@
 - name: install homebrew packages
   community.general.homebrew:
     name:
+      - sheldon
       - ansible
       - mas
       # basics

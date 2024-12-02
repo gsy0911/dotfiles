@@ -52,16 +52,6 @@ function dl() {
     echo "export li=$image"
 }
 
-# TRivy Peco
-function trp() {
-    if [[ $1 ]]; then
-        dl $1
-    else
-        dl
-    fi
-    trivy --severity=HIGH,CRITICAL --ignore-unfixed=true $li
-}
-
 # CD Project-directory
 function cdp() {
     local dir="$( ls -1d $HOME/Development/Projects/* | peco )"
@@ -74,14 +64,14 @@ function cdp() {
 zle -N cdp
 bindkey "^p" cdp
 
-function cdpp() {
-    cdp
-    local dir="$( ls -D | peco )"
-    if [ ! -z "$dir" ] ; then
-        echo $dir
-        cd $dir
-    fi
-}
+# function cdpp() {
+#     cdp
+#     local dir="$( ls -D | peco )"
+#     if [ ! -z "$dir" ] ; then
+#         echo $dir
+#         cd $dir
+#     fi
+# }
 
 # Docker RM Images with Peco
 function drmip(){
@@ -102,12 +92,12 @@ function drmig() {
     | xargs docker image rm
 }
 
-function jump_middle() {
-    CURSOR=$((${#BUFFER} / 2))
-    zle redisplay
-}
-zle -N jump_middle
-bindkey "^j" jump_middle
+# function jump_middle() {
+#     CURSOR=$((${#BUFFER} / 2))
+#     zle redisplay
+# }
+# zle -N jump_middle
+# bindkey "^j" jump_middle
 
 # Node-SCript
 function nsc() {
@@ -118,40 +108,40 @@ function nsc() {
 }
 
 # CDK List && cdk Deploy
-function cdkld() {
-    if [[ $1 ]]; then
-        local stack="$(cdk ls | sort | grep $1 | peco)"
-        echo deploying... $stack
-        cdk deploy $stack
-    else
-        local stack="$(cdk ls | sort | peco)"
-        echo deploying... $stack
-        cdk deploy $stack
-    fi
-}
+# function cdkld() {
+#     if [[ $1 ]]; then
+#         local stack="$(cdk ls | sort | grep $1 | peco)"
+#         echo deploying... $stack
+#         cdk deploy $stack
+#     else
+#         local stack="$(cdk ls | sort | peco)"
+#         echo deploying... $stack
+#         cdk deploy $stack
+#     fi
+# }
 
-function cdk_pkg_ver() {
-    if [[ -f package.json ]]; then
-        local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
-        if [ $cdk_installed_packages_version_count -eq 1 ]; then
-            echo "cdk package compatibility: ⭕"
-        else
-            echo "cdk package compatibility: ❌"
-        fi
-    else
-        echo "cdk package not found"
-    fi
-}
-
-function set_cdk() {
-    if [[ $1 ]]; then
-        local account=$(aws sts get-caller-identity --profile $1 | jq -r .Account)
-    else
-        local account=$(aws sts get-caller-identity | jq -r .Account)
-    fi
-    export CDK_DEFAULT_ACCOUNT=$account
-    echo "set CDK_DEFAULT_ACCOUNT as $CDK_DEFAULT_ACCOUNT as deploy account"
-}
+# function cdk_pkg_ver() {
+#     if [[ -f package.json ]]; then
+#         local cdk_installed_packages_version_count="$(cat package-lock.json | sed -e 's/ //g' |grep -E "\"@aws-cdk/.*?:\"[0-9\.]*\"," | awk -F ":" '{printf "%s\n", $2}' | sed -e 's/\"//g' | sed -e 's/,//g' | uniq | wc -l | awk '{print $1}')"
+#         if [ $cdk_installed_packages_version_count -eq 1 ]; then
+#             echo "cdk package compatibility: ⭕"
+#         else
+#             echo "cdk package compatibility: ❌"
+#         fi
+#     else
+#         echo "cdk package not found"
+#     fi
+# }
+#
+# function set_cdk() {
+#     if [[ $1 ]]; then
+#         local account=$(aws sts get-caller-identity --profile $1 | jq -r .Account)
+#     else
+#         local account=$(aws sts get-caller-identity | jq -r .Account)
+#     fi
+#     export CDK_DEFAULT_ACCOUNT=$account
+#     echo "set CDK_DEFAULT_ACCOUNT as $CDK_DEFAULT_ACCOUNT as deploy account"
+# }
 
 # show aws CREDential
 function cred() {
