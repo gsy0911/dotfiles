@@ -15,6 +15,8 @@
   - [~~zinitでzsh環境をいい感じにしたメモ~~](https://qiita.com/crossroad0201/items/17270127732dc20fa8b2)
   - [zle](https://dev.classmethod.jp/articles/zsh-zle-introduction/)
   - [dotfiles with zsh](https://www.m3tech.blog/entry/dotfiles-bonsai)
+  - [高速で設定しやすいZsh/BashプラグインマネージャーSheldonの紹介](https://zenn.dev/ganta/articles/e1e0746136ce67)
+  - [dotfiles を育て始めた話](https://zenn.dev/simpleform_blog/articles/20241201-start_dotfiles)
 - vim
   - [vimrcの設定方法](https://qiita.com/iwaseasahi/items/0b2da68269397906c14c)
   - [dein設定](https://knowledge.sakura.ad.jp/23248/)

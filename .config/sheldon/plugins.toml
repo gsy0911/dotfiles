@@ -14,9 +14,8 @@ shell = "zsh"
 
 
 [templates]
-defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
-
-[plugins]
+defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks | get: \"post\" | nl }}"
+# defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
@@ -25,12 +24,11 @@ github = "romkatv/zsh-defer"
 github = "zdharma-continuum/fast-syntax-highlighting"
 apply = ["defer"]
 
-[plugins.autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
-apply = ["defer"]
+# [plugins.autosuggestions]
+# github = "zsh-users/zsh-autosuggestions"
+# apply = ["defer"]
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+[plugins.abbr]
+github = "olets/zsh-abbr"
+apply = ["defer"]
 

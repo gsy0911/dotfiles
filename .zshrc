@@ -5,13 +5,14 @@
 #                          (_)___|___/_| |_|_|  \___|
 #
 
+# speed check
+# zmodload zsh/zprof
+
 # enable brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # enable sheldon
 eval "$(sheldon source)"
 
-# speed check
-# zmodload zsh/zprof
 
 ## not share command history between terminals
 setopt no_share_history
