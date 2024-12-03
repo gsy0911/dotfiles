@@ -55,19 +55,19 @@ format = "[$time]($style) "
 style = "#32cd32"
 disabled = false
 
-[custom.cdk]
-# shows output of command
-command = "echo $CDK_VERSION"
-# can specify filters
-when = """ test -e cdk.json """
-symbol = "cdk:"
-format = "[$symbol$output]($style) "
+# [custom.cdk]
+# # shows output of command
+# command = "echo $CDK_VERSION"
+# # can specify filters
+# when = """ test -e cdk.json """
+# symbol = "cdk:"
+# format = "[$symbol$output]($style) "
 
-[custom.archi]
-# shows output of command
-command = "uname -m"
-when = true
-symbol = "arch:"
-style = "#ff8c00"
-format = "[$symbol$output]($style) "
+# [custom.archi]
+# # shows output of command
+# command = "uname -m"
+# when = true
+# symbol = "arch:"
+# style = "#ff8c00"
+# format = "[$symbol$output]($style) "
 
