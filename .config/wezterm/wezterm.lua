@@ -227,6 +227,11 @@ config.keys = {
         mods = "CMD",
         action = wezterm.action.CloseCurrentPane { confirm = true },
     },
+    {
+        key = 'v',
+        mods = 'CTRL',
+        action = act.PasteFrom 'Clipboard'
+    },
     -- ⌘ Ctrl ,で下方向にペイン分割
 --     {
 --         key = ",",

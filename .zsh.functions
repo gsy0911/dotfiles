@@ -41,6 +41,16 @@ function mm() {
     fi
 }
 
+function fzf-task-command-copy() {
+    local allTask=$(task | grep -v "Available tasks for")
+    local src=$(task | grep -v "Available tasks for" | fzf --preview "echo $allTask")
+    local c=$(task | grep $src | cut -d' ' -f2)
+    echo -n "task ${c%?}" | pbcopy
+    zle accept-line
+}
+zle -N fzf-task-command-copy
+bindkey '^t' fzf-task-command-copy
+
 # CD Project-directory
 # function cdp() {
 #     local dir="$( ls -1d $HOME/Development/Projects/* | fzf )"
