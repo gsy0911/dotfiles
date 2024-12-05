@@ -41,46 +41,39 @@ function mm() {
     fi
 }
 
-# Docker List
-function dl() {
-    if [[ $1 ]]; then
-        local image="$(docker images | sed -e '1d' | grep $1 | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
-    else
-        local image="$(docker images | sed -e '1d' | sort | awk '{printf "%-20s %-20s %s\n", $2, $3, $1}' | peco | awk '{printf "%s:%s", $3, $1}' | sed -e 's/%//g')"
-    fi
-    export li=$image
-    echo "export li=$image"
-}
-
 # CD Project-directory
-function cdp() {
-    local dir="$( ls -1d $HOME/Development/Projects/* | peco )"
-    if [ ! -z "$dir" ] ; then
-        echo $dir
-        cd $dir
-	zle accept-line
-    fi
-}
-zle -N cdp
-bindkey "^p" cdp
-
-# function cdpp() {
-#     cdp
-#     local dir="$( ls -D | peco )"
+# function cdp() {
+#     local dir="$( ls -1d $HOME/Development/Projects/* | fzf )"
 #     if [ ! -z "$dir" ] ; then
 #         echo $dir
 #         cd $dir
+# 	zle accept-line
 #     fi
 # }
+# zle -N cdp
+# bindkey "^p" cdp
+
+# see: https://zenn.dev/mozumasu/articles/mozumasu-lazy-git
+# ghq
+function ghq-fzf() {
+  local src=$(ghq list | fzf --preview "bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
+  if [ -n "$src" ]; then
+    BUFFER="cd $(ghq root)/$src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+zle -N ghq-fzf
+bindkey '^g' ghq-fzf
 
 # Docker RM Images with Peco
 function drmip(){
-    local imageId=$(docker images | sort | peco | awk '{print $3}')
+    local imageId=$(docker images | sort | fzf | awk '{print $3}')
     [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
 function drmcp(){
-    local containerId=$(docker ps -a | sort | peco | awk '{print $1}')
+    local containerId=$(docker ps -a | sort | fzf | awk '{print $1}')
     [ -n "$containerId" ] && docker rm -f $containerId
 }
 
@@ -150,7 +143,7 @@ function cred() {
 
 # CREDential with Peco
 function credp() {
-    target=$(cred | peco)
+    target=$(cred | fzf)
     export AWS_PROFILE=$target
     export AWS_DEFAULT_PROFILE=$target
     echo "set AWS_DEFAULT_PROFILE as $Red$AWS_DEFAULT_PROFILE$Rst"
@@ -158,14 +151,14 @@ function credp() {
 
 # Docker EXec with Peco
 function dexp() {
-    container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
+    container=$(docker ps --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | fzf | awk '{printf "%s\n", $1}')
     echo "chosen: $Red$container$Rst"
     docker exec -it $container /bin/bash
 }
 
 # Docker LOGs with Peco
 function dlop() {
-    container=$(docker ps -a --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | peco | awk '{printf "%s\n", $1}')
+    container=$(docker ps -a --format "table {{.ID}} {{.Names}}" | grep -v "CONTAINER" | fzf | awk '{printf "%s\n", $1}')
     echo "chosen: $Red$container$Rst"
     docker logs $container
 }
