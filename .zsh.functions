@@ -41,6 +41,15 @@ function mm() {
     fi
 }
 
+function fzf-help() {
+    target=$(ghq root)/dotfiles/man
+    local src=$(ls $target | fzf --preview "bat $target/{}")
+    bat $target/$src
+    zle accept-line
+}
+zle -N fzf-help
+bindkey '^h' fzf-help
+
 function fzf-task-command-copy() {
     local src=$(task | grep -v "Available tasks for" | fzf)
     local selected=$(echo $src | cut -d' ' -f2)
