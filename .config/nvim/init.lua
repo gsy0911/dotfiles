@@ -29,6 +29,11 @@ vim.keymap.set("n", "<space>y", '"*yy')
 vim.keymap.set("v", "<space>y", '"*yy')
 vim.keymap.set("n", "<space>p", '"*p')
 vim.keymap.set("v", "<space>p", '"*p')
+-- 行の入れ替え
+vim.keymap.set("n", "<C-S-j>", "<Cmd>move .+1<CR>==")
+vim.keymap.set("n", "<C-S-k>", "<Cmd>move .-2<CR>==")
+vim.keymap.set("x", "<C-S-j>", ":move '>+1<CR>gv=gv")
+vim.keymap.set("x", "<C-S-k>", ":move '<-2<CR>gv=gv")
 -- cursor
 vim.opt.guicursor = "n-i:ver25"
 -- say

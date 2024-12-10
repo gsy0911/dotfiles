@@ -43,7 +43,7 @@ function mm() {
 
 function fzf-help() {
     target=$(ghq root)/dotfiles/man
-    local src=$(ls $target | fzf --preview "bat $target/{}")
+    local src=$(ls $target | fzf --preview "bat --color=always --style=header,grid --line-range :80 $target/{}")
     bat $target/$src
     zle accept-line
 }
