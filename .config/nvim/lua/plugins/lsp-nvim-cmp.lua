@@ -6,6 +6,7 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
+		"dmitmel/cmp-cmdline-history",
 		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
 	},
@@ -14,7 +15,6 @@ return {
     local types = require('cmp.types')
 	  vim.opt.completeopt = { "menu", "menuone", "noselect" }
     cmp.setup({
-      
       snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
@@ -43,6 +43,16 @@ return {
         { name = "buffer" },
         { name = "path" },
       }),
+    })
+
+    -- コマンドラインの補完設定
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'cmdline' },
+        { name = 'path' },
+        { name = 'cmdline_history' }
+      })
     })
   end
 }
