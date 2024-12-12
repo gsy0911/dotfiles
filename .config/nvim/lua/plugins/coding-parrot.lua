@@ -4,15 +4,20 @@ return {
     -- 'ibhagwan/fzf-lua',
     'nvim-lua/plenary.nvim'
   },
+  lazy = false,
   -- optionally include "rcarriga/nvim-notify" for beautiful notifications
   config = function()
     -- require("fzf-lua").setup({})
     require("parrot").setup({
       -- Providers must be explicitly added to make them available.
       providers = {
-        -- anthropic = {
-        --   api_key = os.getenv "ANTHROPIC_API_KEY",
-        -- },
+        -- models: https://docs.anthropic.com/en/docs/about-claude/models
+        anthropic = {
+          api_key = os.getenv "ANTHROPIC_API_KEY",
+          topic = {
+            model = "claude-3-haiku-20240307"
+          }
+        },
         -- gemini = {
         --   api_key = os.getenv "GEMINI_API_KEY",
         -- },
@@ -50,10 +55,11 @@ return {
     })
   end,
   keys = {
-    {mode = "n", "<C-g>t", "<cmd>PrtChatNew vsplit<CR><C-w>x<C-w>l", desc = "new chat with tab"},
-    {mode = "n", "<C-g>v", "<cmd>PrtChatNew vsplit<CR>", desc = "new chat with vsplit"},
+    {mode = "n", "<C-g>t", "<cmd>PrtChatToggle popup<CR>", desc = "new chat with popup"},
+    {mode = "n", "<C-g>c", "<cmd>PrtChatNew popup<CR>", desc = "new chat with popup"},
     {mode = "n", "<C-g>pp", "<cmd>PrtProvider pplx<CR>", desc = "new chat with Perplexity"},
     {mode = "n", "<C-g>po", "<cmd>PrtProvider openai<CR>", desc = "new chat with OpenAI"},
+    {mode = "n", "<C-g>pa", "<cmd>PrtProvider anthropic<CR>", desc = "new chat with Anthropic"},
     {mode = "n", "<C-g>s", "<cmd>PrtStatus<CR>", desc = "show model"},
   },
 }
