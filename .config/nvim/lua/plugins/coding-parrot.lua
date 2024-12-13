@@ -51,6 +51,10 @@ return {
         -- xai = {
         --   api_key = os.getenv "XAI_API_KEY",
         -- },
+      },    
+      system_prompt = {
+        chat = "openai",
+        command = "anthropic"
       },
     })
   end,
@@ -60,6 +64,8 @@ return {
     {mode = "n", "<C-g>pp", "<cmd>PrtProvider pplx<CR>", desc = "new chat with Perplexity"},
     {mode = "n", "<C-g>po", "<cmd>PrtProvider openai<CR>", desc = "new chat with OpenAI"},
     {mode = "n", "<C-g>pa", "<cmd>PrtProvider anthropic<CR>", desc = "new chat with Anthropic"},
+    {mode = "v", "<C-g>r", ":'<,'>PrtRewrite<CR>", desc = "new chat with Anthropic"},
+    {mode = "v", "<C-g>i", ":'<,'>PrtRewrite<CR>", desc = "new chat with Anthropic"},
     {mode = "n", "<C-g>s", "<cmd>PrtStatus<CR>", desc = "show model"},
   },
 }
