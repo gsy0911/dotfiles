@@ -104,3 +104,10 @@ alias da='direnv allow'
 alias lg="lazygit"
 # nvim
 alias n='nvim'
+
+# aerospace
+# 起動
+alias aeroon="aerospace enable on"
+# 停止
+alias aerooff="aerospace enable off"
+
