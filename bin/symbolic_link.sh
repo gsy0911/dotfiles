@@ -46,6 +46,7 @@ for dotfile in $(ls -F .config/nvim | grep -v /); do
     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
     ln -snfv "$(pwd)/.config/nvim/$dotfile" "$HOME/.config/nvim/$dotfile"
 done
+
 mkdir -p $HOME/.config/nvim/lua/plugins
 for dotfile in $(ls -F .config/nvim/lua/plugins | grep -v /); do
     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
@@ -67,11 +68,21 @@ echo "create .config/aerospace in $HOME"
 mkdir -p $HOME/.config/aerospace
 ln -snfv "$(pwd)/.config/aerospace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
 
+
 echo "\n================================="
-echo "create ./.hammerspoon in $HOME"
-mkdir -p $HOME/.hammerspoon
-ln -snfv "$(pwd)/.config/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
-ln -snfv "$(pwd)/.config/hammerspoon/ctrlDoublePress.lua" "$HOME/.hammerspoon/ctrlDoublePress.lua"
+echo "create .config/sketchybar in $HOME"
+mkdir -p $HOME/.config/sketchybar/plugins
+ln -snfv "$(pwd)/.config/sketchybar/sketchybarrc" "$HOME/.config/sketchybar/sketchybarrc"
+for dotfile in $(ls -F .config/sketchybar/plugins | grep -v /); do
+    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+    ln -snfv "$(pwd)/.config/sketchybar/plugins/$dotfile" "$HOME/.config/sketchybar/plugins/$dotfile"
+done
+
+# echo "\n================================="
+# echo "create ./.hammerspoon in $HOME"
+# mkdir -p $HOME/.hammerspoon
+# ln -snfv "$(pwd)/.config/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
+# ln -snfv "$(pwd)/.config/hammerspoon/ctrlDoublePress.lua" "$HOME/.hammerspoon/ctrlDoublePress.lua"
 
 echo "\n================================="
 echo "create .compose in $HOME"

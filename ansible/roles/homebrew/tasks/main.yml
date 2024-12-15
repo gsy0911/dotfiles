@@ -69,17 +69,18 @@
       # portscan
       - nmap
       # simple-hotkeys-daemon
-      - koekeishiya/formulae/skhd
+      # - koekeishiya/formulae/skhd
       - yabai
       # neovim
       - neovim
       - ripgrep
       - vhs
-      - im-select
+      # - im-select
       - gh
       - ghq
       # font
       - font-hack-nerd-font
+      - sketchybar
       # $ img2sixel to show image in terminal
       - libsixel
       # Git
