@@ -63,6 +63,11 @@ mkdir -p $HOME/.config/sheldon
 ln -snfv "$(pwd)/.config/sheldon/plugins.toml" "$HOME/.config/sheldon/plugins.toml"
 
 echo "\n================================="
+echo "create .config/aerospace in $HOME"
+mkdir -p $HOME/.config/aerospace
+ln -snfv "$(pwd)/.config/aerospace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
+
+echo "\n================================="
 echo "create ./.hammerspoon in $HOME"
 mkdir -p $HOME/.hammerspoon
 ln -snfv "$(pwd)/.config/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"

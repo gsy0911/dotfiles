@@ -14,9 +14,8 @@
       - minecraft
       - cursor
       # - arc
-      # キーボードの読み込みができなくなっていたため
-      # - karabiner-elements
-      # - iterm2
       - wezterm
       - hammerspoon
       - font-cica
+      # aerospace
+      - nikitabobko/tap/aerospace
