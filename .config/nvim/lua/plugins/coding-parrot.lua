@@ -64,8 +64,9 @@ return {
     {mode = "n", "<C-g>pp", "<cmd>PrtProvider pplx<CR>", desc = "new chat with Perplexity"},
     {mode = "n", "<C-g>po", "<cmd>PrtProvider openai<CR>", desc = "new chat with OpenAI"},
     {mode = "n", "<C-g>pa", "<cmd>PrtProvider anthropic<CR>", desc = "new chat with Anthropic"},
-    {mode = "v", "<C-g>r", ":'<,'>PrtRewrite<CR>", desc = "new chat with Anthropic"},
-    {mode = "v", "<C-g>i", ":'<,'>PrtRewrite<CR>", desc = "new chat with Anthropic"},
+    {mode = "v", "<C-g>r", ":'<,'>PrtRewrite<CR>", desc = "rewrite code with comment"},
+    {mode = "v", "<C-g>i", ":'<,'>PrtImplement<CR>", desc = "implement code from selected comment"},
+    {mode = "v", "<C-g>a", ":'<,'>PrtAppend<CR>", desc = "add comment"},
     {mode = "n", "<C-g>s", "<cmd>PrtStatus<CR>", desc = "show model"},
   },
 }

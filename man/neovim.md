@@ -6,6 +6,10 @@
 - `<C-g>v`: vsplitでチャット開始
 - `<C-g>pp`: Perplexityを利用
 - `<C-g>po`: OpenAIを利用
+- `<C-g>pa`: Claudeを利用
+- `<C-g>r`: 選択範囲を修正する 
+- `<C-g>i`: コメントから実装をする 
+- `<C-g>a`: コメントなどの追加 
 
 ## nvim-tree
 
