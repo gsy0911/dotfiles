@@ -47,7 +47,7 @@ tasks:
       - for: { var: GIT, as: git }
         cmd: ln -snfv {{.PWD}}/.config/git/{{.git}} {{.HOME}}/.config/git/{{.git}}
       - for: { var: LAZYGIT, as: lazygit }
-        cmd: ln -snfv {{.PWD}}/.config/git/{{.lazygit}} {{.HOME}}/Library/Application\ Support/lazygit/{{.lazygit}}
+        cmd: ln -snfv {{.PWD}}/.config/lazygit/{{.lazygit}} {{.HOME}}/Library/Application\ Support/lazygit/{{.lazygit}}
       - for: { var: NVIM, as: nvim }
         cmd: ln -snfv {{.PWD}}/.config/nvim/{{.nvim}} {{.HOME}}/.config/nvim/{{.nvim}}
       - for: { var: NVIM_PLUGINS, as: plugin }
