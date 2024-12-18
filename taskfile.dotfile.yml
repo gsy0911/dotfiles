@@ -1,0 +1,69 @@
+version: '3'
+
+tasks:
+
+  mkdir:
+    desc: mkdir
+    silent: true
+    internal: true
+    vars:
+      DIRS: ~/.config ~/.config/nvim/lua/plugins ~/.config/wezterm ~/.config/sheldon ~/.config/aerospace ~/.config/sketchybar/plugins
+    cmds:
+      - for: { var: DIRS, as: dir }
+        cmd: mkdir -p {{.dir}}
+
+  symbolic-link-to-config:
+    desc: add single symbolic-link
+    silent: true
+    internal: true
+    vars:
+      PWD:
+        sh: pwd
+    cmds:
+      - ln -snfv {{.PWD}}/.config/{{.filePath}} {{.HOME}}/.config/{{.filePath}}
+
+  install:
+    desc: test
+    silent: true
+    vars:
+      PWD:
+        sh: pwd
+      CONFIGS:
+        sh: ls -F .config | grep -v / 
+      GIT:
+        sh: ls -F .config/git | grep -v / 
+      LAZYGIT:
+        sh: ls -F .config/lazygit | grep -v / 
+      NVIM:
+        sh: ls -F .config/nvim | grep -v / 
+      NVIM_PLUGINS:
+        sh: ls -F .config/nvim/lua/plugins | grep -v / 
+      SKETCHYBARS:
+        sh: ls -F .config/sketchybar/plugins | grep -v / 
+    cmds:
+      - task: mkdir
+      - for: { var: CONFIGS, as: config }
+        cmd: ln -snfv {{.PWD}}/.config/{{.config}} {{.HOME}}/.config/{{.config}}
+      - for: { var: GIT, as: git }
+        cmd: ln -snfv {{.PWD}}/.config/git/{{.git}} {{.HOME}}/.config/git/{{.git}}
+      - for: { var: LAZYGIT, as: lazygit }
+        cmd: ln -snfv {{.PWD}}/.config/git/{{.lazygit}} {{.HOME}}/Library/Application\ Support/lazygit/{{.lazygit}}
+      - for: { var: NVIM, as: nvim }
+        cmd: ln -snfv {{.PWD}}/.config/nvim/{{.nvim}} {{.HOME}}/.config/nvim/{{.nvim}}
+      - for: { var: NVIM_PLUGINS, as: plugin }
+        cmd: ln -snfv {{.PWD}}/.config/nvim/lua/plugins/{{.plugin}} {{.HOME}}/.config/nvim/lua/plugins/{{.plugin}}
+      - for: { var: SKETCHYBARS, as: sketchybar }
+        cmd: ln -snfv {{.PWD}}/.config/sketchybar/plugins/{{.plugin}} {{.HOME}}/.config/sketchybar/plugins/{{.plugin}}
+      - task: symbolic-link-to-config 
+        vars:
+          filePath: wezterm/wezterm.lua
+      - task: symbolic-link-to-config 
+        vars:
+          filePath: sheldon/plugins.toml
+      - task: symbolic-link-to-config
+        vars:
+          filePath: aerospace/aerospace.toml
+      - task: symbolic-link-to-config
+        vars:
+          filePath: sketchybar/sketchybarrc
+
