@@ -10,11 +10,6 @@ tasks:
       - task -l --sort none
     silent: true
 
-  install:
-    desc: create symbolic links
-    cmds:
-      - sh ./bin/symbolic_link.sh
-
   ansible:
     desc: run-ansible
     dir: ./ansible
