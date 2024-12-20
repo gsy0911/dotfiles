@@ -44,3 +44,7 @@ tasks:
     requires:
       vars: [token]
 
+  start:
+    desc: start services
+    cmds:
+      - brew services start sketchybar
