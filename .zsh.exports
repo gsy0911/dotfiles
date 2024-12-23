@@ -2,6 +2,7 @@
 
 # brew path
 export BREW_PREFIX=$(brew --prefix)
+export HOMEBREW_AUTO_UPDATE_SECS=86400
 
 # python
 export PATH="$BREW_PREFIX/opt/python@3.10/bin:$PATH"
