@@ -312,6 +312,30 @@ config.keys = {
         mods = 'CMD|SHIFT',
         action = act.ActivateTabRelative(1)
     },
+    -- スクロールアップ
+    {
+      key = 'u',
+      mods = 'CTRL',
+      action = wezterm.action.ScrollByLine(-5), -- 5行上にスクロール
+    },
+    -- スクロールダウン
+    {
+      key = 'd',
+      mods = 'CTRL',
+      action = wezterm.action.ScrollByLine(5), -- 5行下にスクロール
+    },
+    -- スクロールアップ
+    {
+      key = 'u',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.ScrollByPage(-1), -- 1ページ上にスクロール
+    },
+    -- スクロールダウン
+    {
+      key = 'd',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.ScrollByPage(1), -- 1ページ下にスクロール
+    },
     {
         key = '{',
         mods = 'SHIFT|CTRL',
