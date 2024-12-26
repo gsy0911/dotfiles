@@ -67,6 +67,13 @@ function fzf-task-command-copy() {
 zle -N fzf-task-command-copy
 bindkey '^t' fzf-task-command-copy
 
+function open-neovim() {
+    nvim
+    zle accept-line
+}
+zle -N open-neovim
+bindkey '^n' open-neovim
+
 # CD Project-directory
 # function cdp() {
 #     local dir="$( ls -1d $HOME/Development/Projects/* | fzf )"
