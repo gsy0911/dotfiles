@@ -12,7 +12,8 @@ config.use_ime = true
 -- Window
 ----------------------------------------------------
 
-config.color_scheme = 'Wombat'
+-- config.color_scheme = 'Wombat'
+config.color_scheme = 'OneDark (base16)'
 config.window_padding = {
   left = "0.5cell",
   right = "0.5cell",

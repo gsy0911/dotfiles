@@ -67,13 +67,3 @@ usage:docker ## - ## docker network create {network-name}
 
 usage:cdk ## cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1 ## bootstrap
 
-desc:github ## 1. ## generate token in GitHub
-desc:github ## 2.a ## `$ git remote add origin https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
-desc:github ## 2.b ## or edit origin as `https://<TOKEN>@github.com/<USERNAME>/<REPO>.git`
-
-usage:av-antivirus ## sudo freshclam ## update virus definition
-usage:av-antivirus ## clamdscan --infected /{path} ## scan {path}
-usage:av-antivirus ## sudo /usr/local/sbin/clamd ## start daemon
-
-alias:python ## p ## poetry shell
-alias:python ## j ## jupyter lab

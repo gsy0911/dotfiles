@@ -1,5 +1,11 @@
 # Keymap
 
+## avante
+
+- `<Leader>af`:
+- `<Leader>aa`:
+- `<Leader>ae`:
+
 ## parrot
 
 - `<C-g>t`: タブでチャット開始
