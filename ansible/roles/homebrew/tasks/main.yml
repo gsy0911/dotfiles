@@ -68,14 +68,10 @@
       - mkcert
       # portscan
       - nmap
-      # simple-hotkeys-daemon
-      # - koekeishiya/formulae/skhd
-      - yabai
       # neovim
       - neovim
       - ripgrep
       - vhs
-      # - im-select
       - gh
       - ghq
       # font
@@ -91,6 +87,4 @@
       # document a Database
       # see: https://github.com/k1LoW/tbls
       - k1LoW/tap/tbls
-      # benchmark
-      # - wrk2 
 

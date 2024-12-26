@@ -91,9 +91,6 @@ alias arm='arch -arm64 zsh'
 # weather
 alias tenki='curl wttr.in/Tokyo'
 
-# Delete cache of the Microsoft Teams which is marvelous, supreme, and best UI/UX never experience before.
-alias teams='rm -r ~/Library/Application\ Support/Microsoft/Teams'
-
 # 画像の表示
 alias lsimg='img2sixel'
 
