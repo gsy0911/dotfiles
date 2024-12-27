@@ -171,7 +171,7 @@ alt-shift-p = ['move-node-to-workspace P', 'workspace P']
 alt-shift-q = 'move-node-to-workspace Q'
 alt-shift-r = 'move-node-to-workspace R'
 alt-shift-s = 'move-node-to-workspace S'
-alt-shift-t = 'move-node-to-workspace T'
+alt-shift-t = ['move-node-to-workspace T', 'workspace T']
 alt-shift-u = 'move-node-to-workspace U'
 alt-shift-v = ['move-node-to-workspace V', 'workspace V']
 alt-shift-w = ['move-node-to-workspace W', 'workspace W']
@@ -226,6 +226,10 @@ run = 'move-node-to-workspace P'
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
