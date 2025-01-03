@@ -10,6 +10,8 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+FONT="Maple Mono" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+PADDINGS=3 # All paddings use this value (icon, label, background)
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 # These are only some of the options available. For all options see:
@@ -42,19 +44,42 @@ sketchybar --bar "${bar[@]}"
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
-default=(
-  padding_left=5
-  padding_right=5
-  icon.font="Hack Nerd Font:Bold:17.0"
-  label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
-  icon.padding_left=4
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=4
+# Setting up default item properties
+defaults=(
+  updates=when_shown
+
+  # icon
+  icon.drawing=off
+  icon.padding_left=0
+  icon.padding_right=0
+  icon.font="$FONT:Regular:14.0"
+
+  # label/text
+  label.font="$FONT:Regular:14.0"
+  label.color=$LABEL_COLOR
+
+  # padding
+  label.padding_left=8
+  label.padding_right=8
+  padding_right=2
+  padding_left=2
+
+  # background
+  background.height=24
+  background.corner_radius=5
+  background.border_width=2
+
+  # popup
+  popup.background.border_width=2
+  popup.background.corner_radius=9
+  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+
+  scroll_texts=on
 )
-sketchybar --default "${default[@]}"
+
+sketchybar --default "${defaults[@]}"
 
 ##### Adding Mission Control Space Indicators #####
 # Let's add some mission control spaces:
