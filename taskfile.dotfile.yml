@@ -7,7 +7,7 @@ tasks:
     silent: true
     internal: true
     vars:
-      DIRS: ~/.config ~/.config/nvim/lua/plugins ~/.config/wezterm ~/.config/sheldon ~/.config/aerospace ~/.config/sketchybar/plugins
+      DIRS: ~/.config ~/.config/nvim/lua/plugins ~/.config/wezterm ~/.config/sheldon ~/.config/aerospace ~/.config/sketchybar/plugins ~/.config/sketchybar/items
     cmds:
       - for: { var: DIRS, as: dir }
         cmd: mkdir -p {{.dir}}
@@ -38,8 +38,10 @@ tasks:
         sh: ls -F .config/nvim | grep -v / 
       NVIM_PLUGINS:
         sh: ls -F .config/nvim/lua/plugins | grep -v / 
-      SKETCHYBARS:
+      SKETCHYBAR_PLUGINS:
         sh: ls -F .config/sketchybar/plugins | grep -v / 
+      SKETCHYBAR_ITEMS:
+        sh: ls -F .config/sketchybar/items | grep -v / 
     cmds:
       - task: mkdir
       - for: { var: CONFIGS, as: config }
@@ -52,8 +54,10 @@ tasks:
         cmd: ln -snfv {{.PWD}}/.config/nvim/{{.nvim}} {{.HOME}}/.config/nvim/{{.nvim}}
       - for: { var: NVIM_PLUGINS, as: plugin }
         cmd: ln -snfv {{.PWD}}/.config/nvim/lua/plugins/{{.plugin}} {{.HOME}}/.config/nvim/lua/plugins/{{.plugin}}
-      - for: { var: SKETCHYBARS, as: sketchybar }
-        cmd: ln -snfv {{.PWD}}/.config/sketchybar/plugins/{{.plugin}} {{.HOME}}/.config/sketchybar/plugins/{{.plugin}}
+      - for: { var: SKETCHYBAR_PLUGINS, as: sketchybar }
+        cmd: ln -snfv {{.PWD}}/.config/sketchybar/plugins/{{.sketchybar}} {{.HOME}}/.config/sketchybar/plugins/{{.sketchybar}}
+      - for: { var: SKETCHYBAR_ITEMS, as: sketchybar_item }
+        cmd: ln -snfv {{.PWD}}/.config/sketchybar/items/{{.sketchybar_item}} {{.HOME}}/.config/sketchybar/items/{{.sketchybar_item}}
       - task: symbolic-link-to-config 
         vars:
           filePath: wezterm/wezterm.lua
@@ -66,4 +70,7 @@ tasks:
       - task: symbolic-link-to-config
         vars:
           filePath: sketchybar/sketchybarrc
+      - task: symbolic-link-to-config
+        vars:
+          filePath: sketchybar/colors.sh
 
