@@ -19,3 +19,5 @@
       - font-cica
       # aerospace
       - nikitabobko/tap/aerospace
+      # icons for sketchybar
+      - sf-symbols

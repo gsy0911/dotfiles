@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-### Catppuccin
+### Color Tokens
 export RED=0xfff38ba8
 export YELLOW=0xfff9e2af
 export ORANGE=0xfffab387
@@ -12,7 +12,6 @@ export FLAMINGO=0xfff2cdcd
 export FLAMINGO_BG=0x19f2cdcd
 export PINK=0xfff5c2e7
 export PINK_BG=0x19f5c2e7
-
 export OVERLAY1=0xff7f849c
 
 # General bar colors

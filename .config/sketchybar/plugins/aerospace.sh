@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 SPACE_ID="$1"
 FOCUSED_WORKSPACE="$"
