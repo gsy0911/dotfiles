@@ -48,3 +48,4 @@ tasks:
     desc: start services
     cmds:
       - brew services start sketchybar
+      - aerospace reload-config
