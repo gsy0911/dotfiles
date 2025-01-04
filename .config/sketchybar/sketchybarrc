@@ -67,6 +67,16 @@ sketchybar --default "${defaults[@]}"
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces.
 
+FRONT_APP=(
+  label.font="JetBrainsMono Nerd Font:Thin:13.0"
+  icon.font="sketchybar-app-font:Regular:14.0" 
+  script="$PLUGIN_DIR/front_app.sh"
+)
+
+sketchybar --add item front_app left \
+           --set front_app "${FRONT_APP[@]}" \
+           --subscribe front_app front_app_switched
+
 # aerospace
 sketchybar --add event aerospace_workspace_change \
            --add event window_focus
@@ -107,15 +117,6 @@ done
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-FRONT_APP=(
-  label.font="JetBrainsMono Nerd Font:Thin:13.0"
-  icon.font="sketchybar-app-font:Regular:14.0" 
-  script="$PLUGIN_DIR/front_app.sh"
-)
-
-sketchybar --add item front_app right \
-           --set front_app "${FRONT_APP[@]}" \
-           --subscribe front_app front_app_switched
 # sketchybar --add item clock right \
 #            --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
 #            --add item volume right \
