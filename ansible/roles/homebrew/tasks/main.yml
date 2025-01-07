@@ -27,6 +27,7 @@
       # aws
       - aws-cdk
       - awscli
+      - localstack/tap/localstack-cli
       # node
       # - node@20
       # - node
