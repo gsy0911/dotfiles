@@ -48,7 +48,7 @@ function fzf-help() {
     zle accept-line
 }
 zle -N fzf-help
-bindkey '^h' fzf-help
+# bindkey '^h' fzf-help
 
 function fzf-task-command-copy() {
     local src=$(task | grep -v "Available tasks for" | fzf)
