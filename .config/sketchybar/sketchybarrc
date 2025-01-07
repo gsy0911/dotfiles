@@ -8,7 +8,8 @@
 # For a (much) more advanced configuration example see my dotfiles:
 # https://github.com/FelixKratz/dotfiles
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+# Loads all defined colors
+source "$CONFIG_DIR/colors.sh" 
 
 ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
@@ -25,8 +26,8 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 # Setting up the general bar appearance of the bar
 bar=(
     # color
-    color=0x7f1e1e2e
-    border_color=0xffb8e986
+    color=$BAR_BG_COLOR
+    border_color=$BAR_BOARDER_COLOR
     position=top
     height=30
     blur_radius=10

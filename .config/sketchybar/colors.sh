@@ -4,7 +4,8 @@
 export RED=0xfff38ba8
 export YELLOW=0xfff9e2af
 export ORANGE=0xfffab387
-export GREEN=0xffa6e3a1
+export BLUE_BG=0x7f1e1e2e
+export GREEN=0xffb8e986
 export GREEN_BG=0x19a6e3a1
 export LAVENDER=0xffb4befe
 export LAVENDER_BG=0x19b4befe
@@ -15,7 +16,8 @@ export PINK_BG=0x19f5c2e7
 export OVERLAY1=0xff7f849c
 
 # General bar colors
-export BAR_COLOR=0x00000000
+export BAR_BG_COLOR=$BLUE_BG
+export BAR_BOARDER_COLOR=$GREEN
 export LABEL_COLOR=$OVERLAY1
 
 export POPUP_BACKGROUND_COLOR=0xFF272936
