@@ -1,7 +1,8 @@
 #!/bin/sh
 
 CLOCK_ITEM=(
-  background.color=$BOARDER_BG_COLOR
+  background.color=$TRANSPARENT
+  label.font="Hack Nerd Font:Bold:12.0"
 )
 
 sketchybar --add item clock right \

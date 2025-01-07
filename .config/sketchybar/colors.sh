@@ -14,10 +14,13 @@ export FLAMINGO_BG=0x19f2cdcd
 export PINK=0xfff5c2e7
 export PINK_BG=0x19f5c2e7
 export OVERLAY1=0xff7f849c
+export DARK=0xa024273a
+export DARK_PLUS=0xe024273a
+export TRANSPARENT=0x70000000
 
 # General Bar colors
-export BAR_BG_COLOR=$BLUE_BG
-export BAR_BOARDER_COLOR=$GREEN
+export BAR_BG_COLOR=$DARK
+export BAR_BOARDER_COLOR=$DARK_PLUS
 
 # General Item colors
 export LABEL_COLOR=$OVERLAY1
