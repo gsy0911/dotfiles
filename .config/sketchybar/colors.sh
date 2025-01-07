@@ -15,9 +15,11 @@ export PINK=0xfff5c2e7
 export PINK_BG=0x19f5c2e7
 export OVERLAY1=0xff7f849c
 
-# General bar colors
+# General Bar colors
 export BAR_BG_COLOR=$BLUE_BG
 export BAR_BOARDER_COLOR=$GREEN
+
+# General Item colors
 export LABEL_COLOR=$OVERLAY1
 
 export POPUP_BACKGROUND_COLOR=0xFF272936
