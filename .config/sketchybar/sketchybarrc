@@ -70,15 +70,7 @@ sketchybar --default "${defaults[@]}"
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces.
 
-FRONT_APP=(
-  label.font="JetBrainsMono Nerd Font:Thin:13.0"
-  icon.font="sketchybar-app-font:Regular:14.0" 
-  script="$PLUGIN_DIR/front_app.sh\*"
-)
-
-sketchybar --add item front_app left \
-           --set front_app "${FRONT_APP[@]}" \
-           --subscribe front_app front_app_switched
+source "$ITEM_DIR/front_app.sh*" 
 
 # aerospace
 # sketchybar --add event aerospace_workspace_change \
@@ -120,13 +112,9 @@ sketchybar --add item front_app left \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-source "$CONFIG_DIR/items/clock.sh*" 
+source "$ITEM_DIR/clock.sh*" 
+source "$ITEM_DIR/battery.sh*" 
 
-sketchybar --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh\*" \
-           --subscribe battery system_woke power_source_change
-
-           # --add item volume right \
            # --set volume script="$PLUGIN_DIR/volume.sh\*" \
            # --subscribe volume volume_change \
 ##### Force all scripts to run the first time (never do this in a script) #####
