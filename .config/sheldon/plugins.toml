@@ -24,11 +24,14 @@ github = "romkatv/zsh-defer"
 github = "zdharma-continuum/fast-syntax-highlighting"
 apply = ["defer"]
 
-# [plugins.autosuggestions]
-# github = "zsh-users/zsh-autosuggestions"
-# apply = ["defer"]
+[plugins.autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
 
 [plugins.abbr]
 github = "olets/zsh-abbr"
 apply = ["defer"]
 
+[plugins.completions]
+github = "zsh-users/zsh-completions"
+apply = ["defer"]
