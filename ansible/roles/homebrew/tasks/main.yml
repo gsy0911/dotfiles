@@ -75,6 +75,7 @@
       - vhs
       - gh
       - ghq
+      - ollama
       # font
       - font-hack-nerd-font
       - sketchybar
