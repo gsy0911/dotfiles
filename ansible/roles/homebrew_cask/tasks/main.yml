@@ -21,3 +21,5 @@
       - nikitabobko/tap/aerospace
       # icons for sketchybar
       - sf-symbols
+      # claude
+      - claude
