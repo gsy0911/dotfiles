@@ -66,3 +66,10 @@ if type "starship" > /dev/null 2>&1; then
 fi
 # check
 # zprof
+
+echo -e "\e[35m" \
+"            _      \n" \
+"    _______| |__   \n" \
+"   |_  / __| '_ \  \n" \
+"  _ / /\__ \ | | | \n" \
+" (_)___|___/_| |_|   "

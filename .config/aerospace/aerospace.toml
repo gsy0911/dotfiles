@@ -66,10 +66,11 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        [{ monitor.main = 10 }, 44]
+outer.top =        [{ monitor."VZ239*" = 44}, { monitor.main = 44 }, { monitor."built-in*" = 10}, 44]
 outer.right =      10
 
 [workspace-to-monitor-force-assignment]
+A = 1
 C = 1
 D = 3
 F = 3
@@ -220,6 +221,10 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 # to add other apps, type: $ aerospace list-apps
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = 'move-node-to-workspace A'
+
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace C'
