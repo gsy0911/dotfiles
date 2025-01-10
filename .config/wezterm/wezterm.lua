@@ -316,25 +316,25 @@ config.keys = {
     {
       key = 'k',
       mods = 'CMD',
-      action = wezterm.action.ScrollByLine(-5), -- 5行上にスクロール
-    },
-    -- スクロールダウン
-    {
-      key = 'j',
-      mods = 'CMD',
-      action = wezterm.action.ScrollByLine(5), -- 5行下にスクロール
-    },
-    -- スクロールアップ
-    {
-      key = 'k',
-      mods = 'CMD|SHIFT',
       action = wezterm.action.ScrollByPage(-1), -- 1ページ上にスクロール
     },
     -- スクロールダウン
     {
       key = 'j',
-      mods = 'CMD|SHIFT',
+      mods = 'CMD',
       action = wezterm.action.ScrollByPage(1), -- 1ページ下にスクロール
+    },
+    -- スクロールアップ
+    {
+      key = 'k',
+      mods = 'CMD|SHIFT',
+      action = wezterm.action.ScrollByLine(-5), -- 5行上にスクロール
+    },
+    -- スクロールダウン
+    {
+      key = 'j',
+      mods = 'CMD|SHIFT',
+      action = wezterm.action.ScrollByLine(5), -- 5行下にスクロール
     },
     {
         key = '{',

@@ -19,6 +19,7 @@
       - tokei
       - direnv
       - procs
+      - figlet
       # Taskfile
       - go-task
       # rust
