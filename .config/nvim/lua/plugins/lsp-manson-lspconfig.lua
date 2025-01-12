@@ -17,7 +17,9 @@ return {
       -- toml
       "taplo",
       -- PHP
-      "intelephense"
+      "intelephense",
+      -- typst
+      "typst_lsp"
     }
     -- utilities
     local diagnostics = { "typos_lsp" }

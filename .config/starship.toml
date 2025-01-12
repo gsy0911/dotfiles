@@ -55,6 +55,10 @@ format = "[$time]($style) "
 style = "#32cd32"
 disabled = false
 
+[typst]
+format = "[$symbol($version)]($style) "
+symbol = "typst:"
+
 # [custom.cdk]
 # # shows output of command
 # command = "echo $CDK_VERSION"
