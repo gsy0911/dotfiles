@@ -25,6 +25,7 @@
       # rust
       - rustup
       - rust-analyzer
+      - typst
       # aws
       - aws-cdk
       - awscli
