@@ -182,8 +182,8 @@ alt-shift-e = 'move-node-to-workspace E'
 alt-shift-f = ['move-node-to-workspace F', 'workspace F']
 alt-shift-g = 'move-node-to-workspace G'
 alt-shift-i = 'move-node-to-workspace I'
-alt-shift-m = 'move-node-to-workspace M'
-alt-shift-n = 'move-node-to-workspace N'
+alt-shift-m = ['move-node-to-workspace M', 'workspace M']
+alt-shift-n = ['move-node-to-workspace N', 'workspace N']
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = ['move-node-to-workspace P', 'workspace P']
 alt-shift-q = 'move-node-to-workspace Q'
@@ -240,6 +240,10 @@ run = 'move-node-to-workspace F'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.cinhimbnkkaeohfgghhklpknlkffjgod'
 run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'jp.naver.line.mac'
+run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.pycharm'
