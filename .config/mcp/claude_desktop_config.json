@@ -3,6 +3,14 @@
     "sqlite": {
       "command": "uvx",
       "args": ["mcp-server-sqlite", "--db-path", "~/test.db"]
+    },
+    "tenki": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/acxelerator/mcp-tenki.git",
+        "mcp-tenki"
+      ]
     }
   }
 }
