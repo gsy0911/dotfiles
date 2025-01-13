@@ -5,4 +5,4 @@ cdk.out
 .envrc
 *.gif
 .zsh.exports.secret
-
+**__pycache__
