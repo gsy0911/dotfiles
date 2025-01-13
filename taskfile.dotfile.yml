@@ -22,6 +22,14 @@ tasks:
     cmds:
       - ln -snfv {{.PWD}}/.config/{{.filePath}} {{.HOME}}/.config/{{.filePath}}
 
+  generate-mcp-config:
+    desc: generate mcp config
+    silent: true
+    internal: true
+    dir: src/dotfiles
+    cmds:
+      - rye run python generate_mcp_config.py
+
   install:
     desc: test
     silent: true
@@ -44,6 +52,7 @@ tasks:
         sh: ls -F .config/sketchybar/items | grep -v / 
     cmds:
       - task: mkdir
+      - task: generate-mcp-config
       - for: { var: CONFIGS, as: config }
         cmd: ln -snfv {{.PWD}}/.config/{{.config}} {{.HOME}}/.config/{{.config}}
       - for: { var: GIT, as: git }
