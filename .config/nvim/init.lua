@@ -23,10 +23,10 @@ vim.keymap.set("i", "kk", "<esc><cmd>w<CR>", { noremap = true })
 -- タブ切り替え
 vim.keymap.set("n", "<C-t>", "<cmd>tabNext<CR>")
 -- クリップボードへコピー
-vim.keymap.set("n", "<space>d", '"*dd', { noremap = true })
-vim.keymap.set("v", "<space>d", '"*dd', { noremap = true })
-vim.keymap.set("n", "<space>y", '"*yy', { noremap = true })
-vim.keymap.set("v", "<space>y", '"*yy', { noremap = true })
+vim.keymap.set("n", "<space>d", '"*d', { noremap = true })
+vim.keymap.set("v", "<space>d", '"*d', { noremap = true })
+vim.keymap.set("n", "<space>y", '"*y', { noremap = true })
+vim.keymap.set("v", "<space>y", '"*y', { noremap = true })
 vim.keymap.set("n", "<space>p", '"*p', { noremap = true })
 vim.keymap.set("v", "<space>p", '"*p', { noremap = true })
 -- 行の入れ替え
