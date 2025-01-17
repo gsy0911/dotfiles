@@ -52,6 +52,11 @@ return {
             }
           }
         }
+        nvim_lsp.intelephense.setup({
+          settings = {
+            intelephense = {}
+          }
+        })
       end,
     }
     -- カーソル下の変数の情報

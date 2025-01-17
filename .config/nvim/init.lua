@@ -17,9 +17,6 @@ vim.g.have_nerd_font = true
 vim.keymap.set("i", "jj", "<esc><cmd>w<CR>", { noremap = true })
 vim.keymap.set("i", "<C-g>", "<esc><cmd>w<CR>", { noremap = true })
 vim.keymap.set("i", "kk", "<esc><cmd>w<CR>", { noremap = true })
--- ファイル切り替え
--- vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>")
--- vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>")
 -- タブ切り替え
 vim.keymap.set("n", "<C-t>", "<cmd>tabNext<CR>")
 -- クリップボードへコピー
@@ -38,7 +35,7 @@ vim.keymap.set("x", "<C-S-k>", ":move '<-2<CR>gv=gv")
 vim.keymap.set('n', ';', ':', { noremap = true })
 vim.keymap.set('v', ';', ':', { noremap = true })
 -- cursor
-vim.opt.guicursor = "n-i:ver25"
+-- vim.opt.guicursor = "n-i:ver25"
 -- say
 vim.keymap.set("n", "<space>say", function()
   local current_word = vim.fn.expand("<cword>")
