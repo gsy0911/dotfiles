@@ -39,7 +39,7 @@ class McpServerConfig(BaseModel):
                 "@jetbrains/mcp-proxy",
             ],
             url="https://github.com/JetBrains/mcp-jetbrains?tab=readme-ov-file",
-            enabled=True,
+            enabled=False,
         )
 
     @model_serializer
