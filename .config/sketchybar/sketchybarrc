@@ -70,8 +70,9 @@ sketchybar --default "${defaults[@]}"
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces.
 
-source "$ITEM_DIR/front_app.sh*" 
-source "$ITEM_DIR/term.sh*" 
+# source "$ITEM_DIR/front_app.sh*"
+source "$ITEM_DIR/aerospace_app.sh*"
+source "$ITEM_DIR/term.sh*"
 
 # aerospace
 # sketchybar --add event aerospace_workspace_change \
