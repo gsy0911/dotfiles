@@ -4,6 +4,9 @@
 export BREW_PREFIX=$(brew --prefix)
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 
+# curl
+export PATH="$BREW_PREFIX/opt/curl/bin:$PATH"
+
 # python
 export PATH="$BREW_PREFIX/opt/python@3.10/bin:$PATH"
 export PATH="$BREW_PREFIX/opt/python@3.11/bin:$PATH"

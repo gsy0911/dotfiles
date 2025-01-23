@@ -12,7 +12,7 @@ function window() {
       local window="$(aerospace list-windows --workspace "$1" --format "%{app-name}" | uniq | paste -s -d "," -)"
       echo "$1:$window"
     else
-     echo "$1"
+      echo "$1"
     fi
   fi
 }
@@ -32,7 +32,7 @@ function workspace() {
   # $1 = monitor-id
   if [[ $1 ]]; then
     local workspace="$(aerospace list-workspaces --monitor $1 --visible)"
-    local workspace_non="$(aerospace list-workspaces --monitor $1 --visible no --empty no | paste -s -d ',' -)"
+    # local workspace_non="$(aerospace list-workspaces --monitor $1 --visible no --empty no | paste -s -d ',' -)"
     local workspaceWithName="$(listWindowsVisibleNo $1 | paste -s -d ',' -)"
     local label="$workspace ($workspaceWithName)"
     echo $label
