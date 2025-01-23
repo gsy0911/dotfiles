@@ -32,7 +32,9 @@ return {
         require("lspconfig").typos_lsp.setup {}
 
         -- TypeScript
-        nvim_lsp.ts_ls.setup {}
+        nvim_lsp.ts_ls.setup {
+          root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json"),
+        }
         -- Python
         require("lspconfig").pyright.setup {
           root_dir = nvim_lsp.util.root_pattern(".venv"),
