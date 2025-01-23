@@ -52,6 +52,13 @@ return {
             }
           }
         }
+        nvim_lsp.dockerls.setup({
+          root_dir = nvim_lsp.util.root_pattern("Dockerfile"),
+        })
+        nvim_lsp.docker_compose_language_service.setup({
+          root_dir = nvim_lsp.util.root_pattern("docker-compose.yml", "docker-compose.yaml", "compose.yml", "compose.yaml"),
+        })
+        -- PHP
         nvim_lsp.intelephense.setup({
           settings = {
             intelephense = {}
