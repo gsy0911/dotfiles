@@ -2,8 +2,9 @@ return {
   'smoka7/hop.nvim',
   version = "*",
   keys = {
-    {mode = "n", "<leader>hw", "<cmd>HopWord<CR>", desc = "HopWord"},
-    {mode = "n", "<leader>hl", "<cmd>HopLine<CR>", desc = "HopWord"},
+    {mode = "n", "<leader>jj", "<cmd>HopWord<CR>", desc = "HopWord"},
+    {mode = "n", "<leader>jw", "<cmd>HopWord<CR>", desc = "HopWord"},
+    {mode = "n", "<leader>jl", "<cmd>HopLine<CR>", desc = "HopLine"},
   },
   opts = {
       keys = 'etovxqpdygfblzhckisuran'

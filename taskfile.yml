@@ -39,7 +39,7 @@ tasks:
       - gh extension install dlvhdr/gh-dash
       
   update-github-pat:
-    desc: update token
+    desc: update token; e.g. $ token={} task update-github-pat
     cmds:
       - sh ./bin/update_github_pat.sh {{.token}}
     requires:
