@@ -42,12 +42,13 @@ function workspace() {
 if [ "$SENDER" = "front_app_switched" ]; then
   MONITOR_NUM="$(aerospace list-monitors --count)"
   if [ "$MONITOR_NUM" = "3" ]; then
+    WINDOW1="$(workspace 1)"
     WINDOW2="$(workspace 2)"
     WINDOW3="$(workspace 3)"
     LABEL="$WINDOW1 | $WINDOW2 | $WINDOW3"
   elif [ "$MONITOR_NUM" = 2 ]; then
-    WINDOW2="$(workspace 2)"
     WINDOW1="$(workspace 1)"
+    WINDOW2="$(workspace 2)"
     LABEL="$WINDOW1 | $WINDOW2"
   elif [ "$MONITOR_NUM" = 1 ]; then
     WINDOW1="$(workspace 1)"

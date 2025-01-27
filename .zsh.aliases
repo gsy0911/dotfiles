@@ -55,10 +55,6 @@ alias rj="rye run jupyter lab"
 alias va=". .venv/bin/activate"
 alias vd="deactivate"
 
-# global alias
-alias -g C='| wc -l' # count
-alias -g G='| grep --color=auto' # 鉄板
-
 # alias for docker
 alias di="docker images"
 alias dr="docker run --rm"
@@ -108,4 +104,12 @@ alias n='nvim'
 alias aeroon="aerospace enable on"
 # 停止
 alias aerooff="aerospace enable off"
+
+# beep
+alias beep='afplay /System/Library/Sounds/Submarine.aiff'
+
+# global alias
+alias -g C='| wc -l' # count
+alias -g G='| grep --color=auto' # 鉄板
+alias -g B=';beep' # 鉄板
 
