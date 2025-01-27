@@ -174,3 +174,13 @@ function dcrf() {
     dcd
     dcuf $1
 }
+
+function ss() {
+    sleep 300
+    if [[ $1 ]]; then
+	say $1
+    else
+        exit 1
+    fi
+}
+
