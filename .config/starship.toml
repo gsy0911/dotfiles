@@ -59,6 +59,10 @@ disabled = false
 format = "[$symbol($version)]($style) "
 symbol = "typst:"
 
+[cmd_duration]
+min_time = 10_000
+show_notifications = true
+
 # [custom.cdk]
 # # shows output of command
 # command = "echo $CDK_VERSION"
