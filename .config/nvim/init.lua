@@ -83,4 +83,7 @@ end
 -- Keymap("<Leader>yp", copy_current_file_path)
 
 vim.keymap.set("n", "<Leader>y", copy_current_file_path, { noremap = true, silent = true })
+-- lazy.nvim related
+vim.keymap.set("n", "<Leader>lu", "<Cmd>Lazy update<CR>")
+vim.keymap.set("n", "<Leader>ls", "<Cmd>Lazy sync<CR>")
 
