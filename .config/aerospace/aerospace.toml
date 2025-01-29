@@ -87,11 +87,13 @@ C = 1
 D = 3
 F = 3
 M = 3
-P = 'main'
+P = 3
 S = 3
 T = 3 
 V = 1
 W = 'main'
+X = 3
+Z = 'main'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -207,7 +209,7 @@ alt-shift-v = ['move-node-to-workspace V', 'workspace V']
 alt-shift-w = ['move-node-to-workspace W', 'workspace W']
 alt-shift-x = 'move-node-to-workspace X'
 alt-shift-y = 'move-node-to-workspace Y'
-alt-shift-z = 'move-node-to-workspace Z'
+alt-shift-z = ['move-node-to-workspace Z', 'workspace Z']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -262,6 +264,14 @@ if.app-id = 'com.jetbrains.pycharm'
 run = 'move-node-to-workspace P'
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.PhpStorm'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.WebStorm'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace S'
 
@@ -277,7 +287,8 @@ run = 'move-node-to-workspace V'
 if.app-id = 'org.videolan.vlc'
 run = 'move-node-to-workspace V'
 
+# 以前はWにしていたが、Zの方が押しやすいため
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace W'
+run = 'move-node-to-workspace Z'
 
