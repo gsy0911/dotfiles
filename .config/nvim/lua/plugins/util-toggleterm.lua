@@ -68,14 +68,27 @@ return {
     }
 
     local Terminal  = require('toggleterm.terminal').Terminal
-    local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-
+    -- Terminal for lazygit
+    local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
     function _lazygit_toggle()
       lazygit:toggle()
     end
-
     vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
     vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+
+    -- Terminal for python
+    local python = Terminal:new({ cmd = "rye run python", hidden = true, direction = "float" })
+    function _python_toggle()
+      python:toggle()
+    end
+    vim.api.nvim_set_keymap("n", "<leader>tp", "<cmd>lua _python_toggle()<CR>", {noremap = true, silent = true})
+
+    -- Terminal for oxker
+    local oxker = Terminal:new({ cmd = "oxker", hidden = true, direction = "float" })
+    function _oxker_toggle()
+      oxker:toggle()
+    end
+    vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>lua _oxker_toggle()<CR>", {noremap = true, silent = true})
 
   end
 }
