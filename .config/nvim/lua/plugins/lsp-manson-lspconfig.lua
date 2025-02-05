@@ -30,6 +30,7 @@ return {
       function (server_name)
         local nvim_lsp = require("lspconfig")
         require("lspconfig").typos_lsp.setup {}
+        require('lspconfig').lua_ls.setup({})
 
         -- TypeScript
         nvim_lsp.ts_ls.setup {
