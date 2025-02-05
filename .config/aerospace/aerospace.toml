@@ -91,7 +91,7 @@ P = 3
 S = 3
 T = 3 
 V = 1
-W = 'main'
+W = 3
 X = 3
 Z = 'main'
 
@@ -269,7 +269,7 @@ run = 'move-node-to-workspace P'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.WebStorm'
-run = 'move-node-to-workspace P'
+run = 'move-node-to-workspace W'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
