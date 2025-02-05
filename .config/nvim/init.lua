@@ -14,9 +14,9 @@ vim.opt.swapfile = false
 vim.g.have_nerd_font = true
 
 -- モード切り替えと保存
-vim.keymap.set("i", "jj", "<esc><cmd>w<CR>", { noremap = true })
+vim.keymap.set("i", "jj", "<esc>", { noremap = true })
 vim.keymap.set("i", "<C-g>", "<esc><cmd>w<CR>", { noremap = true })
-vim.keymap.set("i", "kk", "<esc><cmd>w<CR>", { noremap = true })
+vim.keymap.set("i", "kk", "<esc>", { noremap = true })
 -- タブ切り替え
 vim.keymap.set("n", "<C-t>", "<cmd>tabNext<CR>")
 -- クリップボードへコピー
