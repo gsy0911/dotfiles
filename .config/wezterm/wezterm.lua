@@ -184,7 +184,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   -- local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "
   -- local wholeTitle = tab.active_pane.title .. " @ " .. cwd .. ""
   local wholeTitle = cwd 
-  local title = " " .. wezterm.truncate_right(wholeTitle, max_width - 1) .. " "
+  local workspace = wezterm.truncate_right(mux.get_active_workspace(), 3)
+  local title = wezterm.truncate_right(wholeTitle, max_width - 1)
+  local display_name = " " .. workspace .. ": " .. title .. " "
   return {
     { Background = { Color = edge_background } },
     { Foreground = { Color = icon_foreground } },
@@ -194,7 +196,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Text = SOLID_LEFT_CIRCLE },
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
-    { Text = title },
+    { Text = display_name },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_RIGHT_CIRCLE },
@@ -318,6 +320,28 @@ config.keys = {
         key = 'l',
         mods = 'CMD|SHIFT',
         action = act.ActivateTabRelative(1)
+    },
+    -- ⌘ Ctrl yo でワークスペースの移動
+    -- ⌘ Shift yo でワークスペースの移動
+    {
+        key = 'y',
+        mods = 'CMD|CTRL',
+        action = act.SwitchWorkspaceRelative(-1)
+    },
+    {
+        key = 'o',
+        mods = 'CMD|CTRL',
+        action = act.SwitchWorkspaceRelative(1)
+    },
+    {
+        key = 'y',
+        mods = 'CMD|SHIFT',
+        action = act.SwitchWorkspaceRelative(-1)
+    },
+    {
+        key = 'o',
+        mods = 'CMD|SHIFT',
+        action = act.SwitchWorkspaceRelative(1)
     },
     -- スクロールアップ
     {
