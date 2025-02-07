@@ -251,6 +251,13 @@ config.keys = {
         mods = "CMD|CTRL",
         action = wezterm.action.RotatePanes 'Clockwise'
     },
+    -- command + nで新規タブの作成 command + tと同じ挙動
+    -- command + nはデフォルトだと新しいウィンドウを作成する
+    {
+        key = "n",
+        mods = "SUPER",
+        action = act.SpawnTab 'CurrentPaneDomain'
+    },
     -- ⌘ Ctrl hjklでペインの移動
 --     {
 --         key = 'h',
