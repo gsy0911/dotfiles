@@ -206,7 +206,8 @@ end)
 -- ウィンドウのタイトルを変更
 wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
   local workspace = mux.get_active_workspace()
-  local display_name = workspace
+  local workspaces = mux.all_windows()
+  local display_name = "workspace: " .. workspace .. " [" .. #workspaces .. "]"
   return display_name
 end)
 
