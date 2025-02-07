@@ -92,7 +92,7 @@ S = 3
 T = 3 
 V = 1
 W = 3
-X = 3
+X = 'main'
 Z = 'main'
 
 # 'main' binding mode declaration
@@ -286,6 +286,11 @@ run = 'move-node-to-workspace V'
 [[on-window-detected]]
 if.app-id = 'org.videolan.vlc'
 run = 'move-node-to-workspace V'
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = 'move-node-to-workspace X'
+
 
 # 以前はWにしていたが、Zの方が押しやすいため
 [[on-window-detected]]
