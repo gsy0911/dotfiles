@@ -2,7 +2,6 @@
 
 - [![maintained](https://img.shields.io/maintenance/yes/2024?label=maintained)](https://github.com/gsy0911/dotfiles/commits/main)
 - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 - [![macOS](https://img.shields.io/badge/macOS_Sequoia-15.3-green.svg)]()
 - [![aerospace](https://img.shields.io/badge/window-aerospace-green.svg)]()
 - [![wezterm](https://img.shields.io/badge/terminal-wezterm-green.svg)]()
