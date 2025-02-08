@@ -207,7 +207,7 @@ end)
 wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
   local workspace = mux.get_active_workspace()
   local workspaces = mux.all_windows()
-  local display_name = "workspace: " .. workspace .. " [" .. #workspaces .. "]"
+  local display_name = "[" .. #workspaces .. "] " .. "workspace: " .. workspace
   return display_name
 end)
 
