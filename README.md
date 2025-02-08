@@ -37,5 +37,9 @@ $ task dotfile
 $ time zsh -i -c exit
 @ 2024/12/05
 zsh -i -c exit  0.06s user 0.07s system 75% cpu 0.169 total
+
+$ nvim --startuptime startuptime.log +q
+@ 2025/02/08
+145.366  000.029: --- NVIM STARTED ---
 ```
 
