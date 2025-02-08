@@ -6,3 +6,4 @@ cdk.out
 *.gif
 .zsh.exports.secret
 **__pycache__
+*.log
