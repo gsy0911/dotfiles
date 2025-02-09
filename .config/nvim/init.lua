@@ -89,3 +89,22 @@ vim.keymap.set("n", "<Leader>y", copy_current_file_path, { noremap = true, silen
 vim.keymap.set("n", "<Leader>lu", "<Cmd>Lazy update<CR>")
 vim.keymap.set("n", "<Leader>ls", "<Cmd>Lazy sync<CR>")
 
+-- disable loading default plugins
+-- vim.g.did_install_default_menus = 1
+-- vim.g.did_install_syntax_menu   = 1
+-- vim.g.did_indent_on             = 1
+-- vim.g.did_load_filetypes        = 1
+-- vim.g.did_load_ftplugin         = 1
+-- vim.g.loaded_2html_plugin       = 1
+-- vim.g.loaded_gzip               = 1
+-- vim.g.loaded_man                = 1
+-- vim.g.loaded_matchit            = 1
+-- vim.g.loaded_matchparen         = 1
+-- vim.g.loaded_netrwPlugin        = 1
+-- vim.g.loaded_remote_plugins     = 1
+-- vim.g.loaded_shada_plugin       = 1
+-- vim.g.loaded_spellfile_plugin   = 1
+-- vim.g.loaded_tarPlugin          = 1
+-- vim.g.loaded_tutor_mode_plugin  = 1
+-- vim.g.loaded_zipPlugin          = 1
+
