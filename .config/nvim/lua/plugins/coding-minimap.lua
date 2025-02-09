@@ -36,4 +36,4 @@ return {
     vim.keymap.set('n', '<Leader>mo', minimap.open, { desc = 'open minimap' })
     vim.keymap.set('n', '<Leader>mc', minimap.close, { desc = 'close minimap' })
   end
-} 
+}
