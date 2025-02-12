@@ -77,12 +77,12 @@ config.colors = {
 }
 
 
-function split(str, ts)
+local function split(str, ts)
   -- 引数がないときは空tableを返す
   if ts == nil then return {} end
 
   local t = {} ;
-  i=1
+  local i = 1
   for s in string.gmatch(str, "([^"..ts.."]+)") do
     t[i] = s
     i = i + 1
@@ -113,26 +113,37 @@ wezterm.on('update-status', function(_, pane)
 end)
 
 
--- タブのアイコン
-local TAB_ICON_DOCKER = wezterm.nerdfonts.md_docker
-local TAB_ICON_PYTHON = wezterm.nerdfonts.dev_python
-local TAB_ICON_NEOVIM = wezterm.nerdfonts.linux_neovim
-local TAB_ICON_ZSH = wezterm.nerdfonts.dev_terminal
-local TAB_ICON_TASK = wezterm.nerdfonts.cod_server_process
-local TAB_ICON_NODE = wezterm.nerdfonts.md_language_typescript
-local TAB_ICON_FALLBACK = wezterm.nerdfonts.md_console_network
--- タブのアイコン色
-local TAB_ICON_COLOR_DOCKER = "#4169e1"
-local TAB_ICON_COLOR_PYTHON = "#ffd700"
-local TAB_ICON_COLOR_NEOVIM = "#32cd32"
-local TAB_ICON_COLOR_ZSH = "#808080"
-local TAB_ICON_COLOR_TASK = "#ff7f50"
-local TAB_ICON_COLOR_NODE = "#1e90ff"
-local TAB_ICON_COLOR_FALLBACK = "#ae8b2d"
-local TAB_FOREGROUND_DEFAULT = "#FFFFFF"
-local TAB_BACKGROUND_DEFAULT = "#5c6d74"
-local TAB_FOREGROUND_ACTIVE = "#FFFFFF"
-local TAB_BACKGROUND_ACTIVE = "#ae8b2d"
+local ICONS = {
+  DOCKER = wezterm.nerdfonts.md_docker,
+  PYTHON = wezterm.nerdfonts.dev_python,
+  NEOVIM = wezterm.nerdfonts.linux_neovim,
+  ZSH = wezterm.nerdfonts.dev_terminal,
+  TASK = wezterm.nerdfonts.cod_server_process,
+  NODE = wezterm.nerdfonts.md_language_typescript,
+  FALLBACK = wezterm.nerdfonts.md_console_network,
+}
+
+local COLORS = {
+  ICON = {
+    DOCKER = "#4169e1",
+    PYTHON = "#ffd700",
+    NEOVIM = "#32cd32",
+    ZSH = "#808080",
+    TASK = "#ff7f50",
+    NODE = "#1e90ff",
+    FALLBACK = "#ae8b2d",
+  },
+  TAB = {
+    FOREGROUND = {
+      DEFAULT = "#FFFFFF",
+      ACTIVE = "#FFFFFF",
+    },
+    BACKGROUND = {
+      DEFAULT = "#5c6d74",
+      ACTIVE = "#ae8b2d",
+    },
+  },
+}
 -- タブの左側の装飾
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
@@ -142,35 +153,35 @@ local SOLID_RIGHT_CIRCLE = wezterm.nerdfonts.ple_right_half_circle_thick
 
 -- タブの名前を変更する
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local background = TAB_BACKGROUND_DEFAULT
-  local foreground = TAB_FOREGROUND_DEFAULT
+  local background = COLORS.TAB.BACKGROUND.DEFAULT
+  local foreground = COLORS.TAB.FOREGROUND.DEFAULT
   if tab.is_active then
-    background = TAB_BACKGROUND_ACTIVE
-    foreground = TAB_FOREGROUND_ACTIVE
+    background = COLORS.TAB.BACKGROUND.ACTIVE
+    foreground = COLORS.TAB.FOREGROUND.ACTIVE
   end
   local edge_background = "none"
   local edge_foreground = background
 
-  local icon = TAB_ICON_FALLBACK
-  local icon_foreground = TAB_ICON_COLOR_FALLBACK
+  local icon = ICONS.FALLBACK
+  local icon_foreground = COLORS.ICON.FALLBACK
   if tab.active_pane.title == "nvim" then
-    icon = TAB_ICON_NEOVIM
-    icon_foreground = TAB_ICON_COLOR_NEOVIM
+    icon = ICONS.NEOVIM
+    icon_foreground = COLORS.ICON.NEOVIM
   elseif tab.active_pane.title == "zsh" then
-    icon = TAB_ICON_ZSH
-    icon_foreground = TAB_ICON_COLOR_ZSH
+    icon = ICONS.ZSH
+    icon_foreground = COLORS.ICON.ZSH
   elseif tab.active_pane.title == "Python" or string.find(tab.active_pane.title, "python") then
-    icon = TAB_ICON_PYTHON
-    icon_foreground = TAB_ICON_COLOR_PYTHON
+    icon = ICONS.PYTHON
+    icon_foreground = COLORS.ICON.PYTHON
   elseif tab.active_pane.title == "node" or string.find(tab.active_pane.title, "node") then
-    icon = TAB_ICON_NODE
-    icon_foreground = TAB_ICON_COLOR_NODE
+    icon = ICONS.NODE
+    icon_foreground = COLORS.ICON.NODE
   elseif tab.active_pane.title == "docker" or string.find(tab.active_pane.title, "docker") then
-    icon = TAB_ICON_DOCKER
-    icon_foreground = TAB_ICON_COLOR_DOCKER
+    icon = ICONS.DOCKER
+    icon_foreground = COLORS.ICON.DOCKER
   elseif tab.active_pane.title == "task" or string.find(tab.active_pane.title, "task") then
-    icon = TAB_ICON_TASK
-    icon_foreground = TAB_ICON_COLOR_TASK
+    icon = ICONS.TASK
+    icon_foreground = COLORS.ICON.TASK
   end
 
   local pane = tab.active_pane
