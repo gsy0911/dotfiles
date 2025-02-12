@@ -62,10 +62,10 @@ return {
           root_dir = nvim_lsp.util.root_pattern("docker-compose.yml", "docker-compose.yaml", "compose.yml", "compose.yaml"),
         })
         -- PHP
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         nvim_lsp.intelephense.setup({
-          settings = {
-            intelephense = {}
-          }
+          capabilities = capabilities,
+          root_dir = nvim_lsp.util.root_pattern("composer.json", ".git", ".")
         })
       end,
     }
