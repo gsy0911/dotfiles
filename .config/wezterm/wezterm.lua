@@ -95,27 +95,21 @@ end
 local repository_root_cache = {}
 local repository_cwd_cache = {}
 
-wezterm.on('update-status', function(window, pane)
+wezterm.on('update-status', function(_, pane)
   local pane_id = pane:pane_id()
   local process_info = pane:get_foreground_process_info()
 
---   if success then
---     title_cache[pane_id] = stdout
---   end
-  if process_info then
-    local cwd = process_info.cwd
-    local rm_home = string.gsub(cwd, os.getenv 'HOME', '')
-    local prj = string.gsub(rm_home, '/Development/Projects', '')
-    local dirs = split(prj, '/')
-    local root_dir = dirs[1]
-    local cwd_dir = dirs[#dirs]
-    repository_root_cache[pane_id] = root_dir
-    if root_dir == cwd_dir then
-      repository_cwd_cache[pane_id] = "/"
-    else
-      repository_cwd_cache[pane_id] = "/" .. dirs[#dirs]
-    end
-  end
+  if not process_info then return end
+
+  local cwd = process_info.cwd
+  local rm_home = string.gsub(cwd, os.getenv('HOME'), '')
+  local prj = string.gsub(rm_home, '/Development/Projects', '')
+  local dirs = split(prj, '/')
+  local root_dir = dirs[1]
+  local cwd_dir = dirs[#dirs]
+
+  repository_root_cache[pane_id] = root_dir
+  repository_cwd_cache[pane_id] = root_dir == cwd_dir and "/" or "/" .. cwd_dir
 end)
 
 
@@ -192,7 +186,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
       tab_title = "@" .. repository_cwd_cache[pane_id]
     end
   end
-  
+
   local title = wezterm.truncate_right(tab_title, max_width - 1)
   -- title
   local display_name = " " .. title .. " "
