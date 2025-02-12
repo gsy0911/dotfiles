@@ -177,14 +177,10 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local pane_id = pane.pane_id
   local workspace = mux.get_active_workspace()
   local tab_title = "-"
-  if workspace == "default" then
-    if repository_root_cache[pane_id] then
-      tab_title = repository_root_cache[pane_id]
-    end
-  else
-    if repository_cwd_cache[pane_id] then
-      tab_title = "@" .. repository_cwd_cache[pane_id]
-    end
+  if repository_root_cache[pane_id] then
+    tab_title = workspace == "default"
+      and repository_root_cache[pane_id]
+      or "@" .. repository_cwd_cache[pane_id]
   end
 
   local title = wezterm.truncate_right(tab_title, max_width - 1)
