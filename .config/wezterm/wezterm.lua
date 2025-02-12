@@ -92,11 +92,11 @@ function split(str, ts)
 end
 
 -- 各タブの「ディレクトリ名」を記憶しておくテーブル
-local title_cache = {}
+local repository_root_cache = {}
+local repository_cwd_cache = {}
 
 wezterm.on('update-status', function(window, pane)
   local pane_id = pane:pane_id()
-  title_cache[pane_id] = "-"
   local process_info = pane:get_foreground_process_info()
 
 --   if success then
@@ -108,7 +108,13 @@ wezterm.on('update-status', function(window, pane)
     local prj = string.gsub(rm_home, '/Development/Projects', '')
     local dirs = split(prj, '/')
     local root_dir = dirs[1]
-    title_cache[pane_id] = root_dir
+    local cwd_dir = dirs[#dirs]
+    repository_root_cache[pane_id] = root_dir
+    if root_dir == cwd_dir then
+      repository_cwd_cache[pane_id] = "/"
+    else
+      repository_cwd_cache[pane_id] = "/" .. dirs[#dirs]
+    end
   end
 end)
 
@@ -175,17 +181,20 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
   local pane = tab.active_pane
   local pane_id = pane.pane_id
-  local cwd = "none"
-  if title_cache[pane_id] then
-    cwd = title_cache[pane_id]
+  local workspace = mux.get_active_workspace()
+  local tab_title = "-"
+  if workspace == "default" then
+    if repository_root_cache[pane_id] then
+      tab_title = repository_root_cache[pane_id]
+    end
   else
-    cwd = "-"
+    if repository_cwd_cache[pane_id] then
+      tab_title = "@" .. repository_cwd_cache[pane_id]
+    end
   end
   
-  -- local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " [ " .. cwd .. " ] "
-  -- local wholeTitle = tab.active_pane.title .. " @ " .. cwd .. ""
-  local wholeTitle = cwd 
-  local title = wezterm.truncate_right(wholeTitle, max_width - 1)
+  local title = wezterm.truncate_right(tab_title, max_width - 1)
+  -- title
   local display_name = " " .. title .. " "
   return {
     { Background = { Color = edge_background } },
