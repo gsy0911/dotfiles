@@ -407,21 +407,21 @@ config.keys = {
     },
     -- Create new workspace
     {
-        key = 'S',
-        mods = 'CMD|SHIFT',
-        action = act.PromptInputLine {
-          description = "(wezterm) Create new workspace:",
-          action = wezterm.action_callback(function(window, pane, line)
-            if line then
-              window:perform_action(
-                act.SwitchToWorkspace {
-                  name = line,
-                },
-                pane
-              )
-            end
-          end),
-        },
+      key = 'S',
+      mods = 'CMD|SHIFT',
+      action = act.PromptInputLine {
+        description = "(wezterm) Create new workspace:",
+        action = wezterm.action_callback(function(window, pane, line)
+          if line then
+            window:perform_action(
+              act.SwitchToWorkspace {
+                name = line,
+              },
+              pane
+            )
+          end
+        end),
+      },
   },
 }
 
