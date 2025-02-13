@@ -89,6 +89,10 @@ vim.keymap.set("n", "<Leader>y", copy_current_file_path, { noremap = true, silen
 vim.keymap.set("n", "<Leader>lu", "<Cmd>Lazy update<CR>")
 vim.keymap.set("n", "<Leader>ls", "<Cmd>Lazy sync<CR>")
 
+-- 背景透過
+vim.opt.termguicolors = true
+vim.opt.winblend = 0 -- ウィンドウの不透明度
+vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
 -- disable loading default plugins
 -- vim.g.did_install_default_menus = 1
 -- vim.g.did_install_syntax_menu   = 1
