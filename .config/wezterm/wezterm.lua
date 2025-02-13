@@ -91,6 +91,17 @@ local function split(str, ts)
   return t
 end
 
+-- スライス関数の定義
+local function slice(tbl, startIndex, endIndex)
+  local result = {}
+  -- endIndex が指定されていない場合はテーブルの末尾にする
+  local _endIndex = endIndex or #tbl
+  for i = startIndex, _endIndex do
+    table.insert(result, tbl[i])
+  end
+  return result
+end
+
 -- 各タブの「ディレクトリ名」を記憶しておくテーブル
 local repository_root_cache = {}
 local repository_cwd_cache = {}
@@ -106,7 +117,7 @@ wezterm.on('update-status', function(_, pane)
   local prj = string.gsub(rm_home, '/Development/Projects', '')
   local dirs = split(prj, '/')
   local root_dir = dirs[1]
-  local cwd_dir = dirs[#dirs]
+  local cwd_dir = table.concat(slice(dirs, 2), "/")
 
   repository_root_cache[pane_id] = root_dir
   repository_cwd_cache[pane_id] = root_dir == cwd_dir and "/" or "/" .. cwd_dir
