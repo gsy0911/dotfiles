@@ -20,6 +20,7 @@
       # aerospace
       - nikitabobko/tap/aerospace
       # icons for sketchybar
+      - font-hack-nerd-font 
       - sf-symbols
       # claude
       - claude

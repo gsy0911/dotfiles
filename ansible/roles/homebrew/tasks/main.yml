@@ -50,6 +50,7 @@
       ## for psycopg2
       # - postgresql
       - mysql
+      # see: https://github.com/k1LoW/tbls
       - tbls
       ## for numpy, see: https://github.com/numpy/numpy/issues/17807
       - openblas
@@ -80,8 +81,6 @@
       - ghq
       - ollama
       # font
-      - font-hack-nerd-font
-      - sketchybar
       # $ img2sixel to show image in terminal
       - libsixel
       # Git
@@ -90,7 +89,6 @@
       # Docker
       - lazydocker
       - oxker
-      # document a Database
-      # see: https://github.com/k1LoW/tbls
-      - k1LoW/tap/tbls
-
+      # sketchybar
+      # didn't work
+      # - sketchybar
