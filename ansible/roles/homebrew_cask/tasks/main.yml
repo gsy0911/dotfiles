@@ -24,3 +24,5 @@
       - sf-symbols
       # claude
       - claude
+      # # VNC
+      # - vnc-viewer
