@@ -240,6 +240,10 @@ if.app-id = 'com.anthropic.claudefordesktop'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
+if.app-id = 'net.java.openjdk.java'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace C'
 
