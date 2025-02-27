@@ -19,7 +19,7 @@ return {
       -- PHP
       "intelephense",
       -- typst
-      "typst_lsp"
+      "tinymist"
     }
     -- utilities
     local diagnostics = { "typos_lsp" }

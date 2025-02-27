@@ -136,7 +136,7 @@ function nsc() {
 
 # show aws CREDential
 function cred() {
-    cat $HOME/.aws/credentials | grep "\[" | sed -e 's/\[//g' | sed -e 's/\]//g'
+    cat $HOME/.aws/config | grep "\[profile" | sed -e 's/\[profile //g' | sed -e 's/\]//g'
 }
 
 # CREDential with Peco
