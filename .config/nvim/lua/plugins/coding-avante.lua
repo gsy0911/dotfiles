@@ -7,11 +7,11 @@ return {
     provider = "claude",
     auto_suggestions_provider = "claude",
     behaviour = {
-        auto_suggestions = true,
-        auto_set_highlight_group = true,
-        auto_set_keymaps = true,
-        auto_apply_diff_after_generation = true,
-        support_paste_from_clipboard = true,
+        auto_suggestions = false,
+        auto_set_highlight_group = false,
+        auto_set_keymaps = false,
+        auto_apply_diff_after_generation = false,
+        support_paste_from_clipboard = false,
     },
     -- providers-setting
     claude = {
@@ -19,7 +19,7 @@ return {
         -- model = "claude-3-5-sonnet-20240620", -- $3/$15, maxtokens=8000
         -- model = "claude-3-opus-20240229",  -- $15/$75
         -- model = "claude-3-haiku-20240307", -- $0.25/1.25
-        max_tokens = 4000,
+        max_tokens = 8000,
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
