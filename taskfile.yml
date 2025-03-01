@@ -31,7 +31,6 @@ tasks:
       - brew tap daipeihust/tap
       - brew tap FelixKratz/formulae
       - brew tap localstack/tap 
-      # - brew tap jabley/homebrew-wrk2
 
   github:
     desc: add gh-plugins
