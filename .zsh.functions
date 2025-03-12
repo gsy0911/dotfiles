@@ -111,7 +111,7 @@ function jump_middle() {
     zle redisplay
 }
 zle -N jump_middle
-bindkey "^m" jump_middle
+# bindkey "^m" jump_middle
 
 # Node-SCript
 function nsc() {
