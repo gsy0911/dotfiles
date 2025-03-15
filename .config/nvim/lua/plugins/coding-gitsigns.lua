@@ -52,5 +52,6 @@ return {
         col = 1
       },
     }
+    require("scrollbar.handlers.gitsigns").setup()
   end
 }
