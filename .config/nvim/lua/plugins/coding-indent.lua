@@ -1,6 +1,7 @@
 return {
   'lukas-reineke/indent-blankline.nvim',
   event = "VeryLazy",
+  enabled = false,
   dependencies = {
     'HiPhish/rainbow-delimiters.nvim',
     'nvim-treesitter/nvim-treesitter',
