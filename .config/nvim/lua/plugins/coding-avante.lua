@@ -1,7 +1,8 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  version = false, -- set this if you want to always pull the latest change
+  -- install stable version
+  version = "*",
   opts = {
     -- add any opts here
     provider = "claude",
