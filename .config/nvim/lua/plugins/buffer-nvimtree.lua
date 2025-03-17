@@ -23,6 +23,7 @@ return {
     nvimtree.setup {
       filters = {
         git_ignored = false,
+        dotfiles = false,
         custom = {
          "^\\.git",
          "^node_modules",
@@ -34,6 +35,9 @@ return {
          "cdk.out",
          "__pycache__",
         },
+        exclude = {
+          ".gitignore",
+        }
       },
       git = {
         enable = true,
