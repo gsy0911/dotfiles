@@ -6,14 +6,14 @@ return {
   opts = {
     -- add any opts here
     provider = "claude",
-    auto_suggestions_provider = "claude",
-    behaviour = {
-        auto_suggestions = false,
-        auto_set_highlight_group = false,
-        auto_set_keymaps = false,
-        auto_apply_diff_after_generation = false,
-        support_paste_from_clipboard = false,
-    },
+    -- auto_suggestions_provider = "claude",
+    -- behaviour = {
+    --     auto_suggestions = false,
+    --     auto_set_highlight_group = false,
+    --     auto_set_keymaps = false,
+    --     auto_apply_diff_after_generation = false,
+    --     support_paste_from_clipboard = false,
+    -- },
     -- providers-setting
     claude = {
         model = "claude-3-7-sonnet-20250219",
