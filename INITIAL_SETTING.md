@@ -27,7 +27,7 @@ $ cd Development
 $ mkdir Development/Projects
 $ git clone https://github.com/gsy0911/dotfiles.git
 $ cd doftiles
-$ task dotfile
+$ task dotfile:install
 $ task ansible
 ```
 

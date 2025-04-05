@@ -31,7 +31,7 @@ tasks:
       - rye run python generate_mcp_config.py
 
   install:
-    desc: test
+    desc: install dotfiles
     silent: true
     vars:
       PWD:
