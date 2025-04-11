@@ -13,6 +13,7 @@ class McpServerConfig(BaseModel):
         return [
             McpServerConfig._tenki(),
             McpServerConfig._jetbrains(),
+            McpServerConfig._aws_mcp(),
         ]
 
     @staticmethod
@@ -40,6 +41,18 @@ class McpServerConfig(BaseModel):
             ],
             url="https://github.com/JetBrains/mcp-jetbrains?tab=readme-ov-file",
             enabled=False,
+        )
+
+    @staticmethod
+    def _aws_mcp() -> "McpServerConfig":
+        return McpServerConfig(
+            name="aws-docs",
+            command="uvx",
+            args=[
+                "awslabs.aws-documentation-mcp-server@latest"
+            ],
+            url="https://github.com/awslabs/mcp",
+            enabled=True,
         )
 
     @model_serializer
