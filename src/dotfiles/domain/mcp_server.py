@@ -14,6 +14,7 @@ class McpServerConfig(BaseModel):
             McpServerConfig._tenki(),
             McpServerConfig._jetbrains(),
             McpServerConfig._aws_mcp(),
+            McpServerConfig._aws_cdk_mcp(),
         ]
 
     @staticmethod
@@ -50,6 +51,18 @@ class McpServerConfig(BaseModel):
             command="uvx",
             args=[
                 "awslabs.aws-documentation-mcp-server@latest"
+            ],
+            url="https://github.com/awslabs/mcp",
+            enabled=True,
+        )
+
+    @staticmethod
+    def _aws_cdk_mcp() -> "McpServerConfig":
+        return McpServerConfig(
+            name="aws-cdk",
+            command="uvx",
+            args=[
+                "awslabs.cdk-mcp-server@latest"
             ],
             url="https://github.com/awslabs/mcp",
             enabled=True,
