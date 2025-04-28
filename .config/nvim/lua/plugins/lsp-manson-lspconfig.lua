@@ -66,6 +66,39 @@ return {
         nvim_lsp.intelephense.setup({
           capabilities = capabilities,
           root_dir = nvim_lsp.util.root_pattern("composer.json"),
+          settings = {
+            intelephense = {
+              -- Composerの設定を有効化
+              composer = {
+                enabled = true
+              },
+              -- VendorディレクトリのPSR-4オートロード対応
+              phpdoc = {
+                useFullyQualifiedNames = true
+              },
+              -- ファイル関連
+              files = {
+                maxSize = 5000000,
+                associations = {"*.php", "*.phtml"},
+                -- Vendorディレクトリ内のファイルも解析対象に含める
+                exclude = {
+                  "**/.git/**",
+                  "**/.svn/**",
+                  "**/.hg/**",
+                  "**/CVS/**",
+                  "**/.DS_Store/**",
+                  "**/node_modules/**",
+                  "**/bower_components/**",
+                  "**/var/cache/**"
+                }
+              },
+              -- コンポーザーのオートロードをサポート
+              completion = {
+                insertUseDeclaration = true,
+                fullyQualifyGlobalConstantsAndFunctions = false
+              }
+            }
+          }
         })
       end,
     }
