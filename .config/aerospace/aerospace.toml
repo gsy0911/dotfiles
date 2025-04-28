@@ -88,12 +88,12 @@ D = [4, 3]
 F = [4, 3]
 M = [4, 3]
 P = [4, 3, 'main']
-S = [4, 3]
+S = ['main', 3]
 T = [4, 3] 
 V = 1
 W = [2, 3]
 X = 'main'
-Z = 'main'
+Z = [2, 'main']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
