@@ -65,19 +65,7 @@ return {
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         nvim_lsp.intelephense.setup({
           capabilities = capabilities,
-          root_dir = nvim_lsp.util.root_pattern("composer.json", ".git", "."),
-          settings = {
-            intelephense = {
-              environment = {
-                includePaths = {
-                  "vendor/symfony/",
-                }
-              },
-              files = {
-                maxSize = 5000000;
-              };
-            };
-          };
+          root_dir = nvim_lsp.util.root_pattern("composer.json"),
         })
       end,
     }
