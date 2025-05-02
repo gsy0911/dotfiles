@@ -18,6 +18,7 @@ class McpServerConfig(BaseModel):
             McpServerConfig._aws_mcp(),
             McpServerConfig._aws_cdk_mcp(),
             McpServerConfig._aws_lambda_mcp(),
+            McpServerConfig._memory_mcp(),
         ]
 
     @staticmethod
@@ -86,6 +87,25 @@ class McpServerConfig(BaseModel):
             },
         )
 
+    @staticmethod
+    def _memory_mcp() -> "McpServerConfig":
+        return McpServerConfig(
+            name="memory",
+            command="npx",
+            args=["-y", "@modelcontextprotocol/server-memory"],
+            url="https://github.com/awslabs/mcp",
+            enabled=True,
+            env={
+                "MEMORY_FILE_PATH": os.environ["MCP_MEMORY_FILE_PATH"],
+            },
+        )
+
     @model_serializer
     def serialise(self) -> dict:
-        return {f"{self.name}": {"command": self.command, "args": self.args, "env": self.env}}
+        return {
+            f"{self.name}": {
+                "command": self.command,
+                "args": self.args,
+                "env": self.env,
+            }
+        }
