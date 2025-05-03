@@ -72,7 +72,7 @@ sketchybar --default "${defaults[@]}"
 
 # source "$ITEM_DIR/front_app.sh*"
 source "$ITEM_DIR/aerospace_app.sh*"
-source "$ITEM_DIR/term.sh*"
+# source "$ITEM_DIR/term.sh*"
 
 # aerospace
 # sketchybar --add event aerospace_workspace_change \
