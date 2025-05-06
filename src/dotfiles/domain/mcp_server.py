@@ -19,6 +19,7 @@ class McpServerConfig(BaseModel):
             McpServerConfig._aws_cdk_mcp(),
             McpServerConfig._aws_lambda_mcp(),
             McpServerConfig._memory_mcp(),
+            McpServerConfig._line_mcp(),
         ]
 
     @staticmethod
@@ -97,6 +98,20 @@ class McpServerConfig(BaseModel):
             enabled=True,
             env={
                 "MEMORY_FILE_PATH": os.environ["MCP_MEMORY_FILE_PATH"],
+            },
+        )
+
+    @staticmethod
+    def _line_mcp() -> "McpServerConfig":
+        return McpServerConfig(
+            name="line-bot",
+            command="npx",
+            args=["@line/line-bot-mcp-server"],
+            url="https://github.com/awslabs/mcp",
+            enabled=True,
+            env={
+                "CHANNEL_ACCESS_TOKEN": os.environ["CHANNEL_ACCESS_TOKEN"],
+                "DESTINATION_USER_ID": os.environ["DESTINATION_USER_ID"],
             },
         )
 
