@@ -88,6 +88,7 @@ D = [4, 3]
 F = [4, 3]
 M = [4, 3]
 P = [4, 3, 'main']
+Q = [4, 3, 'main']
 S = ['main', 3]
 T = [4, 3] 
 V = 1
@@ -274,6 +275,10 @@ run = 'move-node-to-workspace P'
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.WebStorm'
 run = 'move-node-to-workspace W'
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace Q'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'

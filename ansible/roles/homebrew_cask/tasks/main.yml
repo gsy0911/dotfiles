@@ -26,3 +26,4 @@
       - claude
       # # VNC
       # - vnc-viewer
+      - obsidian
