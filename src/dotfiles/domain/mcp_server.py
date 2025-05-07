@@ -20,6 +20,7 @@ class McpServerConfig(BaseModel):
             McpServerConfig._aws_lambda_mcp(),
             McpServerConfig._memory_mcp(),
             McpServerConfig._line_mcp(),
+            McpServerConfig._github_mcp(),
         ]
 
     @staticmethod
@@ -112,6 +113,28 @@ class McpServerConfig(BaseModel):
             env={
                 "CHANNEL_ACCESS_TOKEN": os.environ["CHANNEL_ACCESS_TOKEN"],
                 "DESTINATION_USER_ID": os.environ["DESTINATION_USER_ID"],
+            },
+        )
+
+    @staticmethod
+    def _github_mcp() -> "McpServerConfig":
+        return McpServerConfig(
+            name="github",
+            command="docker",
+            args=[
+                "run",
+                "-i",
+                "--rm",
+                "-e",
+                "GITHUB_PERSONAL_ACCESS_TOKEN",
+                "ghcr.io/github/github-mcp-server",
+            ],
+            url="https://github.com/awslabs/mcp",
+            enabled=True,
+            env={
+                "GITHUB_PERSONAL_ACCESS_TOKEN": os.environ[
+                    "GITHUB_PERSONAL_ACCESS_TOKEN"
+                ],
             },
         )
 
