@@ -83,6 +83,7 @@ outer.right =      10
 8 = [4, 3]
 9 = [4, 3]
 A = 1
+B = ['main']
 C = 1
 D = [4, 3]
 F = [4, 3]
@@ -246,6 +247,10 @@ if.app-id = 'net.java.openjdk.java'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace C'
 
@@ -276,10 +281,6 @@ run = 'move-node-to-workspace P'
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.WebStorm'
 run = 'move-node-to-workspace W'
-
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace O'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
