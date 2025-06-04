@@ -30,6 +30,8 @@ export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
 # - python
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+# - zsh
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 # brew path
 export BREW_PREFIX=$(brew --prefix)
