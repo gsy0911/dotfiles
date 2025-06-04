@@ -19,7 +19,7 @@ unsetopt share_history
 
 ## zsh settings
 # ヒストリファイルを指定
-HISTFILE=~/.zsh_history
+# HISTFILE=~/.zsh_history
 # ヒストリに保存するコマンド数
 HISTSIZE=1000
 # ヒストリファイルに保存するコマンド数
