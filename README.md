@@ -43,3 +43,8 @@ $ nvim --startuptime startuptime.log +q
 137.421  000.020: --- NVIM STARTED ---
 ```
 
+# XGD Base Directory
+
+```shell
+$ brew install --formula xdg-ninja
+```

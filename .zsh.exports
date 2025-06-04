@@ -1,5 +1,36 @@
 #!/bin/zsh
 
+# XGD Base Directory
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
+# Compatible XGD Base Directory
+
+# - ansible
+export ANSIBLE_HOME="$XDG_DATA_HOME"/ansible
+# - rust
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+# -- you should add, after executing `$ rustup-init`
+export PATH="$CARGO_HOME/env:$PATH"
+# - docker
+#export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export DOCKER_BUILDKIT=1
+# - volta
+export VOLTA_HOME="$XDG_DATA_HOME/volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+# - sqlite
+export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
+# - psql
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+# - mysql
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
+# - python
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+
 # brew path
 export BREW_PREFIX=$(brew --prefix)
 export HOMEBREW_AUTO_UPDATE_SECS=86400
@@ -20,13 +51,7 @@ export BLOSC_DIR="$BREW_PREFIX/opt/c-blosc"
 # node
 # export PATH="$BREW_PREFIX/opt/node@20/bin:$PATH"
 # export PATH="$BREW_PREFIX/opt/node/bin:$PATH"
-## volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
-# rust
-# you should add, after executing `$ rustup-init`
-export PATH="$HOME/.cargo/env:$PATH"
 
 # mysql
 export PATH="$BREW_PREFIX/opt/mysql-client@8.0/bin:$PATH"
@@ -38,9 +63,6 @@ export AWS_PROFILE=default
 export OPENBLAS=$(brew --prefix openblas)
 export LDFLAGS="-I$BREW_PREFIX/opt/openssl/include -L$BREW_PREFIX/opt/openssl/lib"
 export CPPFLAGS="-I$BREW_PREFIX/opt/openblas/include"
-
-# docker
-export DOCKER_BUILDKIT=1
 
 # openssl / gmp, pycrypto
 export "CFLAGS=-I$BREW_PREFIX/include -L$BREW_PREFIX/lib"
