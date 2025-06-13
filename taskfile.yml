@@ -31,6 +31,7 @@ tasks:
       - brew tap daipeihust/tap
       - brew tap FelixKratz/formulae
       - brew tap localstack/tap 
+      - brew tap FelixKratz/formulae
 
   github:
     desc: add gh-plugins
