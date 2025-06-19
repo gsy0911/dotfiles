@@ -5,6 +5,7 @@ return {
     'nvim-lua/plenary.nvim'
   },
   lazy = false,
+  enabled = false,
   -- optionally include "rcarriga/nvim-notify" for beautiful notifications
   config = function()
     -- require("fzf-lua").setup({})

@@ -23,6 +23,14 @@ Initial set up is [here](./INITIAL_SETTING.md).
 $ task ansible
 ```
 
+
+# other initial-setup
+
+```
+# install claude-code
+$ npm install -g @anthropic-ai/claude-code
+```
+
 # install
 
 ```shell

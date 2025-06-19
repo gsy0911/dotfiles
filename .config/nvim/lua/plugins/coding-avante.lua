@@ -1,6 +1,7 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
+  enabled = false,
   -- install stable version
   version = "*",
   opts = {
@@ -15,13 +16,13 @@ return {
     --     support_paste_from_clipboard = false,
     -- },
     -- providers-setting
-    claude = {
-        model = "claude-3-7-sonnet-20250219",
-        -- model = "claude-3-5-sonnet-20240620", -- $3/$15, maxtokens=8000
-        -- model = "claude-3-opus-20240229",  -- $15/$75
-        -- model = "claude-3-haiku-20240307", -- $0.25/1.25
-        max_tokens = 8000,
-    },
+    -- claude = {
+    --     model = "claude-3-7-sonnet-20250219",
+    --     -- model = "claude-3-5-sonnet-20240620", -- $3/$15, maxtokens=8000
+    --     -- model = "claude-3-opus-20240229",  -- $15/$75
+    --     -- model = "claude-3-haiku-20240307", -- $0.25/1.25
+    --     max_tokens = 8000,
+    -- },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
