@@ -7,3 +7,4 @@ cdk.out
 .zsh.exports.secret
 **__pycache__
 *.log
+git-worktrees/*

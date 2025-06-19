@@ -171,3 +171,60 @@ function ss() {
     fi
 }
 
+function gwts() {
+    if [ -z "$1" ]; then
+        echo "Usage: gwts <branch-name>"
+        return 1
+    fi
+    
+    # リポジトリのルートディレクトリの絶対パスを取得
+    REPO_ROOT=$(git rev-parse --show-toplevel)
+    
+    # 新しい作業ツリーのパスを定義
+    WORKTREE_PATH="${REPO_ROOT}/git-worktrees/$1"
+    
+    echo "新しい作業ツリーを作成: ${WORKTREE_PATH}"
+
+    # 新しい作業ツリーを作成
+    git worktree add "${WORKTREE_PATH}" -b $1
+    
+    # 作成した作業ツリーに移動
+    cd "${WORKTREE_PATH}"
+    
+    # プロジェクトの .zsh_aliases をコピー(リポジトリごとに.zsh_aliasesを設定している場合)
+    # if [ -f "${REPO_ROOT}/.zsh_aliases" ]; then
+    #     echo "プロジェクト固有の .zsh_aliases を作業ツリーにコピーしています..."
+    #     cp "${REPO_ROOT}/.zsh_aliases" "${WORKTREE_PATH}/.zsh_aliases"
+    #     echo ".zsh_aliases をコピーしました"
+    # else
+    #     echo "プロジェクト固有の .zsh_aliases が見つかりませんでした"
+    # fi
+
+    ########################
+    ########プロジェクト固有の処理(npm installなどをやる)########
+    ########################
+
+
+    ########################
+    ########プロジェクト固有の処理########
+    ########################
+
+    # VS Code を開く
+    # echo "VS Codeを開いています..."
+    # code "${WORKTREE_PATH}"
+    #
+    # # 元のディレクトリに戻る
+    # cd -
+    #
+    # echo "作業ツリー '$1' のセットアップが完了しました"
+}
+
+function gwts-cd-fzf () {
+  local selected_dir=$(git worktree list | awk '{ print $1}' | fzf)
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+}
+zle -N gwts-cd-fzf
+bindkey '^w' gwts-cd-fzf
