@@ -101,3 +101,5 @@
       - neofetch
       # JankyBorders
       - borders
+      # Gemini
+      - gemini-cli
