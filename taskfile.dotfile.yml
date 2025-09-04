@@ -41,7 +41,7 @@ tasks:
       GIT:
         sh: ls -F .config/git | grep -v / 
       NIX:
-        sh: ls -F .config/git | grep -v / 
+        sh: ls -F .config/nix | grep -v / 
       LAZYGIT:
         sh: ls -F .config/lazygit | grep -v / 
       NVIM:
