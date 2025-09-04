@@ -31,6 +31,8 @@
       - aws-cdk
       - awscli
       - localstack/tap/localstack-cli
+      # cdktf
+      - cdktf
       # node
       # - node@20
       # - node
@@ -101,5 +103,6 @@
       - neofetch
       # JankyBorders
       - borders
+      - codex
       # Gemini
       - gemini-cli
