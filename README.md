@@ -19,6 +19,9 @@ Initial set up is [here](./INITIAL_SETTING.md).
 # setup
 
 ```shell
+# new installation
+$ sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+
 # install required packages via brew
 $ task ansible
 ```
