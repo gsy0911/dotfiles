@@ -95,7 +95,7 @@ S = [2, 'main', 3]
 T = [4, 3] 
 V = 1
 W = [4, 3, 2, 'main']
-X = 'main'
+X = [2, 'main']
 Z = [2, 'main']
 
 # 'main' binding mode declaration

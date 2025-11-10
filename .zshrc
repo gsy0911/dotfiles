@@ -73,3 +73,5 @@ echo -e "\e[35m" \
 "   |_  / __| '_ \  \n" \
 "  _ / /\__ \ | | | \n" \
 " (_)___|___/_| |_|   "
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

@@ -7,7 +7,7 @@ tasks:
     silent: true
     internal: true
     vars:
-      DIRS: ~/.config ~/.config/nvim/lua/plugins ~/.config/wezterm ~/.config/sheldon ~/.config/aerospace ~/.config/sketchybar/plugins ~/.config/sketchybar/items
+      DIRS: ~/.config ~/.copilot ~/.config/nix ~/.config/nvim/lua/plugins ~/.config/wezterm ~/.config/sheldon ~/.config/aerospace ~/.config/sketchybar/plugins ~/.config/sketchybar/items
     cmds:
       - for: { var: DIRS, as: dir }
         cmd: mkdir -p {{.dir}}
@@ -38,8 +38,12 @@ tasks:
         sh: pwd
       CONFIGS:
         sh: ls -F .config | grep -v / 
+      COPILOT:
+        sh: ls -F .config/copilot | grep -v / 
       GIT:
         sh: ls -F .config/git | grep -v / 
+      NIX:
+        sh: ls -F .config/nix | grep -v / 
       LAZYGIT:
         sh: ls -F .config/lazygit | grep -v / 
       NVIM:
@@ -55,8 +59,12 @@ tasks:
       - task: generate-mcp-config
       - for: { var: CONFIGS, as: config }
         cmd: ln -snfv {{.PWD}}/.config/{{.config}} {{.HOME}}/.config/{{.config}}
+      - for: { var: COPILOT, as: coiplot }
+        cmd: ln -snfv {{.PWD}}/.config/copilot/{{.copilot}} {{.HOME}}/.copilot/{{.copilot}}
       - for: { var: GIT, as: git }
         cmd: ln -snfv {{.PWD}}/.config/git/{{.git}} {{.HOME}}/.config/git/{{.git}}
+      - for: { var: NIX, as: nix }
+        cmd: ln -snfv {{.PWD}}/.config/nix/{{.nix}} {{.HOME}}/.config/nix/{{.nix}}
       - for: { var: LAZYGIT, as: lazygit }
         cmd: ln -snfv {{.PWD}}/.config/lazygit/{{.lazygit}} {{.HOME}}/Library/Application\ Support/lazygit/{{.lazygit}}
       - for: { var: NVIM, as: nvim }
