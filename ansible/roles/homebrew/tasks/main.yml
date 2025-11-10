@@ -33,6 +33,7 @@
       - localstack/tap/localstack-cli
       # cdktf
       - cdktf
+      - brew install hashicorp/tap/terraform
       # node
       # - node@20
       # - node
