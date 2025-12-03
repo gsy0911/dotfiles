@@ -8,3 +8,5 @@ cdk.out
 **__pycache__
 *.log
 git-worktrees/*
+pyrightconfig.json
+
