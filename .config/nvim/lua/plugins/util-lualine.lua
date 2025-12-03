@@ -33,6 +33,12 @@ return {
     }
 
     local lualine = require('lualine')
+    
+    -- フルパスを表示するカスタムコンポーネント
+    local function fullpath()
+      return vim.fn.expand('%:p')
+    end
+    
     local config = {
       options = {
         theme = bubbles_theme,
@@ -41,14 +47,14 @@ return {
       },
       sections = {
         lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
-        lualine_b = { 'filename', 'branch' },
+        lualine_b = { fullpath, 'branch' },
         lualine_c = { 'diff', 'diagnostics' },
         lualine_x = { 'encoding', 'fileformat' },
         lualine_y = { 'filetype' },
         lualine_z = { { 'location', separator = { right = '' }, left_padding = 2 } },
       },
       inactive_sections = {
-        lualine_a = { 'filename' },
+        lualine_a = { fullpath },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
