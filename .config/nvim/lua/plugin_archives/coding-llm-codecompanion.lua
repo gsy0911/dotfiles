@@ -5,6 +5,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   event = "VeryLazy",
+  enabled = false,
   config = function()
     require("codecompanion").setup({
       strategies = {
