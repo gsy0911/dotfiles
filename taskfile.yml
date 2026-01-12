@@ -9,6 +9,11 @@ tasks:
     cmds:
       - task -l --sort none
     silent: true
+  
+  install-zellij:
+    cmds:
+      - cargo install --locked zellij
+    silent: true
 
   ansible:
     desc: run-ansible

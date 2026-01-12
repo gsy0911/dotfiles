@@ -50,7 +50,8 @@ function fzf-help() {
 zle -N fzf-help
 # bindkey '^h' fzf-help
 
-function fzf-task-command-copy() {
+# fzf-task-command-copy
+function tl() {
     local src=$(task | grep -v "Available tasks for" | fzf)
     local selected=$(echo $src | cut -d' ' -f2)
     local selectedCommand=${selected%?}
@@ -64,8 +65,8 @@ function fzf-task-command-copy() {
     zle accept-line
     zle -R -c
 }
-zle -N fzf-task-command-copy
-bindkey '^t' fzf-task-command-copy
+zle -N tl
+bindkey '^a' tl
 
 function open-neovim() {
     nvim
@@ -75,8 +76,8 @@ zle -N open-neovim
 bindkey '^n' open-neovim
 
 # see: https://zenn.dev/mozumasu/articles/mozumasu-lazy-git
-# ghq
-function ghq-fzf() {
+# fzf-ghq
+function fzf-ghq() {
   local src=$(ghq list | fzf --preview "bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
   if [ -n "$src" ]; then
     BUFFER="cd $(ghq root)/$src"
@@ -84,8 +85,8 @@ function ghq-fzf() {
   fi
   zle -R -c
 }
-zle -N ghq-fzf
-bindkey '^g' ghq-fzf
+zle -N fzf-ghq
+bindkey '^r' fzf-ghq
 
 # Docker RM Images with Peco
 function drmip(){
