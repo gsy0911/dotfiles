@@ -126,6 +126,18 @@ function fzf-ghq() {
 zle -N fzf-ghq
 bindkey -M udk_zsh 'r' fzf-ghq
 
+function fzf-zellij-attach() {
+  local session=$(zellij list-sessions --short | fzf)
+  if [ -n "$session" ]; then
+    BUFFER="zellij attach $session"
+    zle accept-line
+  fi
+  zle -R -c
+  zle -K main
+}
+zle -N fzf-zellij-attach
+bindkey -M udk_zsh 'z' fzf-zellij-attach
+
 # Docker RM Images with Peco
 function drmip(){
     local imageId=$(docker images | sort | fzf | awk '{print $3}')
