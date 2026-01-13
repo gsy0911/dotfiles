@@ -98,6 +98,8 @@ alias da='direnv allow'
 alias lg="lazygit"
 # nvim
 alias n='nvim'
+# zellij
+alias z='zellij'
 
 # aerospace
 # 起動
