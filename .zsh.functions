@@ -41,14 +41,50 @@ function mm() {
     fi
 }
 
-function fzf-help() {
-    target=$(ghq root)/dotfiles/man
-    local src=$(ls $target | fzf --preview "bat --color=always --style=header,grid --line-range :80 $target/{}")
-    bat $target/$src
-    zle accept-line
+# 1) Prefix 用キーマップを作る
+# udk_zsh:= user-defined-kymap zsh
+bindkey -N udk_zsh
+
+# 2) Prefix に入るウィジェット
+function zle-enter-prefix() {
+  zle -K udk_zsh
+  zle -M "PREFIX"
 }
-zle -N fzf-help
-# bindkey '^h' fzf-help
+zle -N zle-enter-prefix
+
+# 3) 「実行したら main に戻す」ための薄いラッパ
+function _prefix_wrap() {
+  local widget=$1
+  shift
+  function _inner() {
+    zle $widget -- "$@"
+    zle -K main
+  }
+  zle -N "$1" _inner
+}
+# 4) Prefix 内コマンド（例）
+function prefix-left()  { zle backward-char;  zle -K main }
+function prefix-down()  { zle down-line-or-history; zle -K main }
+function prefix-up()    { zle up-line-or-history;   zle -K main }
+function prefix-right() { zle forward-char;   zle -K main }
+zle -N prefix-left
+zle -N prefix-down
+zle -N prefix-up
+zle -N prefix-right
+
+# 5) Prefix キーマップへ割り当て
+bindkey -M udk_zsh 'h' prefix-left
+bindkey -M udk_zsh 'j' prefix-down
+bindkey -M udk_zsh 'k' prefix-up
+bindkey -M udk_zsh 'l' prefix-right
+
+# Esc でキャンセルして main に戻る
+function prefix-cancel() { zle -K main; zle -M "" }
+zle -N prefix-cancel
+bindkey -M udk_zsh '\e' prefix-cancel
+
+# 6) Prefix キー（例: Ctrl-Space = '^@' が多い）
+bindkey '^z' zle-enter-prefix
 
 # fzf-task-command-copy
 function tl() {
