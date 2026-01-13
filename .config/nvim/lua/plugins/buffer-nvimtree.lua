@@ -13,10 +13,10 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    {mode = "n", "<C-n>t", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
-    {mode = "n", "<C-n>f", "<cmd>NvimTreeFocus<CR>", desc = "NvimTreeにフォーカス"},
-    {mode = "n", "<C-n>s", "<cmd>NvimTreeFindFile<CR>", desc = "開いているファイルをNvimTreeで表示"},
-    {mode = "n", "<C-n>c", "<cmd>NvimTreeCollapse<CR>", desc = "NvimTreeのフォルダを閉じる"},
+    {mode = "n", "<Leader>nt", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
+    {mode = "n", "<Leader>nf", "<cmd>NvimTreeFocus<CR>", desc = "NvimTreeにフォーカス"},
+    {mode = "n", "<Leader>ns", "<cmd>NvimTreeFindFile<CR>", desc = "開いているファイルをNvimTreeで表示"},
+    {mode = "n", "<Leader>nc", "<cmd>NvimTreeCollapse<CR>", desc = "NvimTreeのフォルダを閉じる"},
   },
   config = function()
     local nvimtree = require("nvim-tree")
