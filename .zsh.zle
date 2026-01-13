@@ -31,10 +31,10 @@ zle -N prefix-up
 zle -N prefix-right
 
 # 5) Prefix キーマップへ割り当て
-bindkey -M udk_zsh 'h' prefix-left
-bindkey -M udk_zsh 'j' prefix-down
-bindkey -M udk_zsh 'k' prefix-up
-bindkey -M udk_zsh 'l' prefix-right
+# bindkey -M udk_zsh 'h' prefix-left
+# bindkey -M udk_zsh 'j' prefix-down
+# bindkey -M udk_zsh 'k' prefix-up
+# bindkey -M udk_zsh 'l' prefix-right
 
 # Esc でキャンセルして main に戻る
 function prefix-cancel() { zle -K main; zle -M "" }
@@ -95,4 +95,18 @@ function fzf-zellij-attach() {
 }
 zle -N fzf-zellij-attach
 bindkey -M udk_zsh 'z' fzf-zellij-attach
+
+
+autoload -Uz read-from-minibuffer
+function ask-reply() {
+  local reply=""
+  if ! read-from-minibuffer "Input> "; then
+    return 1
+  fi
+  BUFFER=$REPLY
+  zle accept-line
+  zle -K main
+}
+zle -N ask-reply
+bindkey -M udk_zsh 'x' ask-reply
 
