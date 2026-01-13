@@ -48,7 +48,7 @@ bindkey -N udk_zsh
 # 2) Prefix に入るウィジェット
 function zle-enter-prefix() {
   zle -K udk_zsh
-  zle -M "PREFIX"
+  zle -M "UDK-ZSH | ^n:nvim | ^r: repo | ^t: task"
 }
 zle -N zle-enter-prefix
 
@@ -102,14 +102,14 @@ function tl() {
     zle -R -c
 }
 zle -N tl
-bindkey '^a' tl
+bindkey -M udk_zsh '^t' tl
 
 function open-neovim() {
     nvim
     zle accept-line
 }
 zle -N open-neovim
-bindkey '^n' open-neovim
+bindkey -M udk_zsh '^n' open-neovim
 
 # see: https://zenn.dev/mozumasu/articles/mozumasu-lazy-git
 # fzf-ghq
@@ -122,7 +122,7 @@ function fzf-ghq() {
   zle -R -c
 }
 zle -N fzf-ghq
-bindkey '^r' fzf-ghq
+bindkey -M udk_zsh '^r' fzf-ghq
 
 # Docker RM Images with Peco
 function drmip(){
