@@ -100,16 +100,17 @@ function tl() {
     printf "\n$Grn * USAGE:$Rst \t$eg"
     zle accept-line
     zle -R -c
+    zle -K main
 }
 zle -N tl
-bindkey -M udk_zsh '^t' tl
+bindkey -M udk_zsh 't' tl
 
 function open-neovim() {
     nvim
     zle accept-line
 }
 zle -N open-neovim
-bindkey -M udk_zsh '^n' open-neovim
+bindkey -M udk_zsh 'n' open-neovim
 
 # see: https://zenn.dev/mozumasu/articles/mozumasu-lazy-git
 # fzf-ghq
@@ -120,9 +121,10 @@ function fzf-ghq() {
     zle accept-line
   fi
   zle -R -c
+  zle -K main
 }
 zle -N fzf-ghq
-bindkey -M udk_zsh '^r' fzf-ghq
+bindkey -M udk_zsh 'r' fzf-ghq
 
 # Docker RM Images with Peco
 function drmip(){
