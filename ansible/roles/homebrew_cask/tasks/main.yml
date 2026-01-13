@@ -27,3 +27,4 @@
       # # VNC
       # - vnc-viewer
       - obsidian
+      - ghostty
