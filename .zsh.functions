@@ -48,7 +48,7 @@ bindkey -N udk_zsh
 # 2) Prefix に入るウィジェット
 function zle-enter-prefix() {
   zle -K udk_zsh
-  zle -M "UDK-ZSH | ^n:nvim | ^r: repo | ^t: task"
+  zle -M "UDK-ZSH | n:nvim | r: repo | t: task"
 }
 zle -N zle-enter-prefix
 
@@ -100,7 +100,7 @@ function tl() {
     printf "\n$Grn * USAGE:$Rst \t$eg"
     zle accept-line
     zle -R -c
-    zle -K main
+    # zle -K main
 }
 zle -N tl
 bindkey -M udk_zsh 't' tl
