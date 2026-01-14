@@ -1,3 +1,4 @@
+from os import wait
 import yaml
 from pydantic import BaseModel
 from pathlib import Path
@@ -27,19 +28,19 @@ class Task(BaseModel):
         else:
             return f"task {self.gen_command()}"
 
+
 class Taskfile(BaseModel):
     includes: list[Include]
     tasks: list[Task]
 
 
 class TaskFileRepository:
-
     def __init__(self, path: str, prefix: str | None = None):
         self.path = Path(path)
         self.prefix = prefix
 
     def _read(self) -> Taskfile:
-        with open(self.path, 'r', encoding='utf-8') as f:
+        with open(self.path, "r", encoding="utf-8") as f:
             docs = list(yaml.safe_load_all(f))
 
         includes = []
@@ -53,7 +54,12 @@ class TaskFileRepository:
 
         tasks = []
         for k, v in docs[0]["tasks"].items():
-            t = Task(prefix=self.prefix, name=k, desc=v.get("desc", ""), requires=v.get("requires", {}))
+            t = Task(
+                prefix=self.prefix,
+                name=k,
+                desc=v.get("desc", ""),
+                requires=v.get("requires", {}),
+            )
             tasks.append(t)
         return Taskfile(includes=includes, tasks=tasks)
 
@@ -66,7 +72,22 @@ class TaskFileRepository:
             else:
                 relative_path = Path(i.taskfile)
                 target_path = self.path.parent / relative_path
-                tasks.extend(TaskFileRepository(path=target_path, prefix=i.prefix)._read().tasks)
+                tasks.extend(
+                    TaskFileRepository(path=target_path, prefix=i.prefix)._read().tasks
+                )
                 print(target_path)
 
         return tasks
+
+
+class TaskfileFinder:
+    def __init__(self, root_dir: str):
+        self.root_dir = Path(root_dir)
+
+    def find(self) -> str | None:
+        candidates = []
+        for v in self.root_dir.glob("taskfile.y*"):
+            candidates.append(v)
+        if len(candidates) > 0:
+            return str(candidates[0])
+        return None
