@@ -83,12 +83,13 @@
       - gh
       - ghq
       - ollama
+      - zellij
       # font
       # $ img2sixel to show image in terminal
       - libsixel
       - imagemagick
       # Git
-      - jesseduffield/lazygit/lazygit
+      - lazygit
       - git-flow
       # Docker
       - lazydocker

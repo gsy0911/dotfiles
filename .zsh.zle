@@ -6,7 +6,7 @@ bindkey -N udk_zsh
 # 2) Prefix に入るウィジェット
 function zle-enter-prefix() {
   zle -K udk_zsh
-  zle -M "UDK-ZSH | n:nvim | r: repo | t: task | z: zellij"
+  printf "\n$Grn + UDK-ZSH$Rst | n:nvim | r: repo | t: task | z: zellij"
 }
 zle -N zle-enter-prefix
 
@@ -56,9 +56,11 @@ function tl() {
     printf "\n$Grn * DESC:$Rst \t$desc"
     printf "\n$Grn * COPIED AS:$Rst \ttask $selectedCommand"
     printf "\n$Grn * USAGE:$Rst \t$eg"
-    zle accept-line
-    zle -R -c
-    # zle -K main
+    local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
+    BUFFER=$command
+    # zle redisplay
+    # zle -R -c
+    zle -K main
 }
 zle -N tl
 bindkey -M udk_zsh 't' tl
