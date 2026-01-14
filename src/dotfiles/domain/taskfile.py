@@ -20,6 +20,13 @@ class Task(BaseModel):
         else:
             return self.name
 
+    def gen_buffer(self) -> str:
+        if self.requires:
+            args = " ".join([f"{v}=" for v in self.requires["vars"]])
+            return f"{args} task {self.gen_command()}"
+        else:
+            return f"task {self.gen_command()}"
+
 class Taskfile(BaseModel):
     includes: list[Include]
     tasks: list[Task]
