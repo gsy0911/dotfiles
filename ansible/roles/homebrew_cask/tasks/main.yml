@@ -24,6 +24,7 @@
       - sf-symbols
       # claude
       - claude
+      - claude-code
       # # VNC
       # - vnc-viewer
       - obsidian
