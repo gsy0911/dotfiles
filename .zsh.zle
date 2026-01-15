@@ -42,23 +42,25 @@ zle -N prefix-cancel
 bindkey -M udk_zsh '\e' prefix-cancel
 
 # 6) Prefix キー（例: Ctrl-Space = '^@' が多い）
-bindkey '^z' zle-enter-prefix
+bindkey '^a' zle-enter-prefix
 
 # fzf-task-command-copy
 function tl() {
     local src=$(task | grep -v "Available tasks for" | fzf)
     local selected=$(echo $src | cut -d' ' -f2)
     local selectedCommand=${selected%?}
-    echo -n "task $selectedCommand" | pbcopy
-    # printf "\n$Grn * SELECTED:$Rst \t$selectedCommand"
-    local desc=$(echo $src | awk -F'[:*;]' '{print $4}' | sed 's/^ *//')
-    # local eg=$(echo $src | awk -F'[;]' '{print $2}' | sed 's/^ *//')
-    printf "\n$Grn * DESC:$Rst\t$desc"
-    # printf "\n$Grn * COPIED AS:$Rst \ttask $selectedCommand"
-    # printf "\n$Grn * USAGE:$Rst \t$eg"
-    printf "\n\n"
-    local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
-    BUFFER=$command
+    if [ -n "$selectedCommand" ]; then
+   	 echo -n "task $selectedCommand" | pbcopy
+    	# printf "\n$Grn * SELECTED:$Rst \t$selectedCommand"
+ 	   local desc=$(echo $src | awk -F'[:*;]' '{print $4}' | sed 's/^ *//')
+    	# local eg=$(echo $src | awk -F'[;]' '{print $2}' | sed 's/^ *//')
+    	printf "\n$Grn * DESC:$Rst\t$desc"
+    	# printf "\n$Grn * COPIED AS:$Rst \ttask $selectedCommand"
+    	# printf "\n$Grn * USAGE:$Rst \t$eg"
+    	printf "\n\n"
+    	local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
+    	BUFFER=$command
+    fi
     # zle redisplay
     # zle -R -c
     zle -K main
