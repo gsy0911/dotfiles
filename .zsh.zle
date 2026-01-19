@@ -50,9 +50,9 @@ function tl() {
     local selected=$(echo $src | cut -d' ' -f2)
     local selectedCommand=${selected%?}
     if [ -n "$selectedCommand" ]; then
-   	 echo -n "task $selectedCommand" | pbcopy
+   	echo -n "task $selectedCommand" | pbcopy
     	# printf "\n$Grn * SELECTED:$Rst \t$selectedCommand"
- 	   local desc=$(echo $src | awk -F'[:*;]' '{print $4}' | sed 's/^ *//')
+ 	local desc=$(echo $src | awk -F'[:*]' '{print $3}' | sed 's/^ *//')
     	# local eg=$(echo $src | awk -F'[;]' '{print $2}' | sed 's/^ *//')
     	printf "\n$Grn * DESC:$Rst\t$desc"
     	# printf "\n$Grn * COPIED AS:$Rst \ttask $selectedCommand"
