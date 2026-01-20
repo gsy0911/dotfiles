@@ -13,6 +13,7 @@
     brews = [
       ### CLI Applications not available in nixpkgs
       # "fisher"
+      "htop",
     ];
     taps = [
       # "nikitabobko/tap"
@@ -24,7 +25,7 @@
       # "1password-cli"
       "aerospace"
       "cursor"
-      # "firefox"
+      "firefox"
       "obsidian"
       # "raycast"
       # "stats"
