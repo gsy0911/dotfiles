@@ -123,15 +123,10 @@
     ];
     casks = [
       ### GUI Applications
-      "font-cica"
       # icons for sketchybar
-      "font-hack-nerd-font"
-      "sf-symbols"
       # claude
       "claude"
       # "claude-code"
-      # # VNC
-      # "vnc-viewer
       # terminal
       "ghostty"
       "wezterm"
@@ -159,6 +154,9 @@
       "minecraft"
 
       ### Fonts
+      "font-cica"
+      "font-hack-nerd-font"
+      "sf-symbols"
       # "font-google-sans-code"
       # "font-jetbrains-mono-nerd-font"
     ];

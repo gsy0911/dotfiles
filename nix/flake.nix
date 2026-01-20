@@ -18,7 +18,6 @@
   outputs = { self, nixpkgs, home-manager, nix-darwin } @ inputs: let
        system = "aarch64-darwin";
        pkgs = nixpkgs.legacyPackages.${system};
-       homebrewConfig = "yoshiki-m3-mba";
              # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
