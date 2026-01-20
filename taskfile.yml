@@ -10,11 +10,6 @@ tasks:
       - task -l --sort none
     silent: true
   
-  install-zellij:
-    cmds:
-      - cargo install --locked zellij
-    silent: true
-
   ansible:
     desc: run-ansible
     dir: ./ansible
@@ -22,22 +17,7 @@ tasks:
       - test -f playbook.yml
       - test -f requirements.yml
     cmds:
-      - task: tap
       - ansible-playbook playbook.yml
-
-  tap:
-    desc: add external-repositories
-    internal: true
-    cmds:
-      - brew tap koekeishiya/formulae
-      - brew tap k1low/tap
-      - brew tap jesseduffield/lazygit
-      - brew tap jesseduffield/lazydocker
-      - brew tap daipeihust/tap
-      - brew tap FelixKratz/formulae
-      - brew tap localstack/tap 
-      - brew tap FelixKratz/formulae
-      - brew tap hashicorp/tap
 
   github:
     desc: add gh-plugins

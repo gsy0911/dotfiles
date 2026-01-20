@@ -119,14 +119,20 @@
       "typst"
     ];
     taps = [
+      "daipeihust/tap"
+      "FelixKratz/formulae"
+      "hashicorp/tap"
+      "jesseduffield/lazygit"
+      "jesseduffield/lazydocker"
+      "koekeishiya/formulae"
+      "k1low/tap"
+      "localstack/tap "
       "nikitabobko/tap"
     ];
     casks = [
       ### GUI Applications
-      # icons for sketchybar
-      # claude
+      # AI
       "claude"
-      # "claude-code"
       # terminal
       "ghostty"
       "wezterm"
@@ -147,6 +153,8 @@
       # development
       "aws-vault-binary"
       "docker-desktop"
+      # Chat
+      "slack"
       # Others
       "adobe-acrobat-reader"
       "insomnia"
@@ -156,6 +164,7 @@
       ### Fonts
       "font-cica"
       "font-hack-nerd-font"
+      # icons for sketchybar
       "sf-symbols"
       # "font-google-sans-code"
       # "font-jetbrains-mono-nerd-font"

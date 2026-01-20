@@ -71,10 +71,10 @@
         };
       };
 
-      # darwinConfigurations.${homebrewConfig} = nix-darwin.lib.darwinSystem {
-      #   system = system;
-      #   modules = [ ./nix-darwin/config.nix ];
-      # };
+      darwinConfigurations."yoshiki-m1-mbp" = nix-darwin.lib.darwinSystem {
+        system = system;
+        modules = [ ./nix-darwin/config.nix ];
+      };
       darwinConfigurations."yoshiki-m3-mba" = nix-darwin.lib.darwinSystem {
         system = system;
         modules = [ ./nix-darwin/config.nix ];
