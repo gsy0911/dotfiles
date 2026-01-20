@@ -35,7 +35,6 @@
       # rust
       "rustup"
       "rust-analyzer"
-      "typst"
       # aws
       "aws-cdk"
       "awscli"
@@ -114,10 +113,10 @@
       "neofetch"
       # JankyBorders
       "borders"
-      # "codex"
       # Gemini
       "gemini-cli"
       # Others
+      "typst"
     ];
     taps = [
       "nikitabobko/tap"
