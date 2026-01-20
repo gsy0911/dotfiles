@@ -1,10 +1,10 @@
 { pkgs, lib, inputs, ... }:
 {
+  nix.enable = false;
   system = {
     stateVersion = 6;
     # mac のユーザー名
     primaryUser = "yoshiki";
-    homeDirectory = "/Users/yoshiki";
   };
   nixpkgs = {
     config.allowUnfree = true;

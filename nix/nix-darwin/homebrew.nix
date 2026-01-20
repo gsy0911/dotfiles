@@ -2,6 +2,7 @@
 {
   homebrew = {
     enable = true;
+    brewPrefix = "/opt/homebrew/bin";
     onActivation = {
       autoUpdate = true;
       # TODO: いずれ uninstall
@@ -13,7 +14,7 @@
     brews = [
       ### CLI Applications not available in nixpkgs
       # "fisher"
-      "htop",
+      "htop"
     ];
     taps = [
       # "nikitabobko/tap"
