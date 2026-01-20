@@ -14,6 +14,110 @@
     brews = [
       ### CLI Applications not available in nixpkgs
       "htop"
+      "sheldon"
+      # "ansible"
+      "mas"
+      # basics
+      "bat"
+      "eza"
+      "gawk"
+      "jq"
+      "fzf"
+      "curl"
+      "starship"
+      "colordiff"
+      "tokei"
+      "direnv"
+      "procs"
+      "figlet"
+      # Taskfile
+      "go-task"
+      # rust
+      "rustup"
+      "rust-analyzer"
+      "typst"
+      # aws
+      "aws-cdk"
+      "awscli"
+      "localstack/tap/localstack-cli"
+      # cdktf
+      "cdktf"
+      "terraform"
+      # node
+      "node@20"
+      "node"
+      "yarn"
+      # python
+      "rye"
+      "uv"
+      "python@3.10"
+      "python@3.11"
+      "python@3.12"
+      # after install, you must type: brew link certifi
+      "certifi"
+      ## for scipy
+      "lapack"
+      ## for matplotlib
+      "libjpeg"
+      ## for psycopg2
+      # "postgresql"
+      "mysql"
+      # see: https://github.com/k1LoW/tbls
+      "tbls"
+      ## for numpy, see: https://github.com/numpy/numpy/issues/17807
+      "openblas"
+      ## for lightgbm
+      "libomp"
+      # "cmake"
+      ## for mecab
+      "mecab"
+      "mecab-ipadic"
+      ## for tables(library)
+      "hdf5"
+      "c-blosc"
+      # yubikey
+      "ykman"
+      # sshpass
+      "hudochenkov/sshpass/sshpass"
+      # for ssh2-python
+      "openssl@3"
+      # for SSL
+      "mkcert"
+      # portscan
+      "nmap"
+      # neovim
+      "neovim"
+      "ripgrep"
+      "vhs"
+      "gh"
+      "ghq"
+      "ollama"
+      "zellij"
+      # font
+      # $ img2sixel to show image in terminal
+      "libsixel"
+      "imagemagick"
+      # Git
+      "lazygit"
+      "git-flow"
+      # Docker
+      "lazydocker"
+      "oxker"
+      # sketchybar
+      # didn't work
+      # "sketchybar"
+      # JMeter
+      # run below after installing openjdk
+      # $ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+      # "openjdk
+      # "jmeter
+      "neofetch"
+      # JankyBorders
+      "borders"
+      # "codex"
+      # Gemini
+      "gemini-cli"
+      # Others
     ];
     taps = [
       "nikitabobko/tap"
@@ -28,7 +132,7 @@
       "claude"
       # "claude-code"
       # # VNC
-      # - vnc-viewer
+      # "vnc-viewer
       # terminal
       "ghostty"
       "wezterm"
@@ -47,9 +151,9 @@
       # Git
       "fork"
       # development
-      "aws-vault"
-      "docker"
-      # other
+      "aws-vault-binary"
+      "docker-desktop"
+      # Others
       "adobe-acrobat-reader"
       "insomnia"
       "vlc"
