@@ -80,5 +80,7 @@
         modules = [ ./nix-darwin/config.nix ];
       };
 
+      # nix-formatter
+      formatter.${system} = pkgs.alejandra;
     };
 }
