@@ -7,19 +7,23 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
 
-  outputs = { self, nixpkgs, home-manager } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, nix-darwin } @ inputs: let
        system = "aarch64-darwin";
        pkgs = nixpkgs.legacyPackages.${system};
+       homebrewConfig = "gsy0911-homebrew";
     in
     {
       packages.${system}.my-packages = pkgs.buildEnv {
         name = "my-packages-list";
         paths = [
-          pkgs.git
           pkgs.curl
           # ここにパッケージを追記していく
         ];
@@ -35,18 +39,25 @@
         echo "Update complete!"
       '');
       };
+
       homeConfigurations = {
-      myHomeConfig = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = system;
+        myHomeConfig = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = system;
+          };
+          extraSpecialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./home.nix
+          ];
         };
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./home.nix
-        ];
       };
+
+      darwinConfigurations.${homebrewConfig} = nix-darwin.lib.darwinSystem {
+        system = system;
+        modules = [ ./nix-darwin/config.nix ];
+      };
+
     };
-  };
 }
