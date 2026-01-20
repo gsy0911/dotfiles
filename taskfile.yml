@@ -10,6 +10,12 @@ tasks:
       - task -l --sort none
     silent: true
   
+  nix:
+    desc: update nix and format nix-files
+    dir: ./nix
+    cmds:
+      - nix run .#update
+
   ansible:
     desc: run-ansible
     dir: ./ansible

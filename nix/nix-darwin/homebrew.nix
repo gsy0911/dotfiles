@@ -1,5 +1,9 @@
-{ pkgs, lib, inputs, ... }:
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   homebrew = {
     enable = true;
     brewPrefix = "/opt/homebrew/bin";
@@ -170,5 +174,4 @@
       # "font-jetbrains-mono-nerd-font"
     ];
   };
-
 }

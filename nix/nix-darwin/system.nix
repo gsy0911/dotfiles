@@ -1,5 +1,9 @@
-{ pkgs, lib, inputs, ... }:
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   nix.enable = false;
   system = {
     stateVersion = 6;
