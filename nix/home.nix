@@ -29,4 +29,24 @@ in {
     source = ./config/aerospace;
     recursive = true;
   };
+  xdg.configFile."git" = {
+    source = ./config/git;
+    recursive = true;
+  };
+  xdg.configFile."lazygit" = {
+    source = ./config/lazygit;
+    recursive = true;
+  };
+  xdg.configFile."sheldon" = {
+    source = ./config/sheldon;
+    recursive = true;
+  };
+  xdg.configFile."sketchybar" = {
+    source = ./config/sketchybar;
+    recursive = true;
+  };
+  xdg.configFile."wezterm" = {
+    source = ./config/wezterm;
+    recursive = true;
+  };
 }

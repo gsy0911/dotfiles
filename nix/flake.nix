@@ -38,7 +38,7 @@
         echo "Updating home-manager..."
         nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
         echo "Updating nix-darwin..."
-        sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
+        # sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
         echo "Update complete!"
       '');
     };
