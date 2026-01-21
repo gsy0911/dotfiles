@@ -55,7 +55,7 @@
       ## AWS 
       "aws-cdk"
       "awscli"
-      "localstack/tap/localstack-cli"
+      # "localstack/tap/localstack-cli"
       # cdktf
       "cdktf"
 
@@ -106,7 +106,6 @@
 
       ## Others
       "mas"
-      # basics
       "hdf5"
       "c-blosc"
       # yubikey
@@ -145,7 +144,7 @@
       "jesseduffield/lazydocker"
       "koekeishiya/formulae"
       "k1low/tap"
-      "localstack/tap "
+      # "localstack/tap "
       "nikitabobko/tap"
     ];
     casks = [
