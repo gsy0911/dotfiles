@@ -82,7 +82,7 @@
       
       ## Terminal
       # neovim
-      "vneovim"
+      "neovim"
       "vhs"
       "zellij"
       "neofetch"
