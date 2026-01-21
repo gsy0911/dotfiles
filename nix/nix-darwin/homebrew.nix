@@ -52,7 +52,7 @@
       # for ssh2-python
       "openssl@3"
 
-      ## AWS 
+      ## AWS
       "aws-cdk"
       "awscli"
       # "localstack/tap/localstack-cli"
@@ -69,17 +69,17 @@
       ## IaC
       "terraform"
       # "ansible"
-      
+
       ## Taskfile
       "go-task"
-      
+
       ## Git
       "lazygit"
       "git-flow"
       ## Docker
       "lazydocker"
       "oxker"
-      
+
       ## Terminal
       # neovim
       "neovim"

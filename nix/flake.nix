@@ -32,14 +32,14 @@
     apps.${system}.update = {
       type = "app";
       program = toString (pkgs.writeShellScript "update-script" ''
-               set -e
-               echo "Updating flake..."
-               nix flake update
-               echo "Updating home-manager..."
-               nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
-               echo "Updating nix-darwin..."
-               sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
-               echo "Update complete!"
+        set -e
+        echo "Updating flake..."
+        nix flake update
+        echo "Updating home-manager..."
+        nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
+        echo "Updating nix-darwin..."
+        sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
+        echo "Update complete!"
       '');
     };
 
