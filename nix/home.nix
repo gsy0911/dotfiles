@@ -22,4 +22,11 @@ in {
   };
 
   programs.home-manager.enable = true;
+
+  # symbolic-link
+  xdg.enable = true;
+  xdg.configFile."aerospace" = {
+    source = ./config/aerospace;
+    recursive = true;
+  };
 }
