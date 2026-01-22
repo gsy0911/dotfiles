@@ -18,6 +18,9 @@
     brews = [
       ### CLI Applications not available in nixpkgs
 
+      # check XDG
+      "xdg-ninja"
+
       ## Languages
       # rust
       "rustup"

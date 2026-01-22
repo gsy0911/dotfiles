@@ -34,14 +34,6 @@ $ task nix
 $ npm install -g @anthropic-ai/claude-code
 ```
 
-# install
-
-```shell
-# create symbolic linc
-# add .zshrc
-$ task dotfile
-```
-
 # check
 
 ```shell
