@@ -16,16 +16,11 @@
     #   appdir = "~/Applications";
     # };
     brews = [
-      ### CLI Applications not available in nixpkgs
-
-      # check XDG
-      "xdg-ninja"
-
-      ## Languages
-      # rust
+      ### Languages & Runtimes
+      # Rust
       "rustup"
       "rust-analyzer"
-      # python
+      # Python
       "rye"
       "uv"
       "python@3.10"
@@ -33,72 +28,26 @@
       "python@3.12"
       "python@3.13"
       "python@3.14"
-
-      # node
+      # Node.js
       "node@24"
       "node@20"
       "node"
       "yarn"
+      # Lua
+      "lua"
+      "luajit"
+      "luarocks"
+      "lpeg"
+      # Other runtimes
+      "tree-sitter@0.25"
 
-      ## Python-related
-      # for lightgbm
-      # "libomp"
-      # "cmake"
-      # for mecab
-      # "mecab"
-      # "mecab-ipadic"
-      ## for tables(library)
-      # after install, you must type: brew link certifi
-      "certifi"
-      # for scipy
-      "lapack"
-      ## for matplotlib
-      "libjpeg"
-      ## for numpy, see: https://github.com/numpy/numpy/issues/17807
-      "openblas"
-      # for ssh2-python
-      "openssl@3"
-      # Python packages
-      "cffi"
-      "cryptography"
-      "python-certifi"
-      "python-cryptography"
-
-      ## AWS
-      "aws-cdk"
-      "awscli"
-      "cdktf"
-
-      ## Database
-      # for psycopg2
-      # "postgresql"
-      "mysql"
-      # see: https://github.com/k1LoW/tbls
-      "tbls"
-
-      ## IaC
-      "terraform"
-      # "ansible"
-
-      ## Taskfile
-      "go-task"
-
-      ## Git
-      "lazygit"
-      "git-flow"
-
-      ## Docker
-      "lazydocker"
-      "oxker"
-      "docker-completion"
-
-      ## Terminal
-      # neovim
+      ### Development Tools
+      # Editors & Terminals
       "neovim"
       "vhs"
       "zellij"
+      # Terminal utilities
       "neofetch"
-      # JankyBorders
       "borders"
       "starship"
       "bat"
@@ -112,8 +61,6 @@
       "direnv"
       "htop"
       "sheldon"
-      # "procs"
-      # Ascii Art
       "figlet"
       "act"
       "glow"
@@ -123,20 +70,55 @@
       "procs"
       "tree"
       "ttyd"
+      "ripgrep"
+      # Git tools
+      "lazygit"
+      "git-flow"
+      "gh"
+      "ghq"
+      # Docker tools
+      "lazydocker"
+      "oxker"
+      "docker-completion"
+      # Task runners
+      "go-task"
+      # Documentation & Writing
+      "codex"
+      "gemini-cli"
+      "typst"
+      # Other dev tools
+      "xcodegen"
+      "snowflake-cli"
+      "screenresolution"
+      "sketchybar"
 
-      ## Security/Tools
+      ### Infrastructure & DevOps
+      # AWS
+      "aws-cdk"
+      "awscli"
+      "cdktf"
+      # Infrastructure as Code
+      "terraform"
+      # Database
+      "mysql"
+      "tbls"
+      # Database tools
+      "sqlite"
+
+      ### System & Security
+      # Security tools
       "mas"
       "ykman"
       "hudochenkov/sshpass/sshpass"
       "mkcert"
       "nmap"
+      # System utilities
+      "xdg-ninja"
+      "im-select"
+      "ios-deploy"
 
-      ## Git/GitHub
-      "gh"
-      "ghq"
-      "ripgrep"
-
-      ## Image Processing
+      ### Media Processing
+      # Image processing
       "libsixel"
       "imagemagick"
       "cairo"
@@ -154,27 +136,21 @@
       "tesseract"
       "webp"
       "zimg"
-
-      ## Video/Audio
+      "jasper"
+      "openexr"
+      "openjpeg"
+      "openjph"
+      "libultrahdr"
+      "little-cms2"
+      # Video processing
       "ffmpeg"
-      "flac"
-      "lame"
       "libass"
       "libbluray"
       "libde265"
-      "libsamplerate"
-      "libsndfile"
-      "libsoxr"
       "libvidstab"
       "libvmaf"
-      "libvorbis"
       "libvpx"
-      "mpg123"
-      "opencore-amr"
-      "opus"
       "rav1e"
-      "rubberband"
-      "speex"
       "srt"
       "svt-av1"
       "theora"
@@ -184,46 +160,30 @@
       "aom"
       "dav1d"
       "aribb24"
-
-      ## Font/Text Rendering
+      "librist"
+      "libudfread"
+      # Audio processing
+      "flac"
+      "lame"
+      "libsamplerate"
+      "libsndfile"
+      "libsoxr"
+      "libvorbis"
+      "mpg123"
+      "opencore-amr"
+      "opus"
+      "rubberband"
+      "speex"
+      "libogg"
+      # Font & Text rendering
       "fontconfig"
       "freetype"
       "fribidi"
       "graphite2"
       "pango"
 
-      ## Compression
-      "brotli"
-      "lz4"
-      "lzo"
-      "xz"
-      "zlib"
-      "zstd"
-      "libarchive"
-      "libdeflate"
-      "libzip"
-      "snappy"
-
-      ## Networking
-      "c-ares"
-      "libnghttp2"
-      "libssh"
-      "libssh2"
-      "libwebsockets"
-      "rtmpdump"
-      "unbound"
-
-      ## Cryptography/Security
-      "ca-certificates"
-      "gnutls"
-      "libfido2"
-      "libsodium"
-      "libtasn1"
-      "mbedtls"
-      "mbedtls@3"
-      "nettle"
-
-      ## Build Tools/Compilers
+      ### Core Libraries
+      # Build tools & Compilers
       "gcc"
       "gmp"
       "mpfr"
@@ -236,45 +196,65 @@
       "ncurses"
       "isl"
       "mpdecimal"
-
-      ## System Libraries
+      # System libraries
       "glib"
       "gettext"
       "libevent"
       "libuv"
       "libyaml"
       "shared-mime-info"
-      "sqlite"
       "unibilium"
       "utf8proc"
       "uvwasi"
       "gdbm"
-
-      ## Language Runtimes
-      "lua"
-      "luajit"
-      "luarocks"
-      "lpeg"
-      "tree-sitter@0.25"
-
-      ## Data Processing
+      # Cryptography & Security libraries
+      "ca-certificates"
+      "gnutls"
+      "libfido2"
+      "libsodium"
+      "libtasn1"
+      "mbedtls"
+      "mbedtls@3"
+      "nettle"
+      # Networking libraries
+      "c-ares"
+      "libnghttp2"
+      "libssh"
+      "libssh2"
+      "libwebsockets"
+      "rtmpdump"
+      "unbound"
+      # Compression libraries
+      "brotli"
+      "lz4"
+      "lzo"
+      "xz"
+      "zlib"
+      "zstd"
+      "libarchive"
+      "libdeflate"
+      "libzip"
+      "snappy"
+      # Data processing
       "hdf5"
       "c-blosc"
       "json-c"
       "cjson"
       "simdjson"
       "protobuf"
+      # Python dependencies
+      "certifi"
+      "lapack"
+      "libjpeg"
+      "openblas"
+      "openssl@3"
+      "cffi"
+      "cryptography"
+      "python-certifi"
+      "python-cryptography"
 
-      ## Development Tools
-      "codex"
-      "gemini-cli"
-      "typst"
-      "xcodegen"
-      "snowflake-cli"
-      "screenresolution"
-      "sketchybar"
-
-      ## X11
+      ### Graphics & Display
+      # X11
       "libx11"
       "libxau"
       "libxcb"
@@ -282,18 +262,18 @@
       "libxext"
       "libxrender"
       "xorgproto"
-
-      ## Other Libraries
-      "abseil"
-      "frei0r"
+      # Graphics libraries
+      "pixman"
+      "sdl2"
+      "imath"
       "highway"
+      "frei0r"
+
+      ### Other Libraries
+      "abseil"
       "icu4c@76"
       "icu4c@77"
       "icu4c@78"
-      "im-select"
-      "imath"
-      "ios-deploy"
-      "jasper"
       "libb2"
       "libcbor"
       "libgit2"
@@ -302,20 +282,9 @@
       "liblqr"
       "libmicrohttpd"
       "libmpc"
-      "libogg"
-      "librist"
-      "libudfread"
-      "libultrahdr"
       "libunibreak"
       "libunistring"
-      "little-cms2"
       "oniguruma"
-      "openexr"
-      "openjpeg"
-      "openjph"
-      "pixman"
-      "sdl2"
-      "zimg"
     ];
     taps = [
       "daipeihust/tap"
