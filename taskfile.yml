@@ -1,8 +1,5 @@
 version: '3'
 
-includes:
-  dotfile: ./taskfile.dotfile.yml
-
 tasks:
 
   default:
@@ -16,15 +13,6 @@ tasks:
     cmds:
       - nix run .#update
       - nix store gc
-
-  ansible:
-    desc: run-ansible
-    dir: ./ansible
-    preconditions:
-      - test -f playbook.yml
-      - test -f requirements.yml
-    cmds:
-      - ansible-playbook playbook.yml
 
   github:
     desc: add gh-plugins
