@@ -31,7 +31,11 @@
       "python@3.10"
       "python@3.11"
       "python@3.12"
+      "python@3.13"
+      "python@3.14"
+
       # node
+      "node@24"
       "node@20"
       "node"
       "yarn"
@@ -54,12 +58,15 @@
       "openblas"
       # for ssh2-python
       "openssl@3"
+      # Python packages
+      "cffi"
+      "cryptography"
+      "python-certifi"
+      "python-cryptography"
 
       ## AWS
       "aws-cdk"
       "awscli"
-      # "localstack/tap/localstack-cli"
-      # cdktf
       "cdktf"
 
       ## Database
@@ -79,9 +86,11 @@
       ## Git
       "lazygit"
       "git-flow"
+
       ## Docker
       "lazydocker"
       "oxker"
+      "docker-completion"
 
       ## Terminal
       # neovim
@@ -106,6 +115,14 @@
       # "procs"
       # Ascii Art
       "figlet"
+      "act"
+      "glow"
+      "gum"
+      "httpie"
+      "jc"
+      "procs"
+      "tree"
+      "ttyd"
 
       ## Others
       "mas"
@@ -137,21 +154,18 @@
       "gemini-cli"
       "typst"
 
+      ## Others
       "abseil"
-      "act"
       "aom"
       "aribb24"
       "brotli"
       "c-ares"
       "ca-certificates"
       "cairo"
-      "cffi"
       "cjson"
       # "cmake"
       "codex"
-      "cryptography"
       "dav1d"
-      "docker-completion"
       "ffmpeg"
       "flac"
       "fontconfig"
@@ -164,13 +178,10 @@
       "gettext"
       "giflib"
       "glib"
-      "glow"
       "gmp"
       "gnutls"
       "graphite2"
-      "gum"
       "highway"
-      "httpie"
       "icu4c@76"
       "icu4c@77"
       "icu4c@78"
@@ -179,7 +190,6 @@
       "ios-deploy"
       "isl"
       "jasper"
-      "jc"
       "jpeg"
       "jpeg-turbo"
       "jpeg-xl"
@@ -204,7 +214,6 @@
       "libmpc"
       "libnghttp2"
       "libogg"
-      "libomp"
       "libpng"
       "libraw"
       "librsvg"
@@ -237,7 +246,6 @@
       "libyaml"
       "libzip"
       "little-cms2"
-      "localstack-cli"
       "lpeg"
       "lua"
       "luajit"
@@ -248,14 +256,11 @@
       "pkgconf"
       "mbedtls"
       "mbedtls@3"
-      "mecab"
-      "mecab-ipadic"
       "mpdecimal"
       "mpfr"
       "mpg123"
       "ncurses"
       "nettle"
-      "node@24"
       "oniguruma"
       "opencore-amr"
       "openexr"
@@ -265,12 +270,7 @@
       "pango"
       "pcre2"
       "pixman"
-      "procs"
       "protobuf"
-      "python-certifi"
-      "python-cryptography"
-      "python@3.13"
-      "python@3.14"
       "rav1e"
       "readline"
       "rtmpdump"
@@ -288,9 +288,7 @@
       "svt-av1"
       "tesseract"
       "theora"
-      "tree"
       "tree-sitter@0.25"
-      "ttyd"
       "unbound"
       "unibilium"
       "utf8proc"
