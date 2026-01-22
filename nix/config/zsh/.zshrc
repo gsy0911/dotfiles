@@ -42,20 +42,20 @@ zshaddhistory() {
 export LANG=ja_JP.UTF-8
 
 # add exports
-source "$HOME/.zsh.exports"
-source "$HOME/.zsh.exports.secret"
+source "$HOME/.config/zsh/.zsh.exports"
+source "$ZDOTDIR/.zsh.exports.secret"
 
 # add aliases
-source "$HOME/.zsh.aliases"
+source "$ZDOTDIR/.zsh.aliases"
 
 # add functions
-source "$HOME/.zsh.functions"
+source "$ZDOTDIR/.zsh.functions"
 
 # add zle
-source "$HOME/.zsh.zle"
+source "$ZDOTDIR/.zsh.zle"
 
 # add vi-mode
-source "$HOME/.zsh.vi"
+source "$ZDOTDIR/.zsh.vi"
 
 # set up direnv
 eval "$(direnv hook zsh)"

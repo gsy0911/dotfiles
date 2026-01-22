@@ -25,6 +25,20 @@ in {
 
   # symbolic-link
   xdg.enable = true;
+  # $ZDOTDIR: zsh
+  xdg.configFile."zsh" = {
+    source = ./config/zsh;
+    recursive = true;
+  };
+  home.file.".zshrc".text = ''
+    # Managed by Home Manager
+    if [ -r "${config.xdg.configHome}/zsh/.zshrc" ]; then
+      source "${config.xdg.configHome}/zsh/.zshrc"
+    fi
+  '';
+  home.file.".zshrc".force = true;
+
+  # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {
     source = ./config/aerospace;
     recursive = true;
