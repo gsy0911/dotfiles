@@ -36,6 +36,8 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 # - zsh
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
+# -starship
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 # brew path
 export BREW_PREFIX=$(brew --prefix)

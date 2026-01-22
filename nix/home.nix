@@ -59,6 +59,10 @@ in {
     source = ./config/sketchybar;
     recursive = true;
   };
+  xdg.configFile."starship" = {
+    source = ./config/starship;
+    recursive = true;
+  };
   xdg.configFile."wezterm" = {
     source = ./config/wezterm;
     recursive = true;
