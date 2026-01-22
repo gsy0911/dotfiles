@@ -151,6 +151,7 @@
       ### GUI Applications
       # AI
       "claude"
+      "copilot-cli"
       # terminal
       "ghostty"
       "wezterm"
