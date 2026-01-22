@@ -51,6 +51,10 @@ in {
     source = ./config/lazygit;
     recursive = true;
   };
+  xdg.configFile."nvim" = {
+    source = ./config/nvim;
+    recursive = true;
+  };
   xdg.configFile."sheldon" = {
     source = ./config/sheldon;
     recursive = true;
