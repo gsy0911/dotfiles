@@ -13,6 +13,7 @@ tasks:
     cmds:
       - nix run .#update
       - nix store gc
+      - nix fmt .
 
   github:
     desc: add gh-plugins
