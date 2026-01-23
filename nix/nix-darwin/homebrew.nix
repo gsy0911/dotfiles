@@ -9,8 +9,7 @@
     brewPrefix = "/opt/homebrew/bin";
     onActivation = {
       autoUpdate = true;
-      # TODO: いずれ uninstall
-      cleanup = "none";
+      cleanup = "uninstall";
     };
     # caskArgs = {
     #   appdir = "~/Applications";
@@ -89,7 +88,6 @@
       # Task runners
       "go-task"
       # Documentation & Writing
-      "codex"
       "gemini-cli"
       "typst"
       # Other dev tools
@@ -336,6 +334,7 @@
       # AI
       "claude"
       "copilot-cli"
+      "codex"
       # terminal
       "ghostty"
       "wezterm"
