@@ -22,17 +22,10 @@ Initial set up is [here](./INITIAL_SETTING.md).
 # new installation
 $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
-# install required packages via brew
+# install required packages via nix
 $ task nix
 ```
 
-
-# other initial-setup
-
-```
-# install claude-code
-$ npm install -g @anthropic-ai/claude-code
-```
 
 # check
 

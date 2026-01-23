@@ -40,11 +40,9 @@
       "luarocks"
       "lpeg"
       # Java
-      "openjdk"
-      "openjdk@21"
+      # "openjdk@21"
       # Other runtimes
       "tree-sitter"
-      "tree-sitter@0.25"
 
       ### Development Tools
       # Editors & Terminals
@@ -91,7 +89,7 @@
       "gemini-cli"
       "typst"
       # Other dev tools
-      "jmeter"
+      # "jmeter"
       "ollama"
       "xcodegen"
       "snowflake-cli"
@@ -115,10 +113,9 @@
       # Security tools
       "mas"
       "ykman"
-      "hudochenkov/sshpass/sshpass"
       "mkcert"
       "nmap"
-      "sshpass"
+      # "sshpass"
       # System utilities
       "xdg-ninja"
       "im-select"
@@ -228,7 +225,6 @@
       "libsodium"
       "libtasn1"
       "mbedtls"
-      "mbedtls@3"
       "nettle"
       "p11-kit"
       # Networking libraries
@@ -273,8 +269,6 @@
       "python-certifi"
       "python-cryptography"
       "pycparser"
-      "python-markupsafe"
-      "python-packaging"
       "python-setuptools"
       "rpds-py"
 
