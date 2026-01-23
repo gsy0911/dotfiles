@@ -18,8 +18,10 @@
     brews = [
       ### Languages & Runtimes
       # Rust
+      "rust"
       "rustup"
       "rust-analyzer"
+      "rustup-init"
       # Python
       "rye"
       "uv"
@@ -38,7 +40,11 @@
       "luajit"
       "luarocks"
       "lpeg"
+      # Java
+      "openjdk"
+      "openjdk@21"
       # Other runtimes
+      "tree-sitter"
       "tree-sitter@0.25"
 
       ### Development Tools
@@ -87,6 +93,8 @@
       "gemini-cli"
       "typst"
       # Other dev tools
+      "jmeter"
+      "ollama"
       "xcodegen"
       "snowflake-cli"
       "screenresolution"
@@ -101,9 +109,9 @@
       "terraform"
       # Database
       "mysql"
-      "tbls"
       # Database tools
       "sqlite"
+      "tbls"
 
       ### System & Security
       # Security tools
@@ -112,6 +120,7 @@
       "hudochenkov/sshpass/sshpass"
       "mkcert"
       "nmap"
+      "sshpass"
       # System utilities
       "xdg-ninja"
       "im-select"
@@ -142,6 +151,7 @@
       "openjph"
       "libultrahdr"
       "little-cms2"
+      "libmng"
       # Video processing
       "ffmpeg"
       "libass"
@@ -181,6 +191,8 @@
       "fribidi"
       "graphite2"
       "pango"
+      "harfbuzz"
+      "hunspell"
 
       ### Core Libraries
       # Build tools & Compilers
@@ -189,7 +201,9 @@
       "mpfr"
       "m4"
       "pkgconf"
-      # "cmake"
+      "cmake"
+      "llvm"
+      "libomp"
       "libtool"
       "pcre2"
       "readline"
@@ -207,6 +221,8 @@
       "utf8proc"
       "uvwasi"
       "gdbm"
+      "dbus"
+      "libvterm"
       # Cryptography & Security libraries
       "ca-certificates"
       "gnutls"
@@ -216,9 +232,12 @@
       "mbedtls"
       "mbedtls@3"
       "nettle"
+      "p11-kit"
       # Networking libraries
       "c-ares"
       "libnghttp2"
+      "libnghttp3"
+      "libngtcp2"
       "libssh"
       "libssh2"
       "libwebsockets"
@@ -235,6 +254,7 @@
       "libdeflate"
       "libzip"
       "snappy"
+      "libaec"
       # Data processing
       "hdf5"
       "c-blosc"
@@ -242,6 +262,8 @@
       "cjson"
       "simdjson"
       "protobuf"
+      "double-conversion"
+      "msgpack"
       # Python dependencies
       "certifi"
       "lapack"
@@ -252,6 +274,11 @@
       "cryptography"
       "python-certifi"
       "python-cryptography"
+      "pycparser"
+      "python-markupsafe"
+      "python-packaging"
+      "python-setuptools"
+      "rpds-py"
 
       ### Graphics & Display
       # X11
@@ -285,6 +312,13 @@
       "libunibreak"
       "libunistring"
       "oniguruma"
+      "gumbo-parser"
+      "litehtml"
+      "luv"
+      "md4c"
+      "assimp"
+      "z3"
+      "zeromq"
     ];
     taps = [
       "daipeihust/tap"
