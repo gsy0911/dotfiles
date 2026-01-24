@@ -1,9 +1,10 @@
 # dotfiles
 
-- [![maintained](https://img.shields.io/maintenance/yes/2025?label=maintained)](https://github.com/gsy0911/dotfiles/commits/main)
+- [![maintained](https://img.shields.io/maintenance/yes/2026?label=maintained)](https://github.com/gsy0911/dotfiles/commits/main)
 - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-- [![macOS](https://img.shields.io/badge/macOS_Sequoia-15.3-green.svg)]()
-- [![aerospace](https://img.shields.io/badge/window-aerospace-green.svg)]()
+- [![macOS](https://img.shields.io/badge/macOS_Tahoe-16.2-green.svg)]()
+- [![nix](https://img.shields.io/badge/package--manager-nix-blue.svg)]()
+- [![aerospace](https://img.shields.io/badge/window--manager-aerospace-green.svg)]()
 - [![wezterm](https://img.shields.io/badge/terminal-wezterm-green.svg)]()
 - [![zsh](https://img.shields.io/badge/shell-zsh-green.svg)]()
 
