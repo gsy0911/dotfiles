@@ -50,6 +50,10 @@ in {
     source = ./config/git;
     recursive = true;
   };
+  xdg.configFile."ghostty" = {
+    source = ./config/ghostty;
+    recursive = true;
+  };
   xdg.configFile."lazygit" = {
     source = ./config/lazygit;
     recursive = true;
