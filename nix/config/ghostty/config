@@ -1,2 +1,4 @@
-keybind = ctrl+shift>h=previous_tab
-keybind = ctrl+shift>l=next_tab
+keybind = super+shift+h=previous_tab
+keybind = super+shift+l=next_tab
+keybind = super+n=new_tab
+
