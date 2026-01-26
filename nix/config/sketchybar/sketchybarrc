@@ -71,7 +71,7 @@ sketchybar --default "${defaults[@]}"
 # to indicate active and available mission control spaces.
 
 # source "$ITEM_DIR/front_app.sh*"
-source "$ITEM_DIR/aerospace_app.sh*"
+source "$ITEM_DIR/aerospace_app.sh"
 # source "$ITEM_DIR/term.sh*"
 
 # aerospace
@@ -114,8 +114,8 @@ source "$ITEM_DIR/aerospace_app.sh*"
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-source "$ITEM_DIR/clock.sh*" 
-source "$ITEM_DIR/battery.sh*" 
+source "$ITEM_DIR/clock.sh" 
+source "$ITEM_DIR/battery.sh" 
 
            # --set volume script="$PLUGIN_DIR/volume.sh\*" \
            # --subscribe volume volume_change \
