@@ -7,4 +7,4 @@ TERM_ITEM=(
 
 sketchybar --add item term left \
            --set term "${TERM_ITEM[@]}" \
-           --set term update_freq=300 script="$PLUGIN_DIR/term.sh*"
+           --set term update_freq=300 script="$PLUGIN_DIR/term.sh"

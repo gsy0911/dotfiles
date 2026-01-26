@@ -1,7 +1,7 @@
 #!/bin.sh
 AEROSPACE_APP=(
   label.font="Hack Nerd Font:Bold:12.0"
-  script="$PLUGIN_DIR/aerospace_app.sh*"
+  script="$PLUGIN_DIR/aerospace_app.sh"
   background.color=$TRANSPARENT
 )
 

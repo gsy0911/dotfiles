@@ -2,7 +2,7 @@
 FRONT_APP=(
   label.font="JetBrainsMono Nerd Font:Bold:13.0"
   icon.font="sketchybar-app-font:Regular:14.0" 
-  script="$PLUGIN_DIR/front_app.sh*"
+  script="$PLUGIN_DIR/front_app.sh"
   background.color=$TRANSPARENT
 )
 
