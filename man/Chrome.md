@@ -1,5 +1,3 @@
-# Keymap
-
-## address-bar
+# address-bar
 
 - `CMD+l`: focus address bar

@@ -1,9 +1,10 @@
 # dotfiles
 
-- [![maintained](https://img.shields.io/maintenance/yes/2025?label=maintained)](https://github.com/gsy0911/dotfiles/commits/main)
+- [![maintained](https://img.shields.io/maintenance/yes/2026?label=maintained)](https://github.com/gsy0911/dotfiles/commits/main)
 - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-- [![macOS](https://img.shields.io/badge/macOS_Sequoia-15.3-green.svg)]()
-- [![aerospace](https://img.shields.io/badge/window-aerospace-green.svg)]()
+- [![macOS](https://img.shields.io/badge/macOS_Tahoe-16.2-green.svg)]()
+- [![nix](https://img.shields.io/badge/package--manager-nix-blue.svg)]()
+- [![aerospace](https://img.shields.io/badge/window--manager-aerospace-green.svg)]()
 - [![wezterm](https://img.shields.io/badge/terminal-wezterm-green.svg)]()
 - [![zsh](https://img.shields.io/badge/shell-zsh-green.svg)]()
 
@@ -22,17 +23,10 @@ Initial set up is [here](./INITIAL_SETTING.md).
 # new installation
 $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
-# install required packages via brew
+# install required packages via nix
 $ task nix
 ```
 
-
-# other initial-setup
-
-```
-# install claude-code
-$ npm install -g @anthropic-ai/claude-code
-```
 
 # check
 
