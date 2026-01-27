@@ -78,4 +78,8 @@ in {
     source = ./config/wezterm;
     recursive = true;
   };
+  xdg.configFile."zellij" = {
+    source = ./config/zellij;
+    recursive = true;
+  };
 }

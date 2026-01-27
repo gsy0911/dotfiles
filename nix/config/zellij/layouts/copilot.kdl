@@ -1,8 +1,14 @@
 layout {
     pane split_direction="vertical" {
-        pane name="db"
-        pane name="backend"
-        pane name="frontend"
+        pane {
+	    name "copilot"
+	    command "copilot"
+	    size "60%"
+	}
+        pane {
+	    name "log"
+	    size "40%"
+	}
     }
     pane size=1 borderless=true {
         plugin location="zellij:status-bar"
