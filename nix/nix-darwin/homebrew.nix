@@ -329,15 +329,19 @@
       "claude"
       "copilot-cli"
       "codex"
+
       # terminal
       "ghostty"
       "wezterm"
+
       # browser
       "firefox"
       "google-chrome"
+
       # note
       "obsidian"
       "notion"
+
       # window-manager
       "aerospace"
       # IDE
@@ -353,7 +357,7 @@
       "slack"
       # Others
       "adobe-acrobat-reader"
-      "insomnia"
+      # "insomnia"
       "vlc"
       "minecraft"
 
