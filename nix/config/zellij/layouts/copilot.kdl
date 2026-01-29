@@ -8,6 +8,7 @@ layout {
         pane {
 	    name "log"
 	    size "40%"
+	    cwd "~/.local/state/.copilot/session-state/"
 	}
     }
     pane size=1 borderless=true {

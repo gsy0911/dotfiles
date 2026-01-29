@@ -46,6 +46,10 @@ in {
     source = ./config/aerospace;
     recursive = true;
   };
+  xdg.configFile."copilot" = {
+    source = ./config/copilot;
+    recursive = true;
+  };
   xdg.configFile."git" = {
     source = ./config/git;
     recursive = true;
