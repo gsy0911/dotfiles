@@ -86,7 +86,6 @@
       # Task runners
       "go-task"
       # Documentation & Writing
-      "gemini-cli"
       "typst"
       # Other dev tools
       # "jmeter"
@@ -326,9 +325,9 @@
     casks = [
       ### GUI Applications
       # AI
-      "claude"
+      # "claude"
       "copilot-cli"
-      "codex"
+      # "codex"
 
       # terminal
       "ghostty"
