@@ -1,10 +1,52 @@
 #!/bin/zsh
 
-# general
+# aerospace
+# 起動
+alias aeroon="aerospace enable on"
+# 停止
+alias aerooff="aerospace enable off"
+
+# awk
 if type "gwak" > /dev/null 2>&1; then
     alias nawk=/usr/bin/awk
     alias awk=/usr/local/bin/gawk
 fi
+
+# cat
+if type "bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
+
+# cd
+alias u='cd ..'
+alias uu='cd ../..'
+
+# diff
+if type "colordiff" > /dev/null 2>&1; then
+    alias diff='colordiff'
+    alias diffu='colordiff -u'
+    alias diffy='colordiff -y'
+else
+    alias diff='diff'
+fi
+
+# direnv
+alias da='direnv allow'
+
+# alias for docker
+alias di="docker images"
+alias dr="docker run --rm"
+alias ds='docker stop $(docker ps -q)'
+alias dcu="docker compose up"
+alias dcub="docker compose up --build"
+alias dcd="docker compose down"
+alias dcdrm="docker compose down --rmi all --volumes --remove-orphans"
+alias dst="docker stats"
+alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
+alias drm="yes | docker system prune"
+alias drv="docker volume rm $(docker volume ls -qf dangling=true)"
+alias lk="lazydocker"
 
 # ls
 if type "eza" > /dev/null 2>&1; then
@@ -22,54 +64,25 @@ else
     alias lla='ls -la'
 fi
 
-if type "bat" > /dev/null 2>&1; then
-    alias cat="bat"
-fi
+# lazygit
+alias lg="lazygit"
 
-if type "colordiff" > /dev/null 2>&1; then
-    alias diff='colordiff'
-    alias diffu='colordiff -u'
-    alias diffy='colordiff -y'
-else
-    alias diff='diff'
-fi
-
-if type "pipes.sh" > /dev/null 2>&1; then
-    alias pipe='pipes.sh'
-fi
+# nvim
+alias n='nvim'
 
 # node
 alias nr='npm run'
 
-# cd
-alias u='cd ..'
-alias uu='cd ../..'
-# cd to chat stored directory
-alias cdc='cd $HOME/.local/share/nvim/parrot/chats'
-
 # alias for Python
-# alias j="jupyter lab"
 alias p="uv run python"
-# alias r="rye run -l"
 alias rj="rye run jupyter lab"
+alias uj="uv run jupyter lab"
 alias um="uv run marimo edit"
-alias va=". .venv/bin/activate"
-alias vd="deactivate"
 
-# alias for docker
-alias di="docker images"
-alias dr="docker run --rm"
-alias ds='docker stop $(docker ps -q)'
-alias dcu="docker compose up"
-alias dcub="docker compose up --build"
-alias dcd="docker compose down"
-alias dcdrm="docker compose down --rmi all --volumes --remove-orphans"
-alias dst="docker stats"
-alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
-## 停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
-alias drm="yes | docker system prune"
-alias drv="docker volume rm $(docker volume ls -qf dangling=true)"
-alias lk="lazydocker"
+# zellij
+alias z='zellij'
+alias znc='zellij -n copilot'
+alias znd='zellij -n dev'
 
 # Get week number
 alias week='date +%V'
@@ -83,31 +96,14 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # for M1 mac
-alias x86='arch -x86_64 zsh'
-alias arm='arch -arm64 zsh'
+# alias x86='arch -x86_64 zsh'
+# alias arm='arch -arm64 zsh'
 
 # weather
 alias tenki='curl wttr.in/Tokyo'
 
 # 画像の表示
 alias lsimg='img2sixel'
-
-# direnv
-alias da='direnv allow'
-
-# lazygit
-alias lg="lazygit"
-# nvim
-alias n='nvim'
-# zellij
-alias z='zellij'
-alias cdz='cd $CARGO_HOME/bin'
-
-# aerospace
-# 起動
-alias aeroon="aerospace enable on"
-# 停止
-alias aerooff="aerospace enable off"
 
 # beep
 alias beep='afplay /System/Library/Sounds/Submarine.aiff'
