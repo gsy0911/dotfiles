@@ -83,6 +83,7 @@ alias um="uv run marimo edit"
 alias z='zellij'
 alias znc='zellij -n copilot'
 alias znd='zellij -n dev'
+alias zr='zellij ka -y && zellij da -y'
 
 # Get week number
 alias week='date +%V'
