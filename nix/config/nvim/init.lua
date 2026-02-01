@@ -67,9 +67,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- load lsp-server
-require("lsp")
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = { { import = "plugins" } },
@@ -79,6 +76,9 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- load lsp-server
+require("lsp")
 
 local function copy_current_file_path()
   local path = vim.fn.expand "%:."

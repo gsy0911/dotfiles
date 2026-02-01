@@ -2,7 +2,7 @@ return {
   "folke/tokyonight.nvim",
   name = "tokyonight",
   priority = 1000,
-  enabled = false,
+  -- enabled = false,
   config = function()
     require("tokyonight").setup({
       theme = "tokyonight",
