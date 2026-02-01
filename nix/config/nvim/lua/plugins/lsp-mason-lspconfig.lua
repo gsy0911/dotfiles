@@ -72,7 +72,7 @@ return {
         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json"),
       },
       pyright = {
-        root_dir = lspconfig.util.root_pattern(".venv"),
+        root_dir = lspconfig.util.root_pattern(".venv", "pyproject.toml", "setup.py", ".git"),
         settings = {
           python = {
             venvPath = ".",

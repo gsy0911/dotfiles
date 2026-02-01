@@ -90,7 +90,6 @@ vim.keymap.set("n", "<Leader>lu", "<Cmd>Lazy update<CR>")
 vim.keymap.set("n", "<Leader>ls", "<Cmd>Lazy sync<CR>")
 
 -- 背景透過
-vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度
 vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
 -- disable loading default plugins
