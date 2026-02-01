@@ -49,15 +49,6 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- 診断情報を自動的にquickfixリストに設定（手動で開く）
-    local diagnostic_group = vim.api.nvim_create_augroup("LspDiagnostics", { clear = true })
-    vim.api.nvim_create_autocmd("DiagnosticChanged", {
-      group = diagnostic_group,
-      callback = function()
-        vim.diagnostic.setqflist({ open = false })
-      end,
-    })
-
     local server_configs = {
       lua_ls = {
         settings = {
