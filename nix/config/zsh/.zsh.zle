@@ -8,8 +8,8 @@ bindkey -N udk_zsh
 # 2) Prefix に入るウィジェット
 function zle-enter-prefix() {
   zle -K udk_zsh
-  # ステータスラインにメッセージを表示 (printfではなくzle -Mを使用)
-  zle -M "${fg[red]} + UDK-ZSH${reset_color}: n:nvim | r: repo | t: task | z: zellij | x: input"
+  # ステータスラインにメッセージを表示 (意図してprintfを使っている)
+  printf "\n$Red + UDK-ZSH$Rst:\tn:nvim | r: repo | t: task | z: zellij"
 }
 zle -N zle-enter-prefix
 
@@ -29,7 +29,7 @@ bindkey '^a' zle-enter-prefix
 
 # fzf-task-command-copy
 function tl() {
-    zle -I # 外部コマンド実行前に画面をクリア
+    # zle -I # 外部コマンド実行前に画面をクリア
     
     # taskコマンドの出力を取得
     local src=$(task | grep -v "Available tasks for" | fzf)
@@ -46,15 +46,16 @@ function tl() {
     
     if [ -n "$selectedCommand" ]; then
         # クリップボードにコピー
-       echo -n "task $selectedCommand" | pbcopy
+        echo -n "task $selectedCommand" | pbcopy
         
         # Descriptionの抽出と表示
-     local desc=$(echo $src | awk -F'[:*]' '{print $3}' | sed 's/^ *//')
-    zle -M "${fg[green]} * DESC:${reset_color} $desc"
-        
+        local desc=$(echo $src | awk -F'[:*]' '{print $3}' | sed 's/^ *//')
+	# 意図してprintfを使っている（メッセージを消したくないため）
+        printf "\n$Grn * DESC:$Rst\t$desc\n\n"
+
         # taskfile-parserを使って実際のコマンドを展開
-    local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
-    BUFFER=$command
+        local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
+        BUFFER=$command
     fi
     
     zle -K main
