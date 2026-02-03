@@ -5,3 +5,31 @@
 	rebase = false
 [ghq]
 	root = /Users/yoshiki/Development/Projects
+[alias]
+    # worktree追加（ブランチ名だけ指定）
+    wta = "!f() { \
+        branch=\"$1\"; \
+        safe_branch=$(echo \"$branch\" | sed 's/\\//-/g'); \
+        repo_name=$(basename \"$(git rev-parse --show-toplevel)\"); \
+        path=\"../$repo_name-$safe_branch\"; \
+        if git show-ref --verify --quiet \"refs/heads/$branch\"; then \
+            git worktree add \"$path\" \"$branch\"; \
+        else \
+            git worktree add -b \"$branch\" \"$path\"; \
+        fi; \
+    }; f"
+    
+    # ブランチ名で削除（パスを探して削除）
+    wtr = "!f() { \
+        branch=\"$1\"; \
+        worktree_path=$(git worktree list --porcelain | grep -B2 \"branch refs/heads/$branch\" | grep \"worktree\" | cut -d' ' -f2); \
+        if [ -n \"$worktree_path\" ]; then \
+            git worktree remove ${2:+--force} \"$worktree_path\"; \
+        else \
+            echo \"Worktree for branch '$branch' not found\"; \
+        fi; \
+    }; f"
+    
+    # 一覧表示
+    wtl = worktree list
+

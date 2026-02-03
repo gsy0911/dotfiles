@@ -40,7 +40,10 @@ in {
     export ZDOTDIR=$XDG_CONFIG_HOME/zsh
   '';
   home.file.".zshenv".force = true;
-  home.file.".gitconfig".source = ./home/.gitconfig;
+  home.file.".gitconfig" = {
+    source = ./home/.gitconfig;
+    force = true;
+  };
 
   # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {
