@@ -89,7 +89,7 @@
       "typst"
       # Other dev tools
       # "jmeter"
-      "ollama"
+      # "ollama"
       "xcodegen"
       "snowflake-cli"
       "screenresolution"
