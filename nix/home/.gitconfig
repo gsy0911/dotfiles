@@ -6,6 +6,7 @@
 [ghq]
 	root = /Users/yoshiki/Development/Projects
 [alias]
+    # see: https://zenn.dev/hiraoku/articles/56f4f9ffc6d186
     # worktree追加（ブランチ名だけ指定）
     wta = "!f() { \
         branch=\"$1\"; \
