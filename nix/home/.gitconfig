@@ -1,0 +1,7 @@
+[user]
+	name = gsy0911
+	email = yoshiki0911@gmail.com
+[pull]
+	rebase = false
+[ghq]
+	root = /Users/yoshiki/Development/Projects

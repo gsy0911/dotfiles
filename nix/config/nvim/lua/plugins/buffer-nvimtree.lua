@@ -37,6 +37,7 @@ return {
         },
         exclude = {
           ".gitignore",
+          ".gitconfig",
           ".github"
         }
       },

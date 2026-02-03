@@ -40,16 +40,13 @@ in {
     export ZDOTDIR=$XDG_CONFIG_HOME/zsh
   '';
   home.file.".zshenv".force = true;
+  home.file.".gitconfig".source = ./home/.gitconfig;
 
   # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {
     source = ./config/aerospace;
     recursive = true;
   };
-  # xdg.configFile."copilot" = {
-  #   source = ./config/copilot;
-  #   recursive = true;
-  # };
   xdg.configFile.".copilot/copilot-instructions.md".source = ./config/copilot/copilot-instructions.md;
   xdg.configFile.".copilot/mcp-config.json".source = ./config/copilot/mcp-config.json;
   xdg.configFile.".copilot/prompts" = {
