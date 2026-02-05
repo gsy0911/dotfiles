@@ -100,6 +100,7 @@
       "aws-cdk"
       "awscli"
       "cdktf"
+      "ecspresso"
       # Infrastructure as Code
       "terraform"
       # Database
@@ -321,6 +322,7 @@
       "k1low/tap"
       # "localstack/tap "
       "nikitabobko/tap"
+      "kayac/tap"
     ];
     casks = [
       ### GUI Applications
