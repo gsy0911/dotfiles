@@ -54,7 +54,7 @@ function tl() {
         printf "\n$Grn * DESC:$Rst\t$desc\n\n"
 
         # taskfile-parserを使って実際のコマンドを展開
-        local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
+        local command=$(uvx --from git+https://github.com/gsy0911/taskfile-parser@v0.1.0 parser --pwd $(pwd) --taskfile-task-name $selectedCommand)
         BUFFER=$command
     fi
     
