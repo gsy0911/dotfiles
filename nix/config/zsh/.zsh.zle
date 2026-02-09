@@ -23,7 +23,7 @@ zle -N prefix-cancel
 bindkey -M udk_zsh '\e' prefix-cancel
 
 # 4) Prefix キー（例: Ctrl-a）
-bindkey '^a' zle-enter-prefix
+bindkey '^w' zle-enter-prefix
 
 # --- Custom Widgets ---
 
