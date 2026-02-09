@@ -259,11 +259,11 @@ config.keys = {
         mods = "CMD",
         action = wezterm.action.CloseCurrentPane { confirm = true },
     },
-    {
-        key = 'v',
-        mods = 'CTRL',
-        action = act.PasteFrom 'Clipboard'
-    },
+    -- {
+    --     key = 'v',
+    --     mods = 'CTRL',
+    --     action = act.PasteFrom 'Clipboard'
+    -- },
     -- ⌘ Ctrl ,で下方向にペイン分割
 --     {
 --         key = ",",
@@ -277,11 +277,11 @@ config.keys = {
 --         action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
 --     },
     -- ⌘ Ctrl oでペインの中身を入れ替える
-    {
-        key = "o",
-        mods = "CMD|CTRL",
-        action = wezterm.action.RotatePanes 'Clockwise'
-    },
+    -- {
+    --     key = "o",
+    --     mods = "CMD|CTRL",
+    --     action = wezterm.action.RotatePanes 'Clockwise'
+    -- },
     -- command + nで新規タブの作成 command + tと同じ挙動
     -- command + nはデフォルトだと新しいウィンドウを作成する
     {
@@ -311,35 +311,35 @@ config.keys = {
 --         action = wezterm.action.ActivatePaneDirection 'Right',
 --     },
     -- ⌘ Enterで最大化・縮小化のトグル
-    {
-        key = 'Enter',
-        mods = 'CMD',
-        action = act.ToggleFullScreen
-    },
+    -- {
+    --     key = 'Enter',
+    --     mods = 'CMD',
+    --     action = act.ToggleFullScreen
+    -- },
     -- ⌘ Ctrl [] でタブの移動
     -- ⌘ Ctrl hl でタブの移動
     -- ⌘ Shift hl でタブの移動
     -- defaultは⌘ Shift []
-    {
-        key = '[',
-        mods = 'CMD|CTRL',
-        action = act.ActivateTabRelative(-1)
-    },
-    {
-        key = ']',
-        mods = 'CMD|CTRL',
-        action = act.ActivateTabRelative(1)
-    },
-    {
-        key = 'h',
-        mods = 'CMD|CTRL',
-        action = act.ActivateTabRelative(-1)
-    },
-    {
-        key = 'l',
-        mods = 'CMD|CTRL',
-        action = act.ActivateTabRelative(1)
-    },
+    -- {
+    --     key = '[',
+    --     mods = 'CMD|CTRL',
+    --     action = act.ActivateTabRelative(-1)
+    -- },
+    -- {
+    --     key = ']',
+    --     mods = 'CMD|CTRL',
+    --     action = act.ActivateTabRelative(1)
+    -- },
+    -- {
+    --     key = 'h',
+    --     mods = 'CMD|CTRL',
+    --     action = act.ActivateTabRelative(-1)
+    -- },
+    -- {
+    --     key = 'l',
+    --     mods = 'CMD|CTRL',
+    --     action = act.ActivateTabRelative(1)
+    -- },
     {
         key = 'h',
         mods = 'CMD|SHIFT',
@@ -352,16 +352,16 @@ config.keys = {
     },
     -- ⌘ Ctrl yo でワークスペースの移動
     -- ⌘ Shift yo でワークスペースの移動
-    {
-        key = 'y',
-        mods = 'CMD|CTRL',
-        action = act.SwitchWorkspaceRelative(-1)
-    },
-    {
-        key = 'o',
-        mods = 'CMD|CTRL',
-        action = act.SwitchWorkspaceRelative(1)
-    },
+    -- {
+    --     key = 'y',
+    --     mods = 'CMD|CTRL',
+    --     action = act.SwitchWorkspaceRelative(-1)
+    -- },
+    -- {
+    --     key = 'o',
+    --     mods = 'CMD|CTRL',
+    --     action = act.SwitchWorkspaceRelative(1)
+    -- },
     {
         key = 'y',
         mods = 'CMD|SHIFT',
@@ -396,26 +396,26 @@ config.keys = {
       mods = 'CMD|SHIFT',
       action = wezterm.action.ScrollByLine(5), -- 5行下にスクロール
     },
-    {
-        key = '{',
-        mods = 'SHIFT|CTRL',
-        action = act.MoveTabRelative(-1)
-    },
-    {
-        key = '}',
-        mods = 'SHIFT|CTRL',
-        action = act.MoveTabRelative(1)
-    },
-    {
-        key = 'h',
-        mods = 'SHIFT|CTRL',
-        action = act.MoveTabRelative(-1)
-    },
-    {
-        key = 'l',
-        mods = 'SHIFT|CTRL',
-        action = act.MoveTabRelative(1)
-    },
+    -- {
+    --     key = '{',
+    --     mods = 'SHIFT|CTRL',
+    --     action = act.MoveTabRelative(-1)
+    -- },
+    -- {
+    --     key = '}',
+    --     mods = 'SHIFT|CTRL',
+    --     action = act.MoveTabRelative(1)
+    -- },
+    -- {
+    --     key = 'h',
+    --     mods = 'SHIFT|CTRL',
+    --     action = act.MoveTabRelative(-1)
+    -- },
+    -- {
+    --     key = 'l',
+    --     mods = 'SHIFT|CTRL',
+    --     action = act.MoveTabRelative(1)
+    -- },
     -- Create new workspace
     {
       key = 'S',
