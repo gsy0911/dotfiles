@@ -2,16 +2,18 @@
 
 # zsh
 
-`^{}` = `ctrl + {}`
+`CTRL|{}` = `control + {}`
 
 # neovim
 
 `<Leader>{}` = `space + {}`
+or
+`CTRL|{}` = `control + {}`
 
 # wezterm
 
 
-`CMD{}` = `command+ {}`
+`CMD|{}` = `command+ {}`
 or
 `CMD|SHIFT|{}` = `command + shift + {}`
 
@@ -21,3 +23,7 @@ or
 or
 `ALT|SHIFT{}` = `option + shift + {}`
 
+
+# zellij
+
+default `CTRL|{}` base

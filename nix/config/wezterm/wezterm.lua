@@ -406,16 +406,16 @@ config.keys = {
     --     mods = 'SHIFT|CTRL',
     --     action = act.MoveTabRelative(1)
     -- },
-    -- {
-    --     key = 'h',
-    --     mods = 'SHIFT|CTRL',
-    --     action = act.MoveTabRelative(-1)
-    -- },
-    -- {
-    --     key = 'l',
-    --     mods = 'SHIFT|CTRL',
-    --     action = act.MoveTabRelative(1)
-    -- },
+    {
+        key = 'b',
+        mods = 'CMD|SHIFT',
+        action = act.MoveTabRelative(-1)
+    },
+    {
+        key = 'f',
+        mods = 'CMD|SHIFT',
+        action = act.MoveTabRelative(1)
+    },
     -- Create new workspace
     {
       key = 'S',
