@@ -27,6 +27,31 @@
         "*"
       ],
       "args": ["@playwright/mcp@latest"]
+    },
+    "awslabs-aws-documentation-mcp-server": {
+      "type": "local",
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "tools": [
+        "*"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      }
+    },
+    "awslabs-aws-api-mcp-server": {
+      "type": "local",
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "tools": [
+        "*"
+      ],
+      "env": {
+        "AWS_REGION": "ap-northeast-1",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "READ_OPERATIONS_ONLY": "true"
+      }
     }
   }
 }
