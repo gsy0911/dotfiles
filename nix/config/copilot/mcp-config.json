@@ -52,6 +52,14 @@
         "FASTMCP_LOG_LEVEL": "ERROR",
         "READ_OPERATIONS_ONLY": "true"
       }
+    },
+    "drawio": {
+      "type": "local",
+      "command": "npx",
+      "args": ["@drawio/mcp@latest"],
+      "tools": [
+        "*"
+      ]
     }
   }
 }
