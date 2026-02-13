@@ -53,6 +53,29 @@
         "READ_OPERATIONS_ONLY": "true"
       }
     },
+    "github": {
+      "type": "local",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "tools": [
+	"get_me",
+        "issue_read",
+	"issue_write",
+	"add_issue_comment",
+	"list_issues",
+	"update_issue"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "$COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
+    },
     "drawio": {
       "type": "local",
       "command": "npx",
