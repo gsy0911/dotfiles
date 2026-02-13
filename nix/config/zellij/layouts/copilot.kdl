@@ -2,7 +2,8 @@ layout {
     pane split_direction="vertical" {
         pane {
 	    name "copilot"
-	    command "copilot"
+	    command "zsh"
+	    args "-c" "copilot" 
 	    size "60%"
 	}
         pane {
