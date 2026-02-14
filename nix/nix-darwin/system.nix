@@ -4,7 +4,12 @@
   inputs,
   ...
 }: {
-  nix.enable = false;
+  nix = {
+    enable = false;
+    settings = {
+      log-format = "raw";
+    };
+  };
   system = {
     stateVersion = 6;
     # mac のユーザー名

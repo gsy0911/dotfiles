@@ -6,7 +6,7 @@
 }: {
   homebrew = {
     enable = true;
-    prefix = "/opt/homebrew/bin";
+    prefix = "/opt/homebrew";
     onActivation = {
       autoUpdate = true;
       cleanup = "uninstall";
