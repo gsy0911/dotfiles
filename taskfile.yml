@@ -14,6 +14,7 @@ tasks:
       - nix run .#update
       - nix store gc
       - nix fmt .
+      - brew upgrade
 
   github:
     desc: add gh-plugins
