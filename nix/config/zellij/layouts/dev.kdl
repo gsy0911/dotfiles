@@ -2,14 +2,17 @@ layout {
     pane split_direction="vertical" {
         pane {
 	    name "db"
+	    command "zsh"
 	    size "20%"
 	}
         pane {
 	    name "backend"
+	    command "zsh"
 	    size "60%"
 	}
         pane {
             name "frontend"
+	    command "zsh"
 	    size "20%"
 	}
     }
