@@ -92,4 +92,9 @@ in {
     source = ./config/zellij;
     recursive = true;
   };
+
+  xdg.dataFile."man" = {
+    source = ./home/man;
+    recursive = true;
+  }
 }
