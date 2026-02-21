@@ -22,7 +22,7 @@ function prefix-cancel() {
 zle -N prefix-cancel
 bindkey -M udk_zsh '\e' prefix-cancel
 
-# 4) Prefix キー（例: Ctrl-a）
+# 4) Prefix キー（例: Ctrl-w）
 bindkey '^w' zle-enter-prefix
 
 # --- Custom Widgets ---
@@ -86,6 +86,20 @@ function fzf-ghq() {
 }
 zle -N fzf-ghq
 bindkey -M udk_zsh 'r' fzf-ghq
+
+function fzf-man() {
+  zle -I
+  local src=$(eza $XDG_DATA_HOME/man | sed 's/ -> .*//' | fzf --preview "bat $XDG_DATA_HOME/man/{}")
+  if [ -n "$src" ]; then
+    BUFFER="glow $XDG_DATA_HOME/man/$src"
+    zle accept-line
+  else
+    zle redisplay
+  fi
+  zle -K main
+}
+zle -N fzf-man
+bindkey -M udk_zsh 'm' fzf-man
 
 function fzf-zellij-attach() {
   zle -I

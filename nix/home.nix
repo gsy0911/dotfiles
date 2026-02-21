@@ -96,5 +96,5 @@ in {
   xdg.dataFile."man" = {
     source = ./home/man;
     recursive = true;
-  }
+  };
 }
