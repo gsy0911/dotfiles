@@ -3,12 +3,8 @@
 * worktreeの新規作成
 
 ```
-# 既存のブランチ
-$ git wta existing-branch
-
-
 # 新しいブランチを作成
-$ git wta -b new-feature
+$ git wta new-feature
 ```
 
 * worktreeの削除

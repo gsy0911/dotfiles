@@ -70,7 +70,7 @@
       "jc"
       "procs"
       "tree"
-      "ttyd"
+      # "ttyd"
       "ripgrep"
       # Git tools
       "lazygit"

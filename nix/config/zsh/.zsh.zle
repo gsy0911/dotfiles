@@ -9,7 +9,7 @@ bindkey -N udk_zsh
 function zle-enter-prefix() {
   zle -K udk_zsh
   # ステータスラインにメッセージを表示 (意図してprintfを使っている)
-  printf "\n$Red + UDK-ZSH$Rst:\tn:nvim | r: repo | t: task | z: zellij"
+  printf "\n$Red + UDK-ZSH$Rst:\tm: man | n:nvim | r: repo | t: task | z: zellij"
 }
 zle -N zle-enter-prefix
 
