@@ -12,7 +12,7 @@
         branch=\"$1\"; \
         safe_branch=$(echo \"$branch\" | sed 's/\\//-/g'); \
         repo_name=$(basename \"$(git rev-parse --show-toplevel)\"); \
-        path=\"../$repo_name-$safe_branch\"; \
+        path=\"../$repo_name-wt-$safe_branch\"; \
         if git show-ref --verify --quiet \"refs/heads/$branch\"; then \
             git worktree add \"$path\" \"$branch\"; \
         else \
