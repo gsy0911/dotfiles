@@ -36,7 +36,6 @@
       "yarn"
       # Lua
       "lua"
-      "luajit"
       "luarocks"
       "lpeg"
       # Java
@@ -47,10 +46,11 @@
       ### Development Tools
       # Editors & Terminals
       "neovim"
-      "vhs"
+      # "vhs"
       "zellij"
       # Terminal utilities
-      "neofetch"
+      # "neofetch"
+      "fastfetch"
       "borders"
       "starship"
       "bat"
@@ -134,10 +134,7 @@
       "jpeg-turbo"
       "jpeg-xl"
       "libheif"
-      "libpng"
       "libraw"
-      "librsvg"
-      "libtiff"
       "leptonica"
       "tesseract"
       "webp"
@@ -151,7 +148,6 @@
       "libmng"
       # Video processing
       "ffmpeg"
-      "libass"
       "libbluray"
       "libde265"
       "libvidstab"
@@ -165,7 +161,6 @@
       "x265"
       "xvid"
       "aom"
-      "dav1d"
       "aribb24"
       "librist"
       "libudfread"
@@ -181,7 +176,6 @@
       "opus"
       "rubberband"
       "speex"
-      "libogg"
       # Font & Text rendering
       "fontconfig"
       "freetype"
@@ -291,10 +285,6 @@
       "frei0r"
 
       ### Other Libraries
-      "abseil"
-      # "icu4c@76"
-      # "icu4c@77"
-      "icu4c@78"
       "libb2"
       "libcbor"
       "libgit2"
