@@ -304,7 +304,7 @@
       "jesseduffield/lazydocker"
       "koekeishiya/formulae"
       "k1low/tap"
-      # "localstack/tap "
+      # "localstack/tap"
       "nikitabobko/tap"
       "kayac/tap"
     ];
@@ -316,16 +316,16 @@
       # "codex"
 
       # terminal
-      "ghostty"
+      # "ghostty"
       "wezterm"
 
       # browser
-      "firefox"
+      # "firefox"
       "google-chrome"
 
       # note
       "obsidian"
-      "notion"
+      # "notion"
 
       # window-manager
       "aerospace"
