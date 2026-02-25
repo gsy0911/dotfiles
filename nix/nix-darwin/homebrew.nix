@@ -22,7 +22,7 @@
       "rust-analyzer"
       "rustup-init"
       # Python
-      "rye"
+      # "rye"
       "uv"
       "python@3.10"
       "python@3.11"
@@ -76,7 +76,7 @@
       "ripgrep"
       # Git tools
       "lazygit"
-      "git-flow"
+      # "git-flow"
       "gh"
       "ghq"
       # Docker tools
@@ -120,6 +120,8 @@
       "xdg-ninja"
       "im-select"
       "ios-deploy"
+      # vm
+      # "cirruslabs/cli/tart"
 
       ### Media Processing
       # Image processing
@@ -290,8 +292,8 @@
 
       ### Other Libraries
       "abseil"
-      "icu4c@76"
-      "icu4c@77"
+      # "icu4c@76"
+      # "icu4c@77"
       "icu4c@78"
       "libb2"
       "libcbor"
