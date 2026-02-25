@@ -22,7 +22,6 @@
       "rust-analyzer"
       "rustup-init"
       # Python
-      # "rye"
       "uv"
       "python@3.10"
       "python@3.11"
@@ -37,7 +36,6 @@
       # Lua
       "lua"
       "luarocks"
-      "lpeg"
       # Java
       # "openjdk@21"
       # Other runtimes
@@ -82,7 +80,7 @@
       # Docker tools
       "lazydocker"
       "oxker"
-      "docker-completion"
+      # "docker-completion"
       # Task runners
       "go-task"
       # Documentation & Writing
@@ -92,7 +90,7 @@
       # "ollama"
       "xcodegen"
       "snowflake-cli"
-      "screenresolution"
+      # "screenresolution"
       "sketchybar"
 
       ### Infrastructure & DevOps
@@ -215,7 +213,6 @@
       "dbus"
       "libvterm"
       # Cryptography & Security libraries
-      "ca-certificates"
       "gnutls"
       "libfido2"
       "libsodium"
@@ -225,11 +222,6 @@
       "p11-kit"
       # Networking libraries
       "c-ares"
-      "libnghttp2"
-      "libnghttp3"
-      "libngtcp2"
-      "libssh"
-      "libssh2"
       "libwebsockets"
       "rtmpdump"
       "unbound"
