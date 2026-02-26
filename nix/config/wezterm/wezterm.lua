@@ -103,25 +103,26 @@ local function slice(tbl, startIndex, endIndex)
 end
 
 -- 各タブの「ディレクトリ名」を記憶しておくテーブル
-local repository_root_cache = {}
-local repository_cwd_cache = {}
+-- local repository_root_cache = {}
+-- local repository_cwd_cache = {}
+-- local git_cwd_cache = {}
 
-wezterm.on('update-status', function(_, pane)
-  local pane_id = pane:pane_id()
-  local process_info = pane:get_foreground_process_info()
-
-  if not process_info then return end
-
-  local cwd = process_info.cwd
-  local rm_home = string.gsub(cwd, os.getenv('HOME'), '')
-  local prj = string.gsub(rm_home, '/Development/Projects', '')
-  local dirs = split(prj, '/')
-  local root_dir = dirs[1]
-  local cwd_dir = table.concat(slice(dirs, 2), "/")
-
-  repository_root_cache[pane_id] = root_dir
-  repository_cwd_cache[pane_id] = root_dir == cwd_dir and "/" or "/" .. cwd_dir
-end)
+-- wezterm.on('update-status', function(_, pane)
+--   local pane_id = pane:pane_id()
+--   local process_info = pane:get_foreground_process_info()
+--
+--   if not process_info then return end
+--
+--   -- get git-repository name
+--   -- local cwd = process_info.cwd
+--   -- local rm_home = string.gsub(cwd, os.getenv('HOME'), '')
+--   -- local prj = string.gsub(rm_home, '/Development/Projects', '')
+--   -- local dirs = split(prj, '/')
+--   -- local root_dir = dirs[1]
+--   -- local cwd_dir = table.concat(slice(dirs, 2), "/")
+--   -- repository_root_cache[pane_id] = root_dir
+--   -- repository_cwd_cache[pane_id] = root_dir == cwd_dir and "/" or "/" .. cwd_dir
+-- end)
 
 
 local ICONS = {
@@ -175,39 +176,44 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
   local icon = ICONS.FALLBACK
   local icon_foreground = COLORS.ICON.FALLBACK
-  if tab.active_pane.title == "nvim" then
+
+  local pane = tab.active_pane
+  local process_name = pane.foreground_process_name
+  if string.find(process_name, "nvim") then
     icon = ICONS.NEOVIM
     icon_foreground = COLORS.ICON.NEOVIM
-  elseif tab.active_pane.title == "zsh" then
+  elseif string.find(process_name, "zsh") then
     icon = ICONS.ZSH
     icon_foreground = COLORS.ICON.ZSH
-  elseif tab.active_pane.title == "Python" or string.find(tab.active_pane.title, "python") then
+  elseif string.find(process_name, "python") then
     icon = ICONS.PYTHON
     icon_foreground = COLORS.ICON.PYTHON
-  elseif tab.active_pane.title == "node" or string.find(tab.active_pane.title, "node") then
+  elseif string.find(process_name, "node") then
     icon = ICONS.NODE
     icon_foreground = COLORS.ICON.NODE
-  elseif tab.active_pane.title == "docker" or string.find(tab.active_pane.title, "docker") then
+  elseif string.find(process_name, "docker") then
     icon = ICONS.DOCKER
     icon_foreground = COLORS.ICON.DOCKER
-  elseif tab.active_pane.title == "task" or string.find(tab.active_pane.title, "task") then
+  elseif string.find(process_name, "task") then
     icon = ICONS.TASK
     icon_foreground = COLORS.ICON.TASK
   end
 
-  local pane = tab.active_pane
-  local pane_id = pane.pane_id
-  local workspace = mux.get_active_workspace()
-  local tab_title = "-"
-  if repository_root_cache[pane_id] then
-    tab_title = workspace == "default"
-      and repository_root_cache[pane_id]
-      or "@" .. repository_cwd_cache[pane_id]
-  end
+  -- local pane = tab.active_pane
+  -- local pane_id = pane.pane_id
+  -- local workspace = mux.get_active_workspace()
+  -- local tab_title = "-"
+  -- if repository_root_cache[pane_id] then
+  --   tab_title = workspace == "default"
+  --     and repository_root_cache[pane_id]
+  --     or "@" .. repository_cwd_cache[pane_id] .. git_cwd_cache[pane_id]
+  -- end
 
-  local title = wezterm.truncate_right(tab_title, max_width - 1)
+  -- local title = wezterm.truncate_right(tab_title, max_width - 1)
   -- title
-  local display_name = " " .. title .. " "
+  -- local display_name = " " .. title .. " "
+  local display_name = tab.active_pane.title
+  -- local display_name = process_name
   return {
     { Background = { Color = edge_background } },
     { Foreground = { Color = icon_foreground } },

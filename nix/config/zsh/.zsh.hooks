@@ -1,0 +1,46 @@
+set_title() { 
+  printf '\033]0;%s\007' "$1" 
+}
+
+git_branch() {
+  local b
+  b=$(command git rev-parse --abbrev-ref HEAD 2>/dev/null) || return 1
+  [[ "$b" == "HEAD" ]] && return 1
+  print -r -- "$b"
+}
+
+git_repo_path() {
+  # Gitリポジトリ外なら失敗
+  repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || return 1
+
+  repo_name="${repo_root##*/}"
+
+  # ルートとの差分パス取得
+  rel_path="${PWD#$repo_root}"
+
+  if [ -z "$rel_path" ]; then
+    # 直下
+    printf "%s" "$repo_name"
+  else
+    # 先頭の / を削る
+    rel_path="${rel_path#/}"
+    printf "%s/%s" "$repo_name" "$rel_path"
+  fi
+}
+
+update_title() {
+  # local b=$(git_branch)
+  local p=$(git_repo_path)
+  set_title " $p "
+  # if b=$(git_branch); then
+  #   set_title " $p "
+  # else
+  #   # Git外ならディレクトリ名などにする（好みで）
+  #   set_title " "
+  # fi
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd update_title
+# cdした時にも更新
+add-zsh-hook chpwd  update_title

@@ -57,6 +57,9 @@ source "$ZDOTDIR/.zsh.zle"
 # add vi-mode
 source "$ZDOTDIR/.zsh.vi"
 
+# add vi-mode
+source "$ZDOTDIR/.zsh.hooks"
+
 # set up direnv
 eval "$(direnv hook zsh)"
 
