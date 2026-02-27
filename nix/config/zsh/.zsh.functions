@@ -125,3 +125,13 @@ function ss() {
     fi
 }
 
+function znd() {
+  echo $1
+  if [[ $1 ]]; then
+    zellij -s $1 -n dev
+  else
+    local dir=$(basename "$PWD")
+    zellij -s $dir -n dev
+  fi
+}
+
