@@ -131,7 +131,17 @@ function znd() {
     zellij -s $1 -n dev
   else
     local dir=$(basename "$PWD")
-    zellij -s $dir -n dev
+    zellij -s "$dir-dev" -n dev
+  fi
+}
+
+function znc() {
+  echo $1
+  if [[ $1 ]]; then
+    zellij -s $1 -n copilot
+  else
+    local dir=$(basename "$PWD")
+    zellij -s "$dir-cop" -n copilot
   fi
 }
 
