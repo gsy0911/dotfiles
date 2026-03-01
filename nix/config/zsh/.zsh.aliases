@@ -80,8 +80,6 @@ alias uj="uv run jupyter lab"
 alias um="uv run marimo edit"
 
 # zellij
-alias z='zellij'
-alias znc='zellij -n copilot'
 alias zr='zellij ka -y && zellij da -y'
 
 # Get week number
