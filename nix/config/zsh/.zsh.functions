@@ -126,7 +126,6 @@ function ss() {
 }
 
 function znd() {
-  echo $1
   if [[ $1 ]]; then
     zellij -s $1 -n dev
   else
@@ -136,7 +135,6 @@ function znd() {
 }
 
 function znc() {
-  echo $1
   if [[ $1 ]]; then
     zellij -s $1 -n copilot
   else
