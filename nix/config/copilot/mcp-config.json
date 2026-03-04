@@ -7,7 +7,13 @@
         "*"
       ],
       "args": [
-        "--from git+https://github.com/oraios/serena serena-mcp-server --context ide-assistant --project $(pwd)"
+        "--from",
+	"git+https://github.com/oraios/serena",
+	"serena-mcp-server",
+	"--context",
+	"ide-assistant",
+	"--project",
+	"$(pwd)"
       ]
     },
     "fetch-mcp": {
