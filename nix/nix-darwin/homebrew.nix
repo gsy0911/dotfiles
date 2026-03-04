@@ -326,6 +326,7 @@
       # note
       "obsidian"
       # "notion"
+      # "figma"
 
       # window-manager
       "aerospace"

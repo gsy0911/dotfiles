@@ -47,6 +47,21 @@ function drmip(){
     [ -n "$imageId" ] && docker rmi -f $imageId
 }
 
+function drmim() {
+    local pattern="$1"
+
+    if [ -z "$pattern" ]; then
+        echo "usage: drmip <pattern>"
+        return 1
+    fi
+
+    docker images --format "{{.Repository}}:{{.Tag}} {{.ID}}" \
+    | grep "$pattern" \
+    | awk '{print $2}' \
+    | sort -u \
+    | xargs -r docker rmi -f
+}
+
 function drmcp(){
     local containerId=$(docker ps -a | sort | fzf | awk '{print $1}')
     [ -n "$containerId" ] && docker rm -f $containerId
@@ -143,3 +158,10 @@ function znc() {
   fi
 }
 
+
+function prepwt() {
+  local parentDir=$(dirname "$(git rev-parse --git-common-dir)")
+  cp $parentDir/.env ./.env
+  cp $parentDir/.envrc ./.envrc
+  direnv allow
+}
