@@ -11,6 +11,7 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # googleworkspace-cli.url = "github:googleworkspace/cli";
   };
 
   outputs = {
@@ -18,6 +19,7 @@
     nixpkgs,
     home-manager,
     nix-darwin,
+    # googleworkspace-cli,
   } @ inputs: let
     system = "aarch64-darwin";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -27,20 +29,23 @@
       paths = [
         pkgs.curl
         # ここにパッケージを追記していく
+        # googleworkspace-cli.packages.${system}.default
       ];
     };
-    apps.${system}.update = {
-      type = "app";
-      program = toString (pkgs.writeShellScript "update-script" ''
-        set -e
-        echo "Updating flake..."
-        nix flake update
-        echo "Updating home-manager..."
-        nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
-        echo "Updating nix-darwin..."
-        sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
-        echo "Update complete!"
-      '');
+    apps.${system} = {
+      update = {
+        type = "app";
+        program = toString (pkgs.writeShellScript "update-script" ''
+          set -e
+          echo "Updating flake..."
+          nix flake update
+          echo "Updating home-manager..."
+          nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
+          echo "Updating nix-darwin..."
+          sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
+          echo "Update complete!"
+        '');
+      };
     };
 
     homeConfigurations = {
