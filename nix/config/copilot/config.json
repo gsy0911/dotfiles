@@ -12,6 +12,13 @@
   ],
   "render_markdown": true,
   "theme": "auto",
-  "trusted_folders": []
+  "trusted_folders": [],
+  "allowed_commands": [
+    "ls",
+    "cat",
+    "pwd",
+    "git status",
+    "git diff"
+  ]
 }
 
