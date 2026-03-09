@@ -310,6 +310,7 @@
     ];
     casks = [
       ### GUI Applications
+      "gcloud-cli"
       # AI
       # "claude"
       "copilot-cli"

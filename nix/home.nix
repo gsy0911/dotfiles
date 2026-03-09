@@ -50,8 +50,8 @@ in {
     source = ./config/aerospace;
     recursive = true;
   };
-  xdg.configFile.".copilot/copilot-instructions.md".source = ./config/copilot/copilot-instructions.md;
-  xdg.configFile.".copilot/mcp-config.json".source = ./config/copilot/mcp-config.json;
+  home.file.".copilot/copilot-instructions.md".source = ./config/copilot/copilot-instructions.md;
+  home.file.".copilot/mcp-config.json".source = ./config/copilot/mcp-config.json;
   xdg.configFile.".copilot/prompts" = {
     source = ./config/copilot/prompts;
     recursive = true;

@@ -19,6 +19,9 @@ vimcmd_visual_symbol = "[V](bold #32cd32)"
 format = "[aws:$profile]($style) "
 style = "#ff8c00"
 
+[gcloud]
+format = "[gcp:$account(@$domain)]($style)"
+
 [python]
 style = "bold #ff8c00"
 symbol = "py:"
