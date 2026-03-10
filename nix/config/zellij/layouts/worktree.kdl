@@ -1,0 +1,29 @@
+layout {
+    tab name="copilot" {
+        pane {
+            name "copilot"
+            command "zsh"
+            args "-c" "copilot"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="base" {
+        pane split_direction="vertical" {
+            pane {
+                name "pane 1"
+                command "zsh"
+                size "50%"
+            }
+            pane {
+                name "pane 2"
+                command "zsh"
+                size "50%"
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
