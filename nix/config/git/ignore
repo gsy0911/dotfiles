@@ -114,6 +114,4 @@ notebooks
 .editorconfig
 .cursorrules
 pyrightconfig.json
-
-# mcp-server
-.serena
+node_modules

@@ -17,6 +17,7 @@
     "ls",
     "cat",
     "pwd",
+    "find",
     "git status",
     "git diff"
   ]
