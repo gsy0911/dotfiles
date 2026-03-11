@@ -172,9 +172,22 @@ function wt() {
 }
 
 
+# PREPare Worktree: worktree に必要なファイルを親リポジトリからコピーする
 function prepwt() {
+  # git worktree の共通ルートから親ディレクトリを取得
   local parentDir=$(dirname "$(git rev-parse --git-common-dir)")
   cp $parentDir/.env ./.env
   cp $parentDir/.envrc ./.envrc
   direnv allow
+  # .serena が存在する場合は memories ディレクトリをコピー
+  if [[ -d "$parentDir/.serena" ]]; then
+    mkdir -p ./.serena
+    cp -r "$parentDir/.serena/memories" ./.serena/memories
+    cp -r "$parentDir/.serena/cache" ./.serena/cache
+  fi
 }
+
+function serena-index() {
+  uvx --from git+https://github.com/oraios/serena serena project index
+}
+
