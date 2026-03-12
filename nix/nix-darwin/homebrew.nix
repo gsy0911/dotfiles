@@ -321,7 +321,7 @@
       "wezterm"
 
       # browser
-      # "firefox"
+      "firefox"
       "google-chrome"
 
       # note
