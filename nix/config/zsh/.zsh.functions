@@ -150,7 +150,10 @@ function znd() {
 }
 
 function wt() {
-  prepwt
+  local parentDir=$(dirname "$(git rev-parse --git-common-dir)")
+  if [[ "$parentDir" != "$PWD" ]]; then
+    prepwt
+  fi
   local session_name
   if [[ $1 ]]; then
     session_name=$1
@@ -158,9 +161,9 @@ function wt() {
     local dir=$(basename "$PWD")
     if [[ "$dir" == *wt* ]]; then
       local suffix="${dir#*wt-}"
-      session_name="${suffix}-cop"
+      session_name="${suffix}"
     else
-      session_name="${dir}-cop"
+      session_name="${dir}"
     fi
   fi
 
