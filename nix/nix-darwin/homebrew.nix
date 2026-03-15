@@ -23,8 +23,6 @@
       "rustup-init"
       # Python
       "uv"
-      "python@3.10"
-      "python@3.11"
       "python@3.12"
       "python@3.13"
       "python@3.14"
