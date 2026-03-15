@@ -9,18 +9,19 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
-    tab name="base" {
-        pane split_direction="vertical" {
-            pane {
-                name "pane 1"
-                command "zsh"
-                size "50%"
-            }
-            pane {
-                name "pane 2"
-                command "zsh"
-                size "50%"
-            }
+    tab name="tab 1" {
+        pane {
+            name "pane 1"
+            command "zsh"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="tab 2" {
+        pane {
+            name "pane 1"
+            command "zsh"
         }
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
