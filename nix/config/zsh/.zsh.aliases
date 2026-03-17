@@ -82,6 +82,9 @@ alias um="uv run marimo edit"
 # zellij
 alias zr='zellij ka -y && zellij da -y'
 
+# for mcp
+alias si='uvx --from git+https://github.com/oraios/serena serena project index'
+
 # Get week number
 alias week='date +%V'
 

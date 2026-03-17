@@ -342,7 +342,7 @@
       "slack"
       # Others
       "adobe-acrobat-reader"
-      # "insomnia"
+      "insomnia"
       "vlc"
       "minecraft"
 
