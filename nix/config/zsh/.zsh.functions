@@ -150,8 +150,11 @@ function znd() {
 }
 
 function wt() {
-  local parentDir=$(dirname "$(git rev-parse --git-common-dir)")
-  if [[ "$parentDir" != "$PWD" ]]; then
+  # work-treeの場合、`./git/`以下にwtが保持されている
+  local absoluteGitDir=$(git rev-parse --absolute-git-dir)
+  # work-treeと普通のリポジトリで同じ値を返す
+  local repositoryRoot=$(git rev-parse --show-toplevel)
+  if [[ "$absoluteGitDir" != "$repositoryRoot/.git" ]]; then
     prepwt
   fi
   local session_name
@@ -178,7 +181,7 @@ function wt() {
 # PREPare Worktree: worktree に必要なファイルを親リポジトリからコピーする
 function prepwt() {
   # git worktree の共通ルートから親ディレクトリを取得
-  local parentDir=$(dirname "$(git rev-parse --git-common-dir)")
+  local parentDir=$(dirname $absGitDir | xargs dirname | xargs dirname)
   cp $parentDir/.env ./.env
   cp $parentDir/.envrc ./.envrc
   direnv allow
