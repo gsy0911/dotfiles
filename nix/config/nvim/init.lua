@@ -77,9 +77,6 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
--- load lsp-server
-require("lsp")
-
 local function copy_current_file_path()
   local path = vim.fn.expand "%:."
   vim.fn.setreg("*", path)

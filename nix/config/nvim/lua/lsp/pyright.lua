@@ -1,7 +1,5 @@
 return {
-  root_dir = function(fname)
-    return vim.fs.dirname(vim.fs.find({'.venv', 'pyproject.toml', 'setup.py', '.git'}, { path = fname, upward = true })[1])
-  end,
+  root_markers = { '.venv', 'pyproject.toml', 'setup.py', '.git' },
   settings = {
     python = {
       venvPath = ".",

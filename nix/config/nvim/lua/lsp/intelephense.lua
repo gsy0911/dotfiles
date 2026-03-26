@@ -1,7 +1,5 @@
 return {
-  root_dir = function(fname)
-    return vim.fs.dirname(vim.fs.find({'composer.json', '.git'}, { path = fname, upward = true })[1])
-  end,
+  root_markers = { 'composer.json', '.git' },
   settings = {
     intelephense = {
       composer = {
