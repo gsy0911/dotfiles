@@ -6,43 +6,58 @@ layout {
             args "-c" "copilot"
         }
         pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:tab-bar"
+            // plugin location="zellij:status-bar"
         }
     }
-    tab name="tab 1" {
+    tab name="back" {
         pane {
-            name "pane 1"
+            name "pane"
             command "zsh"
         }
         pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:tab-bar"
+            // plugin location="zellij:status-bar"
         }
     }
-    tab name="tab 2" {
+    tab name="front" {
         pane {
-            name "pane 2"
+            name "pane"
             command "zsh"
         }
         pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:tab-bar"
+            // plugin location="zellij:status-bar"
         }
     }
-    tab name="tab 3" {
+    tab name="test" {
         pane {
-            name "pane 3"
+            name "pane"
             command "zsh"
         }
         pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:tab-bar"
+            // plugin location="zellij:status-bar"
         }
     }
-    tab name="tab 4" {
+    tab name="other1" {
         pane {
-            name "pane 4"
+            name "pane"
             command "zsh"
         }
         pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:tab-bar"
+            // plugin location="zellij:status-bar"
+        }
+    }
+    tab name="other2" {
+        pane {
+            name "pane"
+            command "zsh"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            // plugin location="zellij:status-bar"
         }
     }
 }
