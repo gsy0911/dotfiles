@@ -75,6 +75,7 @@
       # "git-flow"
       "gh"
       "ghq"
+      "worktrunk"
       # Docker tools
       "lazydocker"
       "oxker"

@@ -149,7 +149,7 @@ function znd() {
   fi
 }
 
-function wt() {
+function ws() {
   # work-treeの場合、`./git/`以下にwtが保持されている
   local absoluteGitDir=$(git rev-parse --absolute-git-dir)
   # work-treeと普通のリポジトリで同じ値を返す
