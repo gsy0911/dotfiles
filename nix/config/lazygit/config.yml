@@ -1,3 +1,10 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - "#3b3b3b"
+    selectedRangeBgColor:
+      - "#3b3b3b"
+
 customCommands:
   - key: '<c-n>'
     context: 'localBranches'
