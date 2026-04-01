@@ -140,23 +140,23 @@ function ss() {
     fi
 }
 
-function znd() {
-  if [[ $1 ]]; then
-    zellij -s $1 -n dev
-  else
-    local dir=$(basename "$PWD")
-    zellij -s "$dir-dev" -n dev
-  fi
-}
+# function znd() {
+#   if [[ $1 ]]; then
+#     zellij -s $1 -n dev
+#   else
+#     local dir=$(basename "$PWD")
+#     zellij -s "$dir-dev" -n dev
+#   fi
+# }
 
 function ws() {
   # work-treeの場合、`./git/`以下にwtが保持されている
   local absoluteGitDir=$(git rev-parse --absolute-git-dir)
   # work-treeと普通のリポジトリで同じ値を返す
   local repositoryRoot=$(git rev-parse --show-toplevel)
-  if [[ "$absoluteGitDir" != "$repositoryRoot/.git" ]]; then
-    prepwt
-  fi
+  # if [[ "$absoluteGitDir" != "$repositoryRoot/.git" ]]; then
+  #   prepwt
+  # fi
   local session_name
   if [[ $1 ]]; then
     session_name=$1
@@ -179,19 +179,19 @@ function ws() {
 
 
 # PREPare Worktree: worktree に必要なファイルを親リポジトリからコピーする
-function prepwt() {
-  # git worktree の共通ルートから親ディレクトリを取得
-  local parentDir=$(dirname $absGitDir | xargs dirname | xargs dirname)
-  cp $parentDir/.env ./.env
-  cp $parentDir/.envrc ./.envrc
-  direnv allow
-  # .serena が存在する場合は memories ディレクトリをコピー
-  if [[ -d "$parentDir/.serena" ]]; then
-    mkdir -p ./.serena
-    cp -r "$parentDir/.serena/memories" ./.serena/memories
-    cp -r "$parentDir/.serena/cache" ./.serena/cache
-  fi
-}
+# function prepwt() {
+#   # git worktree の共通ルートから親ディレクトリを取得
+#   local parentDir=$(dirname $absGitDir | xargs dirname | xargs dirname)
+#   cp $parentDir/.env ./.env
+#   cp $parentDir/.envrc ./.envrc
+#   direnv allow
+#   # .serena が存在する場合は memories ディレクトリをコピー
+#   if [[ -d "$parentDir/.serena" ]]; then
+#     mkdir -p ./.serena
+#     cp -r "$parentDir/.serena/memories" ./.serena/memories
+#     cp -r "$parentDir/.serena/cache" ./.serena/cache
+#   fi
+# }
 
 function serena-index() {
   uvx --from git+https://github.com/oraios/serena serena project index
