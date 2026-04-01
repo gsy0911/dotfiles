@@ -60,6 +60,10 @@ source "$ZDOTDIR/.zsh.vi"
 # add vi-mode
 source "$ZDOTDIR/.zsh.hooks"
 
+# add worktrunk
+# $ wt config shell init zsh
+source "$ZDOTDIR/.zsh.worktrunk"
+
 # set up direnv
 eval "$(direnv hook zsh)"
 
