@@ -74,22 +74,22 @@ return {
     function _lazygit_toggle()
       lazygit:toggle()
     end
-    vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-    vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+    vim.keymap.set("n", "<leader>lg", _lazygit_toggle, { noremap = true, silent = true, desc = "Toggle lazygit" })
+    vim.keymap.set("n", "<leader>gg", _lazygit_toggle, { noremap = true, silent = true, desc = "Toggle lazygit" })
 
     -- Terminal for python
     local python = Terminal:new({ cmd = "rye run python", hidden = true, direction = "float" })
     function _python_toggle()
       python:toggle()
     end
-    vim.api.nvim_set_keymap("n", "<leader>tp", "<cmd>lua _python_toggle()<CR>", {noremap = true, silent = true})
+    vim.keymap.set("n", "<leader>tp", _python_toggle, { noremap = true, silent = true, desc = "Toggle python REPL" })
 
     -- Terminal for oxker
     local oxker = Terminal:new({ cmd = "oxker", hidden = true, direction = "float" })
     function _oxker_toggle()
       oxker:toggle()
     end
-    vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>lua _oxker_toggle()<CR>", {noremap = true, silent = true})
+    vim.keymap.set("n", "<leader>to", _oxker_toggle, { noremap = true, silent = true, desc = "Toggle oxker" })
 
   end
 }

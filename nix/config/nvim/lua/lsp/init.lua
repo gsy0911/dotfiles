@@ -39,8 +39,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, bufopts)
-    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
-    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, bufopts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, bufopts)
     -- 診断情報をquickfixリストで表示
     vim.keymap.set("n", "qq", function()
       vim.diagnostic.setqflist({ open = true })
