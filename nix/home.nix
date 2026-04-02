@@ -88,6 +88,10 @@ in {
     source = ./config/starship;
     recursive = true;
   };
+  xdg.configFile."uv" = {
+    source = ./config/uv;
+    recursive = true;
+  };
   xdg.configFile."wezterm" = {
     source = ./config/wezterm;
     recursive = true;
