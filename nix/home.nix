@@ -44,6 +44,10 @@ in {
     source = ./home/.gitconfig;
     force = true;
   };
+  home.file.".npmrc" = {
+    source = ./home/.npmrc;
+    force = true;
+  };
 
   # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {
