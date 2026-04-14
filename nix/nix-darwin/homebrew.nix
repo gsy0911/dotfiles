@@ -181,6 +181,8 @@
       "pango"
       "harfbuzz"
       "hunspell"
+      # map
+      "pmtiles"
 
       ### Core Libraries
       # Build tools & Compilers
