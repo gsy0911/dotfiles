@@ -35,7 +35,7 @@
       "lua"
       "luarocks"
       # Java
-      # "openjdk@21"
+      "openjdk@25"
       # Other runtimes
       "tree-sitter"
 
@@ -68,6 +68,7 @@
       "jc"
       "procs"
       "tree"
+      "wget"
       # "ttyd"
       "ripgrep"
       # Git tools
