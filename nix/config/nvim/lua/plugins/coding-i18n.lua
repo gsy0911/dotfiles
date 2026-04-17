@@ -5,6 +5,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "nvim-lua/plenary.nvim",
   },
-  event = { "BufReadPre", "BufNewFile" },
+  ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "vue", "json" },
   opts = {}
 }
