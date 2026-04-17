@@ -23,6 +23,11 @@ in {
 
   programs.home-manager.enable = true;
 
+  # nvim-treesitter mainブランチのパーサーコンパイルに必要
+  home.packages = with pkgs; [
+    tree-sitter
+  ];
+
   # symbolic-link
   xdg.enable = true;
   # $ZDOTDIR: zsh
