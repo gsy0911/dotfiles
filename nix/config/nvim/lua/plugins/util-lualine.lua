@@ -5,30 +5,31 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     local colors = {
-      blue   = '#80a0ff',
-      cyan   = '#79dac8',
-      black  = '#080808',
-      white  = '#c6c6c6',
-      red    = '#ff5189',
-      violet = '#d183e8',
-      grey   = '#303030',
+      bg       = '#3C3F41',
+      bg_dark  = '#2B2B2B',
+      fg       = '#A9B7C6',
+      orange   = '#CC7832',
+      blue     = '#6897BB',
+      green    = '#6A8759',
+      yellow   = '#FFC66D',
+      red      = '#FF5370',
+      grey     = '#4E5254',
     }
 
-    local bubbles_theme = {
+    local darcula_theme = {
       normal = {
-        a = { fg = colors.black, bg = colors.violet },
-        b = { fg = colors.white, bg = colors.grey },
-        c = { fg = colors.white },
+        a = { fg = colors.bg_dark, bg = colors.orange, gui = 'bold' },
+        b = { fg = colors.fg,      bg = colors.grey },
+        c = { fg = colors.fg,      bg = colors.bg },
       },
-
-      insert = { a = { fg = colors.black, bg = colors.blue } },
-      visual = { a = { fg = colors.black, bg = colors.cyan } },
-      replace = { a = { fg = colors.black, bg = colors.red } },
-
+      insert  = { a = { fg = colors.bg_dark, bg = colors.blue,   gui = 'bold' } },
+      visual  = { a = { fg = colors.bg_dark, bg = colors.green,  gui = 'bold' } },
+      replace = { a = { fg = colors.bg_dark, bg = colors.red,    gui = 'bold' } },
+      command = { a = { fg = colors.bg_dark, bg = colors.yellow, gui = 'bold' } },
       inactive = {
-        a = { fg = colors.white, bg = colors.black },
-        b = { fg = colors.white, bg = colors.black },
-        c = { fg = colors.white },
+        a = { fg = colors.fg, bg = colors.bg_dark },
+        b = { fg = colors.fg, bg = colors.bg_dark },
+        c = { fg = colors.fg, bg = colors.bg_dark },
       },
     }
 
@@ -41,7 +42,7 @@ return {
     
     local config = {
       options = {
-        theme = bubbles_theme,
+        theme = darcula_theme,
         component_separators = '',
         section_separators = { left = '', right = '' },
       },

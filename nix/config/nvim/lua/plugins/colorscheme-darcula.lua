@@ -1,14 +1,8 @@
 return {
-  "xiantang/darcula-dark.nvim",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-  },
-  name = "darcula",
-  enabled = false,
+  "doums/darcula",
+  priority = 1000,
   config = function()
-    require("darcula").setup({
-    })
-    vim.cmd.colorscheme("darcula-dark")
+    vim.cmd.colorscheme("darcula")
   end
 }
 
