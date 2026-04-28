@@ -27,10 +27,10 @@
       "python@3.13"
       "python@3.14"
       # Node.js
-      # "node@24"
-      "node@22"
-      "node"
-      "yarn"
+      "node@24"
+      # "node@22"
+      # "node"
+      # "yarn"
       # Lua
       "lua"
       "luarocks"
@@ -78,7 +78,7 @@
       "ghq"
       "worktrunk"
       # Docker tools
-      "lazydocker"
+      # "lazydocker"
       "oxker"
       # "docker-completion"
       # Task runners
