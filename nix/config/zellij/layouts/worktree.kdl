@@ -2,8 +2,8 @@ layout {
     tab name="copilot" {
         pane {
             name "copilot"
-            command "zsh"
-            args "-c" "copilot"
+            command "gh"
+            args "copilot"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
@@ -13,7 +13,6 @@ layout {
     tab name="back" {
         pane {
             name "pane"
-            command "zsh"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
@@ -23,7 +22,6 @@ layout {
     tab name="front" {
         pane {
             name "pane"
-            command "zsh"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
@@ -33,7 +31,6 @@ layout {
     tab name="test" {
         pane {
             name "pane"
-            command "zsh"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
@@ -43,7 +40,6 @@ layout {
     tab name="nvim" {
         pane {
             name "pane"
-            command "nvim"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
@@ -53,17 +49,6 @@ layout {
     tab name="other1" {
         pane {
             name "pane"
-            command "zsh"
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-            // plugin location="zellij:status-bar"
-        }
-    }
-    tab name="other2" {
-        pane {
-            name "pane"
-            command "zsh"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
