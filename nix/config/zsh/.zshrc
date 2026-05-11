@@ -40,6 +40,7 @@ zshaddhistory() {
 
 # You may need to manually set your language environment
 export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
 # add exports
 source "$HOME/.config/zsh/.zsh.exports"
