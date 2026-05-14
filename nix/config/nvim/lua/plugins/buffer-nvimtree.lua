@@ -21,6 +21,9 @@ return {
   config = function()
     local nvimtree = require("nvim-tree")
     nvimtree.setup {
+      view = {
+        width = 45,
+      },
       filters = {
         git_ignored = false,
         dotfiles = false,

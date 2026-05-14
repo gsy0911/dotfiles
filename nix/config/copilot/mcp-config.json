@@ -75,6 +75,11 @@
       "type": "local",
       "command": "gws",
       "args": ["mcp", "-s", "docs,slides,sheets"]
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"]
     }
   }
 }
