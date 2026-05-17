@@ -56,6 +56,7 @@
       "fzf"
       "curl"
       "colordiff"
+      "dyff"
       "tokei"
       "direnv"
       "htop"
