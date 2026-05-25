@@ -19,7 +19,7 @@ layout {
             // plugin location="zellij:status-bar"
         }
     }
-    tab name="git" {
+    tab name="front" {
         pane {
             name "pane"
         }
@@ -37,25 +37,7 @@ layout {
             // plugin location="zellij:status-bar"
         }
     }
-    tab name="front" {
-        pane {
-            name "pane"
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-            // plugin location="zellij:status-bar"
-        }
-    }
     tab name="test" {
-        pane {
-            name "pane"
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-            // plugin location="zellij:status-bar"
-        }
-    }
-    tab name="other1" {
         pane {
             name "pane"
         }
