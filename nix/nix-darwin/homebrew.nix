@@ -9,7 +9,7 @@
     prefix = "/opt/homebrew";
     onActivation = {
       autoUpdate = true;
-      cleanup = "uninstall";
+      cleanup = "none";
     };
     # caskArgs = {
     #   appdir = "~/Applications";
@@ -315,9 +315,9 @@
       ### GUI Applications
       "gcloud-cli"
       # AI
-      # "claude"
+      "claude"
       "copilot-cli"
-      # "codex"
+      "codex"
 
       # terminal
       # "ghostty"
