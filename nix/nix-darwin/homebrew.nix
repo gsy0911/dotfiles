@@ -318,6 +318,9 @@
       "claude"
       "copilot-cli"
       "codex"
+      "google-gemini"
+      "antigravity"
+      "antigravity-ide"
 
       # terminal
       # "ghostty"
