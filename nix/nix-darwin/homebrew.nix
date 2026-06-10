@@ -103,7 +103,8 @@
       # Infrastructure as Code
       "terraform"
       # Database
-      "mysql"
+      # "mysql"
+      "mysql@8.4"
       # Database tools
       "sqlite"
       "tbls"

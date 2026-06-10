@@ -55,7 +55,7 @@ export BLOSC_DIR="$BREW_PREFIX/opt/c-blosc"
 
 
 # mysql
-export PATH="$BREW_PREFIX/opt/mysql-client@8.0/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/mysql-client@8.4/bin:$PATH"
 
 # for starship(aws default_profile)
 export AWS_PROFILE=default
