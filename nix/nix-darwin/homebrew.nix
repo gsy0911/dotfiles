@@ -28,8 +28,8 @@
       "python@3.14"
       # Node.js
       "node@24"
-      # "node@22"
-      # "node"
+      "node"
+      "volta"
       # "yarn"
       # Lua
       "lua"
