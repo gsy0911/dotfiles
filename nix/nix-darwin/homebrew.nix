@@ -343,7 +343,7 @@
       ### GUI Applications
       "gcloud-cli"
       # AI
-      "claude"
+      # "claude"
       "copilot-cli"
       "codex"
       "google-gemini"
