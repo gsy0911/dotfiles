@@ -1,6 +1,8 @@
 #!/bin/zsh
 
 # Compatible XGD Base Directory
+# - local bin
+export PATH="$HOME/.local/bin:$PATH"
 # - nix
 export PATH="$HOME/.nix-profile/bin:$PATH"
 

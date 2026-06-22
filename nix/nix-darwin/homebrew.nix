@@ -47,7 +47,7 @@
       # Terminal utilities
       # "neofetch"
       "fastfetch"
-      "borders"
+      # "borders"
       "starship"
       "bat"
       "eza"
@@ -301,22 +301,49 @@
       "zeromq"
     ];
     taps = [
-      "daipeihust/tap"
-      "FelixKratz/formulae"
-      "hashicorp/tap"
-      "jesseduffield/lazygit"
-      "jesseduffield/lazydocker"
-      "koekeishiya/formulae"
-      "k1low/tap"
+      {
+        name = "daipeihust/tap";
+        trusted = true;
+      }
+      {
+        name = "felixkratz/formulae";
+        trusted = true;
+      }
+      {
+        name = "hashicorp/tap";
+        trusted = true;
+      }
+      {
+        name = "jesseduffield/lazygit";
+        trusted = true;
+      }
+      {
+        name = "jesseduffield/lazydocker";
+        trusted = true;
+      }
+      {
+        name = "koekeishiya/formulae";
+        trusted = true;
+      }
+      {
+        name = "k1low/tap";
+        trusted = true;
+      }
       # "localstack/tap"
-      "nikitabobko/tap"
-      "kayac/tap"
+      {
+        name = "nikitabobko/tap";
+        trusted = true;
+      }
+      {
+        name = "kayac/tap";
+        trusted = true;
+      }
     ];
     casks = [
       ### GUI Applications
       "gcloud-cli"
       # AI
-      "claude"
+      # "claude"
       "copilot-cli"
       "codex"
       "google-gemini"
