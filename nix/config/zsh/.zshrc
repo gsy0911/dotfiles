@@ -68,6 +68,11 @@ source "$ZDOTDIR/.zsh.worktrunk"
 # set up direnv
 eval "$(direnv hook zsh)"
 
+# set up fzftask
+# taskfileのタスクをfzfで選択・実行するためのツール
+# https://github.com/panter/fzftask
+source "$BREW_PREFIX/opt/fzftask/share/fzftask/fzftask.zsh"
+
 # disable default repeat command
 disable r
 
