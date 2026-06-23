@@ -1,9 +1,9 @@
 layout {
-    tab name="copilot" {
+    tab name="agent" {
         pane {
-            name "copilot"
-            command "gh"
-            args "copilot"
+            name "agent"
+            // command "gh"
+            // args "copilot"
         }
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
