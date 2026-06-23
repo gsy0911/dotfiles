@@ -1,0 +1,26 @@
+{
+  "model": "opus",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "mcpServers": {
+    "playwright": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "figma": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ]
+    }
+  }
+}

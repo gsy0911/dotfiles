@@ -53,6 +53,11 @@ in {
     source = ./home/.npmrc;
     force = true;
   };
+  # Claude Code settings (MCP servers configuration)
+  home.file.".claude/settings.json" = {
+    source = ./config/claude/settings.json;
+    force = true;
+  };
 
   # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {
