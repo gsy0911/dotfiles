@@ -44,7 +44,7 @@ export LC_ALL=ja_JP.UTF-8
 
 # add exports
 source "$HOME/.config/zsh/.zsh.exports"
-source "$ZDOTDIR/.zsh.exports.secret"
+[[ -f "$ZDOTDIR/.zsh.exports.secret" ]] && source "$ZDOTDIR/.zsh.exports.secret"
 
 # add aliases
 source "$ZDOTDIR/.zsh.aliases"

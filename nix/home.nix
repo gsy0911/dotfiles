@@ -67,7 +67,7 @@ in {
   home.file.".copilot/copilot-instructions.md".source = ./config/copilot/copilot-instructions.md;
   home.file.".copilot/mcp-config.json".source = ./config/copilot/mcp-config.json;
   xdg.configFile."github-copilot/intellij/mcp.json".source = ./config/copilot/mcp-config.json;
-  xdg.configFile.".copilot/prompts" = {
+  home.file.".copilot/prompts" = {
     source = ./config/copilot/prompts;
     recursive = true;
   };

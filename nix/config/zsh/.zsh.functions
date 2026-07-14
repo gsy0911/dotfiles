@@ -121,7 +121,7 @@ function dcuf() {
     if [[ $1 ]]; then
         local dockerfile=$1
     else
-        exit 1
+        return 1
     fi
     docker compose -f $dockerfile up --build
 }
@@ -132,12 +132,11 @@ function dcrf() {
 }
 
 function ss() {
-    sleep 300
-    if [[ $1 ]]; then
-	say $1
-    else
-        exit 1
+    if [[ -z $1 ]]; then
+        return 1
     fi
+    sleep 300
+    say $1
 }
 
 # function znd() {

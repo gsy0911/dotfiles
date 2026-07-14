@@ -102,7 +102,8 @@
       "cdktf"
       "ecspresso"
       # Infrastructure as Code
-      "terraform"
+      # homebrew-core の terraform は disabled のため tap を完全修飾で指定
+      "hashicorp/tap/terraform"
       # Database
       # "mysql"
       "mysql@8.4"
