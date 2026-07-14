@@ -91,6 +91,7 @@
       # "ollama"
       "xcodegen"
       "snowflake-cli"
+      "stripe-cli"
       # "screenresolution"
       "sketchybar"
 
