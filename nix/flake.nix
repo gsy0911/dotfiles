@@ -39,6 +39,9 @@
       node24 = pkgs.mkShell {
         packages = [
           pkgs.nodejs_24
+          # macOS では devShell 内で /usr/bin/git (xcrun ラッパー) が壊れ、
+          # zsh の precmd タイトル生成 (.zsh.hooks) が空になるため git を同梱する
+          pkgs.git
         ];
       };
 
@@ -48,6 +51,8 @@
           pkgs.nodejs_24
           pkgs.python313
           pkgs.uv
+          # devShell 内でも zsh のタブタイトル生成が動くように git を同梱
+          pkgs.git
         ];
       };
     };
