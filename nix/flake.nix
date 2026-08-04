@@ -32,6 +32,26 @@
         # googleworkspace-cli.packages.${system}.default
       ];
     };
+    devShells.${system} = {
+      # 各プロジェクトの .envrc から
+      #   use flake "path:$HOME/Development/Projects/dotfiles/nix#node24"
+      # で参照する
+      node24 = pkgs.mkShell {
+        packages = [
+          pkgs.nodejs_24
+        ];
+      };
+
+      # Node 24 + Python 3.13 (ライブラリは uv 管理)
+      node24-py313 = pkgs.mkShell {
+        packages = [
+          pkgs.nodejs_24
+          pkgs.python313
+          pkgs.uv
+        ];
+      };
+    };
+
     apps.${system} = {
       update = {
         type = "app";
