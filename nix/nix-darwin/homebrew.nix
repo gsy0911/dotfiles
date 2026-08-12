@@ -374,7 +374,8 @@
       # Git
       "fork"
       # development
-      "aws-vault-binary"
+      # "aws-vault-binary"
+      "aws-vpn-client"
       "docker-desktop"
       # Chat
       "slack"
