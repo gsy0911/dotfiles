@@ -45,3 +45,13 @@ $ nvim --startuptime startuptime.log +q
 ```shell
 $ brew install --formula xdg-ninja
 ```
+
+# GitHub PAT
+
+## Fork
+
+In Fork, Accounts => Update token..., type PAT.
+
+## CLI
+
+In Keychain, `github.com` => InternetPassword, type PAT.
