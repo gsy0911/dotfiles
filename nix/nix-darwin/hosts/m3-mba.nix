@@ -6,6 +6,8 @@
   homebrew = {
     brews = [
       # このマシンだけに入れる formula をここに書く
+      # Database tools
+      "tbls"
     ];
     casks = [
       # このマシンだけに入れる cask をここに書く

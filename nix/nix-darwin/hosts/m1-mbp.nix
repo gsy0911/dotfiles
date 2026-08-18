@@ -6,6 +6,13 @@
   homebrew = {
     brews = [
       # このマシンだけに入れる formula をここに書く
+      # Documentation & Writing
+      "typst"
+
+      ### Infrastructure & DevOps
+      # Infrastructure as Code
+      # homebrew-core の terraform は disabled のため tap を完全修飾で指定
+      "hashicorp/tap/terraform"
     ];
     casks = [
       # このマシンだけに入れる cask をここに書く

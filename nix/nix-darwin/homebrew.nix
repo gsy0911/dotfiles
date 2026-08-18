@@ -30,7 +30,6 @@
       "node@24"
       "node"
       "volta"
-      # "yarn"
       # Lua
       "lua"
       "luarocks"
@@ -84,8 +83,6 @@
       # "docker-completion"
       # Task runners
       "go-task"
-      # Documentation & Writing
-      "typst"
       # Other dev tools
       # "jmeter"
       # "ollama"
@@ -101,15 +98,11 @@
       "awscli"
       "cdktf"
       "ecspresso"
-      # Infrastructure as Code
-      # homebrew-core の terraform は disabled のため tap を完全修飾で指定
-      "hashicorp/tap/terraform"
       # Database
       # "mysql"
       "mysql@8.4"
       # Database tools
       "sqlite"
-      "tbls"
 
       ### System & Security
       # Security tools
