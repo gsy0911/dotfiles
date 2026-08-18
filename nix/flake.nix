@@ -23,6 +23,17 @@
   } @ inputs: let
     system = "aarch64-darwin";
     pkgs = nixpkgs.legacyPackages.${system};
+
+    # 共通モジュール + ホスト固有モジュール で darwinConfiguration を組み立てる
+    mkDarwin = hostModule:
+      nix-darwin.lib.darwinSystem {
+        inherit system;
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./nix-darwin/config.nix
+          hostModule
+        ];
+      };
   in {
     packages.${system}.my-packages = pkgs.buildEnv {
       name = "my-packages-list";
@@ -87,14 +98,8 @@
       };
     };
 
-    darwinConfigurations."yoshiki-m1-mbp" = nix-darwin.lib.darwinSystem {
-      system = system;
-      modules = [./nix-darwin/config.nix];
-    };
-    darwinConfigurations."yoshiki-m3-mba" = nix-darwin.lib.darwinSystem {
-      system = system;
-      modules = [./nix-darwin/config.nix];
-    };
+    darwinConfigurations."yoshiki-m1-mbp" = mkDarwin ./nix-darwin/hosts/m1-mbp.nix;
+    darwinConfigurations."yoshiki-m3-mba" = mkDarwin ./nix-darwin/hosts/m3-mba.nix;
 
     # nix-formatter
     formatter.${system} = pkgs.alejandra;
