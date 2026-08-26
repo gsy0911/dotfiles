@@ -6,6 +6,18 @@
   homebrew = {
     brews = [
       # このマシンだけに入れる formula をここに書く
+      # Languages & Runtimes
+      "oven-sh/bun/bun"
+      # Rust
+      "rust"
+      "rustup"
+      "rust-analyzer"
+      "rustup-init"
+
+      ### Development Tools
+      # Other dev tools
+      "snowflake-cli"
+
       # Documentation & Writing
       "typst"
 
@@ -16,9 +28,15 @@
     ];
     casks = [
       # このマシンだけに入れる cask をここに書く
+      "insomnia"
+      "aws-vpn-client"
     ];
     taps = [
       # このマシンだけで使う tap をここに書く
+      {
+        name = "oven-sh/bun";
+        trusted = true;
+      }
     ];
   };
 }

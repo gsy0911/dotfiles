@@ -16,11 +16,6 @@
     # };
     brews = [
       ### Languages & Runtimes
-      # Rust
-      "rust"
-      "rustup"
-      "rust-analyzer"
-      "rustup-init"
       # Python
       "uv"
       "python@3.12"
@@ -79,8 +74,6 @@
       # "jmeter"
       # "ollama"
       "xcodegen"
-      "snowflake-cli"
-      "stripe-cli"
       # "screenresolution"
       "sketchybar"
 
@@ -88,7 +81,6 @@
       # AWS
       "aws-cdk"
       "awscli"
-      "cdktf"
       "ecspresso"
       # Database
       # "mysql"
@@ -257,13 +249,11 @@
       "fork"
       # development
       # "aws-vault-binary"
-      "aws-vpn-client"
       "docker-desktop"
       # Chat
       "slack"
       # Others
       "adobe-acrobat-reader"
-      "insomnia"
       "vlc"
       "minecraft"
 

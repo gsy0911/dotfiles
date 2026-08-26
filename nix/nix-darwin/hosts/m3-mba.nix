@@ -8,6 +8,8 @@
       # このマシンだけに入れる formula をここに書く
       # Database tools
       "tbls"
+      # Other dev tools
+      "stripe-cli"
     ];
     casks = [
       # このマシンだけに入れる cask をここに書く
