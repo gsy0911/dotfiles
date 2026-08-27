@@ -217,7 +217,6 @@
     ];
     casks = [
       ### GUI Applications
-      "gcloud-cli"
       # AI
       # "claude"
       "copilot-cli"
@@ -231,7 +230,6 @@
       "wezterm"
 
       # browser
-      "firefox"
       "google-chrome"
 
       # note
@@ -244,7 +242,6 @@
       # IDE
       "jetbrains-toolbox"
       "visual-studio-code"
-      "cursor"
       # Git
       "fork"
       # development
