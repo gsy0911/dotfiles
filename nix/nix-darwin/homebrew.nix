@@ -70,6 +70,8 @@
       # "docker-completion"
       # Task runners
       "go-task"
+      # Documentation & Writing
+      "typst"
       # Other dev tools
       # "jmeter"
       # "ollama"
@@ -251,6 +253,7 @@
       "slack"
       # Others
       "adobe-acrobat-reader"
+      "insomnia"
       "vlc"
       "minecraft"
 

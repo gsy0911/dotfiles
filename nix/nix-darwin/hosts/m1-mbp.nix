@@ -18,9 +18,6 @@
       # Other dev tools
       "snowflake-cli"
 
-      # Documentation & Writing
-      "typst"
-
       ### Infrastructure & DevOps
       # Infrastructure as Code
       # homebrew-core の terraform は disabled のため tap を完全修飾で指定
@@ -28,7 +25,6 @@
     ];
     casks = [
       # このマシンだけに入れる cask をここに書く
-      "insomnia"
       "aws-vpn-client"
     ];
     taps = [
