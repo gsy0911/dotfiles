@@ -9,7 +9,7 @@
     prefix = "/opt/homebrew";
     onActivation = {
       autoUpdate = true;
-      cleanup = "none";
+      cleanup = "uninstall";
     };
     # caskArgs = {
     #   appdir = "~/Applications";
@@ -41,6 +41,7 @@
       "eza"
       "gawk"
       "fzf"
+      "acxelerator/fzftask/fzftask"
       "curl"
       "colordiff"
       "dyff"
@@ -179,6 +180,10 @@
       "zeromq"
     ];
     taps = [
+      {
+        name = "acxelerator/fzftask";
+        trusted = true;
+      }
       {
         name = "daipeihust/tap";
         trusted = true;

@@ -70,7 +70,11 @@ export CPPFLAGS="-I$BREW_PREFIX/opt/openblas/include"
 # openssl / gmp, pycrypto
 export "CFLAGS=-I$BREW_PREFIX/include -L$BREW_PREFIX/lib"
 
-# taskfile
-export TASK_X_REMOTE_TASKFILES=1
+# zellij
+# ソケットは <ZELLIJ_SOCKET_DIR>/<version>/<session名> に作られ、
+# UNIXソケットのパス長上限(macOSは sun_path=104byte)を超えられない。
+# TMPDIRが長い環境だと「session name must be less than 0 characters」で失敗するため、
+# 短い固定パスを指定して名前に使える文字数を確保する。
+export ZELLIJ_SOCKET_DIR="/tmp/zellij-$(id -u)"
 
 export EDITOR=nano
