@@ -18,6 +18,10 @@
       # Other dev tools
       "snowflake-cli"
 
+      ### Database
+      # mysqldump を含む MySQL クライアント (keg-only)
+      "mysql-client@8.4"
+
       ### Infrastructure & DevOps
       # Infrastructure as Code
       # homebrew-core の terraform は disabled のため tap を完全修飾で指定
