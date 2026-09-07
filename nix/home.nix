@@ -58,6 +58,13 @@ in {
     source = ./config/claude/settings.json;
     force = true;
   };
+  # Claude Code statusline script
+  # https://zenn.dev/kawarimidoll/articles/00cfa200c12c5f
+  home.file.".claude/statusline.sh" = {
+    source = ./config/claude/statusline.sh;
+    executable = true;
+    force = true;
+  };
 
   # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {

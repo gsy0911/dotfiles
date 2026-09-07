@@ -54,6 +54,7 @@
       "gum"
       "httpie"
       "jc"
+      "jq"
       "procs"
       "tree"
       "wget"
