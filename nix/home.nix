@@ -86,6 +86,10 @@ in {
     source = ./config/ghostty;
     recursive = true;
   };
+  xdg.configFile."herdr" = {
+    source = ./config/herdr;
+    recursive = true;
+  };
   xdg.configFile."lazygit" = {
     source = ./config/lazygit;
     recursive = true;

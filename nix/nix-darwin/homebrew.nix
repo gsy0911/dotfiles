@@ -52,6 +52,7 @@
       "figlet"
       "act"
       "gum"
+      "herdr"
       "httpie"
       "jc"
       "jq"
