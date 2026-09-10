@@ -30,7 +30,11 @@ return {
     })
 
     minimap.setup({
-      integrations = { diff_integration, search_integration, diagnostic_integration }
+      integrations = { diff_integration, search_integration, diagnostic_integration },
+      window = {
+        -- 透過を無くしてバッファ文字がミニマップに透けて重なるのを防ぐ
+        winblend = 0,
+      },
     })
     minimap.open()
     vim.keymap.set('n', '<Leader>mo', minimap.open, { desc = 'open minimap' })
