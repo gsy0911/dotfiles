@@ -65,6 +65,12 @@ in {
     executable = true;
     force = true;
   };
+  # Claude Code user skill: herdr (available across all projects/machines)
+  # Regenerate on herdr upgrades with: herdr --skill > <this source>
+  home.file.".claude/skills/herdr/SKILL.md" = {
+    source = ./config/claude/skills/herdr/SKILL.md;
+    force = true;
+  };
 
   # xdg.configFile."<path>" => ${XDG_CONFIG_HOME}/<path>
   xdg.configFile."aerospace" = {
