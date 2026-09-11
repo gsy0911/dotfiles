@@ -9,7 +9,6 @@ return {
   config = function()
     local wk = require("which-key")
     wk.add({
-      { "<leader>a", "", desc = "avente" },
       { "<leader>c", "", desc = "CSV-related" },
       { "<leader>f", "", desc = "fuzzy finder" },
       { "<leader>g", "", desc = "Git-related" },
