@@ -7,7 +7,7 @@ tasks:
       - task -l --sort none
     silent: true
   
-  nix:
+  nix-all:
     desc: update nix and format nix-files
     dir: ./nix
     cmds:
@@ -15,6 +15,19 @@ tasks:
       - nix store gc
       - nix fmt .
       - brew upgrade
+
+  # nix-switch:
+  #   desc: apply nix config (home-manager + nix-darwin) without updating flake inputs
+  #   dir: ./nix
+  #   cmds:
+  #     - nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
+  #     - sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ./flake.nix
+
+  nix-symlinks:
+    desc: apply home-manager only (dotfile symlinks such as ~/.config/*)
+    dir: ./nix
+    cmds:
+      - nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig
 
   github:
     desc: add gh-plugins
