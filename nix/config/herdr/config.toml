@@ -92,6 +92,13 @@ rename_workspace = "prefix+shift+r"
 #   reload_config was prefix+shift+r -> prefix+shift+e
 resize_mode = "prefix+shift+z"
 reload_config = "prefix+shift+e"
+# Close: tab = ctrl+t -> x, space(workspace) = ctrl+t -> shift+x.
+# close_pane used to own prefix+x, so it moves to the unused prefix+d.
+close_pane = "prefix+d"
+close_tab = "prefix+x"
+close_workspace = "prefix+shift+x"
+# Switch space(workspace) by index: ctrl+t -> shift+1..9 (tabs stay on prefix+1..9)
+switch_workspace = "prefix+shift+1..9"
 # --- end custom bindings ---
 
 # Templated space: ctrl+t -> shift+n creates a space with fixed tabs
