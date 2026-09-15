@@ -102,7 +102,7 @@ switch_workspace = "prefix+shift+1..9"
 # --- end custom bindings ---
 
 # Templated space: ctrl+t -> shift+n creates a space with fixed tabs
-# (control / nvim / git / 1 / 2 / 3) via the managed helper script.
+# (control-agent / nvim / shell) via the managed helper script.
 [[keys.command]]
 key = "prefix+shift+n"
 type = "shell"
