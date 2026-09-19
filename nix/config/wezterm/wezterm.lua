@@ -254,6 +254,29 @@ config.keys = {
         mods = "ALT",
         action = wezterm.action.SendKey { key = '¥' }
     },
+    -- Herdr がタブ/スペース切り替えに使う ctrl+shift+h/j/k/l を
+    -- WezTerm のデフォルト割り当て（例: ctrl+shift+l = ShowDebugOverlay）から解放し、
+    -- そのまま端末アプリ（Herdr）へ透過させる
+    {
+        key = 'h',
+        mods = 'CTRL|SHIFT',
+        action = act.DisableDefaultAssignment,
+    },
+    {
+        key = 'j',
+        mods = 'CTRL|SHIFT',
+        action = act.DisableDefaultAssignment,
+    },
+    {
+        key = 'k',
+        mods = 'CTRL|SHIFT',
+        action = act.DisableDefaultAssignment,
+    },
+    {
+        key = 'l',
+        mods = 'CTRL|SHIFT',
+        action = act.DisableDefaultAssignment,
+    },
     -- {
     --     key = 't',
     --     mods = 'CTRL',

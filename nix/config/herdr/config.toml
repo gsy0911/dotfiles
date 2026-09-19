@@ -70,17 +70,17 @@ onboarding = false
 # --- custom bindings (managed) ---
 # Prefix (leader) key
 prefix = "ctrl+t"
-# Tab navigation: ctrl+t then h / l
-previous_tab = "prefix+h"
-next_tab = "prefix+l"
-# Space (workspace) navigation: ctrl+t then k / j
-previous_workspace = "prefix+k"
-next_workspace = "prefix+j"
-# Move pane focus off h/j/k/l (they now drive tabs/spaces) onto arrows
-focus_pane_left = "prefix+left"
-focus_pane_down = "prefix+down"
-focus_pane_up = "prefix+up"
-focus_pane_right = "prefix+right"
+# Tab navigation: single-chord ctrl+shift+h / ctrl+shift+l (no prefix)
+previous_tab = "ctrl+shift+h"
+next_tab = "ctrl+shift+l"
+# Space (workspace) navigation: single-chord ctrl+shift+k / ctrl+shift+j (no prefix)
+previous_workspace = "ctrl+shift+k"
+next_workspace = "ctrl+shift+j"
+# Tabs/spaces moved to direct chords above, so pane focus keeps h/j/k/l under prefix
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
 # Plain new (empty) workspace moves to ctrl+t -> n,
 # because ctrl+t -> shift+n now creates a templated space (see [[keys.command]]).
 new_workspace = "prefix+n"
