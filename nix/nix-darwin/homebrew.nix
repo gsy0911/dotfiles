@@ -261,7 +261,6 @@
       # Others
       "adobe-acrobat-reader"
       "insomnia"
-      "vlc"
       "minecraft"
 
       ### Fonts
