@@ -44,3 +44,21 @@ autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_title
 # cdした時にも更新
 add-zsh-hook chpwd  update_title
+
+# herdr: space の sidebar に PR 番号 ($pr) を表示する。
+# precmd 毎に git rev-parse (数十ms) だけ行い、ブランチが変わった時か
+# TTL (HERDR_PR_TTL, 既定 300 秒) 経過時のみ gh を叩く report-pr.sh を裏で走らせる。
+if [[ -n "$HERDR_WORKSPACE_ID" ]]; then
+  zmodload zsh/datetime
+  typeset -g _herdr_pr_key="" _herdr_pr_at=0
+  herdr_report_pr() {
+    local key
+    key="$(command git rev-parse --show-toplevel --abbrev-ref HEAD 2>/dev/null)"
+    if [[ "$key" == "$_herdr_pr_key" ]] && (( EPOCHSECONDS - _herdr_pr_at < ${HERDR_PR_TTL:-300} )); then
+      return
+    fi
+    _herdr_pr_key="$key" _herdr_pr_at=$EPOCHSECONDS
+    bash "$HOME/.config/herdr/scripts/report-pr.sh" "$HERDR_WORKSPACE_ID" "$PWD" &>/dev/null &!
+  }
+  add-zsh-hook precmd herdr_report_pr
+fi

@@ -331,6 +331,14 @@ window_title = "herdr"
 # Blank rows between space entries. Set to 1 to restore the previous spacing.
 # row_gap = 0
 # rows = [["state_icon", "workspace"], ["branch", "git_status"]]
+# 3 行目: zsh precmd -> scripts/report-pr.sh が報告する PR 番号 ("PR:#1234" / "PR:----")
+[ui.sidebar.spaces]
+# PR あり ("PR:#...") は黄色太字、なし ("PR:----") は薄字。
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+  [{ token = "$pr", dim = true, rules = [{ starts_with = "PR:#", fg = "#f9e2af", bold = true, dim = false }] }],
+]
 
 # Accent color for highlights, borders, and navigation UI.
 # Accepts: hex (#89b4fa), named colors (cyan, blue, magenta), or rgb(r,g,b)
