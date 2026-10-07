@@ -2,7 +2,7 @@
 # report-pr.sh — 現在ブランチの PR 番号を herdr の space metadata ($pr) として報告する。
 # zsh の precmd から (ブランチ変化 or TTL 切れ時のみ) バックグラウンドで呼ばれる想定。
 # 引数: $1 = workspace_id, $2 = 対象ディレクトリ (省略時は $PWD)
-# 表示: PR あり -> "PR:#1234" / なし -> "PR:----" / git 外 -> token をクリア
+# 表示: open -> "PR:#1234" / closed・merged -> "PR:(#1234)" / なし -> "PR:----" / git 外 -> token をクリア
 set -uo pipefail
 
 ws="${1:?workspace_id required}"
@@ -26,15 +26,19 @@ fi
 mkdir -p "$cache_dir"
 cache="$cache_dir/$(printf '%s\0%s' "$root" "$branch" | shasum | cut -c1-16)"
 now=$(date +%s)
+# キャッシュ内容: "<number> <state>" (PR なしは空)。
 if [[ -f "$cache" ]] && (( now - $(stat -f %m "$cache") < ttl )); then
-  num=$(<"$cache")
+  info=$(<"$cache")
 else
-  num=$(gh pr view "$branch" --json number --jq .number 2>/dev/null) || num=""
-  printf '%s' "$num" >"$cache"
+  info=$(gh pr view "$branch" --json number,state --jq '"\(.number) \(.state)"' 2>/dev/null) || info=""
+  printf '%s' "$info" >"$cache"
 fi
+read -r num state <<<"$info"
 
-if [[ -n "$num" ]]; then
+if [[ -z "$num" ]]; then
+  report --token pr="PR:----"
+elif [[ "$state" == "OPEN" ]]; then
   report --token pr="PR:#$num"
 else
-  report --token pr="PR:----"
+  report --token pr="PR:(#$num)"
 fi
