@@ -1,5 +1,6 @@
 {
   "model": "claude-opus-5-5",
+  "language": "japanese",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
