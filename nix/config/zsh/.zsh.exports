@@ -16,9 +16,9 @@ export PATH="$CARGO_HOME/env:$PATH"
 # - docker
 #export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export DOCKER_BUILDKIT=1
-# - volta
-export VOLTA_HOME="$XDG_DATA_HOME/volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# - volta (unused)
+# VOLTA_HOME is exported in $ZDOTDIR/.zshenv
+# export PATH="$VOLTA_HOME/bin:$PATH"
 # - sqlite
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
 # - psql

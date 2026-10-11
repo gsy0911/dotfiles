@@ -37,12 +37,8 @@ in {
   };
   home.file.".zshenv".text = ''
     # Managed by Home home-manager
-    # XGD Base Directory
-    export XDG_DATA_HOME=$HOME/.local/share
-    export XDG_CONFIG_HOME=$HOME/.config
-    export XDG_STATE_HOME=$HOME/.local/state
-    export XDG_CACHE_HOME=$HOME/.cache
-    export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+    # Only read when ZDOTDIR is not inherited; the real env is $ZDOTDIR/.zshenv
+    source "$HOME/.config/zsh/.zshenv"
   '';
   home.file.".zshenv".force = true;
   home.file.".gitconfig" = {

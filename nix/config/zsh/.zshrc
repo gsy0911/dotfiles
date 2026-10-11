@@ -8,6 +8,10 @@
 # speed check
 # zmodload zsh/zprof
 
+# keep PATH unique; nested shells (terminal -> herdr -> zsh) re-run the
+# prepends below on an inherited PATH
+typeset -U path PATH
+
 # enable brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # enable sheldon

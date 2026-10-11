@@ -21,7 +21,7 @@
       "python@3.12"
       # Node.js
       "node@24"
-      "volta"
+      # "volta"
       # Lua
       "luarocks"
       # Java
