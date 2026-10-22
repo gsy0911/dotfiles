@@ -75,7 +75,6 @@ alias nr='npm run'
 
 # alias for Python
 alias p="uv run python"
-alias rj="rye run jupyter lab"
 alias uj="uv run jupyter lab"
 alias um="uv run marimo edit"
 

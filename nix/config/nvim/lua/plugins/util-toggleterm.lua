@@ -78,7 +78,7 @@ return {
     vim.keymap.set("n", "<leader>gg", _lazygit_toggle, { noremap = true, silent = true, desc = "Toggle lazygit" })
 
     -- Terminal for python
-    local python = Terminal:new({ cmd = "rye run python", hidden = true, direction = "float" })
+    local python = Terminal:new({ cmd = "uv run python", hidden = true, direction = "float" })
     function _python_toggle()
       python:toggle()
     end
