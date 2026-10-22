@@ -39,3 +39,8 @@ tasks:
     cmds:
       - brew services start sketchybar
       - aerospace reload-config
+
+  cache-clean:
+    desc: clear caches
+    cmds:
+      - uv cache clean
