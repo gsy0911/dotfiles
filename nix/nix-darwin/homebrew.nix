@@ -256,6 +256,7 @@
       # development
       # "aws-vault-binary"
       "docker-desktop"
+      "session-manager-plugin"
       # Chat
       "slack"
       # Others
