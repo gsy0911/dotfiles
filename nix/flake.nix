@@ -35,14 +35,6 @@
         ];
       };
   in {
-    packages.${system}.my-packages = pkgs.buildEnv {
-      name = "my-packages-list";
-      paths = [
-        pkgs.curl
-        # ここにパッケージを追記していく
-        # googleworkspace-cli.packages.${system}.default
-      ];
-    };
     devShells.${system} = {
       # 各プロジェクトの .envrc から
       #   use flake "path:$HOME/Development/Projects/dotfiles/nix#node24"

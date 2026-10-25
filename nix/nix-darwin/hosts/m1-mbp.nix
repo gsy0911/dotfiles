@@ -7,7 +7,6 @@
     brews = [
       # このマシンだけに入れる formula をここに書く
       # Languages & Runtimes
-      "oven-sh/bun/bun"
       # Rust
       "rust"
       "rustup"
@@ -35,10 +34,6 @@
     ];
     taps = [
       # このマシンだけで使う tap をここに書く
-      {
-        name = "oven-sh/bun";
-        trusted = true;
-      }
     ];
   };
 }
