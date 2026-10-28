@@ -20,11 +20,14 @@ Initial set up is [here](./INITIAL_SETTING.md).
 # setup
 
 ```shell
-# new installation
+# new installation (see INITIAL_SETTING.md for the full steps)
 $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
-# install required packages via nix
-$ task nix
+# update flake.lock and apply home-manager + nix-darwin
+$ task nix-all
+
+# apply home-manager only
+$ task nix-symlinks
 ```
 
 
