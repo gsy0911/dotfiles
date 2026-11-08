@@ -20,6 +20,8 @@
       ### Database
       # mysqldump を含む MySQL クライアント (keg-only)
       "mysql-client@8.4"
+      # psql を含む PostgreSQL クライアント (keg-only)
+      "libpq"
 
       ### Infrastructure & DevOps
       # Infrastructure as Code
