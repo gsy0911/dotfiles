@@ -7,6 +7,8 @@
     brews = [
       # このマシンだけに入れる formula をここに書く
       # Languages & Runtimes
+      # JavaScript runtime (homebrew-core。1.4.4 で CVE-2026-111497 等が修正済み)
+      "bun"
       # Rust
       "rust"
       "rustup"
