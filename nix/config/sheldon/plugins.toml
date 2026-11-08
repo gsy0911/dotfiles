@@ -12,6 +12,8 @@
 
 shell = "zsh"
 
+# サプライチェーン対策として各プラグインを tag / rev で固定する。
+# 更新時は tag / rev を書き換えて `sheldon lock --update` を実行する。
 
 [templates]
 defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks | get: \"post\" | nl }}"
@@ -19,19 +21,24 @@ defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source 
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
+rev = "53a26e287fbbe2dcebb3aa1801546c6de32416fa"  # タグなし
 
 [plugins.highlight]
 github = "zdharma-continuum/fast-syntax-highlighting"
+tag = "v1.56"
 apply = ["defer"]
 
 [plugins.autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
+tag = "v0.7.1"
 apply = ["defer"]
 
 [plugins.abbr]
 github = "olets/zsh-abbr"
+tag = "v6.5.2"
 apply = ["defer"]
 
 [plugins.completions]
 github = "zsh-users/zsh-completions"
+tag = "0.36.0"
 apply = ["defer"]
