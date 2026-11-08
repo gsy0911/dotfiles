@@ -184,15 +184,4 @@ function ws() {
 #   cp $parentDir/.env ./.env
 #   cp $parentDir/.envrc ./.envrc
 #   direnv allow
-#   # .serena が存在する場合は memories ディレクトリをコピー
-#   if [[ -d "$parentDir/.serena" ]]; then
-#     mkdir -p ./.serena
-#     cp -r "$parentDir/.serena/memories" ./.serena/memories
-#     cp -r "$parentDir/.serena/cache" ./.serena/cache
-#   fi
 # }
-
-function serena-index() {
-  uvx --from git+https://github.com/oraios/serena serena project index
-}
-

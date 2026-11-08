@@ -1,21 +1,5 @@
 {
   "mcpServers": {
-    "serena": {
-      "type": "local",
-      "command": "uvx",
-      "tools": [
-        "*"
-      ],
-      "args": [
-        "--from",
-	"git+https://github.com/oraios/serena@v2.1.0",
-	"serena-mcp-server",
-	"--context",
-	"claude-code",
-	"--project",
-	"."
-      ]
-    },
     "fetch-mcp": {
       "type": "local",
       "command": "npx",
