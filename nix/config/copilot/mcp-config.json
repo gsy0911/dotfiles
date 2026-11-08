@@ -8,7 +8,7 @@
       ],
       "args": [
         "--from",
-	"git+https://github.com/oraios/serena",
+	"git+https://github.com/oraios/serena@v2.1.0",
 	"serena-mcp-server",
 	"--context",
 	"claude-code",
@@ -23,7 +23,7 @@
         "*"
       ],
       "args": [
-        "mcp-fetch-server"
+        "mcp-fetch-server@1.1.2"
       ]
     },
     "playwright": {
@@ -32,7 +32,7 @@
       "tools": [
         "*"
       ],
-      "args": ["@playwright/mcp@latest"]
+      "args": ["@playwright/mcp@0.0.84"]
     },
     "figma": {
       "type": "http",
@@ -41,7 +41,7 @@
     "chrome-devtools": {
       "type": "local",
       "command": "npx",
-      "args": ["chrome-devtools-mcp@latest"]
+      "args": ["chrome-devtools-mcp@1.12.0"]
     }
   }
 }

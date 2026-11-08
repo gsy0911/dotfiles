@@ -1,1 +1,2 @@
-# exclude-newer = "1 week"
+# 公開から 1 週間未満のパッケージを解決対象から外す (サプライチェーン対策)
+exclude-newer = "1 week"

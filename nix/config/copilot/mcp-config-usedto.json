@@ -3,7 +3,7 @@
     "awslabs-aws-documentation-mcp-server": {
       "type": "local",
       "command": "uvx",
-      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "args": ["awslabs.aws-documentation-mcp-server@1.2.4"],
       "tools": [
         "*"
       ],
@@ -15,7 +15,7 @@
     "awslabs-aws-api-mcp-server": {
       "type": "local",
       "command": "uvx",
-      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "args": ["awslabs.aws-api-mcp-server@1.6.0"],
       "tools": [
         "*"
       ],
@@ -28,7 +28,7 @@
     "drawio": {
       "type": "local",
       "command": "npx",
-      "args": ["@drawio/mcp@latest"],
+      "args": ["@drawio/mcp@1.10.1"],
       "tools": [
         "*"
       ]

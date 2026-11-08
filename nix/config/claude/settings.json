@@ -26,7 +26,7 @@
       "type": "local",
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest"
+        "@playwright/mcp@0.0.84"
       ]
     },
     "figma": {
@@ -37,7 +37,7 @@
       "type": "local",
       "command": "npx",
       "args": [
-        "chrome-devtools-mcp@latest"
+        "chrome-devtools-mcp@1.12.0"
       ]
     }
   }
