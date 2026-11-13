@@ -35,6 +35,8 @@
       "aws-vpn-client"
       # メディアプレイヤー
       "vlc"
+      # 3DCG
+      "blender"
     ];
     taps = [
       # このマシンだけで使う tap をここに書く
