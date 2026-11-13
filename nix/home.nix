@@ -133,4 +133,30 @@ in {
     source = ./home/man;
     recursive = true;
   };
+
+  # Claude Code の MCP サーバー (user スコープ = ~/.claude.json)
+  # Claude Code は settings.json の mcpServers を読まないため、claude mcp で登録する。
+  # ~/.claude.json は Claude Code 自身も書き換えるので、ファイルごとリンクはせず
+  # 毎回 remove → add-json で入れ直す (冪等)。
+  #
+  # blender: Blender Lab 公式の MCP (https://www.blender.org/lab/mcp-server/)
+  #   PyPI の blender-mcp は非公式版 (ahujasid) なので、公式リポジトリのタグを指定する。
+  #   Blender 側にもアドオン (mcp-x.y.z.zip) を入れて、ポート 9876 でサーバーを起動しておく。
+  home.activation.claudeMcpServers = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    claude="$HOME/.local/bin/claude"
+    if [ -x "$claude" ]; then
+      run "$claude" mcp remove --scope user blender >/dev/null 2>&1 || true
+      run "$claude" mcp add-json --scope user blender ${lib.escapeShellArg (builtins.toJSON {
+      type = "stdio";
+      command = "uvx";
+      args = [
+        "--from"
+        "git+https://projects.blender.org/lab/blender_mcp.git@v1.0.3#subdirectory=mcp"
+        "blender-mcp"
+      ];
+    })}
+    else
+      echo "claude が見つからないため MCP サーバーの登録を飛ばしました"
+    fi
+  '';
 }
