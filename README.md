@@ -58,3 +58,8 @@ In Fork, Accounts => Update token..., type PAT.
 ## CLI
 
 In Keychain, `github.com` => InternetPassword, type PAT.
+
+## Intellij
+
+Git > GitHub > アカウントの管理 > ログイン >  トークンの使用
+
