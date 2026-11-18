@@ -87,10 +87,6 @@
       "aws-cdk"
       "awscli"
       "ecspresso"
-      # Database
-      # "mysql"
-      "mysql@8.4"
-
       ### System & Security
       # Security tools
       "mas"

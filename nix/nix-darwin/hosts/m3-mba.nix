@@ -10,6 +10,8 @@
   homebrew = {
     brews = [
       # このマシンだけに入れる formula をここに書く
+      # Database
+      "mysql@8.4"
       # Database tools
       "tbls"
       # Other dev tools
